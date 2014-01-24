@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76574AEA1892884F004DBBD7 /* index.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76574AE91892884F004DBBD7 /* index.jsx */; };
+		76574AEC18928A12004DBBD7 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = 76574AEB18928A12004DBBD7 /* index.css */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
 		76F208D01892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
@@ -21,6 +23,9 @@
 		76F208ED1892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
 		76F208F51892809B000BE84C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76F208F31892809B000BE84C /* InfoPlist.strings */; };
 		76F208F71892809B000BE84C /* SlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F208F61892809B000BE84C /* SlotTests.m */; };
+		76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */; };
+		76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */; };
+		76F209081892810C000BE84C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 76F209071892810C000BE84C /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76574AE91892884F004DBBD7 /* index.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsx; sourceTree = "<group>"; };
+		76574AEB18928A12004DBBD7 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = index.css; sourceTree = "<group>"; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76F208CD1892809B000BE84C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +60,10 @@
 		76F208F21892809B000BE84C /* SlotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlotTests-Info.plist"; sourceTree = "<group>"; };
 		76F208F41892809B000BE84C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		76F208F61892809B000BE84C /* SlotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlotTests.m; sourceTree = "<group>"; };
+		76F20901189280D9000BE84C /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		76F209071892810C000BE84C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +123,8 @@
 		76F208D11892809B000BE84C /* Slot */ = {
 			isa = PBXGroup;
 			children = (
+				76F209061892810C000BE84C /* webapp */,
+				76F20900189280D9000BE84C /* WebViewJavascriptBridge */,
 				76F208DA1892809B000BE84C /* AppDelegate.h */,
 				76F208DB1892809B000BE84C /* AppDelegate.m */,
 				76F208DD1892809B000BE84C /* Main.storyboard */,
@@ -150,6 +163,26 @@
 				76F208F31892809B000BE84C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76F20900189280D9000BE84C /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				76F20901189280D9000BE84C /* WebViewJavascriptBridge.h */,
+				76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */,
+				76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		76F209061892810C000BE84C /* webapp */ = {
+			isa = PBXGroup;
+			children = (
+				76F209071892810C000BE84C /* index.html */,
+				76574AE91892884F004DBBD7 /* index.jsx */,
+				76574AEB18928A12004DBBD7 /* index.css */,
+			);
+			path = webapp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F209081892810C000BE84C /* index.html in Resources */,
+				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
+				76574AEA1892884F004DBBD7 /* index.jsx in Resources */,
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
+				76574AEC18928A12004DBBD7 /* index.css in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
 			);
@@ -250,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F208E21892809B000BE84C /* ViewController.m in Sources */,
+				76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */,
 				76F208DC1892809B000BE84C /* AppDelegate.m in Sources */,
 				76F208D81892809B000BE84C /* main.m in Sources */,
 			);
@@ -460,6 +498,7 @@
 				76F208FC1892809B000BE84C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76F208FD1892809B000BE84C /* Build configuration list for PBXNativeTarget "SlotTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +507,7 @@
 				76F208FF1892809B000BE84C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
