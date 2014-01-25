@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76574AEA1892884F004DBBD7 /* index.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76574AE91892884F004DBBD7 /* index.jsx */; };
-		76574AEC18928A12004DBBD7 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = 76574AEB18928A12004DBBD7 /* index.css */; };
+		7628CDD21892D9B90085CE94 /* app.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC21892D9B90085CE94 /* app.jsx */; };
+		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
+		7628CDD41892D9B90085CE94 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC41892D9B90085CE94 /* CloseNormal.png */; };
+		7628CDD51892D9B90085CE94 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC51892D9B90085CE94 /* CloseSelected.png */; };
+		7628CDD61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx */; };
+		7628CDDC1892D9B90085CE94 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCC1892D9B90085CE94 /* HelloWorld.png */; };
+		7628CDDD1892D9B90085CE94 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCD1892D9B90085CE94 /* index.css */; };
+		7628CDDE1892D9B90085CE94 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCE1892D9B90085CE94 /* index.html */; };
+		7628CDDF1892D9B90085CE94 /* index.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCF1892D9B90085CE94 /* index.jsx */; };
+		7628CDE11892D9B90085CE94 /* resource.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDD11892D9B90085CE94 /* resource.jsx */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
 		76F208D01892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
@@ -25,7 +33,6 @@
 		76F208F71892809B000BE84C /* SlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F208F61892809B000BE84C /* SlotTests.m */; };
 		76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */; };
 		76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */; };
-		76F209081892810C000BE84C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 76F209071892810C000BE84C /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		76574AE91892884F004DBBD7 /* index.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsx; sourceTree = "<group>"; };
-		76574AEB18928A12004DBBD7 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = index.css; sourceTree = "<group>"; };
+		7628CDC21892D9B90085CE94 /* app.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.jsx; sourceTree = "<group>"; };
+		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
+		7628CDC41892D9B90085CE94 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
+		7628CDC51892D9B90085CE94 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
+		7628CDC61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Cocos2d-html5-v2.2.2.min.jsx"; sourceTree = "<group>"; };
+		7628CDCC1892D9B90085CE94 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		7628CDCD1892D9B90085CE94 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = index.css; sourceTree = "<group>"; };
+		7628CDCE1892D9B90085CE94 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		7628CDCF1892D9B90085CE94 /* index.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsx; sourceTree = "<group>"; };
+		7628CDD11892D9B90085CE94 /* resource.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = resource.jsx; sourceTree = "<group>"; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76F208CD1892809B000BE84C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,7 +78,6 @@
 		76F20901189280D9000BE84C /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		76F209071892810C000BE84C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7628CDC11892D9B90085CE94 /* webapp */ = {
+			isa = PBXGroup;
+			children = (
+				7628CDC41892D9B90085CE94 /* CloseNormal.png */,
+				7628CDC51892D9B90085CE94 /* CloseSelected.png */,
+				7628CDCC1892D9B90085CE94 /* HelloWorld.png */,
+				7628CDCD1892D9B90085CE94 /* index.css */,
+				7628CDCE1892D9B90085CE94 /* index.html */,
+				7628CDC31892D9B90085CE94 /* bridge.jsx */,
+				7628CDC61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx */,
+				7628CDC21892D9B90085CE94 /* app.jsx */,
+				7628CDD11892D9B90085CE94 /* resource.jsx */,
+				7628CDCF1892D9B90085CE94 /* index.jsx */,
+			);
+			path = webapp;
+			sourceTree = "<group>";
+		};
 		76F208BF1892809B000BE84C = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +154,7 @@
 		76F208D11892809B000BE84C /* Slot */ = {
 			isa = PBXGroup;
 			children = (
-				76F209061892810C000BE84C /* webapp */,
+				7628CDC11892D9B90085CE94 /* webapp */,
 				76F20900189280D9000BE84C /* WebViewJavascriptBridge */,
 				76F208DA1892809B000BE84C /* AppDelegate.h */,
 				76F208DB1892809B000BE84C /* AppDelegate.m */,
@@ -173,16 +204,6 @@
 				76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */,
 			);
 			path = WebViewJavascriptBridge;
-			sourceTree = "<group>";
-		};
-		76F209061892810C000BE84C /* webapp */ = {
-			isa = PBXGroup;
-			children = (
-				76F209071892810C000BE84C /* index.html */,
-				76574AE91892884F004DBBD7 /* index.jsx */,
-				76574AEB18928A12004DBBD7 /* index.css */,
-			);
-			path = webapp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,13 +282,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F209081892810C000BE84C /* index.html in Resources */,
+				7628CDDC1892D9B90085CE94 /* HelloWorld.png in Resources */,
 				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
-				76574AEA1892884F004DBBD7 /* index.jsx in Resources */,
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
-				76574AEC18928A12004DBBD7 /* index.css in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
+				7628CDD51892D9B90085CE94 /* CloseSelected.png in Resources */,
+				7628CDDF1892D9B90085CE94 /* index.jsx in Resources */,
+				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
+				7628CDD41892D9B90085CE94 /* CloseNormal.png in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
+				7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */,
+				7628CDE11892D9B90085CE94 /* resource.jsx in Resources */,
+				7628CDD21892D9B90085CE94 /* app.jsx in Resources */,
+				7628CDD61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx in Resources */,
+				7628CDDE1892D9B90085CE94 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +447,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
 				INFOPLIST_FILE = "Slot/Slot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -433,7 +461,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
 				INFOPLIST_FILE = "Slot/Slot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
