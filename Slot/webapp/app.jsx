@@ -21,7 +21,11 @@ var Helloworld = cc.Layer.extend({
             "CloseNormal.png",
             "CloseSelected.png",
             function () {
-                NSLog('hello world');
+                var nextScene = cc.Scene.create();
+                var layer = new WelcomeLayer();
+                layer.init();
+                nextScene.addChild(layer);
+                cc.Director.getInstance().replaceScene(cc.TransitionFadeBL.create(0.5, nextScene));
             },this);
         closeItem.setAnchorPoint(0.5, 0.5);
 
@@ -34,9 +38,10 @@ var Helloworld = cc.Layer.extend({
         // 3. add your codes below...
         // add a label shows "Hello World"
         // create and initialize a label
-        this.helloLabel = cc.LabelTTF.create("Hello World", "Arial", 38);
+        this.helloLabel = cc.LabelTTF.create("123456 中国", "DBLCDTempBlack", 38);
         // position the label on the center of the screen
         this.helloLabel.setPosition(size.width / 2, 0);
+        this.helloLabel.setColor(new cc.Color3B(0, 0, 0));
         // add the label as a child to this layer
         this.addChild(this.helloLabel, 5);
 
@@ -54,8 +59,15 @@ var Helloworld = cc.Layer.extend({
         var rotateToA = cc.RotateTo.create(2, 0);
         var scaleToA = cc.ScaleTo.create(2, 1, 1);
 
-        this.sprite.runAction(cc.Sequence.create(rotateToA, scaleToA));
-        this.helloLabel.runAction(cc.Spawn.create(cc.MoveBy.create(2.5, cc.p(0, size.height - 40)),cc.TintTo.create(2.5,255,125,0)));
+        this.sprite.runAction(
+            cc.Sequence.create(rotateToA, scaleToA)
+        );
+        this.helloLabel.runAction(
+            cc.Spawn.create(
+                cc.MoveBy.create(2.5, cc.p(0, size.height - 40))
+                //cc.TintTo.create(2.5, 0,0,0)
+            )
+        );
 
         this.setTouchEnabled(true);
         return true;

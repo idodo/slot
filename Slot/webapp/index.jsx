@@ -16,12 +16,9 @@ var cocos2dApp = cc.Application.extend({
         }
         // initialize director
         var director = cc.Director.getInstance();
-        var size = director.getWinSize();
 
         cc.EGLView.getInstance().resizeWithBrowserSize(true);
-        cc.EGLView.getInstance().setDesignResolutionSize(
-            size.width, size.height, cc.RESOLUTION_POLICY.SHOW_ALL
-        );
+        //cc.EGLView.getInstance().setDesignResolutionSize(size.width, size.height, cc.RESOLUTION_POLICY.SHOW_ALL);
 
         // turn on display FPS
         director.setDisplayStats(this.config['showFPS']);
@@ -38,4 +35,4 @@ var cocos2dApp = cc.Application.extend({
     }
 });
 
-var myApp = new cocos2dApp(HelloWorldScene);
+new cocos2dApp(HelloWorldScene);

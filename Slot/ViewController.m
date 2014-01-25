@@ -47,6 +47,11 @@
         
         NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSURL *baseURL = [NSURL fileURLWithPath:path];
+        
+        //id webDocumentView = [_webView performSelector:@selector(_browserView)];
+        //id backingWebView = [webDocumentView performSelector:@selector(webView)];
+        //[backingWebView performSelector:@selector(_setWebGLEnabled:) withObject:[NSNumber numberWithBool:YES]];
+        
         [_webView setUserInteractionEnabled:YES];
         [_webView setOpaque:NO];
         [_webView loadHTMLString:html baseURL:baseURL];

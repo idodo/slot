@@ -16,4 +16,7 @@
     window.NSLog = function(message) {
         bridge.callHandler('log', message);
     }
+    window.onerror = function(msg, url, num){
+        NSLog('UncatchException: ' + msg + ' [' + num + ']');
+    };
 });

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76052F001893B6230089F1E5 /* WelcomeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76052EFF1893B6230089F1E5 /* WelcomeLayer.jsx */; };
 		7628CDD21892D9B90085CE94 /* app.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC21892D9B90085CE94 /* app.jsx */; };
 		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
 		7628CDD41892D9B90085CE94 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC41892D9B90085CE94 /* CloseNormal.png */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76052EFF1893B6230089F1E5 /* WelcomeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WelcomeLayer.jsx; sourceTree = "<group>"; };
 		7628CDC21892D9B90085CE94 /* app.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.jsx; sourceTree = "<group>"; };
 		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
 		7628CDC41892D9B90085CE94 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76052EFF1893B6230089F1E5 /* WelcomeLayer.jsx */,
 				7628CDC41892D9B90085CE94 /* CloseNormal.png */,
 				7628CDC51892D9B90085CE94 /* CloseSelected.png */,
 				7628CDCC1892D9B90085CE94 /* HelloWorld.png */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7628CDDC1892D9B90085CE94 /* HelloWorld.png in Resources */,
+				76052F001893B6230089F1E5 /* WelcomeLayer.jsx in Resources */,
 				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
