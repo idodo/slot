@@ -8,7 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		76052F001893B6230089F1E5 /* WelcomeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76052EFF1893B6230089F1E5 /* WelcomeLayer.jsx */; };
-		7628CDD21892D9B90085CE94 /* app.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC21892D9B90085CE94 /* app.jsx */; };
+		76052F021893E3720089F1E5 /* main.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76052F011893E3720089F1E5 /* main.jsx */; };
+		76052F041893EBFF0089F1E5 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76052F031893EBFF0089F1E5 /* bg.jpg */; };
+		76096D8C1894DDD6006E6041 /* SettingsLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D891894DDD6006E6041 /* SettingsLayer.jsx */; };
+		76096D8D1894DDD6006E6041 /* SlotLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D8A1894DDD6006E6041 /* SlotLayer.jsx */; };
+		76096D8E1894DDD6006E6041 /* TradeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D8B1894DDD6006E6041 /* TradeLayer.jsx */; };
+		76096D901894E04B006E6041 /* slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D8F1894E04B006E6041 /* slot.png */; };
+		76096D95189507C6006E6041 /* bet_all.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D92189507C6006E6041 /* bet_all.png */; };
+		76096D96189507C6006E6041 /* bet.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D93189507C6006E6041 /* bet.png */; };
+		76096D97189507C6006E6041 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D94189507C6006E6041 /* start.png */; };
 		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
 		7628CDD41892D9B90085CE94 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC41892D9B90085CE94 /* CloseNormal.png */; };
 		7628CDD51892D9B90085CE94 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC51892D9B90085CE94 /* CloseSelected.png */; };
@@ -16,7 +24,6 @@
 		7628CDDC1892D9B90085CE94 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCC1892D9B90085CE94 /* HelloWorld.png */; };
 		7628CDDD1892D9B90085CE94 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCD1892D9B90085CE94 /* index.css */; };
 		7628CDDE1892D9B90085CE94 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCE1892D9B90085CE94 /* index.html */; };
-		7628CDDF1892D9B90085CE94 /* index.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCF1892D9B90085CE94 /* index.jsx */; };
 		7628CDE11892D9B90085CE94 /* resource.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDD11892D9B90085CE94 /* resource.jsx */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
@@ -48,7 +55,15 @@
 
 /* Begin PBXFileReference section */
 		76052EFF1893B6230089F1E5 /* WelcomeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WelcomeLayer.jsx; sourceTree = "<group>"; };
-		7628CDC21892D9B90085CE94 /* app.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.jsx; sourceTree = "<group>"; };
+		76052F011893E3720089F1E5 /* main.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsx; sourceTree = "<group>"; };
+		76052F031893EBFF0089F1E5 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		76096D891894DDD6006E6041 /* SettingsLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SettingsLayer.jsx; sourceTree = "<group>"; };
+		76096D8A1894DDD6006E6041 /* SlotLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SlotLayer.jsx; sourceTree = "<group>"; };
+		76096D8B1894DDD6006E6041 /* TradeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeLayer.jsx; sourceTree = "<group>"; };
+		76096D8F1894E04B006E6041 /* slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slot.png; sourceTree = "<group>"; };
+		76096D92189507C6006E6041 /* bet_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bet_all.png; sourceTree = "<group>"; };
+		76096D93189507C6006E6041 /* bet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bet.png; sourceTree = "<group>"; };
+		76096D94189507C6006E6041 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
 		7628CDC41892D9B90085CE94 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		7628CDC51892D9B90085CE94 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -56,7 +71,6 @@
 		7628CDCC1892D9B90085CE94 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		7628CDCD1892D9B90085CE94 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = index.css; sourceTree = "<group>"; };
 		7628CDCE1892D9B90085CE94 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		7628CDCF1892D9B90085CE94 /* index.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsx; sourceTree = "<group>"; };
 		7628CDD11892D9B90085CE94 /* resource.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = resource.jsx; sourceTree = "<group>"; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +123,15 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76096D92189507C6006E6041 /* bet_all.png */,
+				76096D93189507C6006E6041 /* bet.png */,
+				76096D94189507C6006E6041 /* start.png */,
+				76096D8F1894E04B006E6041 /* slot.png */,
+				76096D891894DDD6006E6041 /* SettingsLayer.jsx */,
+				76096D8A1894DDD6006E6041 /* SlotLayer.jsx */,
+				76096D8B1894DDD6006E6041 /* TradeLayer.jsx */,
+				76052F031893EBFF0089F1E5 /* bg.jpg */,
+				76052F011893E3720089F1E5 /* main.jsx */,
 				76052EFF1893B6230089F1E5 /* WelcomeLayer.jsx */,
 				7628CDC41892D9B90085CE94 /* CloseNormal.png */,
 				7628CDC51892D9B90085CE94 /* CloseSelected.png */,
@@ -117,9 +140,7 @@
 				7628CDCE1892D9B90085CE94 /* index.html */,
 				7628CDC31892D9B90085CE94 /* bridge.jsx */,
 				7628CDC61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx */,
-				7628CDC21892D9B90085CE94 /* app.jsx */,
 				7628CDD11892D9B90085CE94 /* resource.jsx */,
-				7628CDCF1892D9B90085CE94 /* index.jsx */,
 			);
 			path = webapp;
 			sourceTree = "<group>";
@@ -285,20 +306,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76096D8E1894DDD6006E6041 /* TradeLayer.jsx in Resources */,
+				76052F021893E3720089F1E5 /* main.jsx in Resources */,
 				7628CDDC1892D9B90085CE94 /* HelloWorld.png in Resources */,
+				76096D96189507C6006E6041 /* bet.png in Resources */,
+				76096D8C1894DDD6006E6041 /* SettingsLayer.jsx in Resources */,
 				76052F001893B6230089F1E5 /* WelcomeLayer.jsx in Resources */,
+				76096D95189507C6006E6041 /* bet_all.png in Resources */,
 				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
 				7628CDD51892D9B90085CE94 /* CloseSelected.png in Resources */,
-				7628CDDF1892D9B90085CE94 /* index.jsx in Resources */,
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
 				7628CDD41892D9B90085CE94 /* CloseNormal.png in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
+				76096D97189507C6006E6041 /* start.png in Resources */,
+				76096D901894E04B006E6041 /* slot.png in Resources */,
+				76052F041893EBFF0089F1E5 /* bg.jpg in Resources */,
 				7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */,
 				7628CDE11892D9B90085CE94 /* resource.jsx in Resources */,
-				7628CDD21892D9B90085CE94 /* app.jsx in Resources */,
 				7628CDD61892D9B90085CE94 /* Cocos2d-html5-v2.2.2.min.jsx in Resources */,
+				76096D8D1894DDD6006E6041 /* SlotLayer.jsx in Resources */,
 				7628CDDE1892D9B90085CE94 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +479,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
 				INFOPLIST_FILE = "Slot/Slot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -465,7 +493,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
 				INFOPLIST_FILE = "Slot/Slot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

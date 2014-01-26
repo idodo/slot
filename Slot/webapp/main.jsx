@@ -1,14 +1,13 @@
-var cocos2dApp = cc.Application.extend({
-    config:document['ccConfig'],
-    ctor:function (scene) {
+var SlotApp = cc.Application.extend({
+    config: document.ccConfig,
+    ctor: function () {
         this._super();
-        this.startScene = scene;
         cc.COCOS2D_DEBUG = this.config['COCOS2D_DEBUG'];
         cc.initDebugSetting();
         cc.setup(this.config['tag']);
         cc.AppController.shareAppController().didFinishLaunchingWithOptions();
     },
-    applicationDidFinishLaunching:function () {
+    applicationDidFinishLaunching: function () {
         if(cc.RenderDoesnotSupport()){
             //show Information to user
             alert("Browser doesn't support WebGL");
@@ -16,23 +15,32 @@ var cocos2dApp = cc.Application.extend({
         }
         // initialize director
         var director = cc.Director.getInstance();
+        var size = director.getWinSize();
+
+        SlotApp.centerX = size.width;
+        SlotApp.centerY = size.height;
+
+        cc.MenuItemFont.setFontName('Marker Felt');
+        cc.MenuItemFont.setFontSize(resources_map.fontSizeNormal);
 
         cc.EGLView.getInstance().resizeWithBrowserSize(true);
-        //cc.EGLView.getInstance().setDesignResolutionSize(size.width, size.height, cc.RESOLUTION_POLICY.SHOW_ALL);
+        cc.EGLView.getInstance().setDesignResolutionSize(size.width * 2, size.height * 2, cc.RESOLUTION_POLICY.SHOW_ALL);
 
-        // turn on display FPS
+        //director.setContentScaleFactor(2);
         director.setDisplayStats(this.config['showFPS']);
-
-        // set FPS. the default value is 1.0/60 if you don't call this
         director.setAnimationInterval(1.0 / this.config['frameRate']);
 
         //load resources
         cc.LoaderScene.preload(g_resources, function () {
-            director.replaceScene(new this.startScene());
+            var scene = cc.Scene.create();
+            var layer = new WelcomeLayer();
+            layer.init();
+            scene.addChild(layer);
+            director.replaceScene(cc.TransitionZoomFlipX.create(.5, scene));
         }, this);
 
         return true;
     }
 });
 
-new cocos2dApp(HelloWorldScene);
+new SlotApp();

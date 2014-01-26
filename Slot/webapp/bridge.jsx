@@ -15,7 +15,13 @@
     };
     window.NSLog = function(message) {
         bridge.callHandler('log', message);
-    }
+    };
+    window.NSStartLoading = function(){
+        bridge.callHandler('startLoading');
+    };
+    window.NSStopLoading = function(){
+        bridge.callHandler('stopLoading');
+    };
     window.onerror = function(msg, url, num){
         NSLog('UncatchException: ' + msg + ' [' + num + ']');
     };

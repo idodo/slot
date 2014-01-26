@@ -5,7 +5,8 @@
 html, body, #gameContainer {
     width: 100%;
     height: 100%;
-    background: #000;
+    background: #fff url(bg.jpg);
+    background-size: 100%;
 }
 
 body, canvas, div {
