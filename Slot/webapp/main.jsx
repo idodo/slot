@@ -1,46 +1,32 @@
-var SlotApp = cc.Application.extend({
-    config: document.ccConfig,
-    ctor: function () {
-        this._super();
-        cc.COCOS2D_DEBUG = this.config['COCOS2D_DEBUG'];
-        cc.initDebugSetting();
-        cc.setup(this.config['tag']);
-        cc.AppController.shareAppController().didFinishLaunchingWithOptions();
-    },
-    applicationDidFinishLaunching: function () {
-        if(cc.RenderDoesnotSupport()){
-            //show Information to user
-            alert("Browser doesn't support WebGL");
-            return false;
-        }
-        // initialize director
-        var director = cc.Director.getInstance();
-        var size = director.getWinSize();
+document.addEventListener('WebViewJavascriptBridgeReady', function(){
 
-        SlotApp.centerX = size.width;
-        SlotApp.centerY = size.height;
+    var slotLayer = new View('slotLayer');
+    slotLayer.setPosition(View.width, 0);
+    setTimeout(function(){
+        slotLayer.moveTo(0, 0);
+    }, 0);
 
-        cc.MenuItemFont.setFontName('Marker Felt');
-        cc.MenuItemFont.setFontSize(resources_map.fontSizeNormal);
+    Hammer($('startBtn')).on('tap', function(){
+        var y1 = -37;
+        var y2 = -37;
+        var y3 = -37;
+        var speed1 = 1;
+        var speed2 = 2;
+        var speed3 = 3;
+        setInterval(function(){
+            $('item1').style.top = y1 + 'px';
+            $('item2').style.top = y2 + 'px';
+            $('item3').style.top = y3 + 'px';
+            y1 = (y1 - speed1) % 411;
+            y2 = (y2 - speed2) % 411;
+            y3 = (y3 - speed3) % 411;
+        }, 1);
+    });
 
-        cc.EGLView.getInstance().resizeWithBrowserSize(true);
-        cc.EGLView.getInstance().setDesignResolutionSize(size.width * 2, size.height * 2, cc.RESOLUTION_POLICY.SHOW_ALL);
+    var bet = 0;
+    Hammer($('betBtn')).on('tap', function(){
+        bet = (bet + 100) % 1100;
+        $('bet').innerHTML = bet;
+    });
 
-        //director.setContentScaleFactor(2);
-        director.setDisplayStats(this.config['showFPS']);
-        director.setAnimationInterval(1.0 / this.config['frameRate']);
-
-        //load resources
-        cc.LoaderScene.preload(g_resources, function () {
-            var scene = cc.Scene.create();
-            var layer = new WelcomeLayer();
-            layer.init();
-            scene.addChild(layer);
-            director.replaceScene(cc.TransitionZoomFlipX.create(.5, scene));
-        }, this);
-
-        return true;
-    }
-});
-
-new SlotApp();
+}, false);
