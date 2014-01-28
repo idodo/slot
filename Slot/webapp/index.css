@@ -58,6 +58,7 @@ section {
     width: 240px;
     height: 134px;
     overflow: hidden;
+    border-radius: 6px;
 }
 
 .slotPanel ul li {
@@ -66,7 +67,17 @@ section {
     height: 882px;
     background: url(warms.png) repeat-y 0 0;
     background-size: 100%;
-    top: -37px;
+    top: -35px;
+}
+
+#item1 {
+    left: 5px;
+}
+#item2 {
+    left: 88px;
+}
+#item3 {
+    right: 5px;
 }
 
 .slotPanel hr {
@@ -80,17 +91,11 @@ section {
     left: 15px;
 }
 
-#item1 {
-    left: 5px;
-}
-#item2 {
-    left: 88px;
-}
-#item3 {
-    right: 5px;
+.box-shadow {
+    border: 1px solid #f00;
 }
 
-#glod {
+#score {
     left: 60px;
     top: 11px;
     font-size: 22px;
@@ -124,25 +129,123 @@ section {
     width: 74px;
     height: 64px;
     background-image: url(start.png);
-    background-size: 100% 100%;
+    background-size: 100%;
     float: right;
+}
+#startBtn:active {
+    background-position: 0 100%;
 }
 
 #betBtn {
     width: 57px;
     height: 40px;
     background-image: url(bet.png);
-    background-size: 100% 100%;
+    background-size: 100%;
     float: left;
     margin-right: 20px;
     margin-top: 12px;
+}
+#betBtn:active {
+    background-position: 0 100%;
 }
 
 #betAllBtn {
     width: 93px;
     height: 40px;
     background-image: url(bet_all.png);
-    background-size: 100% 100%;
+    background-size: 100%;
     float: left;
     margin-top: 12px;
+}
+#betAllBtn:active {
+    background-position: 0 100%;
+}
+
+.dialog {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.dialog .panel {
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+    background: #fff;
+    position: absolute;
+    left: 50%; top: 50%;
+    margin-left: -100px;
+    margin-top: -75px;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#4dafee), to(#257db5));
+    background-image: -webkit-linear-gradient(top, #4dafee, #257db5);
+    background-image: linear-gradient(top, #4dafee, #257db5);
+}
+
+.dialog #dialog-title {
+    color: #fff;
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+
+.dialog #dialog-content {
+    border-radius: 6px;
+    border: 3px solid #fff;
+    background: #eee;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0 10px;
+    height: 90px;
+    font-size: 14px;
+    padding: 5px 7px;
+    color: #666;
+    overflow: hidden;
+}
+
+.dialog #dialog-close {
+    width: 20px;
+    height: 20px;
+    background: url(close.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    font-weight: bold;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+}
+
+.transition {
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+}
+
+.show-dialog #gameContainer {
+    -webkit-filter : blur(2px);
+}
+
+.show-dialog .dialog {
+    display: block;
+}
+
+.anim {
+    -webkit-animation-name: glow;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes glow {
+    0% {
+        -webkit-box-shadow: 0 0 12px rgba(255, 0, 0, 1);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 12px rgba(0, 255, 0, 1);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 12px rgba(0, 0, 255, 11);
+    }
 }

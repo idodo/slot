@@ -7,16 +7,16 @@
         <link rel="stylesheet" type="text/css" href="index.css"/>
     </head>
 <body>
-    <div id="gameContainer">
+    <div id="gameContainer" class="transition">
         <section id="welcomeLayer">
             <h1>hello world</h1>
         </section>
         <section id="slotLayer">
             <div class="slotPanel sprite">
-                <div id="glod" class="score">0</div>
+                <div id="score" class="score">0</div>
                 <div id="earn" class="score">0</div>
                 <div id="bet" class="score">0</div>
-                <ul>
+                <ul id="slot-inner">
                     <li id="item1"></li>
                     <li id="item2"></li>
                     <li id="item3"></li>
@@ -30,9 +30,19 @@
             </div>
         </section>
     </div>
+    <div id="dialog" class="dialog">
+        <div class="panel">
+            <h3 id="dialog-title">你好</h3>
+            <div id="dialog-content">这是内容</div>
+            <div id="dialog-close"></div>
+        </div>
+    </div>
     <script type="text/javascript" src="hammer.min.jsx"></script>
     <script type="text/javascript" src="bridge.jsx"></script>
-    <script type="text/javascript" src="view.jsx"></script>
+    <script type="text/javascript" src="Player.jsx"></script>
+    <script type="text/javascript" src="View.jsx"></script>
+    <script type="text/javascript" src="Dialog.jsx"></script>
+    <script type="text/javascript" src="SlotLayer.jsx"></script>
     <script type="text/javascript" src="main.jsx"></script>
 </body>
 </html>

@@ -23,7 +23,18 @@ Function.prototype.derive = function(constructor, proto){
     proto = proto || {};
     for(key in proto){
         if(proto.hasOwnProperty(key)){
-            fp[key] = proto[key];
+            if(typeof proto[key] === 'function' && typeof fp[key] === 'function'){
+                fp[key] = (function(subMethod, parentMethod){
+                    return function(){
+                        this._super = parentMethod;
+                        var ret = subMethod.apply(this, arguments);
+                        delete this._super;
+                        return ret;
+                    };
+                })(proto[key], fp[key]);
+            } else {
+                fp[key] = proto[key];
+            }
         }
     }
     fp.constructor = constructor.prototype.constructor;
@@ -46,8 +57,8 @@ Function.prototype.derive = function(constructor, proto){
     window.NSAlert = function(message){
         bridge.callHandler('alert', message);
     };
-    window.NSLog = function(message) {
-        bridge.callHandler('log', message);
+    window.NSLog = function() {
+        bridge.callHandler('log', '[' + [].join.call(arguments, ', ') + ']');
     };
     window.NSStartLoading = function(){
         bridge.callHandler('startLoading');
