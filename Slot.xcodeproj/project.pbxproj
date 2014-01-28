@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		76052F041893EBFF0089F1E5 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76052F031893EBFF0089F1E5 /* bg.jpg */; };
 		76096D901894E04B006E6041 /* slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D8F1894E04B006E6041 /* slot.png */; };
-		76096D95189507C6006E6041 /* bet_all.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D92189507C6006E6041 /* bet_all.png */; };
-		76096D96189507C6006E6041 /* bet.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D93189507C6006E6041 /* bet.png */; };
 		76096D97189507C6006E6041 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D94189507C6006E6041 /* start.png */; };
 		76096D9918950C45006E6041 /* main.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9818950C45006E6041 /* main.jsx */; };
 		76096D9B1895304D006E6041 /* View.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9A1895304C006E6041 /* View.jsx */; };
@@ -22,9 +20,12 @@
 		7689D216189586170009C3A6 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D215189586170009C3A6 /* line.png */; };
 		768E03B218962157007A98D2 /* SlotLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 768E03B118962157007A98D2 /* SlotLayer.jsx */; };
 		76B1C1D8189690410042C7F6 /* Player.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1D7189690410042C7F6 /* Player.jsx */; };
-		76B1C1DA1896C14F0042C7F6 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1D91896C14F0042C7F6 /* back.png */; };
 		76B1C1DC1897593F0042C7F6 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1DB1897593F0042C7F6 /* close.png */; };
 		76B1C1DE18975E340042C7F6 /* Dialog.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1DD18975E340042C7F6 /* Dialog.jsx */; };
+		76B1C1E0189768380042C7F6 /* WelcomeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1DF189768370042C7F6 /* WelcomeLayer.jsx */; };
+		76B1C1E21897695C0042C7F6 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E11897695C0042C7F6 /* btn.png */; };
+		76B1C1E4189772400042C7F6 /* Director.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E3189772400042C7F6 /* Director.jsx */; };
+		76B1C1E6189782630042C7F6 /* btn_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E5189782630042C7F6 /* btn_small.png */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
 		76F208D01892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
@@ -56,8 +57,6 @@
 /* Begin PBXFileReference section */
 		76052F031893EBFF0089F1E5 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		76096D8F1894E04B006E6041 /* slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slot.png; sourceTree = "<group>"; };
-		76096D92189507C6006E6041 /* bet_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bet_all.png; sourceTree = "<group>"; };
-		76096D93189507C6006E6041 /* bet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bet.png; sourceTree = "<group>"; };
 		76096D94189507C6006E6041 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		76096D9818950C45006E6041 /* main.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsx; sourceTree = "<group>"; };
 		76096D9A1895304C006E6041 /* View.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.jsx; sourceTree = "<group>"; };
@@ -69,9 +68,12 @@
 		7689D215189586170009C3A6 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		768E03B118962157007A98D2 /* SlotLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SlotLayer.jsx; sourceTree = "<group>"; };
 		76B1C1D7189690410042C7F6 /* Player.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Player.jsx; sourceTree = "<group>"; };
-		76B1C1D91896C14F0042C7F6 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		76B1C1DB1897593F0042C7F6 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		76B1C1DD18975E340042C7F6 /* Dialog.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dialog.jsx; sourceTree = "<group>"; };
+		76B1C1DF189768370042C7F6 /* WelcomeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WelcomeLayer.jsx; sourceTree = "<group>"; };
+		76B1C1E11897695C0042C7F6 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		76B1C1E3189772400042C7F6 /* Director.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Director.jsx; sourceTree = "<group>"; };
+		76B1C1E5189782630042C7F6 /* btn_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_small.png; sourceTree = "<group>"; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76F208CD1892809B000BE84C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,9 +125,12 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76B1C1E5189782630042C7F6 /* btn_small.png */,
+				76B1C1E3189772400042C7F6 /* Director.jsx */,
+				76B1C1E11897695C0042C7F6 /* btn.png */,
+				76B1C1DF189768370042C7F6 /* WelcomeLayer.jsx */,
 				76B1C1DD18975E340042C7F6 /* Dialog.jsx */,
 				76B1C1DB1897593F0042C7F6 /* close.png */,
-				76B1C1D91896C14F0042C7F6 /* back.png */,
 				76B1C1D7189690410042C7F6 /* Player.jsx */,
 				768E03B118962157007A98D2 /* SlotLayer.jsx */,
 				7689D215189586170009C3A6 /* line.png */,
@@ -133,8 +138,6 @@
 				7689D20D189574F00009C3A6 /* hammer.min.jsx */,
 				76096D9A1895304C006E6041 /* View.jsx */,
 				76096D9818950C45006E6041 /* main.jsx */,
-				76096D92189507C6006E6041 /* bet_all.png */,
-				76096D93189507C6006E6041 /* bet.png */,
 				76096D94189507C6006E6041 /* start.png */,
 				76096D8F1894E04B006E6041 /* slot.png */,
 				76052F031893EBFF0089F1E5 /* bg.jpg */,
@@ -307,14 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				76096D9918950C45006E6041 /* main.jsx in Resources */,
-				76096D96189507C6006E6041 /* bet.png in Resources */,
 				7689D2141895802E0009C3A6 /* warms.png in Resources */,
 				768E03B218962157007A98D2 /* SlotLayer.jsx in Resources */,
-				76096D95189507C6006E6041 /* bet_all.png in Resources */,
 				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
+				76B1C1E21897695C0042C7F6 /* btn.png in Resources */,
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
 				7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */,
+				76B1C1E0189768380042C7F6 /* WelcomeLayer.jsx in Resources */,
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
 				76096D9B1895304D006E6041 /* View.jsx in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
@@ -323,8 +326,9 @@
 				76B1C1D8189690410042C7F6 /* Player.jsx in Resources */,
 				76B1C1DE18975E340042C7F6 /* Dialog.jsx in Resources */,
 				76096D901894E04B006E6041 /* slot.png in Resources */,
-				76B1C1DA1896C14F0042C7F6 /* back.png in Resources */,
+				76B1C1E4189772400042C7F6 /* Director.jsx in Resources */,
 				76052F041893EBFF0089F1E5 /* bg.jpg in Resources */,
+				76B1C1E6189782630042C7F6 /* btn_small.png in Resources */,
 				76B1C1DC1897593F0042C7F6 /* close.png in Resources */,
 				7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */,
 				7628CDDE1892D9B90085CE94 /* index.html in Resources */,

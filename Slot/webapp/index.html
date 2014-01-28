@@ -7,9 +7,14 @@
         <link rel="stylesheet" type="text/css" href="index.css"/>
     </head>
 <body>
-    <div id="gameContainer" class="transition">
-        <section id="welcomeLayer">
-            <h1>hello world</h1>
+    <div id="gameContainer">
+        <section id="welcomeLayer" class="center">
+            <nav>
+                <span id="enter-slot" class="button">疯狂转转赚</span>
+                <span id="enter-earn" class="button">免费赚金币</span>
+                <span id="enter-trade" class="button">金币兑换</span>
+                <span id="enter-settings" class="button">我的设置</span>
+            </nav>
         </section>
         <section id="slotLayer">
             <div class="slotPanel sprite">
@@ -24,16 +29,16 @@
                 <hr/>
             </div>
             <div class="slotMenu">
-                <div id="betBtn" class="sprite"></div>
-                <div id="betAllBtn" class="sprite"></div>
-                <div id="startBtn" class="sprite"></div>
+                <div id="backBtn" class="button_small">返回</div>
+                <div id="betBtn" class="button">押金币</div>
+                <div id="startBtn" class="button"></div>
             </div>
         </section>
     </div>
     <div id="dialog" class="dialog">
         <div class="panel">
             <h3 id="dialog-title">你好</h3>
-            <div id="dialog-content">这是内容</div>
+            <div id="dialog-content" class="center">这是内容</div>
             <div id="dialog-close"></div>
         </div>
     </div>
@@ -42,7 +47,9 @@
     <script type="text/javascript" src="Player.jsx"></script>
     <script type="text/javascript" src="View.jsx"></script>
     <script type="text/javascript" src="Dialog.jsx"></script>
+    <script type="text/javascript" src="WelcomeLayer.jsx"></script>
     <script type="text/javascript" src="SlotLayer.jsx"></script>
+    <script type="text/javascript" src="Director.jsx"></script>
     <script type="text/javascript" src="main.jsx"></script>
 </body>
 </html>

@@ -2,19 +2,18 @@ var SLOT_OFFSET = -35;
 
 var SlotLayer = View.derive({
     init : function(){
-        this.score = 0;
+        this.bingo = false;
         this.y1 = this.y2 = this.y3 = SLOT_OFFSET;
         this.y1T = this.y2T = this.y3T = SLOT_OFFSET;
         this.s1 = 30;
         this.s2 = 40;
         this.s3 = 25;
-        this.bet = 0;
         this.playing = false;
         this.setPosition(View.width, 0);
-        this._draw();
+        this._moveItems();
         this.on('startBtn', 'tap', this._bind(this.play));
-        this.on('betBtn', 'tap', this._bind(this.bet100));
-        this.on('betAllBtn', 'tap', this._bind(this.betAll));
+        this.on('betBtn',   'tap', this._bind(this.bet100));
+        this.on('backBtn',  'tap', this._bind(this.back));
     },
     _bind : function(fn){
         var me = this;
@@ -23,38 +22,56 @@ var SlotLayer = View.derive({
             fn.apply(me, arguments);
         };
     },
-    play : function(x, y, z){
+    play : function(){
         if(this.playing) return;
-        this.playing = true;
-        x = Math.floor(Math.random() * 6);
-        y = Math.floor(Math.random() * 6);
-        z = Math.floor(Math.random() * 6);
-        NSLog(x, y, z);
-        this.y1T = SLOT_OFFSET - (x + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
-        this.y2T = SLOT_OFFSET - (y + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
-        this.y3T = SLOT_OFFSET - (z + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
-        this._run();
+        var bet = parseInt($('bet').innerHTML.trim());
+        if(bet){
+            var me = this;
+            Player.bet(bet, function(bet){
+                me.playing = true;
+                me.bingo = (bet[0] === bet[1]) && (bet[1] === bet[2]);
+                me.y1T = SLOT_OFFSET - (bet[0] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
+                me.y2T = SLOT_OFFSET - (bet[1] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
+                me.y3T = SLOT_OFFSET - (bet[2] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
+                me._run();
+            });
+        } else {
+            Dialog.show('啊哈', '亲，您还没有下注哦！');
+        }
     },
-    setScore : function(score){
-        this.score = score;
-        $('score').innerHTML = this.score;
+    stop : function(){
+        $('slot-inner').className = '';
+        this.playing = false;
+        this.y1 = this.y2 = this.y3 = SLOT_OFFSET;
+        this._moveItems();
     },
     bet100 : function(){
-        this.bet = (this.bet + 100) % 1100;
-        $('bet').innerHTML = this.bet;
+        var dom = $('bet');
+        var bet = parseInt(dom.innerHTML.trim());
+        var score = Player.getScore();
+        if(score > 0){
+            var base = Math.min(1000, score) + 100;
+            dom.innerHTML = (bet + 100) % base;
+        } else {
+            Dialog.show('哎呀', '您的金币不足啦！');
+        }
     },
-    betAll : function(){
-
+    back : function(){
+        this.stop();
+        Director.show('welcome', true);
     },
     onFinished : function(){
-        $('slot-inner').className = 'anim';
+        if(this.bingo){
+            $('slot-inner').className = 'anim';
+        }
     },
-    _draw : function(){
+    _moveItems : function(){
         $('item1').style.top = Math.floor(this.y1 % 411) + 'px';
         $('item2').style.top = Math.floor(this.y2 % 411) + 'px';
         $('item3').style.top = Math.floor(this.y3 % 411) + 'px';
     },
     _run : function() {
+        if(!this.playing) return;
         var y1D = Math.abs(this.y1T - this.y1) < 0.5;
         var y2D = Math.abs(this.y2T - this.y2) < 0.5;
         var y3D = Math.abs(this.y3T - this.y3) < 0.5;
@@ -80,7 +97,7 @@ var SlotLayer = View.derive({
             this.playing = false;
             this.onFinished();
         } else {
-            this._draw();
+            this._moveItems();
             setTimeout(this._run.bind(this), 1);
         }
     }

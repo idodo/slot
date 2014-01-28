@@ -9,7 +9,30 @@ html, body, #gameContainer, section {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-size: 18px;
+    font: 400 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+.button,.button_small {
+    border: 0;
+    display: block;
+    text-align: center;
+    width: 93px;
+    height: 40px;
+    line-height: 40px;
+    color: #2982ba;
+    background: url(btn.png) no-repeat 0 0;
+    background-size: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: bold;
+}
+.button_small {
+    width: 56px;
+    height: 39px;
+    background-image: url(btn_small.png);
+}
+.button:active,.button_small:active {
+    background-position: 0 100%;
 }
 
 #gameContainer {
@@ -68,6 +91,22 @@ section {
     background: url(warms.png) repeat-y 0 0;
     background-size: 100%;
     top: -35px;
+}
+
+.center {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+
+#welcomeLayer nav {
+    width: 93px;
+    padding: 60px 0 0;
+}
+
+#welcomeLayer .button {
+    margin-top: 12px;
 }
 
 #item1 {
@@ -129,36 +168,21 @@ section {
     width: 74px;
     height: 64px;
     background-image: url(start.png);
-    background-size: 100%;
     float: right;
 }
 #startBtn:active {
     background-position: 0 100%;
 }
 
-#betBtn {
-    width: 57px;
-    height: 40px;
-    background-image: url(bet.png);
-    background-size: 100%;
+#backBtn {
     float: left;
     margin-right: 20px;
     margin-top: 12px;
 }
-#betBtn:active {
-    background-position: 0 100%;
-}
 
-#betAllBtn {
-    width: 93px;
-    height: 40px;
-    background-image: url(bet_all.png);
-    background-size: 100%;
+#betBtn {
     float: left;
     margin-top: 12px;
-}
-#betAllBtn:active {
-    background-position: 0 100%;
 }
 
 .dialog {
