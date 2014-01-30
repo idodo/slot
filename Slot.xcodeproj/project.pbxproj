@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		76052F041893EBFF0089F1E5 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76052F031893EBFF0089F1E5 /* bg.jpg */; };
 		76096D901894E04B006E6041 /* slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D8F1894E04B006E6041 /* slot.png */; };
-		76096D97189507C6006E6041 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D94189507C6006E6041 /* start.png */; };
 		76096D9918950C45006E6041 /* main.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9818950C45006E6041 /* main.jsx */; };
 		76096D9B1895304D006E6041 /* View.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9A1895304C006E6041 /* View.jsx */; };
 		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
@@ -26,6 +25,9 @@
 		76B1C1E21897695C0042C7F6 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E11897695C0042C7F6 /* btn.png */; };
 		76B1C1E4189772400042C7F6 /* Director.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E3189772400042C7F6 /* Director.jsx */; };
 		76B1C1E6189782630042C7F6 /* btn_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E5189782630042C7F6 /* btn_small.png */; };
+		76B1C1E81897EC8F0042C7F6 /* panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E71897EC8F0042C7F6 /* panel.png */; };
+		76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */; };
+		76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1EB1897FD6D0042C7F6 /* btn_big.png */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
 		76F208D01892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
@@ -57,7 +59,6 @@
 /* Begin PBXFileReference section */
 		76052F031893EBFF0089F1E5 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		76096D8F1894E04B006E6041 /* slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slot.png; sourceTree = "<group>"; };
-		76096D94189507C6006E6041 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		76096D9818950C45006E6041 /* main.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsx; sourceTree = "<group>"; };
 		76096D9A1895304C006E6041 /* View.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.jsx; sourceTree = "<group>"; };
 		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
@@ -74,6 +75,9 @@
 		76B1C1E11897695C0042C7F6 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 		76B1C1E3189772400042C7F6 /* Director.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Director.jsx; sourceTree = "<group>"; };
 		76B1C1E5189782630042C7F6 /* btn_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_small.png; sourceTree = "<group>"; };
+		76B1C1E71897EC8F0042C7F6 /* panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panel.png; sourceTree = "<group>"; };
+		76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EarnLayer.jsx; sourceTree = "<group>"; };
+		76B1C1EB1897FD6D0042C7F6 /* btn_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_big.png; sourceTree = "<group>"; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76F208CD1892809B000BE84C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,25 +129,27 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
-				76B1C1E5189782630042C7F6 /* btn_small.png */,
-				76B1C1E3189772400042C7F6 /* Director.jsx */,
+				76052F031893EBFF0089F1E5 /* bg.jpg */,
 				76B1C1E11897695C0042C7F6 /* btn.png */,
-				76B1C1DF189768370042C7F6 /* WelcomeLayer.jsx */,
-				76B1C1DD18975E340042C7F6 /* Dialog.jsx */,
-				76B1C1DB1897593F0042C7F6 /* close.png */,
-				76B1C1D7189690410042C7F6 /* Player.jsx */,
-				768E03B118962157007A98D2 /* SlotLayer.jsx */,
+				76B1C1EB1897FD6D0042C7F6 /* btn_big.png */,
+				76B1C1E5189782630042C7F6 /* btn_small.png */,
 				7689D215189586170009C3A6 /* line.png */,
+				76096D8F1894E04B006E6041 /* slot.png */,
 				7689D2131895802E0009C3A6 /* warms.png */,
+				76B1C1E71897EC8F0042C7F6 /* panel.png */,
+				76B1C1DB1897593F0042C7F6 /* close.png */,
 				7689D20D189574F00009C3A6 /* hammer.min.jsx */,
+				7628CDC31892D9B90085CE94 /* bridge.jsx */,
+				76B1C1DD18975E340042C7F6 /* Dialog.jsx */,
+				76B1C1D7189690410042C7F6 /* Player.jsx */,
+				76B1C1E3189772400042C7F6 /* Director.jsx */,
+				76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */,
+				76B1C1DF189768370042C7F6 /* WelcomeLayer.jsx */,
+				768E03B118962157007A98D2 /* SlotLayer.jsx */,
 				76096D9A1895304C006E6041 /* View.jsx */,
 				76096D9818950C45006E6041 /* main.jsx */,
-				76096D94189507C6006E6041 /* start.png */,
-				76096D8F1894E04B006E6041 /* slot.png */,
-				76052F031893EBFF0089F1E5 /* bg.jpg */,
 				7628CDCD1892D9B90085CE94 /* index.css */,
 				7628CDCE1892D9B90085CE94 /* index.html */,
-				7628CDC31892D9B90085CE94 /* bridge.jsx */,
 			);
 			path = webapp;
 			sourceTree = "<group>";
@@ -321,15 +327,17 @@
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
 				76096D9B1895304D006E6041 /* View.jsx in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
-				76096D97189507C6006E6041 /* start.png in Resources */,
 				7689D216189586170009C3A6 /* line.png in Resources */,
 				76B1C1D8189690410042C7F6 /* Player.jsx in Resources */,
 				76B1C1DE18975E340042C7F6 /* Dialog.jsx in Resources */,
 				76096D901894E04B006E6041 /* slot.png in Resources */,
 				76B1C1E4189772400042C7F6 /* Director.jsx in Resources */,
+				76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */,
 				76052F041893EBFF0089F1E5 /* bg.jpg in Resources */,
 				76B1C1E6189782630042C7F6 /* btn_small.png in Resources */,
+				76B1C1E81897EC8F0042C7F6 /* panel.png in Resources */,
 				76B1C1DC1897593F0042C7F6 /* close.png in Resources */,
+				76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */,
 				7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */,
 				7628CDDE1892D9B90085CE94 /* index.html in Resources */,
 			);

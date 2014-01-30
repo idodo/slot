@@ -2,24 +2,24 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: black;
     list-style: none;
 }
+
 html, body, #gameContainer, section {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    color: #2982ba;
     font: 400 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 
-.button,.button_small {
+.button, .button_small, .button_big {
     border: 0;
     display: block;
     text-align: center;
     width: 93px;
     height: 40px;
     line-height: 40px;
-    color: #2982ba;
     background: url(btn.png) no-repeat 0 0;
     background-size: 100%;
     overflow: hidden;
@@ -31,7 +31,13 @@ html, body, #gameContainer, section {
     height: 39px;
     background-image: url(btn_small.png);
 }
-.button:active,.button_small:active {
+.button_big {
+    width: 74px;
+    height: 64px;
+    line-height: 64px;
+    background-image: url(btn_big.png);
+}
+.button:active, .button_small:active, .button_big:active {
     background-position: 0 100%;
 }
 
@@ -66,12 +72,13 @@ section {
     margin: 130px auto 0;
 }
 
-.slotPanel .score {
+.score {
     position: absolute;
     font-family: "DB LCD Temp";
     -webkit-text-stroke: 1px;
     color: #fa0;
     -webkit-text-fill-color: #af0;
+    font-size: 22px;
 }
 
 .slotPanel ul {
@@ -137,7 +144,6 @@ section {
 #score {
     left: 60px;
     top: 11px;
-    font-size: 22px;
 }
 
 #earn {
@@ -165,13 +171,7 @@ section {
 }
 
 #startBtn {
-    width: 74px;
-    height: 64px;
-    background-image: url(start.png);
     float: right;
-}
-#startBtn:active {
-    background-position: 0 100%;
 }
 
 #backBtn {
@@ -252,6 +252,81 @@ section {
 
 .show-dialog .dialog {
     display: block;
+}
+
+#earnLayer {
+    width: 100%;
+    height: 100%;
+}
+
+#earnLayer .panel {
+    width: 282px;
+    height: 137px;
+    background: url(panel.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    position: relative;
+    margin: 130px auto 10px;
+}
+
+.trade-panel {
+    width: 248px;
+    height: 93px;
+    position: absolute;
+    top: 34px;
+    left: 15px;
+    overflow: hidden;
+}
+.trade-panel li {
+    width: 100%;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size: 12px;
+    line-height: 19px;
+    height: 19px;
+}
+
+.trade-panel li span {
+    color: #f60;
+    font-family: "DB LCD Temp";
+    margin: 0 2px;
+}
+
+#score2 {
+    left: 60px;
+    top: 11px;
+}
+
+#earnLayer fieldset {
+    padding-right: 2px;
+    padding-top: 10px;
+    width: 293px;
+    margin: 0 auto 0;
+    border: none;
+    border-top: 1px solid #2982ba;
+}
+
+#earnLayer fieldset legend {
+    color: #2982ba;
+    padding: 0 10px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    font-size: 14px;
+}
+
+#earnLayer fieldset span {
+    margin-left: 2px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#earn-back-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.transform {
+    -webkit-transition: all 1s ease-out;
 }
 
 .anim {

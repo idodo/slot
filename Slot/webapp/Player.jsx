@@ -2,7 +2,9 @@
     var score = 0;
     var REMOTE_SERVER = 'http://192.168.137.139:8080';
     function displayScore(value){
-        $('score').innerHTML = score = value;
+        score = value;
+        $('score').innerHTML = score;
+        $('score2').innerHTML = score;
     }
     $$.ajax = function(opt){
         var xhr = new window.XMLHttpRequest();
@@ -30,7 +32,7 @@
                         success(xhr.responseText, xhr, opt);
                     }
                 } else {
-                    error('unsuccesful', xhr, opt);
+                    error('server error', xhr, opt);
                 }
             }
         };
@@ -63,14 +65,14 @@
         getScore : function(){
             return score;
         },
-        updateScoreUrl : REMOTE_SERVER + '/score.php',
-        updateScore : function(success, error){
+        updateUrl : REMOTE_SERVER + '/score.php',
+        update : function(success, error){
             error = error || function(code, err){
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             $$.ajax({
-                url : this.updateScoreUrl,
+                url : this.updateUrl,
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
@@ -124,6 +126,32 @@
                         error(-1, e.message, e);
                     }
 
+                },
+                error : function(res){
+                    error(-2, res);
+                }
+            });
+        },
+        earnUrl : REMOTE_SERVER + '/earn.php',
+        earn : function(success, error){
+            error = error || function(code, err){
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url : this.earnUrl,
+                success : function(res){
+                    try {
+                        var data = JSON.parse(res);
+                        if(typeof data.score === 'number'){
+                            displayScore(data.score);
+                            success(data.earn);
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch(e) {
+                        error(-1, e.message, e);
+                    }
                 },
                 error : function(res){
                     error(-2, res);

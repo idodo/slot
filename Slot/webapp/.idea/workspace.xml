@@ -22,13 +22,13 @@
     <favorites_list name="webapp" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4975514">
+    <splitter split-orientation="horizontal" split-proportion="0.50442475">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="27" selection-start="318" selection-end="318" vertical-scroll-proportion="0.26732674" vertical-offset="0" max-vertical-offset="900">
+                <state line="40" column="40" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.1980198" vertical-offset="500" max-vertical-offset="1200">
                   <folding />
                 </state>
               </provider>
@@ -46,7 +46,7 @@
           <file leaf-file-name="View.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/View.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="65" column="20" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1185">
+                <state line="65" column="20" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1185">
                   <folding />
                 </state>
               </provider>
@@ -56,10 +56,19 @@
       </split-first>
       <split-second>
         <leaf>
+          <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="291" column="14" selection-start="5152" selection-end="5152" vertical-scroll-proportion="0.0" vertical-offset="4174" max-vertical-offset="5325">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="main.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="10" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+                <state line="5" column="29" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
                   <folding />
                 </state>
               </provider>
@@ -68,17 +77,28 @@
           <file leaf-file-name="Director.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Director.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="26" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+                <state line="10" column="31" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Player.jsx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="EarnLayer.jsx" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/EarnLayer.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="37" column="45" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.7398844" vertical-offset="171" max-vertical-offset="690">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Player.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Player.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="102" column="29" selection-start="3497" selection-end="3497" vertical-scroll-proportion="0.60474306" vertical-offset="1224" max-vertical-offset="2085">
-                  <folding />
+                <state line="151" column="32" selection-start="5304" selection-end="5304" vertical-scroll-proportion="0.0" vertical-offset="1924" max-vertical-offset="2475">
+                  <folding>
+                    <element signature="e#2040#2077#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -95,7 +115,7 @@
           <file leaf-file-name="WelcomeLayer.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="34" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+                <state line="13" column="53" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
                   <folding />
                 </state>
               </provider>
@@ -124,22 +144,22 @@
         <option value="$USER_HOME$/Downloads/package-quojs-2.3.6/quo.debug.js" />
         <option value="$PROJECT_DIR$/dialog.jsx" />
         <option value="$PROJECT_DIR$/Dialog.jsx" />
-        <option value="$PROJECT_DIR$/main.jsx" />
         <option value="$PROJECT_DIR$/View.jsx" />
+        <option value="$PROJECT_DIR$/SlotLayer.jsx" />
+        <option value="$PROJECT_DIR$/main.jsx" />
         <option value="$PROJECT_DIR$/Director.jsx" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/WelcomeLayer.jsx" />
-        <option value="$PROJECT_DIR$/SlotLayer.jsx" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Player.jsx" />
+        <option value="$PROJECT_DIR$/EarnLayer.jsx" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
     <option name="y" value="22" />
-    <option name="width" value="1322" />
+    <option name="width" value="1366" />
     <option name="height" value="686" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -182,7 +202,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -203,6 +222,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,6 +255,23 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c158162f-0a6e-4678-b805-4ddfe102e044" name="Default" comment="" />
@@ -244,25 +281,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="22" width="1322" height="686" extended-state="0" />
+    <frame x="0" y="22" width="1366" height="686" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="144" y="122" width="1122" height="486" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20546874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20468278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="144" y="122" width="1122" height="486" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -288,6 +325,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/SlotLayer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="24" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="1635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="12" selection-start="324" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Director.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="27" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="465">
@@ -298,7 +349,9 @@
     <entry file="file://$PROJECT_DIR$/Player.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="42" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1140">
-          <folding />
+          <folding>
+            <element signature="e#2040#2077#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -371,7 +424,9 @@
     <entry file="file://$PROJECT_DIR$/Player.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <folding />
+          <folding>
+            <element signature="e#2040#2077#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -510,11 +565,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/package-quojs-2.3.6/quo.debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="28" selection-start="2715" selection-end="2726" vertical-scroll-proportion="0.0" vertical-offset="1337" max-vertical-offset="20415" />
@@ -539,20 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="318" selection-end="318" vertical-scroll-proportion="0.26732674" vertical-offset="0" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="0" selection-start="1994" selection-end="1994" vertical-scroll-proportion="0.38202247" vertical-offset="1488" max-vertical-offset="4200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/btn_small.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -568,23 +604,16 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="291" column="14" selection-start="5152" selection-end="5152" vertical-scroll-proportion="0.0" vertical-offset="4174" max-vertical-offset="5325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Director.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="10" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+        <state line="10" column="31" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
           <folding />
         </state>
       </provider>
@@ -596,9 +625,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="53" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="29" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="40" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.1980198" vertical-offset="500" max-vertical-offset="1200">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Player.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="29" selection-start="3497" selection-end="3497" vertical-scroll-proportion="0.60474306" vertical-offset="1224" max-vertical-offset="2085">
+        <state line="151" column="32" selection-start="5304" selection-end="5304" vertical-scroll-proportion="0.0" vertical-offset="1924" max-vertical-offset="2475">
+          <folding>
+            <element signature="e#2040#2077#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EarnLayer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="45" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.7398844" vertical-offset="171" max-vertical-offset="690">
           <folding />
         </state>
       </provider>
