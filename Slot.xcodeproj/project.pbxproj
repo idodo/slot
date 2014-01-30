@@ -14,6 +14,10 @@
 		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
 		7628CDDD1892D9B90085CE94 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCD1892D9B90085CE94 /* index.css */; };
 		7628CDDE1892D9B90085CE94 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCE1892D9B90085CE94 /* index.html */; };
+		764879F4189A25310050CB62 /* bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 764879F3189A25310050CB62 /* bg.mp3 */; };
+		764879F6189A28B90050CB62 /* slot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 764879F5189A28B90050CB62 /* slot.mp3 */; };
+		764879F8189A36F30050CB62 /* Sound.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 764879F7189A36F30050CB62 /* Sound.jsx */; };
+		764879FA189AC8070050CB62 /* bingo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 764879F9189AC8070050CB62 /* bingo.gif */; };
 		7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7689D20D189574F00009C3A6 /* hammer.min.jsx */; };
 		7689D2141895802E0009C3A6 /* warms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D2131895802E0009C3A6 /* warms.png */; };
 		7689D216189586170009C3A6 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D215189586170009C3A6 /* line.png */; };
@@ -64,6 +68,10 @@
 		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
 		7628CDCD1892D9B90085CE94 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = index.css; sourceTree = "<group>"; };
 		7628CDCE1892D9B90085CE94 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		764879F3189A25310050CB62 /* bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg.mp3; sourceTree = "<group>"; };
+		764879F5189A28B90050CB62 /* slot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slot.mp3; sourceTree = "<group>"; };
+		764879F7189A36F30050CB62 /* Sound.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sound.jsx; sourceTree = "<group>"; };
+		764879F9189AC8070050CB62 /* bingo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bingo.gif; sourceTree = "<group>"; };
 		7689D20D189574F00009C3A6 /* hammer.min.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hammer.min.jsx; sourceTree = "<group>"; };
 		7689D2131895802E0009C3A6 /* warms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warms.png; sourceTree = "<group>"; };
 		7689D215189586170009C3A6 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -129,6 +137,10 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				764879F9189AC8070050CB62 /* bingo.gif */,
+				764879F7189A36F30050CB62 /* Sound.jsx */,
+				764879F5189A28B90050CB62 /* slot.mp3 */,
+				764879F3189A25310050CB62 /* bg.mp3 */,
 				76052F031893EBFF0089F1E5 /* bg.jpg */,
 				76B1C1E11897695C0042C7F6 /* btn.png */,
 				76B1C1EB1897FD6D0042C7F6 /* btn_big.png */,
@@ -316,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76096D9918950C45006E6041 /* main.jsx in Resources */,
+				764879F8189A36F30050CB62 /* Sound.jsx in Resources */,
 				7689D2141895802E0009C3A6 /* warms.png in Resources */,
 				768E03B218962157007A98D2 /* SlotLayer.jsx in Resources */,
 				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
@@ -325,13 +338,16 @@
 				7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */,
 				76B1C1E0189768380042C7F6 /* WelcomeLayer.jsx in Resources */,
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
+				764879FA189AC8070050CB62 /* bingo.gif in Resources */,
 				76096D9B1895304D006E6041 /* View.jsx in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
 				7689D216189586170009C3A6 /* line.png in Resources */,
 				76B1C1D8189690410042C7F6 /* Player.jsx in Resources */,
 				76B1C1DE18975E340042C7F6 /* Dialog.jsx in Resources */,
 				76096D901894E04B006E6041 /* slot.png in Resources */,
+				764879F4189A25310050CB62 /* bg.mp3 in Resources */,
 				76B1C1E4189772400042C7F6 /* Director.jsx in Resources */,
+				764879F6189A28B90050CB62 /* slot.mp3 in Resources */,
 				76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */,
 				76052F041893EBFF0089F1E5 /* bg.jpg in Resources */,
 				76B1C1E6189782630042C7F6 /* btn_small.png in Resources */,

@@ -11,6 +11,7 @@ var SlotLayer = View.derive({
         this.playing = false;
         this.setPosition(View.width, 0);
         this._moveItems();
+        this.on('bingo', 'tap', this._bind(this.hideBingo));
         this.on('startBtn', 'tap', this._bind(this.play));
         this.on('betBtn',   'tap', this._bind(this.bet100));
         this.on('backBtn',  'tap', this._bind(this.back));
@@ -21,6 +22,10 @@ var SlotLayer = View.derive({
             $('slot-inner').className = '';
             fn.apply(me, arguments);
         };
+    },
+    hideBingo : function(){
+        clearTimeout(this.bingoTimer);
+        $('bingo').style.display = 'none';
     },
     play : function(){
         if(this.playing) return;
@@ -62,7 +67,9 @@ var SlotLayer = View.derive({
     },
     onFinished : function(){
         if(this.bingo){
+            $('bingo').style.display = 'block';
             $('slot-inner').className = 'anim';
+            this.bingoTimer = setTimeout(this._bind(this.hideBingo), 3000);
         }
     },
     _moveItems : function(){
