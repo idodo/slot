@@ -62,10 +62,13 @@
         return xhr;
     };
     $$.Player = {
+        //返回暂存的金币数据
         getScore : function(){
             return score;
         },
+        //更新金币的url
         updateUrl : REMOTE_SERVER + '/score.php',
+        //更新金币并回调
         update : function(success, error){
             error = error || function(code, err){
                 NSLog('code: ' + code + '\treason: ' + err);
@@ -91,7 +94,9 @@
                 }
             });
         },
+        //下注请求url
         betUrl : REMOTE_SERVER + '/bet.php',
+        //赌金币并回调
         bet : function(value, success, error){
             error = error || function(code, reason){
                 NSLog('code: ' + code + '\treason: ' + reason);
@@ -132,7 +137,9 @@
                 }
             });
         },
+        //查询赚金币用户列表的url
         earnUrl : REMOTE_SERVER + '/earn.php',
+        //查询赚金币用户列表的回调函数
         earn : function(success, error){
             error = error || function(code, err){
                 NSLog('code: ' + code + '\treason: ' + err);
