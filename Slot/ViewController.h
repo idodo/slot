@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "WebViewJavascriptBridge.h"
+#import "DMOfferWallViewController.h"
 
-@interface ViewController : UIViewController<UIWebViewDelegate>
+#define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
+
+@interface ViewController : UIViewController<UIWebViewDelegate, DMOfferWallDelegate> {
+    DMOfferWallViewController *_offerWallController;
+}
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;

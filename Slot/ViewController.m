@@ -23,6 +23,9 @@
     _webView = [[UIWebView alloc] initWithFrame:screenFrame];
     self.view = _webView;
     
+    _offerWallController = [[DMOfferWallViewController alloc] initWithPublisherID:PUBLISHER_ID];
+    _offerWallController.delegate = self;
+    
     [_webView setDelegate:self];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
     if ([path length]) {
@@ -53,6 +56,10 @@
             [_loading stopAnimating];
         }];
         
+        [_bridge registerHandler:@"showDMOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [_offerWallController presentOfferWall];
+        }];
+        
         NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSURL *baseURL = [NSURL fileURLWithPath:path];
         
@@ -77,6 +84,26 @@
         
         [_bridge send:@"A string sent from ObjC after Webview has loaded."];
     }
+}
+
+- (void)offerWallDidFinishLoad
+{
+    NSLog(@"offerWallDidFinishLoad");
+}
+
+- (void)offerWallDidFailLoadWithError:(NSError *)error
+{
+    NSLog(@"offerWallDidFailLoadWithError:%@", error);
+}
+
+- (void)offerWallDidClosed
+{
+    NSLog(@"offer Wall closed!");
+}
+
+- (void)offerWallDidStartLoad
+{
+    NSLog(@"offerWallDidStartLoad");
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView

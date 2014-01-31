@@ -32,6 +32,17 @@
 		76B1C1E81897EC8F0042C7F6 /* panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E71897EC8F0042C7F6 /* panel.png */; };
 		76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */; };
 		76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1EB1897FD6D0042C7F6 /* btn_big.png */; };
+		76C5B82A189BC0470052FB4D /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */; };
+		76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */; };
+		76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B82C189BC2FA0052FB4D /* libsqlite3.dylib */; };
+		76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B82E189BC3060052FB4D /* CoreMedia.framework */; };
+		76C5B831189BC3120052FB4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B830189BC3120052FB4D /* Security.framework */; };
+		76C5B833189BC31A0052FB4D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B832189BC31A0052FB4D /* AVFoundation.framework */; };
+		76C5B835189BC3250052FB4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B834189BC3250052FB4D /* StoreKit.framework */; };
+		76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B836189BC32F0052FB4D /* CoreLocation.framework */; };
+		76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B838189BC3390052FB4D /* SystemConfiguration.framework */; };
+		76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83A189BC3410052FB4D /* QuartzCore.framework */; };
+		76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83C189BC3DD0052FB4D /* AdSupport.framework */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
 		76F208D01892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
@@ -86,6 +97,21 @@
 		76B1C1E71897EC8F0042C7F6 /* panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panel.png; sourceTree = "<group>"; };
 		76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EarnLayer.jsx; sourceTree = "<group>"; };
 		76B1C1EB1897FD6D0042C7F6 /* btn_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_big.png; sourceTree = "<group>"; };
+		76C5B823189BC0470052FB4D /* DMOfferWallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManager.h; sourceTree = "<group>"; };
+		76C5B824189BC0470052FB4D /* DMOfferWallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManagerDelegate.h; sourceTree = "<group>"; };
+		76C5B825189BC0470052FB4D /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
+		76C5B826189BC0470052FB4D /* DMVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMVideoViewController.h; sourceTree = "<group>"; };
+		76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
+		76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
+		76C5B82C189BC2FA0052FB4D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		76C5B82E189BC3060052FB4D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		76C5B830189BC3120052FB4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		76C5B832189BC31A0052FB4D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		76C5B834189BC3250052FB4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		76C5B836189BC32F0052FB4D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		76C5B838189BC3390052FB4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		76C5B83A189BC3410052FB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		76C5B83C189BC3DD0052FB4D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76F208CD1892809B000BE84C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,7 +141,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */,
+				76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */,
+				76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */,
+				76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */,
+				76C5B835189BC3250052FB4D /* StoreKit.framework in Frameworks */,
+				76C5B833189BC31A0052FB4D /* AVFoundation.framework in Frameworks */,
+				76C5B831189BC3120052FB4D /* Security.framework in Frameworks */,
+				76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */,
+				76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */,
 				76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */,
+				76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */,
 				76F208D01892809B000BE84C /* UIKit.framework in Frameworks */,
 				76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */,
 			);
@@ -166,6 +202,35 @@
 			path = webapp;
 			sourceTree = "<group>";
 		};
+		76C5B821189BC0470052FB4D /* adsdk */ = {
+			isa = PBXGroup;
+			children = (
+				76C5B822189BC0470052FB4D /* DMOfferWallSDK */,
+			);
+			path = adsdk;
+			sourceTree = "<group>";
+		};
+		76C5B822189BC0470052FB4D /* DMOfferWallSDK */ = {
+			isa = PBXGroup;
+			children = (
+				76C5B823189BC0470052FB4D /* DMOfferWallManager.h */,
+				76C5B824189BC0470052FB4D /* DMOfferWallManagerDelegate.h */,
+				76C5B825189BC0470052FB4D /* DMOfferWallViewController.h */,
+				76C5B826189BC0470052FB4D /* DMVideoViewController.h */,
+				76C5B827189BC0470052FB4D /* DomobOfferWallBundle */,
+				76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */,
+			);
+			path = DMOfferWallSDK;
+			sourceTree = "<group>";
+		};
+		76C5B827189BC0470052FB4D /* DomobOfferWallBundle */ = {
+			isa = PBXGroup;
+			children = (
+				76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */,
+			);
+			path = DomobOfferWallBundle;
+			sourceTree = "<group>";
+		};
 		76F208BF1892809B000BE84C = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +253,15 @@
 		76F208CA1892809B000BE84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76C5B83C189BC3DD0052FB4D /* AdSupport.framework */,
+				76C5B83A189BC3410052FB4D /* QuartzCore.framework */,
+				76C5B838189BC3390052FB4D /* SystemConfiguration.framework */,
+				76C5B836189BC32F0052FB4D /* CoreLocation.framework */,
+				76C5B834189BC3250052FB4D /* StoreKit.framework */,
+				76C5B832189BC31A0052FB4D /* AVFoundation.framework */,
+				76C5B830189BC3120052FB4D /* Security.framework */,
+				76C5B82E189BC3060052FB4D /* CoreMedia.framework */,
+				76C5B82C189BC2FA0052FB4D /* libsqlite3.dylib */,
 				76F208CB1892809B000BE84C /* Foundation.framework */,
 				76F208CD1892809B000BE84C /* CoreGraphics.framework */,
 				76F208CF1892809B000BE84C /* UIKit.framework */,
@@ -199,6 +273,7 @@
 		76F208D11892809B000BE84C /* Slot */ = {
 			isa = PBXGroup;
 			children = (
+				76C5B821189BC0470052FB4D /* adsdk */,
 				7628CDC11892D9B90085CE94 /* webapp */,
 				76F20900189280D9000BE84C /* WebViewJavascriptBridge */,
 				76F208DA1892809B000BE84C /* AppDelegate.h */,
@@ -327,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C5B82A189BC0470052FB4D /* DomobOfferWallBundle.bundle in Resources */,
 				76096D9918950C45006E6041 /* main.jsx in Resources */,
 				764879F8189A36F30050CB62 /* Sound.jsx in Resources */,
 				7689D2141895802E0009C3A6 /* warms.png in Resources */,
@@ -512,6 +588,7 @@
 					"$(inherited)",
 					/Users/fouber/work/xcode/Slot/Slot/ad/DianruSDK,
 					/Users/fouber/work/xcode/Slot/Slot/ad/DomobOfferWallSDK,
+					/Users/fouber/work/xcode/Slot/Slot/adsdk/DMOfferWallSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -531,6 +608,7 @@
 					"$(inherited)",
 					/Users/fouber/work/xcode/Slot/Slot/ad/DianruSDK,
 					/Users/fouber/work/xcode/Slot/Slot/ad/DomobOfferWallSDK,
+					/Users/fouber/work/xcode/Slot/Slot/adsdk/DMOfferWallSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

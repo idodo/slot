@@ -25,10 +25,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.50442475">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="65" column="10" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.43564355" vertical-offset="755" max-vertical-offset="1260">
+                <state line="51" column="102" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.5247525" vertical-offset="500" max-vertical-offset="1260">
                   <folding />
                 </state>
               </provider>
@@ -37,7 +37,7 @@
           <file leaf-file-name="bridge.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bridge.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="37" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1155">
+                <state line="46" column="40" selection-start="1410" selection-end="1433" vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="1155">
                   <folding />
                 </state>
               </provider>
@@ -141,7 +141,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WelcomeLayer.jsx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="WelcomeLayer.jsx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="7" column="26" selection-start="309" selection-end="309" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="483">
@@ -180,9 +180,9 @@
         <option value="$PROJECT_DIR$/Director.jsx" />
         <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/SlotLayer.jsx" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Player.jsx" />
         <option value="$PROJECT_DIR$/WelcomeLayer.jsx" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -589,13 +589,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bridge.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="37" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/btn_small.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -658,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="10" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.43564355" vertical-offset="755" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EarnLayer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="22" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
@@ -695,6 +681,20 @@
     <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="26" selection-start="309" selection-end="309" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="483">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bridge.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="40" selection-start="1410" selection-end="1433" vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="1155">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="102" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.5247525" vertical-offset="500" max-vertical-offset="1260">
           <folding />
         </state>
       </provider>
