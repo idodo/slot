@@ -5,6 +5,7 @@ var WelcomeLayer = View.derive({
         Hammer($('enter-earn')).on('tap', this.onEnterEarn.bind(this));
 
         var sound = new Audio('bg.mp3');
+        sound.loop = true;
         sound.preload = 'auto';
         sound.autoplay = true;
         sound.load();

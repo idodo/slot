@@ -93,7 +93,7 @@
           <file leaf-file-name="Director.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Director.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="31" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="480">
+                <state line="10" column="31" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
                   <folding />
                 </state>
               </provider>
@@ -102,16 +102,16 @@
           <file leaf-file-name="EarnLayer.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/EarnLayer.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="22" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="690">
+                <state line="1" column="22" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Player.jsx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Player.jsx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Player.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="141" column="24" selection-start="4730" selection-end="4730" vertical-scroll-proportion="0.6653226" vertical-offset="0" max-vertical-offset="496">
+                <state line="141" column="24" selection-start="4730" selection-end="4730" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
                   <folding>
                     <element signature="e#256#1991#0" expanded="false" />
                     <element signature="e#2060#2097#0" expanded="false" />
@@ -141,10 +141,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="WelcomeLayer.jsx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="WelcomeLayer.jsx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+                <state line="7" column="26" selection-start="309" selection-end="309" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="483">
                   <folding />
                 </state>
               </provider>
@@ -181,8 +181,8 @@
         <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/SlotLayer.jsx" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/WelcomeLayer.jsx" />
         <option value="$PROJECT_DIR$/Player.jsx" />
+        <option value="$PROJECT_DIR$/WelcomeLayer.jsx" />
       </list>
     </option>
   </component>
@@ -611,13 +611,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EarnLayer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="29" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
@@ -658,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Director.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SlotLayer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="70" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1740">
@@ -679,16 +665,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
+    <entry file="file://$PROJECT_DIR$/EarnLayer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="1" column="22" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Director.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="31" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Player.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="24" selection-start="4730" selection-end="4730" vertical-scroll-proportion="0.6653226" vertical-offset="0" max-vertical-offset="496">
+        <state line="141" column="24" selection-start="4730" selection-end="4730" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
           <folding>
             <element signature="e#256#1991#0" expanded="false" />
             <element signature="e#2060#2097#0" expanded="false" />
@@ -696,6 +689,13 @@
             <element signature="e#3241#4633#0" expanded="false" />
             <element signature="e#4770#5654#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WelcomeLayer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="26" selection-start="309" selection-end="309" vertical-scroll-proportion="0.2173913" vertical-offset="0" max-vertical-offset="483">
+          <folding />
         </state>
       </provider>
     </entry>
