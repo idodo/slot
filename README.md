@@ -1,3 +1,1 @@
-An ios hybird html5 game.
-~~~~~~~~
-
+# An ios hybird html5 game.
