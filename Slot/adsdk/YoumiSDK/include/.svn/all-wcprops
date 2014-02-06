@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include
+END
+YouMiPointsManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiPointsManager.h
+END
+YouMiView.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiView.h
+END
+YouMiDelegateProtocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiDelegateProtocol.h
+END
+YouMiWall.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiWall.h
+END
+YouMiWallSpotView.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiWallSpotView.h
+END
+YouMiWallAppModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiWallAppModel.h
+END
+YouMiConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiConfig.h
+END
+YouMiWallSpot.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/adwall-client/!svn/ver/9/branches/yunlong/include/YouMiWallSpot.h
+END

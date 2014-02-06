@@ -8,14 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "WebViewJavascriptBridge.h"
+#import <immobSDK/immobView.h>
+#import "DMOfferWallManager.h"
 #import "DMOfferWallViewController.h"
-
+#import "MBProgressHUD.h"
+#import "NSString+MD5.h"
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 
-@interface ViewController : UIViewController<UIWebViewDelegate, DMOfferWallDelegate> {
-    DMOfferWallViewController *_offerWallController;
+@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate> {
+    
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+/**ad wall**/
+@property (nonatomic, retain)immobView *limeiAdWall;
+@property(strong,nonatomic) DMOfferWallManager *domobAdWallManager;
+@property(strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
+@property (nonatomic)int spendGold;
+@property (strong,nonatomic)MBProgressHUD *hud;
+@property(strong, nonatomic)NSMutableArray *moveFlags;
+
 @end

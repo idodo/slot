@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking
+END
+AFHTTPSessionManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFHTTPSessionManager.m
+END
+AFURLResponseSerialization.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLResponseSerialization.m
+END
+AFSecurityPolicy.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFSecurityPolicy.h
+END
+AFNetworking.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFNetworking.h
+END
+AFSecurityPolicy.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFSecurityPolicy.m
+END
+AFURLSessionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLSessionManager.h
+END
+AFURLConnectionOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLConnectionOperation.h
+END
+AFHTTPRequestOperationManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFHTTPRequestOperationManager.h
+END
+AFNetworkReachabilityManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFNetworkReachabilityManager.h
+END
+AFURLSessionManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLSessionManager.m
+END
+AFURLConnectionOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLConnectionOperation.m
+END
+AFURLRequestSerialization.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLRequestSerialization.h
+END
+AFHTTPRequestOperationManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFHTTPRequestOperationManager.m
+END
+AFHTTPRequestOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFHTTPRequestOperation.h
+END
+AFNetworkReachabilityManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFNetworkReachabilityManager.m
+END
+AFURLRequestSerialization.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLRequestSerialization.m
+END
+AFHTTPSessionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFHTTPSessionManager.h
+END
+AFHTTPRequestOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFHTTPRequestOperation.m
+END
+AFURLResponseSerialization.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/adwall-client/!svn/ver/9/branches/yunlong/AFNetworking/AFURLResponseSerialization.h
+END

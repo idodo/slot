@@ -1,6 +1,11 @@
 (function($$){
     var score = 0;
-    var REMOTE_SERVER = 'http://192.168.137.139:8080';
+    var name = "";
+    var udid = "";
+    var qq = "";
+    var phone = "";
+    
+    var REMOTE_SERVER = 'http://anansi.vicp.cc:8076';
     function displayScore(value){
         score = value;
         $('score').innerHTML = score;
@@ -66,22 +71,34 @@
         getScore : function(){
             return score;
         },
+    updateUdid: function(data){
+    NSLog('js in updateUdid udid:'+ data.udid);
+        udid = data.udid;
+
+    },
+    updateScore: function(_data){
+        var data = JSON.parse(_data);
+        displayScore(data.score);
+    },
         //更新金币的url
-        updateUrl : REMOTE_SERVER + '/score.php',
+        updateUrl : REMOTE_SERVER + '/player/getbyudid',
         //更新金币并回调
         update : function(success, error){
             error = error || function(code, err){
                 NSLog('code: ' + code + '\treason: ' + err);
-                Dialog.show('矮油', '等等，我们这有点忙~~');
+        Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             $$.ajax({
                 url : this.updateUrl,
+        data : 'udid=' + udid,
+        type : 'POST',
+        headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
-                        if(typeof data.score === 'number'){
-                            displayScore(data.score);
-                            success(data.score);
+                        if(typeof data.playerInfo.gold === 'number'){
+                            displayScore(data.playerInfo.gold);
+                            success(data.playerInfo.gold);
                         } else {
                             error(data.result, data.reason, data);
                         }
@@ -95,7 +112,7 @@
             });
         },
         //下注请求url
-        betUrl : REMOTE_SERVER + '/bet.php',
+        betUrl : REMOTE_SERVER + '/player/bet',
         //赌金币并回调
         bet : function(value, success, error){
             error = error || function(code, reason){
@@ -116,11 +133,12 @@
             $$.ajax({
                 url: this.betUrl,
                 type : 'POST',
-                data : 'bet=' + parseInt(value),
+                data : 'betGold=' + parseInt(value)+'&udid='+udid,
                 headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
+            NSLog("[bet] res:"+res);
                         displayScore(data.score);
                         if(data.result == 0){
                             success(data.bet);
@@ -138,7 +156,8 @@
             });
         },
         //查询赚金币用户列表的url
-        earnUrl : REMOTE_SERVER + '/earn.php',
+        earnUrl : REMOTE_SERVER + '/player/earnrecords',
+
         //查询赚金币用户列表的回调函数
         earn : function(success, error){
             error = error || function(code, err){
@@ -147,6 +166,9 @@
             };
             $$.ajax({
                 url : this.earnUrl,
+        data : 'udid=' + udid,
+        type : 'POST',
+        headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
                         var data = JSON.parse(res);

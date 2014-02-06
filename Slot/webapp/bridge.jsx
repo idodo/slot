@@ -53,7 +53,9 @@ Function.prototype.derive = function(constructor, proto){
 })(function(bridge){
     bridge.init(function(message, callback){
         //receive message from object-c
+
     });
+
     window.NSAlert = function(message){
         bridge.callHandler('alert', message);
     };
@@ -69,4 +71,15 @@ Function.prototype.derive = function(constructor, proto){
     window.onerror = function(msg, url, num){
         window.NSLog('UncatchException: ' + msg + ' [' + num + ']');
     };
+  window.NSConsumeEarnGold = function(){
+    bridge.callHandler("consumeEarnGold");
+  };
+  bridge.registerHandler('updateUdid', function(data, responseCallback) {
+    window.NSLog('ObjC called js updateUdid with:', data);
+    Player.updateUdid(data);
+  });
+ bridge.registerHandler('updateScore', function(data, responseCallback) {
+     window.NSLog('ObjC called js updateScore with:', data);
+    Player.updateScore(data);
+  });
 });

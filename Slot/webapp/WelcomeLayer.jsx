@@ -9,6 +9,7 @@ var WelcomeLayer = View.derive({
         sound.preload = 'auto';
         sound.autoplay = true;
         sound.load();
+      
     },
     onEnterSlot : function(){
         Player.update(function(){
@@ -16,6 +17,7 @@ var WelcomeLayer = View.derive({
         });
     },
     onEnterEarn : function(){
+        NSConsumeEarnGold();
         Player.earn(function(earn){
             Director.show('earn').setTradeList(earn);
         });
