@@ -97,6 +97,10 @@
         [_webView setDataDetectorTypes:UIDataDetectorTypeNone];
         [_webView loadHTMLString:html baseURL:baseURL];
         
+        _webView.scrollView.bounces = NO;
+        UIScrollView *scrollView = (UIScrollView *)[[_webView subviews] objectAtIndex:0];
+        scrollView.bounces = NO;
+        
         //add loading
         _loading = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         _loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;

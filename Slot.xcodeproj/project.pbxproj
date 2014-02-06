@@ -1290,8 +1290,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk",
-					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk/LimeiSDK",
+					/Users/fouber/work/xcode/Slot/Slot/adsdk,
+					/Users/fouber/work/xcode/Slot/Slot/adsdk/LimeiSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1318,8 +1318,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk",
-					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk/LimeiSDK",
+					/Users/fouber/work/xcode/Slot/Slot/adsdk,
+					/Users/fouber/work/xcode/Slot/Slot/adsdk/LimeiSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";

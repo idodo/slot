@@ -5,7 +5,7 @@
     var qq = "";
     var phone = "";
     
-    var REMOTE_SERVER = 'http://anansi.vicp.cc:8076';
+    var REMOTE_SERVER = 'http://192.168.137.129:8080';
     function displayScore(value){
         score = value;
         $('score').innerHTML = score;
@@ -71,15 +71,14 @@
         getScore : function(){
             return score;
         },
-    updateUdid: function(data){
-    NSLog('js in updateUdid udid:'+ data.udid);
-        udid = data.udid;
-
-    },
-    updateScore: function(_data){
-        var data = JSON.parse(_data);
-        displayScore(data.score);
-    },
+        updateUdid: function(data){
+            NSLog('js in updateUdid udid:'+ data.udid);
+            udid = data.udid;
+        },
+        updateScore: function(_data){
+            var data = JSON.parse(_data);
+            displayScore(data.score);
+        },
         //更新金币的url
         updateUrl : REMOTE_SERVER + '/player/getbyudid',
         //更新金币并回调
@@ -90,9 +89,9 @@
             };
             $$.ajax({
                 url : this.updateUrl,
-        data : 'udid=' + udid,
-        type : 'POST',
-        headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
+                data : 'udid=' + udid,
+                type : 'POST',
+                headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
@@ -138,7 +137,7 @@
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
-            NSLog("[bet] res:"+res);
+                        NSLog("[bet] res:"+res);
                         displayScore(data.score);
                         if(data.result == 0){
                             success(data.bet);
@@ -166,9 +165,9 @@
             };
             $$.ajax({
                 url : this.earnUrl,
-        data : 'udid=' + udid,
-        type : 'POST',
-        headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
+                data : 'udid=' + udid,
+                type : 'POST',
+                headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
