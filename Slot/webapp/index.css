@@ -10,6 +10,7 @@ html, body, #gameContainer, section {
     height: 100%;
     overflow: hidden;
     color: #2982ba;
+    position: absolute;
     font: 400 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 
