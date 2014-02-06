@@ -67,6 +67,7 @@
         return xhr;
     };
     $$.Player = {
+        setScore : displayScore,
         //返回暂存的金币数据
         getScore : function(){
             return score;
@@ -132,15 +133,15 @@
             $$.ajax({
                 url: this.betUrl,
                 type : 'POST',
-                data : 'betGold=' + parseInt(value)+'&udid='+udid,
+                data : 'betGold=' + parseInt(value) + '&udid='+udid,
                 headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
                         var data = JSON.parse(res);
                         NSLog("[bet] res:"+res);
-                        displayScore(data.score);
+                        displayScore(score - value);
                         if(data.result == 0){
-                            success(data.bet);
+                            success(data.bet, data.winGold, data.score);
                         } else {
                             error(data.result, data.reason, data);
                         }

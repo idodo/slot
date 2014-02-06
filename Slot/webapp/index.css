@@ -362,12 +362,12 @@ section {
 
 @-webkit-keyframes glow {
     0% {
-        -webkit-box-shadow: 0 0 12px rgba(255, 0, 0, 1);
+        color: #ff0;
     }
     50% {
-        -webkit-box-shadow: 0 0 12px rgba(0, 255, 0, 1);
+        color: #f0f;
     }
     100% {
-        -webkit-box-shadow: 0 0 12px rgba(0, 0, 255, 11);
+        color: #0ff;
     }
 }

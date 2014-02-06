@@ -2,13 +2,14 @@ var SLOT_OFFSET = -35;
 
 var SlotLayer = View.derive({
     init : function(){
-        this.bingo = false;
         this.y1 = this.y2 = this.y3 = SLOT_OFFSET;
         this.y1T = this.y2T = this.y3T = SLOT_OFFSET;
         this.s1 = 30;
         this.s2 = 40;
         this.s3 = 25;
         this.playing = false;
+        this.score = Player.getScore();
+        this.winGold = -1;
         this.setPosition(View.width, 0);
         this._moveItems();
         this.on('bingo', 'tap', this._bind(this.hideBingo));
@@ -29,12 +30,16 @@ var SlotLayer = View.derive({
     },
     play : function(){
         if(this.playing) return;
+        var earn = $('earn');
+        earn.innerHTML = '0';
+        earn.className = 'score';
         var bet = parseInt($('bet').innerHTML.trim());
         if(bet){
             var me = this;
-            Player.bet(bet, function(bet){
+            Player.bet(bet, function(bet, winGold, score){
                 me.playing = true;
-                me.bingo = (bet[0] === bet[1]) && (bet[1] === bet[2]);
+                me.winGold = winGold;
+                me.score = score;
                 me.y1T = SLOT_OFFSET - (bet[0] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
                 me.y2T = SLOT_OFFSET - (bet[1] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
                 me.y3T = SLOT_OFFSET - (bet[2] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
@@ -45,7 +50,9 @@ var SlotLayer = View.derive({
         }
     },
     stop : function(){
-        $('slot-inner').className = '';
+        var earn = $('earn');
+        earn.innerHTML = '0';
+        earn.className = 'score';
         this.playing = false;
         this.y1 = this.y2 = this.y3 = SLOT_OFFSET;
         this._moveItems();
@@ -66,10 +73,14 @@ var SlotLayer = View.derive({
         Director.show('welcome', true);
     },
     onFinished : function(){
-        if(this.bingo){
+        if(this.winGold > 0){
+            var earn = $('earn');
+            earn.innerHTML = this.winGold;
+            earn.className = 'score anim';
+            Player.setScore(this.score);
             $('bingo').style.display = 'block';
-            $('slot-inner').className = 'anim';
             this.bingoTimer = setTimeout(this._bind(this.hideBingo), 3000);
+            this.winGold = -1;
         }
     },
     _moveItems : function(){
