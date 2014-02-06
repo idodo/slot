@@ -59,7 +59,6 @@
 		76F208F71892809B000BE84C /* SlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F208F61892809B000BE84C /* SlotTests.m */; };
 		76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */; };
 		76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */; };
-		BF146448189BE3650084E701 /* AdWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF146447189BE3650084E701 /* AdWallViewController.m */; };
 		BF146563189BE73D0084E701 /* immobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146502189BE73D0084E701 /* immobSDK.framework */; };
 		BF146564189BE73D0084E701 /* dianru_blue_all_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146506189BE73D0084E701 /* dianru_blue_all_cell.png */; };
 		BF146565189BE73D0084E701 /* dianru_blue_dianru_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146507189BE73D0084E701 /* dianru_blue_dianru_bottom.png */; };
@@ -139,8 +138,6 @@
 		BF1465AF189BE73D0084E701 /* dianru_red_right_view.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146555189BE73D0084E701 /* dianru_red_right_view.png */; };
 		BF1465B0189BE73D0084E701 /* libDianRuAdWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146557189BE73D0084E701 /* libDianRuAdWall.a */; };
 		BF1465B1189BE73D0084E701 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146562189BE73D0084E701 /* libYouMi.a */; };
-		BF1465B7189BE9C40084E701 /* AdUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465B4189BE9C40084E701 /* AdUtil.m */; };
-		BF1465B8189BE9C40084E701 /* AdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465B6189BE9C40084E701 /* AdInfo.m */; };
 		BF146615189BEB890084E701 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465F0189BEB890084E701 /* MBProgressHUD.m */; };
 		BF146616189BEB890084E701 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465F3189BEB890084E701 /* AFHTTPRequestOperation.m */; };
 		BF146617189BEB890084E701 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465F5189BEB890084E701 /* AFHTTPRequestOperationManager.m */; };
@@ -174,14 +171,12 @@
 		BF146648189BF7850084E701 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146647189BF7850084E701 /* CFNetwork.framework */; };
 		BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146649189BFFC10084E701 /* AudioToolbox.framework */; };
 		BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14664B189BFFE60084E701 /* CoreTelephony.framework */; };
-		BF4B45D1189BE02C004465BB /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B45D0189BE02C004465BB /* Player.m */; };
-		BF4B45D4189BE068004465BB /* AdWall.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B45D3189BE068004465BB /* AdWall.m */; };
-		BF4B45D8189BE171004465BB /* DataConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B45D7189BE171004465BB /* DataConfig.m */; };
-		BF4B45DB189BE1E9004465BB /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B45DA189BE1E9004465BB /* HttpClient.m */; };
-		BF4B45EA189BE2C4004465BB /* DianruViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B45DF189BE2C4004465BB /* DianruViewController.m */; };
-		BF4B45EB189BE2C4004465BB /* DianruViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B45E0189BE2C4004465BB /* DianruViewController.xib */; };
-		BF4B45F0189BE2C4004465BB /* YoumiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4B45E8189BE2C4004465BB /* YoumiViewController.m */; };
-		BF4B45F1189BE2C4004465BB /* YoumiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B45E9189BE2C4004465BB /* YoumiViewController.xib */; };
+		BFD8995F18A3C5EC0078016C /* AdUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995618A3C5EC0078016C /* AdUtil.m */; };
+		BFD8996018A3C5EC0078016C /* AdWall.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995818A3C5EC0078016C /* AdWall.m */; };
+		BFD8996118A3C5EC0078016C /* DataConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995A18A3C5EC0078016C /* DataConfig.m */; };
+		BFD8996218A3C5EC0078016C /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995C18A3C5EC0078016C /* HttpClient.m */; };
+		BFD8996318A3C5EC0078016C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995E18A3C5EC0078016C /* Player.m */; };
+		BFD8996618A3C6CC0078016C /* AdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8996518A3C6CC0078016C /* AdInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,8 +252,6 @@
 		76F20901189280D9000BE84C /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		BF146446189BE3650084E701 /* AdWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWallViewController.h; sourceTree = "<group>"; };
-		BF146447189BE3650084E701 /* AdWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWallViewController.m; sourceTree = "<group>"; };
 		BF146502189BE73D0084E701 /* immobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = immobSDK.framework; sourceTree = "<group>"; };
 		BF146506189BE73D0084E701 /* dianru_blue_all_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianru_blue_all_cell.png; sourceTree = "<group>"; };
 		BF146507189BE73D0084E701 /* dianru_blue_dianru_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianru_blue_dianru_bottom.png; sourceTree = "<group>"; };
@@ -347,11 +340,6 @@
 		BF146560189BE73D0084E701 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
 		BF146561189BE73D0084E701 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
 		BF146562189BE73D0084E701 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
-		BF1465B2189BE9450084E701 /* ParentViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParentViewDelegate.h; path = "../../adwall-client/branches/yunlong/RESideMenuExample/ParentViewDelegate.h"; sourceTree = "<group>"; };
-		BF1465B3189BE9C40084E701 /* AdUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdUtil.h; path = "../../adwall-client/branches/yunlong/AdUtil.h"; sourceTree = "<group>"; };
-		BF1465B4189BE9C40084E701 /* AdUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdUtil.m; path = "../../adwall-client/branches/yunlong/AdUtil.m"; sourceTree = "<group>"; };
-		BF1465B5189BE9C40084E701 /* AdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdInfo.h; path = "../../adwall-client/branches/yunlong/AdInfo.h"; sourceTree = "<group>"; };
-		BF1465B6189BE9C40084E701 /* AdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdInfo.m; path = "../../adwall-client/branches/yunlong/AdInfo.m"; sourceTree = "<group>"; };
 		BF1465EE189BEB890084E701 /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
 		BF1465EF189BEB890084E701 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		BF1465F0189BEB890084E701 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -409,21 +397,18 @@
 		BF146647189BF7850084E701 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BF146649189BFFC10084E701 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BF14664B189BFFE60084E701 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		BF4B45CF189BE02C004465BB /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		BF4B45D0189BE02C004465BB /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		BF4B45D2189BE068004465BB /* AdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWall.h; sourceTree = "<group>"; };
-		BF4B45D3189BE068004465BB /* AdWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWall.m; sourceTree = "<group>"; };
-		BF4B45D6189BE171004465BB /* DataConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataConfig.h; sourceTree = "<group>"; };
-		BF4B45D7189BE171004465BB /* DataConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataConfig.m; sourceTree = "<group>"; };
-		BF4B45D9189BE1E9004465BB /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
-		BF4B45DA189BE1E9004465BB /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
-		BF4B45DC189BE223004465BB /* AdWallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWallDelegate.h; sourceTree = "<group>"; };
-		BF4B45DE189BE2C4004465BB /* DianruViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianruViewController.h; sourceTree = "<group>"; };
-		BF4B45DF189BE2C4004465BB /* DianruViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianruViewController.m; sourceTree = "<group>"; };
-		BF4B45E0189BE2C4004465BB /* DianruViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DianruViewController.xib; sourceTree = "<group>"; };
-		BF4B45E7189BE2C4004465BB /* YoumiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoumiViewController.h; sourceTree = "<group>"; };
-		BF4B45E8189BE2C4004465BB /* YoumiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoumiViewController.m; sourceTree = "<group>"; };
-		BF4B45E9189BE2C4004465BB /* YoumiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoumiViewController.xib; sourceTree = "<group>"; };
+		BFD8995518A3C5EC0078016C /* AdUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdUtil.h; sourceTree = "<group>"; };
+		BFD8995618A3C5EC0078016C /* AdUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdUtil.m; sourceTree = "<group>"; };
+		BFD8995718A3C5EC0078016C /* AdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWall.h; sourceTree = "<group>"; };
+		BFD8995818A3C5EC0078016C /* AdWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWall.m; sourceTree = "<group>"; };
+		BFD8995918A3C5EC0078016C /* DataConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataConfig.h; sourceTree = "<group>"; };
+		BFD8995A18A3C5EC0078016C /* DataConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataConfig.m; sourceTree = "<group>"; };
+		BFD8995B18A3C5EC0078016C /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		BFD8995C18A3C5EC0078016C /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		BFD8995D18A3C5EC0078016C /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		BFD8995E18A3C5EC0078016C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		BFD8996418A3C6CC0078016C /* AdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdInfo.h; sourceTree = "<group>"; };
+		BFD8996518A3C6CC0078016C /* AdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,9 +581,9 @@
 		76F208D11892809B000BE84C /* Slot */ = {
 			isa = PBXGroup;
 			children = (
+				BFD8995418A3C5EC0078016C /* model */,
 				BF4B45DD189BE269004465BB /* controller */,
 				BF4B45D5189BE086004465BB /* thirdlibs */,
-				BF4B45CE189BDFAF004465BB /* model */,
 				76C5B821189BC0470052FB4D /* adsdk */,
 				7628CDC11892D9B90085CE94 /* webapp */,
 				76F20900189280D9000BE84C /* WebViewJavascriptBridge */,
@@ -909,26 +894,6 @@
 			path = thirdlibs/weixin;
 			sourceTree = "<group>";
 		};
-		BF4B45CE189BDFAF004465BB /* model */ = {
-			isa = PBXGroup;
-			children = (
-				BF1465B3189BE9C40084E701 /* AdUtil.h */,
-				BF1465B4189BE9C40084E701 /* AdUtil.m */,
-				BF1465B5189BE9C40084E701 /* AdInfo.h */,
-				BF1465B6189BE9C40084E701 /* AdInfo.m */,
-				BF4B45DC189BE223004465BB /* AdWallDelegate.h */,
-				BF4B45D9189BE1E9004465BB /* HttpClient.h */,
-				BF4B45DA189BE1E9004465BB /* HttpClient.m */,
-				BF4B45D6189BE171004465BB /* DataConfig.h */,
-				BF4B45D7189BE171004465BB /* DataConfig.m */,
-				BF4B45D2189BE068004465BB /* AdWall.h */,
-				BF4B45D3189BE068004465BB /* AdWall.m */,
-				BF4B45CF189BE02C004465BB /* Player.h */,
-				BF4B45D0189BE02C004465BB /* Player.m */,
-			);
-			name = model;
-			sourceTree = "<group>";
-		};
 		BF4B45D5189BE086004465BB /* thirdlibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,17 +910,27 @@
 		BF4B45DD189BE269004465BB /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				BF1465B2189BE9450084E701 /* ParentViewDelegate.h */,
-				BF146446189BE3650084E701 /* AdWallViewController.h */,
-				BF146447189BE3650084E701 /* AdWallViewController.m */,
-				BF4B45DE189BE2C4004465BB /* DianruViewController.h */,
-				BF4B45DF189BE2C4004465BB /* DianruViewController.m */,
-				BF4B45E0189BE2C4004465BB /* DianruViewController.xib */,
-				BF4B45E7189BE2C4004465BB /* YoumiViewController.h */,
-				BF4B45E8189BE2C4004465BB /* YoumiViewController.m */,
-				BF4B45E9189BE2C4004465BB /* YoumiViewController.xib */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		BFD8995418A3C5EC0078016C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BFD8996418A3C6CC0078016C /* AdInfo.h */,
+				BFD8996518A3C6CC0078016C /* AdInfo.m */,
+				BFD8995518A3C5EC0078016C /* AdUtil.h */,
+				BFD8995618A3C5EC0078016C /* AdUtil.m */,
+				BFD8995718A3C5EC0078016C /* AdWall.h */,
+				BFD8995818A3C5EC0078016C /* AdWall.m */,
+				BFD8995918A3C5EC0078016C /* DataConfig.h */,
+				BFD8995A18A3C5EC0078016C /* DataConfig.m */,
+				BFD8995B18A3C5EC0078016C /* HttpClient.h */,
+				BFD8995C18A3C5EC0078016C /* HttpClient.m */,
+				BFD8995D18A3C5EC0078016C /* Player.h */,
+				BFD8995E18A3C5EC0078016C /* Player.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1089,7 +1064,6 @@
 				BF14659B189BE73D0084E701 /* dianru_purple_dianru_download.png in Resources */,
 				BF146577189BE73D0084E701 /* dianru_DRBGLogo@2x.png in Resources */,
 				BF146599189BE73D0084E701 /* dianru_purple_all_cell.png in Resources */,
-				BF4B45EB189BE2C4004465BB /* DianruViewController.xib in Resources */,
 				BF146594189BE73D0084E701 /* dianru_orange_dianru_triangle.png in Resources */,
 				BF146588189BE73D0084E701 /* dianru_green_dianru_titlebg.jpg in Resources */,
 				76B1C1D8189690410042C7F6 /* Player.jsx in Resources */,
@@ -1102,7 +1076,6 @@
 				BF14656F189BE73D0084E701 /* dianru_back.png in Resources */,
 				BF146589189BE73D0084E701 /* dianru_green_dianru_triangle.png in Resources */,
 				BF14658D189BE73D0084E701 /* dianru_green_right_view.png in Resources */,
-				BF4B45F1189BE2C4004465BB /* YoumiViewController.xib in Resources */,
 				BF1465A8189BE73D0084E701 /* dianru_red_dianru_info.png in Resources */,
 				BF146564189BE73D0084E701 /* dianru_blue_all_cell.png in Resources */,
 				BF14657C189BE73D0084E701 /* dianru_point.png in Resources */,
@@ -1160,38 +1133,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD8996618A3C6CC0078016C /* AdInfo.m in Sources */,
 				BF14661E189BEB890084E701 /* AFURLSessionManager.m in Sources */,
 				BF146623189BEB890084E701 /* UIImageView+AFNetworking.m in Sources */,
 				BF14661B189BEB890084E701 /* AFURLConnectionOperation.m in Sources */,
-				BF4B45D8189BE171004465BB /* DataConfig.m in Sources */,
+				BFD8996218A3C5EC0078016C /* HttpClient.m in Sources */,
 				BF146625189BEB890084E701 /* UIWebView+AFNetworking.m in Sources */,
 				BF146618189BEB890084E701 /* AFHTTPSessionManager.m in Sources */,
 				BF146619189BEB890084E701 /* AFNetworkReachabilityManager.m in Sources */,
-				BF146448189BE3650084E701 /* AdWallViewController.m in Sources */,
 				76F208E21892809B000BE84C /* ViewController.m in Sources */,
-				BF4B45F0189BE2C4004465BB /* YoumiViewController.m in Sources */,
 				BF14661A189BEB890084E701 /* AFSecurityPolicy.m in Sources */,
 				BF146624189BEB890084E701 /* UIProgressView+AFNetworking.m in Sources */,
 				76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */,
 				BF146622189BEB890084E701 /* UIButton+AFNetworking.m in Sources */,
+				BFD8996318A3C5EC0078016C /* Player.m in Sources */,
 				BF146629189BEC030084E701 /* NSString+MD5.m in Sources */,
-				BF1465B7189BE9C40084E701 /* AdUtil.m in Sources */,
-				BF4B45D4189BE068004465BB /* AdWall.m in Sources */,
 				BF146617189BEB890084E701 /* AFHTTPRequestOperationManager.m in Sources */,
+				BFD8996018A3C5EC0078016C /* AdWall.m in Sources */,
 				76F208DC1892809B000BE84C /* AppDelegate.m in Sources */,
+				BFD8995F18A3C5EC0078016C /* AdUtil.m in Sources */,
 				76F208D81892809B000BE84C /* main.m in Sources */,
 				BF14662D189BED6A0084E701 /* OpenUDID.m in Sources */,
 				BF146621189BEB890084E701 /* UIAlertView+AFNetworking.m in Sources */,
-				BF4B45DB189BE1E9004465BB /* HttpClient.m in Sources */,
-				BF1465B8189BE9C40084E701 /* AdInfo.m in Sources */,
-				BF4B45D1189BE02C004465BB /* Player.m in Sources */,
-				BF4B45EA189BE2C4004465BB /* DianruViewController.m in Sources */,
 				BF14661C189BEB890084E701 /* AFURLRequestSerialization.m in Sources */,
 				BF14661F189BEB890084E701 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BF146616189BEB890084E701 /* AFHTTPRequestOperation.m in Sources */,
 				BF146620189BEB890084E701 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BF14661D189BEB890084E701 /* AFURLResponseSerialization.m in Sources */,
 				BF146615189BEB890084E701 /* MBProgressHUD.m in Sources */,
+				BFD8996118A3C5EC0078016C /* DataConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

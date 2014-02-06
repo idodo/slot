@@ -11,8 +11,7 @@
 #import "OpenUDID.h"
 #import "Player.h"
 #import "AdWall.h"
-#import "DomobViewController.h"
-#import "LimeiViewController.h"
+#import "DianRuAdWall.h"
 #import "DataConfig.h"
 #import "AdInfo.h"
 #import <AdSupport/ASIdentifierManager.h>
@@ -75,6 +74,10 @@
         [_bridge registerHandler:@"showLimeiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
            [self.limeiAdWall immobViewRequest];
             
+        }];
+        
+        [_bridge registerHandler:@"showDianruOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [DianRuAdWall showAdWall:self];
         }];
         
         [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
@@ -142,8 +145,8 @@
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
         if( adInfo.status == 1){
             NSLog(@"[dianru] begin move gold");
-            //[[[AdWall getInstance] dianruController] moveGold];
-             [self onConsumeGold:0 adtype:dianru];
+            [DianRuAdWall getRemainPoint];
+            
         }
     }
     //Player* player = [Player getInstance];
@@ -187,17 +190,21 @@
         
         //init adwall
         AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
-        if( adInfo.status == 1){
+        if( adInfo.status == 1 ){
              _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
             _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
             _domobAdWallManager.delegate = self;
         }
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
-        if( adInfo.status == 1){
+        if( adInfo.status == 1 ){
             _limeiAdWall=[[immobView alloc] initWithAdUnitID:@"c68025499e648a33826427ef3bf384f9"];
             _limeiAdWall.delegate=self;
-
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
+        if( adInfo.status == 1 ){
+            [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
+            [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
         }
         //init move gold flags for comsumeEarnGold
         _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
@@ -353,7 +360,36 @@
 //
 
 /********************domob adwall callback end*********************/
+/********************dianru adwall callback begin******************/
+#pragma mark dianru  Callbacks
+/*
+ 用于消费积分结果的回调
+ */
+-(void)didReceiveSpendScoreResult:(BOOL)isSuccess{
+    if(isSuccess == TRUE){
+        NSLog(@"[dianru] consume point success, request consume gold: %d", _spendGold );
+        [self onConsumeGold:_spendGold adtype:dianru];
+    }else{
+        NSLog(@"[dianru] consume point failed, request consume gold: %d", _spendGold );
+        [self onConsumeGold:0 adtype:dianru];
+    }
+}
 
+/*
+ 用于获取剩余积分结果的回调
+ */
+-(void)didReceiveGetScoreResult:(int)point{
+    NSLog(@"[dianru] query point , result %d", point );
+    if( point > 0 ){
+        _spendGold = point;
+        [DianRuAdWall spendPoint: point];
+        
+    }else{
+        NSLog(@"[dianru] query point failed, result %d", point );
+        [self onConsumeGold:0 adtype:dianru];
+    }
+}
+/********************dianru adwall callback end*********************/
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {
