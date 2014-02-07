@@ -5,7 +5,11 @@ var EarnLayer = View.derive({
         });
     },
     setTradeList : function(data){
+        clearTimeout(this.listTimer);
+        clearTimeout(this.listTimer2);
         var dom = $('trade-list');
+        dom.className = 'transform';
+        dom.style.webkitTransform = 'translateY(-19px)';
         var html = '';
         data.forEach(function(record){
             html += '<li>' +
@@ -32,10 +36,10 @@ var EarnLayer = View.derive({
         dom.appendChild(clone);
         this._verbose = true;
         var me = this;
-        setTimeout(function(){
+        this.listTimer = setTimeout(function(){
             dom.className = 'transform';
             dom.style.webkitTransform = 'translateY(-19px)';
-            setTimeout(me.marquee.bind(me), 4000);
+            me.listTimer2 = setTimeout(me.marquee.bind(me), 4000);
         }, 0);
     }
 });

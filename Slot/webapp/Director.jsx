@@ -14,7 +14,6 @@ var Director = {
         reverse = reverse ? -1 : 1;
         if(this._map.hasOwnProperty(name)){
             if(this.currentLayer){
-                if(this.currentLayer._moving) return;
                 this.currentLayer.moveTo(-View.width * reverse, 0);
             }
             this.currentLayer = this._map[name];

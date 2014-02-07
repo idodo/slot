@@ -9,7 +9,6 @@ var WelcomeLayer = View.derive({
         sound.preload = 'auto';
         sound.autoplay = true;
         sound.load();
-      
     },
     onEnterSlot : function(){
         Player.update(function(){
