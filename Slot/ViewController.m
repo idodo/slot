@@ -116,10 +116,7 @@
         [_bridge callHandler:@"updateUdid" data:@{ @"udid": [Player getInstance].udid }];
     }
 }
-- (void) immobViewDidReceiveAd:(immobView *)immobView{
-    [self.view addSubview:immobView];
-    [immobView immobViewDisplay];
-}
+
 
 
 -(void)consumeEarnGold{
@@ -202,8 +199,9 @@
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
         if( adInfo.status == 1 ){
-            _limeiAdWall=[[immobView alloc] initWithAdUnitID:@"c68025499e648a33826427ef3bf384f9"];
+            _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
             _limeiAdWall.delegate=self;
+            [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
         if( adInfo.status == 1 ){
@@ -281,6 +279,37 @@
 }
 - (void) onDismissScreen:(immobView *)immobView{
     NSLog(@"onDismissScreen");
+}
+
+
+- (void) immobViewDidReceiveAd:(immobView *)immobView{
+    [self.view addSubview:immobView];
+    [immobView immobViewDisplay];
+}
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight );
+    
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
+}
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+#endif
+- (void) onLeaveApplication:(immobView *)immobView{
+    NSLog(@"onLeaveApplication");
+}
+- (UIViewController *)immobViewController{
+    
+    return self;
 }
 
 /********************limei adwall callback end*********************/

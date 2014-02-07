@@ -23,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 /**ad wall**/
-@property (nonatomic, retain)immobView *limeiAdWall;
+@property (nonatomic, strong)immobView *limeiAdWall;
 @property(strong,nonatomic) DMOfferWallManager *domobAdWallManager;
 @property(strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
 @property (nonatomic)int spendGold;
