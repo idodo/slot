@@ -43,6 +43,8 @@
 		76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B838189BC3390052FB4D /* SystemConfiguration.framework */; };
 		76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83A189BC3410052FB4D /* QuartzCore.framework */; };
 		76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83C189BC3DD0052FB4D /* AdSupport.framework */; };
+		76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263618A6969C00AFA4FD /* Escore.framework */; };
+		76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263818A6974700AFA4FD /* ImageIO.framework */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
 		76F208D01892809B000BE84C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CF1892809B000BE84C /* UIKit.framework */; };
@@ -232,6 +234,8 @@
 		76C5B838189BC3390052FB4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		76C5B83A189BC3410052FB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		76C5B83C189BC3DD0052FB4D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		76ED263618A6969C00AFA4FD /* Escore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Escore.framework; sourceTree = "<group>"; };
+		76ED263818A6974700AFA4FD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76F208CD1892809B000BE84C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -420,6 +424,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */,
+				BF146636189BF6B10084E701 /* MapKit.framework in Frameworks */,
 				BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */,
 				BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */,
 				BF146648189BF7850084E701 /* CFNetwork.framework in Frameworks */,
@@ -429,10 +435,10 @@
 				BF146640189BF73E0084E701 /* libz.dylib in Frameworks */,
 				76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */,
 				BF14663E189BF71B0084E701 /* PassKit.framework in Frameworks */,
+				76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */,
 				BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */,
 				BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */,
 				BF14663A189BF6C30084E701 /* EventKitUI.framework in Frameworks */,
-				BF146636189BF6B10084E701 /* MapKit.framework in Frameworks */,
 				BF146634189BF6A80084E701 /* MessageUI.framework in Frameworks */,
 				76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */,
 				BF146632189BEE560084E701 /* libWeChatSDK.a in Frameworks */,
@@ -501,6 +507,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				76ED263518A6969C00AFA4FD /* YiJiFenSDK */,
 				BF146501189BE73D0084E701 /* LimeiSDK */,
 				BF146503189BE73D0084E701 /* DianruSDK */,
 				BF146558189BE73D0084E701 /* YoumiSDK */,
@@ -530,6 +537,14 @@
 			path = DomobOfferWallBundle;
 			sourceTree = "<group>";
 		};
+		76ED263518A6969C00AFA4FD /* YiJiFenSDK */ = {
+			isa = PBXGroup;
+			children = (
+				76ED263618A6969C00AFA4FD /* Escore.framework */,
+			);
+			path = YiJiFenSDK;
+			sourceTree = "<group>";
+		};
 		76F208BF1892809B000BE84C = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +567,7 @@
 		76F208CA1892809B000BE84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76ED263818A6974700AFA4FD /* ImageIO.framework */,
 				BF14664B189BFFE60084E701 /* CoreTelephony.framework */,
 				BF146649189BFFC10084E701 /* AudioToolbox.framework */,
 				BF146647189BF7850084E701 /* CFNetwork.framework */,
@@ -1301,6 +1317,7 @@
 					"$(inherited)",
 					"${SRCROOT}/Slot/adsdk",
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
+					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1314,6 +1331,7 @@
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YoumiSDK",
 					"${SRCROOT}/Slot/thirdlibs/weixin",
+					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1331,6 +1349,7 @@
 					"$(inherited)",
 					"${SRCROOT}/Slot/adsdk",
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
+					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1344,6 +1363,7 @@
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YoumiSDK",
 					"${SRCROOT}/Slot/thirdlibs/weixin",
+					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";

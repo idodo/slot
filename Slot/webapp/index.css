@@ -348,6 +348,13 @@ section {
     bottom: 20px;
 }
 
+.layer-mask {
+    background: #fff;
+    left: 0; top: 0;
+    opacity: 0;
+    display: none;
+}
+
 .transform {
     -webkit-transition: all 1s ease-out;
 }

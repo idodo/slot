@@ -12,6 +12,7 @@ var Director = {
     },
     show : function(name, reverse){
         reverse = reverse ? -1 : 1;
+        $('layer-mask').style.display = 'block';
         if(this._map.hasOwnProperty(name)){
             if(this.currentLayer){
                 this.currentLayer.moveTo(-View.width * reverse, 0);
