@@ -349,9 +349,8 @@ section {
 }
 
 .layer-mask {
-    background: #fff;
+    background: rgba(0, 0, 0, 0);
     left: 0; top: 0;
-    opacity: 0;
     display: none;
 }
 
