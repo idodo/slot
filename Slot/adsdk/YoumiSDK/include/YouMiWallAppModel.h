@@ -53,4 +53,9 @@
 // 积分值[该值对有积分应用有效，无积分应用默认为0]
 @property(nonatomic, assign, readonly)    NSInteger   points;
 
+//appStoreID
+@property(nonatomic, assign, readonly)     NSInteger    appStoreID;
+
+//appStoreURL
+@property(nonatomic, retain, readonly)     NSString    *linkURL;
 @end

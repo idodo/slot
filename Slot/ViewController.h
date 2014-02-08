@@ -14,6 +14,8 @@
 #import "MBProgressHUD.h"
 #import "NSString+MD5.h"
 #import  "DianRuAdWall.h"
+#import <Escore/YJFUserMessage.h> 
+#import <Escore/YJFInitServer.h>
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 
 @interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate> {

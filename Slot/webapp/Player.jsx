@@ -171,6 +171,7 @@
                 headers : { 'Content-Type' : 'application/x-www-form-urlencoded'},
                 success : function(res){
                     try {
+                        NSLog('[earnrecords] res:'+res);
                         var data = JSON.parse(res);
                         if(typeof data.score === 'number'){
                             displayScore(data.score);

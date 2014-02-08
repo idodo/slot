@@ -18,6 +18,9 @@
 #import "WXApi.h"
 #import "AdWall.h"
 #import "Player.h"
+#import "YouMiConfig.h"
+#import "YouMiPointsManager.h"
+#import "YouMiWall.h"
 @interface ViewController ()
 
 @end
@@ -80,6 +83,15 @@
             [DianRuAdWall showAdWall:self];
         }];
         
+        [_bridge registerHandler:@"showYoumiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [YouMiWall showOffers:YES didShowBlock:^{
+                NSLog(@"有米积分墙已显示");
+            } didDismissBlock:^{
+                NSLog(@"有米积分墙已退出");
+            }];
+
+        }];
+        
         [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
             [self consumeEarnGold];
             
@@ -127,6 +139,7 @@
         self.hud.removeFromSuperViewOnHide = YES;
         AdInfo* adInfo = NULL;
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
+        //消耗多盟平台上的金币
         if( adInfo.status == 1){
             NSLog(@"[domob] begin move gold");
             [_domobAdWallManager requestOnlinePointCheck];
@@ -135,7 +148,14 @@
         if( adInfo.status == 1){
             NSLog(@"[youmi] begin move gold");
             //[[[AdWall getInstance] youmiController] moveGold];
-             [self onConsumeGold:0 adtype:youmi];
+            NSInteger score = [YouMiPointsManager pointsRemained];
+            if( score > 0 ){
+                if([YouMiPointsManager spendPoints:score] ){
+                    [self onConsumeGold:score adtype:youmi];
+                }
+            }else{
+                [self onConsumeGold:score adtype:youmi];
+            }
         }
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:limei];
         if( adInfo.status == 1){
@@ -208,6 +228,17 @@
             [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
             [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
         }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
+        if( adInfo.status == 1 ){
+            NSLog(@"[youmi]init adwall");
+            [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
+            // 开启积分管理[本例子使用自动管理];
+            [YouMiPointsManager enable];
+            // 开启积分墙
+            [YouMiWall enable];
+            [YouMiConfig setFullScreenWindow:self.view.window];
+        }
+        
         //init move gold flags for comsumeEarnGold
         _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
         for(NSInteger i=0 ; i< adtype_num; i++){
