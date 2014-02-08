@@ -59,6 +59,8 @@
 		76F208F71892809B000BE84C /* SlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F208F61892809B000BE84C /* SlotTests.m */; };
 		76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */; };
 		76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */; };
+		76F9714718A629A90050357E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F9714518A629A90050357E /* icon.png */; };
+		76F9714818A629A90050357E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F9714618A629A90050357E /* icon@2x.png */; };
 		BF146563189BE73D0084E701 /* immobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146502189BE73D0084E701 /* immobSDK.framework */; };
 		BF146564189BE73D0084E701 /* dianru_blue_all_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146506189BE73D0084E701 /* dianru_blue_all_cell.png */; };
 		BF146565189BE73D0084E701 /* dianru_blue_dianru_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146507189BE73D0084E701 /* dianru_blue_dianru_bottom.png */; };
@@ -252,6 +254,8 @@
 		76F20901189280D9000BE84C /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		76F20902189280D9000BE84C /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		76F9714518A629A90050357E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		76F9714618A629A90050357E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		BF146502189BE73D0084E701 /* immobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = immobSDK.framework; sourceTree = "<group>"; };
 		BF146506189BE73D0084E701 /* dianru_blue_all_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianru_blue_all_cell.png; sourceTree = "<group>"; };
 		BF146507189BE73D0084E701 /* dianru_blue_dianru_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianru_blue_dianru_bottom.png; sourceTree = "<group>"; };
@@ -601,6 +605,8 @@
 		76F208D21892809B000BE84C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				76F9714518A629A90050357E /* icon.png */,
+				76F9714618A629A90050357E /* icon@2x.png */,
 				76F208D31892809B000BE84C /* Slot-Info.plist */,
 				76F208D41892809B000BE84C /* InfoPlist.strings */,
 				76F208D71892809B000BE84C /* main.m */,
@@ -985,7 +991,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1062,6 +1068,7 @@
 				BF1465AF189BE73D0084E701 /* dianru_red_right_view.png in Resources */,
 				7689D216189586170009C3A6 /* line.png in Resources */,
 				BF14659B189BE73D0084E701 /* dianru_purple_dianru_download.png in Resources */,
+				76F9714818A629A90050357E /* icon@2x.png in Resources */,
 				BF146577189BE73D0084E701 /* dianru_DRBGLogo@2x.png in Resources */,
 				BF146599189BE73D0084E701 /* dianru_purple_all_cell.png in Resources */,
 				BF146594189BE73D0084E701 /* dianru_orange_dianru_triangle.png in Resources */,
@@ -1107,6 +1114,7 @@
 				BF14657D189BE73D0084E701 /* dianru_set_btn.png in Resources */,
 				BF146592189BE73D0084E701 /* dianru_orange_dianru_iphone_download.png in Resources */,
 				76B1C1DC1897593F0042C7F6 /* close.png in Resources */,
+				76F9714718A629A90050357E /* icon.png in Resources */,
 				BF146585189BE73D0084E701 /* dianru_green_dianru_download.png in Resources */,
 				76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */,
 				7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */,
@@ -1307,7 +1315,7 @@
 					"${SRCROOT}/Slot/adsdk/YoumiSDK",
 					"${SRCROOT}/Slot/thirdlibs/weixin",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1337,7 +1345,7 @@
 					"${SRCROOT}/Slot/adsdk/YoumiSDK",
 					"${SRCROOT}/Slot/thirdlibs/weixin",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1388,7 +1396,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,
