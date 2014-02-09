@@ -21,6 +21,7 @@
 #import "YouMiConfig.h"
 #import "YouMiPointsManager.h"
 #import "YouMiWall.h"
+
 @interface ViewController ()
 
 @end
@@ -92,6 +93,15 @@
 
         }];
         
+        [_bridge registerHandler:@"showMiddiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [MiidiAdWall showAppOffers:self withDelegate:self];
+        }];
+        
+        
+        [_bridge registerHandler:@"showAdwoOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [self initAdWoAdWall];
+        }];
+        
         [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
             [self consumeEarnGold];
             
@@ -144,6 +154,24 @@
             NSLog(@"[domob] begin move gold");
             [_domobAdWallManager requestOnlinePointCheck];
         }
+       
+        adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:limei];
+        if( adInfo.status == 1){
+            NSLog(@"[limei] begin move gold");
+            [_limeiAdWall immobViewQueryScoreWithAdUnitID:[DataConfig getLimeiCustomerId] WithAccountID:[Player getInstance].udid];
+
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
+        if( adInfo.status == 1){
+            NSLog(@"[dianru] begin move gold");
+            [DianRuAdWall getRemainPoint];
+            
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
+        if( adInfo.status == 1){
+            NSLog(@"[middi] begin move gold");
+            [MiidiAdWall requestGetPoints:self];
+        }
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
         if( adInfo.status == 1){
             NSLog(@"[youmi] begin move gold");
@@ -157,22 +185,37 @@
                 [self onConsumeGold:score adtype:youmi];
             }
         }
-        adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:limei];
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:adwo];
         if( adInfo.status == 1){
-            NSLog(@"[limei] begin move gold");
-            [_limeiAdWall immobViewQueryScoreWithAdUnitID:[DataConfig getLimeiCustomerId] WithAccountID:[Player getInstance].udid];
-
-        }
-        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
-        if( adInfo.status == 1){
-            NSLog(@"[dianru] begin move gold");
-            [DianRuAdWall getRemainPoint];
+            NSLog(@"[adwo] begin move gold");
+            NSInteger currPoints = 0;
             
+            // 通过传0来查询剩余虚拟货币
+            if(AdwoOWConsumePoints(0, &currPoints)){
+                NSLog(@"[adwo] Current points: %d", currPoints);
+                if( currPoints > 0 ){
+                    if(AdwoOWConsumePoints(currPoints, NULL)){
+                        [self onConsumeGold:currPoints adtype:adwo];
+                    }else{
+                         NSLog(@"Consume points failed, because %@", AdWoErrCodeList[AdwoOWFetchLatestErrorCode()]);
+                        [self onConsumeGold:0 adtype:adwo];
+                    }
+                }else{
+                    [self onConsumeGold:0 adtype:adwo];
+                }
+            }
+            else{
+                NSLog(@"[adwo] Fetch current points failed, because %@", AdWoErrCodeList[AdwoOWFetchLatestErrorCode()]);
+                [self onConsumeGold:0 adtype:adwo];
+            }
         }
     }
+    
     //Player* player = [Player getInstance];
     //[player getPlayerGold];
 }
+
+
 -(void)initAdwallData{
     
     //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
@@ -238,7 +281,11 @@
             [YouMiWall enable];
             [YouMiConfig setFullScreenWindow:self.view.window];
         }
-        
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
+        if( adInfo.status == 1 ){
+            NSLog(@"[middi]init adwall");
+            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
+        }
         //init move gold flags for comsumeEarnGold
         _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
         for(NSInteger i=0 ; i< adtype_num; i++){
@@ -454,6 +501,145 @@
     }
 }
 /********************dianru adwall callback end*********************/
+/********************middi adwall callback begin********************/
+#pragma mark middi  Callbacks
+
+- (void)didReceiveOffers{
+}
+
+// 请求应用列表失败
+//
+// 详解:
+//      广告墙请求失败后回调该方法
+// 补充:
+
+//
+- (void)didFailToReceiveOffers:(NSError *)error{
+}
+
+
+// 显示全屏页面
+//
+// 详解:
+//      全屏页面显示完成后回调该方法
+- (void)didShowWallView{
+}
+
+// 隐藏全屏页面
+//
+// 详解:
+//      全屏页面隐藏完成后回调该方法
+// 补充:
+- (void)didDismissWallView{
+}
+
+
+
+- (void)didReceiveSpendPoints:(NSInteger)totalPoints{
+	NSLog(@"[middi] didReceiveSpendPoints success! totalPoints=%d",totalPoints);
+	[self onConsumeGold:totalPoints adtype:middi];
+	
+	
+}
+
+
+- (void)didFailReceiveSpendPoints:(NSError *)error{
+	NSLog(@"[middi] didFailReceiveSpendPoints failed!");
+    [self onConsumeGold:0 adtype:middi];
+}
+
+
+
+
+- (void)didReceiveAwardPoints:(NSInteger)totalPoints{
+	NSLog(@"[middi] didReceiveAwardPoints success! totalPoints=%d",totalPoints);
+	
+	
+}
+
+- (void)didFailReceiveAwardPoints:(NSError *)error{
+	NSLog(@"[middi] didFailReceiveAwardPoints failed!");
+}
+
+
+
+- (void)didReceiveGetPoints:(NSInteger)totalPoints forPointName:(NSString*)pointName{
+	NSLog(@"[middi] didReceiveGetPoints success! totalPoints:%d",totalPoints);
+    if( totalPoints > 0 ){
+        [MiidiAdWall requestSpendPoints:totalPoints withDelegate:self];
+    }else{
+        [self onConsumeGold:0 adtype:middi];
+    }
+	
+}
+
+
+- (void)didFailReceiveGetPoints:(NSError *)error{
+	NSLog(@"[middi] didFailReceiveGetPoints failed!");
+	[self onConsumeGold:0 adtype:middi];
+	
+	
+}
+
+// 成功请求积分墙开关
+//
+// 详解:当接收服务器返回积分墙开关成功后调用该函数
+// 补充：toggle: 返回积分墙是否开启
+- (void)didReceiveToggle:(BOOL)toggle
+{
+    NSLog(@"[middi] didReceiveToggle success! toggle:%d",toggle);
+    
+}
+
+// 请求积分墙开关失败后调用
+//
+// 详解:当接收服务器返回的数据失败后调用该函数
+// 补充：
+- (void)didFailReceiveToggle:(NSError *)error
+{
+    NSLog(@"[middi] didFailReceiveToggle failed!");
+}
+#pragma mark  end
+/********************middi adwall callback end**********************/
+/********************adwo adwall callback begin********************/
+#pragma mark adwo  Callbacks
+-(void)initAdWoAdWall{
+    // 注册登录事件消息
+    AdwoOWRegisterResponseEvent(ADWO_OFFER_WALL_RESPONSE_EVENTS_WALL_PRESENT, self, @selector(loginSelector));
+    
+    // 注册积分墙被关闭事件消息
+    AdwoOWRegisterResponseEvent(ADWO_OFFER_WALL_RESPONSE_EVENTS_WALL_DISMISS, self, @selector(dismissSelector));
+    
+    //NSArray *arr = [NSArray arrayWithObjects:@"test", nil];
+    //AdwoOWSetKeywords(arr);
+    
+    // 初始化并登录积分墙
+    BOOL result = AdwoOWPresentOfferWall([DataConfig getAdWoCustomerId], self);
+    if(!result)
+    {
+        enum ADWO_OFFER_WALL_ERRORCODE errCode = AdwoOWFetchLatestErrorCode();
+        NSLog(@"[adwo] Initialization error, because %@", AdWoErrCodeList[errCode]);
+    }
+    else
+        NSLog(@"[adwo] Initialization successfully!");
+}
+
+- (void)loginSelector
+{
+    enum ADWO_OFFER_WALL_ERRORCODE errCode = AdwoOWFetchLatestErrorCode();
+    if(errCode == ADWO_OFFER_WALL_ERRORCODE_SUCCESS)
+        NSLog(@"[adwo] Login successfully!");
+    else
+        NSLog(@"[adwo] Login failed, because %@", AdWoErrCodeList[errCode]);
+}
+
+- (void)dismissSelector
+{
+    NSLog(@"[adwo] I know, the wall is dismissed!");
+}
+#pragma mark  end
+/********************adwo adwall callback end********************/
+
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {
@@ -510,10 +696,11 @@
             NSNumber *moveFlag = [_moveFlags objectAtIndex:i];
             moveNum = moveFlag.intValue + moveNum;
         }
-        NSLog(@"adType:%d,moveNum:%d", adtype, moveNum);
+        NSLog(@"adType:%d,moveNum:%d,adNum;%d", adtype, moveNum, adNum );
         if(moveNum == adNum ){
             if( self.hud != NULL){
                 [self.hud hide:TRUE];
+                //self.hud = NULL;
             }
         }
     }

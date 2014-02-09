@@ -5,6 +5,7 @@
     var qq = "";
     var phone = "";
     
+    
     var REMOTE_SERVER = 'http://anansi.vicp.cc:8076';
     function displayScore(value){
         score = value;

@@ -16,9 +16,44 @@
 #import  "DianRuAdWall.h"
 #import <Escore/YJFUserMessage.h> 
 #import <Escore/YJFInitServer.h>
+#import "MiidiManager.h"
+#import "MiidiAdWallShowAppOffersDelegate.h"
+#import "MiidiAdWallAwardPointsDelegate.h"
+#import "MiidiAdWallSpendPointsDelegate.h"
+#import "MiidiAdWallGetPointsDelegate.h"
+#import "MiidiAdWallRequestToggleDelegate.h"
+#import "MiidiAdWall.h"
+#import "AdwoOfferWall.h"
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
-
-@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate> {
+static NSString* const AdWoErrCodeList[] = {
+    @"successful",
+    @"offer wall is disabled",
+    @"login connection failed",
+    @"offer wall has not been loginned",
+    @"offer wall is not initialized",
+    @"offer wall has been loginned",
+    @"unknown error",
+    @"invalid event flag",
+    @"app list request failed",
+    @"app list response failed",
+    @"app list parameter malformatted",
+    @"app list is being requested",
+    @"offer wall is not ready for show",
+    @"keywords malformatted",
+    @"current device has not enough space to save resource",
+    @"resource malformatted",
+    @"resource load failed",
+    @"you are have already loginned",
+    @"exceed max show count",
+    @"exceed max login count",
+    @"you have not enough points",
+    @"points consumption is not available",
+    @"points consumption is negative value",
+};
+@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate,MiidiAdWallShowAppOffersDelegate
+, MiidiAdWallAwardPointsDelegate
+, MiidiAdWallSpendPointsDelegate
+, MiidiAdWallGetPointsDelegate, MiidiAdWallRequestToggleDelegate> {
     
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webView;

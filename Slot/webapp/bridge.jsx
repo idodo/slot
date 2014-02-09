@@ -86,4 +86,8 @@ Function.prototype.derive = function (constructor, proto) {
         window.NSLog('ObjC called js updateScore with:', data);
         Player.updateScore(data);
     });
+    bridge.registerHandler('update', function (data, responseCallback) {
+        window.NSLog('ObjC called js updateScore with:', data);
+        Player.updateScore(data);
+    });
 });

@@ -15,6 +15,7 @@
 +(NSString*)getYoumiCustomerPwd;
 +(NSString*)getDianruCustomerId;
 +(NSString*)getLimeiCustomerId;
++(NSString*)getAdWoCustomerId;
 +(int)getMajorVersion;
 +(int)getMinorVersion;
 +(NSString*)getAdKey;

@@ -12,6 +12,8 @@ enum adtype{
     limei,
     youmi,
     dianru,
+    middi,
+    adwo,
     adtype_num
 };
 

@@ -181,6 +181,11 @@
 		BFD8996218A3C5EC0078016C /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995C18A3C5EC0078016C /* HttpClient.m */; };
 		BFD8996318A3C5EC0078016C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995E18A3C5EC0078016C /* Player.m */; };
 		BFD8996618A3C6CC0078016C /* AdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8996518A3C6CC0078016C /* AdInfo.m */; };
+		BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE0918A731440069B250 /* MiidiAdLib.a */; };
+		BFEEAE1518A759FE0069B250 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1418A759FD0069B250 /* libz.1.2.5.dylib */; };
+		BFEEAE1C18A75C730069B250 /* libAdwoOfferWall1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */; };
+		BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1A18A75C730069B250 /* libminizip.a */; };
+		BFEEAE1E18A75C730069B250 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = BFEEAE1B18A75C730069B250 /* wall_template.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -417,6 +422,21 @@
 		BFD8995E18A3C5EC0078016C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		BFD8996418A3C6CC0078016C /* AdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdInfo.h; sourceTree = "<group>"; };
 		BFD8996518A3C6CC0078016C /* AdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdInfo.m; sourceTree = "<group>"; };
+		BFEEAE0918A731440069B250 /* MiidiAdLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MiidiAdLib.a; sourceTree = "<group>"; };
+		BFEEAE0A18A731440069B250 /* MiidiAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdView.h; sourceTree = "<group>"; };
+		BFEEAE0B18A731440069B250 /* MiidiAdViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdViewDelegate.h; sourceTree = "<group>"; };
+		BFEEAE0C18A731440069B250 /* MiidiAdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdWall.h; sourceTree = "<group>"; };
+		BFEEAE0D18A731440069B250 /* MiidiAdWallAwardPointsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdWallAwardPointsDelegate.h; sourceTree = "<group>"; };
+		BFEEAE0E18A731440069B250 /* MiidiAdWallGetPointsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdWallGetPointsDelegate.h; sourceTree = "<group>"; };
+		BFEEAE0F18A731440069B250 /* MiidiAdWallRequestToggleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdWallRequestToggleDelegate.h; sourceTree = "<group>"; };
+		BFEEAE1018A731440069B250 /* MiidiAdWallShowAppOffersDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdWallShowAppOffersDelegate.h; sourceTree = "<group>"; };
+		BFEEAE1118A731440069B250 /* MiidiAdWallSpendPointsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdWallSpendPointsDelegate.h; sourceTree = "<group>"; };
+		BFEEAE1218A731440069B250 /* MiidiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiManager.h; sourceTree = "<group>"; };
+		BFEEAE1418A759FD0069B250 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		BFEEAE1718A75C730069B250 /* AdwoOfferWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdwoOfferWall.h; sourceTree = "<group>"; };
+		BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdwoOfferWall1.3.0.a; sourceTree = "<group>"; };
+		BFEEAE1A18A75C730069B250 /* libminizip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libminizip.a; sourceTree = "<group>"; };
+		BFEEAE1B18A75C730069B250 /* wall_template.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = wall_template.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,10 +444,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEEAE1518A759FE0069B250 /* libz.1.2.5.dylib in Frameworks */,
 				76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */,
+				BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */,
 				BF146636189BF6B10084E701 /* MapKit.framework in Frameworks */,
 				BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */,
 				BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */,
+				BFEEAE1C18A75C730069B250 /* libAdwoOfferWall1.3.0.a in Frameworks */,
 				BF146648189BF7850084E701 /* CFNetwork.framework in Frameworks */,
 				BF146646189BF7690084E701 /* MobileCoreServices.framework in Frameworks */,
 				BF146644189BF75D0084E701 /* MediaPlayer.framework in Frameworks */,
@@ -438,6 +461,7 @@
 				76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */,
 				BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */,
 				BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */,
+				BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */,
 				BF14663A189BF6C30084E701 /* EventKitUI.framework in Frameworks */,
 				BF146634189BF6A80084E701 /* MessageUI.framework in Frameworks */,
 				76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */,
@@ -507,6 +531,8 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BFEEAE1618A75C730069B250 /* AdWoSDK */,
+				BFEEAE0818A731440069B250 /* MiddiSDK */,
 				76ED263518A6969C00AFA4FD /* YiJiFenSDK */,
 				BF146501189BE73D0084E701 /* LimeiSDK */,
 				BF146503189BE73D0084E701 /* DianruSDK */,
@@ -567,6 +593,7 @@
 		76F208CA1892809B000BE84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFEEAE1418A759FD0069B250 /* libz.1.2.5.dylib */,
 				76ED263818A6974700AFA4FD /* ImageIO.framework */,
 				BF14664B189BFFE60084E701 /* CoreTelephony.framework */,
 				BF146649189BFFC10084E701 /* AudioToolbox.framework */,
@@ -955,6 +982,42 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		BFEEAE0818A731440069B250 /* MiddiSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEAE0918A731440069B250 /* MiidiAdLib.a */,
+				BFEEAE0A18A731440069B250 /* MiidiAdView.h */,
+				BFEEAE0B18A731440069B250 /* MiidiAdViewDelegate.h */,
+				BFEEAE0C18A731440069B250 /* MiidiAdWall.h */,
+				BFEEAE0D18A731440069B250 /* MiidiAdWallAwardPointsDelegate.h */,
+				BFEEAE0E18A731440069B250 /* MiidiAdWallGetPointsDelegate.h */,
+				BFEEAE0F18A731440069B250 /* MiidiAdWallRequestToggleDelegate.h */,
+				BFEEAE1018A731440069B250 /* MiidiAdWallShowAppOffersDelegate.h */,
+				BFEEAE1118A731440069B250 /* MiidiAdWallSpendPointsDelegate.h */,
+				BFEEAE1218A731440069B250 /* MiidiManager.h */,
+			);
+			path = MiddiSDK;
+			sourceTree = "<group>";
+		};
+		BFEEAE1618A75C730069B250 /* AdWoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEAE1718A75C730069B250 /* AdwoOfferWall.h */,
+				BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */,
+				BFEEAE1918A75C730069B250 /* res */,
+			);
+			path = AdWoSDK;
+			sourceTree = "<group>";
+		};
+		BFEEAE1918A75C730069B250 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEAE1A18A75C730069B250 /* libminizip.a */,
+				BFEEAE1B18A75C730069B250 /* wall_template.zip */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1007,7 +1070,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1078,6 +1141,7 @@
 				BF14657E189BE73D0084E701 /* dianru_title.jpg in Resources */,
 				BF146579189BE73D0084E701 /* dianru_help.png in Resources */,
 				76096D9B1895304D006E6041 /* View.jsx in Resources */,
+				BFEEAE1E18A75C730069B250 /* wall_template.zip in Resources */,
 				BF14658E189BE73D0084E701 /* dianru_orange_all_cell.png in Resources */,
 				BF1465A7189BE73D0084E701 /* dianru_red_dianru_download.png in Resources */,
 				76F208DF1892809B000BE84C /* Main.storyboard in Resources */,
@@ -1332,6 +1396,9 @@
 					"${SRCROOT}/Slot/adsdk/YoumiSDK",
 					"${SRCROOT}/Slot/thirdlibs/weixin",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
+					"${SRCROOT}/Slot/adsdk/MiddiSDK",
+					"${SRCROOT}/Slot/adsdk/AdWoSDK",
+					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1364,6 +1431,9 @@
 					"${SRCROOT}/Slot/adsdk/YoumiSDK",
 					"${SRCROOT}/Slot/thirdlibs/weixin",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
+					"${SRCROOT}/Slot/adsdk/MiddiSDK",
+					"${SRCROOT}/Slot/adsdk/AdWoSDK",
+					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1416,7 +1486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,
