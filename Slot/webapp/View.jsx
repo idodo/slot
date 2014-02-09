@@ -42,6 +42,7 @@ var View = Object.derive({
         if(Math.abs(this._tX - this._x) < 0.5 && Math.abs(this._tY - this._y) < 0.5){
             this.setPosition(this._tX, this._tY);
             this._moving = false;
+            $('layer-mask').style.display = 'none';
             this.onMoveFinished();
         } else {
             var x = this._x + (this._tX - this._x) / this.speed;
