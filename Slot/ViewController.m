@@ -253,38 +253,40 @@
         [DataConfig getInstance].minMoneyRatio = minMoneyRatio;
         
         //init adwall
-        AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
-        if( adInfo.status == 1 ){
-             _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
-            _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
-            _domobAdWallManager.delegate = self;
-        }
-        
-        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
-        if( adInfo.status == 1 ){
-            _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
-            _limeiAdWall.delegate=self;
-            [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
-        }
-        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
-        if( adInfo.status == 1 ){
-            [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
-            [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
-        }
-        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
-        if( adInfo.status == 1 ){
-            NSLog(@"[youmi]init adwall");
-            [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
-            // 开启积分管理[本例子使用自动管理];
-            [YouMiPointsManager enable];
-            // 开启积分墙
-            [YouMiWall enable];
-            [YouMiConfig setFullScreenWindow:self.view.window];
-        }
-        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
-        if( adInfo.status == 1 ){
-            NSLog(@"[middi]init adwall");
-            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
+        if( [AdWall getInstance].inReview == 0){
+            AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
+            if( adInfo.status == 1 ){
+                 _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
+                _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
+                _domobAdWallManager.delegate = self;
+            }
+            
+            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
+            if( adInfo.status == 1 ){
+                _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
+                _limeiAdWall.delegate=self;
+                [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
+            }
+            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
+            if( adInfo.status == 1 ){
+                [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
+                [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
+            }
+            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
+            if( adInfo.status == 1 ){
+                NSLog(@"[youmi]init adwall");
+                [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
+                // 开启积分管理[本例子使用自动管理];
+                [YouMiPointsManager enable];
+                // 开启积分墙
+                [YouMiWall enable];
+                [YouMiConfig setFullScreenWindow:self.view.window];
+            }
+            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
+            if( adInfo.status == 1 ){
+                NSLog(@"[middi]init adwall");
+                [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
+            }
         }
         //init move gold flags for comsumeEarnGold
         _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];

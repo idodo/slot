@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 enum adtype{
-    domob=0,
-    limei,
-    youmi,
-    dianru,
-    middi,
-    adwo,
+    domob=0, //多盟
+    limei, //力美
+    youmi, //有米
+    dianru, //点入
+    middi, //米迪
+    adwo, //安沃
+    yijifen, //易积分
     adtype_num
 };
 
