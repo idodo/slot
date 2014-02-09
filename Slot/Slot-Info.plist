@@ -8,6 +8,17 @@
 	<string>转转赚</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>icon_114_114</string>
+				<string>icon_57_57</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.idodo.slot</string>
 	<key>CFBundleInfoDictionaryVersion</key>
