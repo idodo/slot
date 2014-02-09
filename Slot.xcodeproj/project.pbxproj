@@ -32,6 +32,7 @@
 		76B1C1E81897EC8F0042C7F6 /* panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E71897EC8F0042C7F6 /* panel.png */; };
 		76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */; };
 		76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1EB1897FD6D0042C7F6 /* btn_big.png */; };
+		76B95DD718A7F0E600AF26C5 /* sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B95DD618A7F0E600AF26C5 /* sound.png */; };
 		76C5B82A189BC0470052FB4D /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */; };
 		76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */; };
 		76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B82C189BC2FA0052FB4D /* libsqlite3.dylib */; };
@@ -224,6 +225,7 @@
 		76B1C1E71897EC8F0042C7F6 /* panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panel.png; sourceTree = "<group>"; };
 		76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EarnLayer.jsx; sourceTree = "<group>"; };
 		76B1C1EB1897FD6D0042C7F6 /* btn_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_big.png; sourceTree = "<group>"; };
+		76B95DD618A7F0E600AF26C5 /* sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound.png; sourceTree = "<group>"; };
 		76C5B823189BC0470052FB4D /* DMOfferWallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManager.h; sourceTree = "<group>"; };
 		76C5B824189BC0470052FB4D /* DMOfferWallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManagerDelegate.h; sourceTree = "<group>"; };
 		76C5B825189BC0470052FB4D /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76B95DD618A7F0E600AF26C5 /* sound.png */,
 				764879F9189AC8070050CB62 /* bingo.gif */,
 				764879F7189A36F30050CB62 /* Sound.jsx */,
 				764879F5189A28B90050CB62 /* slot.mp3 */,
@@ -1070,7 +1073,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1203,6 +1206,7 @@
 				BF14656E189BE73D0084E701 /* dianru_blue_right_view.png in Resources */,
 				7628CDDE1892D9B90085CE94 /* index.html in Resources */,
 				BF14657F189BE73D0084E701 /* dianru_title_1.jpg in Resources */,
+				76B95DD718A7F0E600AF26C5 /* sound.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1484,7 +1488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,

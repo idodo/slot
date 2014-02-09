@@ -176,7 +176,7 @@
                         var data = JSON.parse(res);
                         if(typeof data.score === 'number'){
                             displayScore(data.score);
-                            success(data.earn);
+                            success(data.earn, data.wall_status);
                         } else {
                             error(data.result, data.reason, data);
                         }

@@ -4,9 +4,20 @@ var EarnLayer = View.derive({
             Director.show('welcome', -1);
         });
     },
-    setTradeList : function(data){
+    setTradeList : function(data, status){
         clearTimeout(this.listTimer);
         clearTimeout(this.listTimer2);
+        var panel = $('pt-panel');
+        for(var name in status){
+            if(status.hasOwnProperty(name) && status[name] == '1'){
+                var d = $(name);
+                if(d){
+                    panel.removeChild(d);
+                    panel.appendChild(d);
+                    d.style.display = 'inline-block';
+                }
+            }
+        }
         var dom = $('trade-list');
         dom.className = 'transform';
         dom.style.webkitTransform = 'translateY(-19px)';

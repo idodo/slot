@@ -339,13 +339,27 @@ section {
 #earnLayer fieldset span {
     margin-left: 2px;
     margin-bottom: 5px;
-    display: inline-block;
+    display: none;
 }
 
 #earn-back-btn {
     position: absolute;
     right: 20px;
     bottom: 20px;
+}
+
+#sound {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: url("sound.png") no-repeat 0 0;
+    background-size: 100%;
+}
+
+#sound.off {
+    background-position: 0 100%;
 }
 
 .layer-mask {

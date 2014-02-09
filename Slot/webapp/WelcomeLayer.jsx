@@ -3,12 +3,7 @@ var WelcomeLayer = View.derive({
         this.setPosition(View.width, 0);
         Hammer($('enter-slot')).on('tap', this.onEnterSlot.bind(this));
         Hammer($('enter-earn')).on('tap', this.onEnterEarn.bind(this));
-
-        var sound = new Audio('bg.mp3');
-        sound.loop = true;
-        sound.preload = 'auto';
-        sound.autoplay = true;
-        sound.load();
+        Sound.init();
     },
     onEnterSlot : function(){
         Player.update(function(){
@@ -17,8 +12,8 @@ var WelcomeLayer = View.derive({
     },
     onEnterEarn : function(){
         NSConsumeEarnGold();
-        Player.earn(function(earn){
-            Director.show('earn').setTradeList(earn);
+        Player.earn(function(earn, status){
+            Director.show('earn').setTradeList(earn, status);
         });
     }
 });
