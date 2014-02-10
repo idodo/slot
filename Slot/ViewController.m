@@ -21,8 +21,9 @@
 #import "YouMiConfig.h"
 #import "YouMiPointsManager.h"
 #import "YouMiWall.h"
-
+#import "SvUDIDTools.h"
 @interface ViewController ()
+
 
 @end
 
@@ -136,11 +137,74 @@
         [_bridge send:@"A string sent from ObjC after Webview has loaded."];
         
         [_bridge callHandler:@"updateUdid" data:@{ @"udid": [Player getInstance].udid }];
+        
+        
     }
+    
+    
+    
 }
 
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    if( [AdWall getInstance].inReview == 1){
+        CGSize screenSize = [UIScreen mainScreen].bounds.size;
+        if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+        {
+            _dmAdView.frame = CGRectMake((screenSize.height - _adSize.width) / 2,
+                                         _adY,
+                                         _dmAdView.frame.size.width,
+                                         _dmAdView.frame.size.height);
+        }
+        else
+        {
+            _dmAdView.frame = CGRectMake((screenSize.width - _adSize.width) / 2,
+                                         _adY,
+                                         _dmAdView.frame.size.width,
+                                         _dmAdView.frame.size.height);
+        }
+    }
+    
+    
+}
+/**
+ *显示多盟的banner广告
+ */
+-(void)showDomobBannerAd{
+    //显示domob的banner广告，苹果审核要求引用了广告sdk的应用需要显示出广告
+    if( [AdWall getInstance].inReview == 1){
+        // 确定广告尺寸及位置
+        //Set the size and origin
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        {
+            _adSize = DOMOB_AD_SIZE_320x50;
+            if (!([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)) {
+                _adY = 0;
+            }
+            
+        }
+        else
+        {
+            _adSize = DOMOB_AD_SIZE_728x90;
+            _adX = ([UIScreen mainScreen].bounds.size.width - _adSize.width) / 2;
+            _adY = 0;
+        }
+        _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJz1F4uNOdLXWmNI"
+                                              placementId:@"16TLmLxlAp0DkNUfva9cvJFi"
+                                                     size:_adSize];
+        
+        // 设置广告视图的位置
+        // Set the frame of advertisement view
+        _dmAdView.frame = CGRectMake(_adX, _adY, _adSize.width, _adSize.height);
+        _dmAdView.delegate = self;
+        _dmAdView.rootViewController = self; // set RootViewController
+        [self.view addSubview:_dmAdView];
+        [_dmAdView loadAd];
+    }
 
+}
 -(void)consumeEarnGold{
     if( [AdWall getInstance].inReview == 0){
         self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -220,7 +284,9 @@
     
     //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     //NSLog(@"idfa:%@", idfaString);
-    NSString* openUDID = [OpenUDID value];
+    //这里使用keychain存储udid
+    NSString* openUDID  = [SvUDIDTools UDID];
+    NSLog(@"keychain udid:%@", openUDID );
     NSNumber *majorVersion =[[NSNumber alloc] initWithInt:[DataConfig getMajorVersion]];
     NSNumber *minorVersion = [[NSNumber alloc] initWithInt:[DataConfig getMinorVersion]];
     NSDictionary *parameters = @{@"udid": openUDID, @"majorVersion" : majorVersion, @"minorVersion": minorVersion};
@@ -297,6 +363,9 @@
         
         //init wei xin
         [WXApi registerApp:@"wxf7f8f4e26c1f66d0"];
+        
+        //苹果审核要求引用了广告sdk的应用需要显示出广告，为了过苹果审核，请求多盟的banner广告
+        [self showDomobBannerAd];
         
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -640,8 +709,48 @@
     NSLog(@"[adwo] I know, the wall is dismissed!");
 }
 #pragma mark  end
-/********************adwo adwall callback end********************/
 
+/********************adwo adwall callback end********************/
+/********************domob banner ad callback begin********************/
+#pragma mark -
+#pragma mark DMAdView delegate
+
+// 成功加载广告后，回调该方法
+// This method will be used after load successfully
+- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] success to load ad.");
+}
+
+// 加载广告失败后，回调该方法
+// This method will be used after load failed
+- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
+{
+    NSLog(@"[Domob Sample] fail to load ad. %@", error);
+}
+
+// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器
+// When will be showing a Modal View, this method will be called. Such as open built-in browser
+- (void)dmWillPresentModalViewFromAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] will present modal view.");
+}
+
+// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
+// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
+- (void)dmDidDismissModalViewFromAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] did dismiss modal view.");
+}
+
+// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
+// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
+- (void)dmApplicationWillEnterBackgroundFromAd:(DMAdView *)adView
+{
+    NSLog(@"[Domob Sample] will enter background.");
+}
+#pragma mark end
+/********************domob banner ad callback end********************/
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {

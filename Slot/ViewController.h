@@ -24,6 +24,7 @@
 #import "MiidiAdWallRequestToggleDelegate.h"
 #import "MiidiAdWall.h"
 #import "AdwoOfferWall.h"
+#import "DMAdView.h"
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 static NSString* const AdWoErrCodeList[] = {
     @"successful",
@@ -53,8 +54,11 @@ static NSString* const AdWoErrCodeList[] = {
 @interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate,MiidiAdWallShowAppOffersDelegate
 , MiidiAdWallAwardPointsDelegate
 , MiidiAdWallSpendPointsDelegate
-, MiidiAdWallGetPointsDelegate, MiidiAdWallRequestToggleDelegate> {
-    
+, MiidiAdWallGetPointsDelegate, MiidiAdWallRequestToggleDelegate,
+DMAdViewDelegate> {
+    DMAdView *_dmAdView;
+    CGSize _adSize;
+    CGFloat _adX, _adY;
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
@@ -66,5 +70,6 @@ static NSString* const AdWoErrCodeList[] = {
 @property (nonatomic)int spendGold;
 @property (strong,nonatomic)MBProgressHUD *hud;
 @property(strong, nonatomic)NSMutableArray *moveFlags;
+
 
 @end

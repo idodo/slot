@@ -182,6 +182,10 @@
 		BFD8996218A3C5EC0078016C /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995C18A3C5EC0078016C /* HttpClient.m */; };
 		BFD8996318A3C5EC0078016C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995E18A3C5EC0078016C /* Player.m */; };
 		BFD8996618A3C6CC0078016C /* AdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8996518A3C6CC0078016C /* AdInfo.m */; };
+		BFEB000C18A8BF4500E18677 /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFEB000B18A8BF4500E18677 /* KeychainAccessGroups.plist */; };
+		BFEB001018A8BF7F00E18677 /* SvUDIDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEB000F18A8BF7F00E18677 /* SvUDIDTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BFEB001C18A8D1CC00E18677 /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFEB001A18A8D1CC00E18677 /* DomobAdSDKBundle.bundle */; };
+		BFEB001D18A8D1CD00E18677 /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB001B18A8D1CC00E18677 /* libDomobAdSDK.a */; };
 		BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE0918A731440069B250 /* MiidiAdLib.a */; };
 		BFEEAE1518A759FE0069B250 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1418A759FD0069B250 /* libz.1.2.5.dylib */; };
 		BFEEAE1C18A75C730069B250 /* libAdwoOfferWall1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */; };
@@ -424,6 +428,18 @@
 		BFD8995E18A3C5EC0078016C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		BFD8996418A3C6CC0078016C /* AdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdInfo.h; sourceTree = "<group>"; };
 		BFD8996518A3C6CC0078016C /* AdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdInfo.m; sourceTree = "<group>"; };
+		BFEB000B18A8BF4500E18677 /* KeychainAccessGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeychainAccessGroups.plist; sourceTree = "<group>"; };
+		BFEB000E18A8BF7F00E18677 /* SvUDIDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvUDIDTools.h; sourceTree = "<group>"; };
+		BFEB000F18A8BF7F00E18677 /* SvUDIDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvUDIDTools.m; sourceTree = "<group>"; };
+		BFEB001118A8C3BA00E18677 /* Slot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Slot.entitlements; sourceTree = "<group>"; };
+		BFEB001318A8D1CC00E18677 /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
+		BFEB001418A8D1CC00E18677 /* DMFeedsAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFeedsAdView.h; sourceTree = "<group>"; };
+		BFEB001518A8D1CC00E18677 /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
+		BFEB001618A8D1CC00E18677 /* DMRTSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRTSplashAdController.h; sourceTree = "<group>"; };
+		BFEB001718A8D1CC00E18677 /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
+		BFEB001818A8D1CC00E18677 /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
+		BFEB001A18A8D1CC00E18677 /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
+		BFEB001B18A8D1CC00E18677 /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
 		BFEEAE0918A731440069B250 /* MiidiAdLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MiidiAdLib.a; sourceTree = "<group>"; };
 		BFEEAE0A18A731440069B250 /* MiidiAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdView.h; sourceTree = "<group>"; };
 		BFEEAE0B18A731440069B250 /* MiidiAdViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdViewDelegate.h; sourceTree = "<group>"; };
@@ -480,6 +496,7 @@
 				76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */,
 				BF146563189BE73D0084E701 /* immobSDK.framework in Frameworks */,
 				76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */,
+				BFEB001D18A8D1CD00E18677 /* libDomobAdSDK.a in Frameworks */,
 				76F208D01892809B000BE84C /* UIKit.framework in Frameworks */,
 				76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */,
 			);
@@ -534,6 +551,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BFEB001218A8D1CC00E18677 /* DomobAdSDK */,
 				BFEEAE1618A75C730069B250 /* AdWoSDK */,
 				BFEEAE0818A731440069B250 /* MiddiSDK */,
 				76ED263518A6969C00AFA4FD /* YiJiFenSDK */,
@@ -631,6 +649,7 @@
 		76F208D11892809B000BE84C /* Slot */ = {
 			isa = PBXGroup;
 			children = (
+				BFEB001118A8C3BA00E18677 /* Slot.entitlements */,
 				BFD8995418A3C5EC0078016C /* model */,
 				BF4B45DD189BE269004465BB /* controller */,
 				BF4B45D5189BE086004465BB /* thirdlibs */,
@@ -651,6 +670,7 @@
 		76F208D21892809B000BE84C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BFEB000B18A8BF4500E18677 /* KeychainAccessGroups.plist */,
 				76F9714518A629A90050357E /* icon.png */,
 				76F9714618A629A90050357E /* icon@2x.png */,
 				76F208D31892809B000BE84C /* Slot-Info.plist */,
@@ -949,6 +969,7 @@
 		BF4B45D5189BE086004465BB /* thirdlibs */ = {
 			isa = PBXGroup;
 			children = (
+				BFEB000D18A8BF7F00E18677 /* UDID_Tools */,
 				BF14662E189BEE560084E701 /* weixin */,
 				BF14662A189BED6A0084E701 /* OpenUDID */,
 				BF146626189BEC030084E701 /* md5 */,
@@ -983,6 +1004,39 @@
 				BFD8995E18A3C5EC0078016C /* Player.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		BFEB000D18A8BF7F00E18677 /* UDID_Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB000E18A8BF7F00E18677 /* SvUDIDTools.h */,
+				BFEB000F18A8BF7F00E18677 /* SvUDIDTools.m */,
+			);
+			name = UDID_Tools;
+			path = thirdlibs/UDID_Tools;
+			sourceTree = "<group>";
+		};
+		BFEB001218A8D1CC00E18677 /* DomobAdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB001318A8D1CC00E18677 /* DMAdView.h */,
+				BFEB001418A8D1CC00E18677 /* DMFeedsAdView.h */,
+				BFEB001518A8D1CC00E18677 /* DMInterstitialAdController.h */,
+				BFEB001618A8D1CC00E18677 /* DMRTSplashAdController.h */,
+				BFEB001718A8D1CC00E18677 /* DMSplashAdController.h */,
+				BFEB001818A8D1CC00E18677 /* DMTools.h */,
+				BFEB001918A8D1CC00E18677 /* DomobAdSDKBundle */,
+				BFEB001B18A8D1CC00E18677 /* libDomobAdSDK.a */,
+			);
+			path = DomobAdSDK;
+			sourceTree = "<group>";
+		};
+		BFEB001918A8D1CC00E18677 /* DomobAdSDKBundle */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB001A18A8D1CC00E18677 /* DomobAdSDKBundle.bundle */,
+			);
+			path = DomobAdSDKBundle;
 			sourceTree = "<group>";
 		};
 		BFEEAE0818A731440069B250 /* MiddiSDK */ = {
@@ -1068,12 +1122,19 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = fouber;
 				TargetAttributes = {
+					76F208C71892809B000BE84C = {
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 					76F208E81892809B000BE84C = {
 						TestTargetID = 76F208C71892809B000BE84C;
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1097,6 +1158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEB000C18A8BF4500E18677 /* KeychainAccessGroups.plist in Resources */,
 				BF1465A9189BE73D0084E701 /* dianru_red_dianru_iphone_download.png in Resources */,
 				76C5B82A189BC0470052FB4D /* DomobOfferWallBundle.bundle in Resources */,
 				76096D9918950C45006E6041 /* main.jsx in Resources */,
@@ -1177,6 +1239,7 @@
 				BF14656B189BE73D0084E701 /* dianru_blue_left_cell.png in Resources */,
 				BF1465A2189BE73D0084E701 /* dianru_purple_right_cell.png in Resources */,
 				764879F4189A25310050CB62 /* bg.mp3 in Resources */,
+				BFEB001C18A8D1CC00E18677 /* DomobAdSDKBundle.bundle in Resources */,
 				BF146586189BE73D0084E701 /* dianru_green_dianru_info.png in Resources */,
 				BF146570189BE73D0084E701 /* dianru_back_btn.png in Resources */,
 				BF146590189BE73D0084E701 /* dianru_orange_dianru_download.png in Resources */,
@@ -1243,6 +1306,7 @@
 				BF146617189BEB890084E701 /* AFHTTPRequestOperationManager.m in Sources */,
 				BFD8996018A3C5EC0078016C /* AdWall.m in Sources */,
 				76F208DC1892809B000BE84C /* AppDelegate.m in Sources */,
+				BFEB001018A8BF7F00E18677 /* SvUDIDTools.m in Sources */,
 				BFD8995F18A3C5EC0078016C /* AdUtil.m in Sources */,
 				76F208D81892809B000BE84C /* main.m in Sources */,
 				BF14662D189BED6A0084E701 /* OpenUDID.m in Sources */,
@@ -1378,7 +1442,9 @@
 		76F208FB1892809B000BE84C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yonggang qiu (VY94G827V3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1402,6 +1468,7 @@
 					"${SRCROOT}/Slot/adsdk/MiddiSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
+					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk/DomobAdSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1412,7 +1479,9 @@
 		76F208FC1892809B000BE84C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yonggang qiu (VY94G827V3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1436,6 +1505,7 @@
 					"${SRCROOT}/Slot/adsdk/MiddiSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
+					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk/DomobAdSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1488,7 +1558,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,
