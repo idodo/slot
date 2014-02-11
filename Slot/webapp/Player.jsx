@@ -120,7 +120,7 @@
                 NSLog('code: ' + code + '\treason: ' + reason);
                 switch (code){
                     case 1:
-                        reason = '积分没有辣么多啦！';
+                        reason = '金币没有辣么多啦，赶紧去赚点吧~';
                         break;
                     case 2:
                         reason = '亲，还没下注哦！';

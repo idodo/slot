@@ -497,7 +497,7 @@
 // 积分查询成功之后，回调该接口，获取总积分和总已消费积分。
 - (void)offerWallDidFinishCheckPointWithTotalPoint:(NSInteger)totalPoint
                              andTotalConsumedPoint:(NSInteger)consumed {
-    NSLog(@"In the domob offerWallDidFinishCheckPointWithTotalPoint, request consume gold: %d", totalPoint - consumed );
+    NSLog(@"[domob]  request consume gold: %d", totalPoint - consumed );
     int leftPoint = totalPoint-consumed;
     if( leftPoint > 0 ){
         [_domobAdWallManager requestOnlineConsumeWithPoint:leftPoint];
