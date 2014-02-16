@@ -342,7 +342,7 @@ section {
     display: none;
 }
 
-#earn-back-btn {
+.back-btn {
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -378,6 +378,88 @@ section {
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     -webkit-animation-timing-function: ease-in-out;
+}
+
+table {
+    border:0;
+    margin:0;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+#settingsLayer table {
+    width: 250px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333;
+    text-shadow: 0 1px 1px #fff;
+}
+
+#settingsLayer table td {
+    padding: 10px 5px;
+    text-align:justify;
+    text-justify:inter-ideograph;
+}
+
+#settingsLayer table input[type=text] {
+    width: 100%;
+}
+
+input[type=text] {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #333;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+::-webkit-input-placeholder { color:#369; }
+
+#settingsLayer table .selected {
+    background: rgb(28, 184, 65);;
+}
+
+#settingsLayer #settings-back-btn {
+    right: 85px;
+}
+
+#tradeLayer .panel {
+    width: 280px;
+}
+
+#tradeLayer h1.score {
+    font-size: 30px;
+    text-shadow: 0 0 4px rgba(0,0,0,0.7);
+    left: 20px;
+    bottom: 20px;
+}
+
+#tradeLayer ul {
+    width: 100%;
+}
+
+#tradeLayer ul li {
+    background: #fff;
+    border-radius: 6px;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    padding: 5px 10px;
+}
+
+#tradeLayer ul li:active {
+    background: #ccc;
+}
+
+#tradeLayer ul li span {
+    display: inline-block;
+}
+#tradeLayer ul li span:first-child {
+    font-weight: bold;
+}
+#tradeLayer ul li span:last-child {
+    float: right;
 }
 
 @-webkit-keyframes glow {

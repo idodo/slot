@@ -62,7 +62,24 @@ Function.prototype.derive = function (constructor, proto) {
         bridge.callHandler('alert', message);
     };
     window.NSLog = function () {
-        bridge.callHandler('log', '[' + [].join.call(arguments, ', ') + ']');
+        var msg = [];
+        for(var i = 0, len = arguments.length; i < len; i ++){
+            var data = arguments[i];
+            switch (typeof data){
+                case 'string':
+                case 'number':
+                case 'boolean':
+                    msg.push(data);
+                    break;
+                case 'undefined':
+                    msg.push('undefined');
+                    break;
+                default :
+                    msg.push(JSON.stringify(arguments[i]));
+                    break;
+            }
+        }
+        bridge.callHandler('log', '[' + msg + ']');
     };
     window.NSStartLoading = function () {
         $('layer-mask').style.display = 'block';
@@ -77,6 +94,11 @@ Function.prototype.derive = function (constructor, proto) {
     };
     window.NSConsumeEarnGold = function () {
         bridge.callHandler("consumeEarnGold");
+    };
+    window.xss = function(content){
+        return content.replace(/[<>&"']/g, function(m){
+            return '&#' + m.charCodeAt(0) + ';';
+        });
     };
     bridge.registerHandler('updateUdid', function (data, responseCallback) {
         window.NSLog('ObjC called js updateUdid with:', data);

@@ -18,6 +18,10 @@
 		764879F6189A28B90050CB62 /* slot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 764879F5189A28B90050CB62 /* slot.mp3 */; };
 		764879F8189A36F30050CB62 /* Sound.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 764879F7189A36F30050CB62 /* Sound.jsx */; };
 		764879FA189AC8070050CB62 /* bingo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 764879F9189AC8070050CB62 /* bingo.gif */; };
+		765299C318B072E8000F3347 /* SettingsLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299C218B072E8000F3347 /* SettingsLayer.jsx */; };
+		765299C518B07B0D000F3347 /* pure-min.css in Resources */ = {isa = PBXBuildFile; fileRef = 765299C418B07B0D000F3347 /* pure-min.css */; };
+		765299C818B09298000F3347 /* shareLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299C618B09298000F3347 /* shareLayer.jsx */; };
+		765299C918B09298000F3347 /* tradeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299C718B09298000F3347 /* tradeLayer.jsx */; };
 		7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7689D20D189574F00009C3A6 /* hammer.min.jsx */; };
 		7689D2141895802E0009C3A6 /* warms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D2131895802E0009C3A6 /* warms.png */; };
 		7689D216189586170009C3A6 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D215189586170009C3A6 /* line.png */; };
@@ -215,6 +219,10 @@
 		764879F5189A28B90050CB62 /* slot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slot.mp3; sourceTree = "<group>"; };
 		764879F7189A36F30050CB62 /* Sound.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sound.jsx; sourceTree = "<group>"; };
 		764879F9189AC8070050CB62 /* bingo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bingo.gif; sourceTree = "<group>"; };
+		765299C218B072E8000F3347 /* SettingsLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SettingsLayer.jsx; sourceTree = "<group>"; };
+		765299C418B07B0D000F3347 /* pure-min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "pure-min.css"; sourceTree = "<group>"; };
+		765299C618B09298000F3347 /* shareLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shareLayer.jsx; sourceTree = "<group>"; };
+		765299C718B09298000F3347 /* tradeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tradeLayer.jsx; sourceTree = "<group>"; };
 		7689D20D189574F00009C3A6 /* hammer.min.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hammer.min.jsx; sourceTree = "<group>"; };
 		7689D2131895802E0009C3A6 /* warms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warms.png; sourceTree = "<group>"; };
 		7689D215189586170009C3A6 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -518,6 +526,10 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				765299C618B09298000F3347 /* shareLayer.jsx */,
+				765299C718B09298000F3347 /* tradeLayer.jsx */,
+				765299C418B07B0D000F3347 /* pure-min.css */,
+				765299C218B072E8000F3347 /* SettingsLayer.jsx */,
 				76B95DD618A7F0E600AF26C5 /* sound.png */,
 				764879F9189AC8070050CB62 /* bingo.gif */,
 				764879F7189A36F30050CB62 /* Sound.jsx */,
@@ -1134,7 +1146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1184,10 +1196,12 @@
 				BF1465AE189BE73D0084E701 /* dianru_red_right_cell.png in Resources */,
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
 				BF14656A189BE73D0084E701 /* dianru_blue_dianru_triangle.png in Resources */,
+				765299C518B07B0D000F3347 /* pure-min.css in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
 				BF146571189BE73D0084E701 /* dianru_background.png in Resources */,
 				7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */,
 				BF146582189BE73D0084E701 /* dianru_yuanjiao_horizontal.png in Resources */,
+				765299C818B09298000F3347 /* shareLayer.jsx in Resources */,
 				76B1C1E0189768380042C7F6 /* WelcomeLayer.jsx in Resources */,
 				BF1465A6189BE73D0084E701 /* dianru_red_dianru_bottom.png in Resources */,
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
@@ -1234,6 +1248,7 @@
 				BF1465A4189BE73D0084E701 /* dianru_red_all_cell.png in Resources */,
 				BF14658F189BE73D0084E701 /* dianru_orange_dianru_bottom.png in Resources */,
 				BF146572189BE73D0084E701 /* dianru_banner.png in Resources */,
+				765299C918B09298000F3347 /* tradeLayer.jsx in Resources */,
 				76096D901894E04B006E6041 /* slot.png in Resources */,
 				BF14659A189BE73D0084E701 /* dianru_purple_dianru_bottom.png in Resources */,
 				BF14656B189BE73D0084E701 /* dianru_blue_left_cell.png in Resources */,
@@ -1267,6 +1282,7 @@
 				BF14658C189BE73D0084E701 /* dianru_green_right_cell.png in Resources */,
 				BF146598189BE73D0084E701 /* dianru_orange_right_view.png in Resources */,
 				BF14656E189BE73D0084E701 /* dianru_blue_right_view.png in Resources */,
+				765299C318B072E8000F3347 /* SettingsLayer.jsx in Resources */,
 				7628CDDE1892D9B90085CE94 /* index.html in Resources */,
 				BF14657F189BE73D0084E701 /* dianru_title_1.jpg in Resources */,
 				76B95DD718A7F0E600AF26C5 /* sound.png in Resources */,
@@ -1468,7 +1484,7 @@
 					"${SRCROOT}/Slot/adsdk/MiddiSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
-					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk/DomobAdSDK",
+					"${SRCROOT}/Slot/adsdk/DomobAdSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1505,7 +1521,7 @@
 					"${SRCROOT}/Slot/adsdk/MiddiSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
-					"/Users/qiuyonggang/dev/ios-mine/slot/Slot/adsdk/DomobAdSDK",
+					"${SRCROOT}/Slot/adsdk/DomobAdSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
@@ -1558,7 +1574,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,

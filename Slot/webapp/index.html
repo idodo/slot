@@ -12,6 +12,7 @@
             <nav>
                 <span id="enter-slot" class="button">疯狂转转赚</span>
                 <span id="enter-earn" class="button">免费赚金币</span>
+                <span id="enter-share" class="button">分享赚金币</span>
                 <span id="enter-trade" class="button">金币兑换</span>
                 <span id="enter-settings" class="button">我的设置</span>
             </nav>
@@ -60,7 +61,43 @@
                     onclick="WebViewJavascriptBridge.callHandler('showAdwoOfferWall');">安沃平台</span>
                 <span id="yijifen" class="button">易积分平台</span>
             </fieldset>
-            <div id="earn-back-btn" class="button_small">返回</div>
+            <div id="earn-back-btn" class="button_small back-btn">返回</div>
+        </section>
+        <section id="shareLayer">
+            <div id="share-back-btn" class="button_small back-btn">返回</div>
+        </section>
+        <section id="settingsLayer" class="center">
+            <table>
+                <tr>
+                    <td style="width:60px;">QQ&nbsp;&nbsp;号</td>
+                    <td><input id="qq" type="text"></td>
+                </tr>
+                <tr>
+                    <td>支付宝</td>
+                    <td><input id="zhifubao" type="text" placeholder="注册邮箱"></td>
+                </tr>
+                <tr>
+                    <td>手&nbsp;&nbsp;&nbsp;&nbsp;机</td>
+                    <td><input id="phone" type="text"></td>
+                </tr>
+            </table>
+            <div id="settings-back-btn" class="button_small back-btn">返回</div>
+            <div id="settings-save-btn" class="button_small back-btn">保存</div>
+        </section>
+        <section id="tradeLayer" class="center">
+            <div class="panel">
+                <h1 class="score">金币 <span id="score3"></span></h1>
+                <ul id="trade-infos">
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
+                </ul>
+                <div id="trade-back-btn" class="button_small back-btn">返回</div>
+            </div>
         </section>
         <div id="sound"></div>
         <section id="layer-mask" class="layer-mask"></section>
@@ -81,6 +118,9 @@
     <script type="text/javascript" src="WelcomeLayer.jsx"></script>
     <script type="text/javascript" src="SlotLayer.jsx"></script>
     <script type="text/javascript" src="EarnLayer.jsx"></script>
+    <script type="text/javascript" src="SettingsLayer.jsx"></script>
+    <script type="text/javascript" src="tradeLayer.jsx"></script>
+    <script type="text/javascript" src="shareLayer.jsx"></script>
     <script type="text/javascript" src="Director.jsx"></script>
     <script type="text/javascript" src="main.jsx"></script>
 </body>
