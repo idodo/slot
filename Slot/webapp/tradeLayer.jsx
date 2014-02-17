@@ -9,6 +9,15 @@ var TradeLayer = View.derive({
             var li = tag === 'span' ? evt.target.parentNode : evt.target;
             NSLog('category ' + li.getAttribute('data-category'));
             NSLog('gold ' + li.getAttribute('data-gold'));
+            NSLog('idx' + li.getAttribute('data-type'));
+      var duihuanItem = li.getAttribute('data-type');
+            Player.duihuan(duihuanItem, function(){
+            self.lock = false;
+            Dialog.show('提示','申请兑换成功！');
+        }, function(code, msg){
+            self.lock = false;
+            Dialog.show('保存失败', msg);
+        });
         });
     },
     setTradeList : function(infos) {
@@ -17,7 +26,9 @@ var TradeLayer = View.derive({
             infos.forEach(function(item){
                 var attr = [
                     'data-category="' + item.category + '"',
-                    'data-gold="' + item.needGold + '"'
+                    'data-gold="' + item.needGold + '"',
+                    'data-type="' + item.idx + '"'
+
                 ].join(' ');
                 html += '<li ' + attr + '>';
                 html += '<span>' + item.comment + '</span>';
