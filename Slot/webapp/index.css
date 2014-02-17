@@ -438,7 +438,7 @@ input[type=text] {
     width: 100%;
 }
 
-#tradeLayer ul li {
+ul.list li {
     background: #fff;
     border-radius: 6px;
     font-size: 16px;
@@ -448,18 +448,24 @@ input[type=text] {
     padding: 5px 10px;
 }
 
-#tradeLayer ul li:active {
+ul.list li:active {
     background: #ccc;
 }
 
-#tradeLayer ul li span {
+ul.list li span {
     display: inline-block;
 }
-#tradeLayer ul li span:first-child {
+ul.list li span:first-child {
     font-weight: bold;
 }
-#tradeLayer ul li span:last-child {
+ul.list li span:last-child {
     float: right;
+    font-size: 14px;
+}
+
+
+#shareLayer ul {
+    width: 280px;
 }
 
 @-webkit-keyframes glow {

@@ -20,8 +20,9 @@
 		764879FA189AC8070050CB62 /* bingo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 764879F9189AC8070050CB62 /* bingo.gif */; };
 		765299C318B072E8000F3347 /* SettingsLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299C218B072E8000F3347 /* SettingsLayer.jsx */; };
 		765299C518B07B0D000F3347 /* pure-min.css in Resources */ = {isa = PBXBuildFile; fileRef = 765299C418B07B0D000F3347 /* pure-min.css */; };
-		765299C818B09298000F3347 /* shareLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299C618B09298000F3347 /* shareLayer.jsx */; };
-		765299C918B09298000F3347 /* tradeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299C718B09298000F3347 /* tradeLayer.jsx */; };
+		765299CD18B10985000F3347 /* ShareLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299CA18B10985000F3347 /* ShareLayer.jsx */; };
+		765299CE18B10985000F3347 /* TradeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299CB18B10985000F3347 /* TradeLayer.jsx */; };
+		765299CF18B10985000F3347 /* WeixinLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299CC18B10985000F3347 /* WeixinLayer.jsx */; };
 		7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7689D20D189574F00009C3A6 /* hammer.min.jsx */; };
 		7689D2141895802E0009C3A6 /* warms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D2131895802E0009C3A6 /* warms.png */; };
 		7689D216189586170009C3A6 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D215189586170009C3A6 /* line.png */; };
@@ -221,8 +222,9 @@
 		764879F9189AC8070050CB62 /* bingo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bingo.gif; sourceTree = "<group>"; };
 		765299C218B072E8000F3347 /* SettingsLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SettingsLayer.jsx; sourceTree = "<group>"; };
 		765299C418B07B0D000F3347 /* pure-min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "pure-min.css"; sourceTree = "<group>"; };
-		765299C618B09298000F3347 /* shareLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shareLayer.jsx; sourceTree = "<group>"; };
-		765299C718B09298000F3347 /* tradeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tradeLayer.jsx; sourceTree = "<group>"; };
+		765299CA18B10985000F3347 /* ShareLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShareLayer.jsx; sourceTree = "<group>"; };
+		765299CB18B10985000F3347 /* TradeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeLayer.jsx; sourceTree = "<group>"; };
+		765299CC18B10985000F3347 /* WeixinLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WeixinLayer.jsx; sourceTree = "<group>"; };
 		7689D20D189574F00009C3A6 /* hammer.min.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hammer.min.jsx; sourceTree = "<group>"; };
 		7689D2131895802E0009C3A6 /* warms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warms.png; sourceTree = "<group>"; };
 		7689D215189586170009C3A6 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -526,8 +528,9 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
-				765299C618B09298000F3347 /* shareLayer.jsx */,
-				765299C718B09298000F3347 /* tradeLayer.jsx */,
+				765299CA18B10985000F3347 /* ShareLayer.jsx */,
+				765299CB18B10985000F3347 /* TradeLayer.jsx */,
+				765299CC18B10985000F3347 /* WeixinLayer.jsx */,
 				765299C418B07B0D000F3347 /* pure-min.css */,
 				765299C218B072E8000F3347 /* SettingsLayer.jsx */,
 				76B95DD618A7F0E600AF26C5 /* sound.png */,
@@ -1188,9 +1191,11 @@
 				768E03B218962157007A98D2 /* SlotLayer.jsx in Resources */,
 				76F20904189280D9000BE84C /* WebViewJavascriptBridge.js.txt in Resources */,
 				BF146596189BE73D0084E701 /* dianru_orange_left_view.png in Resources */,
+				765299CE18B10985000F3347 /* TradeLayer.jsx in Resources */,
 				76B1C1E21897695C0042C7F6 /* btn.png in Resources */,
 				BF14659C189BE73D0084E701 /* dianru_purple_dianru_info.png in Resources */,
 				BF1465A5189BE73D0084E701 /* dianru_red_all_cell11.png in Resources */,
+				765299CD18B10985000F3347 /* ShareLayer.jsx in Resources */,
 				BF1465A3189BE73D0084E701 /* dianru_purple_right_view.png in Resources */,
 				BF1465AB189BE73D0084E701 /* dianru_red_dianru_triangle.png in Resources */,
 				BF1465AE189BE73D0084E701 /* dianru_red_right_cell.png in Resources */,
@@ -1201,7 +1206,6 @@
 				BF146571189BE73D0084E701 /* dianru_background.png in Resources */,
 				7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */,
 				BF146582189BE73D0084E701 /* dianru_yuanjiao_horizontal.png in Resources */,
-				765299C818B09298000F3347 /* shareLayer.jsx in Resources */,
 				76B1C1E0189768380042C7F6 /* WelcomeLayer.jsx in Resources */,
 				BF1465A6189BE73D0084E701 /* dianru_red_dianru_bottom.png in Resources */,
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
@@ -1248,13 +1252,13 @@
 				BF1465A4189BE73D0084E701 /* dianru_red_all_cell.png in Resources */,
 				BF14658F189BE73D0084E701 /* dianru_orange_dianru_bottom.png in Resources */,
 				BF146572189BE73D0084E701 /* dianru_banner.png in Resources */,
-				765299C918B09298000F3347 /* tradeLayer.jsx in Resources */,
 				76096D901894E04B006E6041 /* slot.png in Resources */,
 				BF14659A189BE73D0084E701 /* dianru_purple_dianru_bottom.png in Resources */,
 				BF14656B189BE73D0084E701 /* dianru_blue_left_cell.png in Resources */,
 				BF1465A2189BE73D0084E701 /* dianru_purple_right_cell.png in Resources */,
 				764879F4189A25310050CB62 /* bg.mp3 in Resources */,
 				BFEB001C18A8D1CC00E18677 /* DomobAdSDKBundle.bundle in Resources */,
+				765299CF18B10985000F3347 /* WeixinLayer.jsx in Resources */,
 				BF146586189BE73D0084E701 /* dianru_green_dianru_info.png in Resources */,
 				BF146570189BE73D0084E701 /* dianru_back_btn.png in Resources */,
 				BF146590189BE73D0084E701 /* dianru_orange_dianru_download.png in Resources */,
