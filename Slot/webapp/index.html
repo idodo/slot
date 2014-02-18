@@ -75,10 +75,10 @@
         </section>
         <section id="weixinLayer" class="center">
             <ul class="list">
-                <li><span>分享应用到朋友圈</span><span>送3金币</span></li>
-                <li><span>分享收入到朋友圈</span><span>送3金币</span></li>
-                <li><span>分享收入给微信朋友</span><span>送3金币</span></li>
-                <li><span>分享应用给微信朋友</span><span>送3金币</span></li>
+                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareAppCircle');">分享应用到朋友圈</span><span>送3金币</span></li>
+                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoneyCircle');">分享收入到朋友圈</span><span>送3金币</span></li>
+                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoney');">分享收入给微信朋友</span><span>送3金币</span></li>
+                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareApp');">分享应用给微信朋友</span><span>送3金币</span></li>
             </ul>
             <div id="weixin-back-btn" class="button_small back-btn">返回</div>
         </section>

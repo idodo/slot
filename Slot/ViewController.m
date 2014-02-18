@@ -22,6 +22,7 @@
 #import "YouMiPointsManager.h"
 #import "YouMiWall.h"
 #import "SvUDIDTools.h"
+#import "AdUtil.h"
 @interface ViewController ()
 
 
@@ -106,6 +107,22 @@
         [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
             [self consumeEarnGold];
             
+        }];
+        
+        [_bridge registerHandler:@"weixinShareMoney" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [self weixinShareMoney];
+        }];
+        
+        [_bridge registerHandler:@"weixinShareAppCircle" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [self weixinShareAppCircle];
+        }];
+        
+        [_bridge registerHandler:@"weixinShareApp" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [self weixinShareApp];
+        }];
+        
+        [_bridge registerHandler:@"weixinShareMoneyCircle" handler:^(id message, WVJBResponseCallback responseCallback) {
+            [self weixinShareMoneyCircle];
         }];
         
         NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
@@ -317,7 +334,9 @@
         int minMoneyRatio = [[ result valueForKey:@"minMoneyRatio"] intValue];
         [DataConfig getInstance].appWebLink = [result valueForKey:@"appWebLink"];
         [DataConfig getInstance].minMoneyRatio = minMoneyRatio;
-        
+        NSDictionary* player = [ result valueForKey:@"playerInfo"];
+        [Player getInstance].todayGold = [[ player valueForKey:@"todayEarnGold"] intValue];
+        [Player getInstance].gold = [[ player valueForKey:@"gold"] intValue];
         //init adwall
         if( [AdWall getInstance].inReview == 0){
             AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
@@ -361,8 +380,7 @@
         }
         
         
-        //init wei xin
-        [WXApi registerApp:@"wxf7f8f4e26c1f66d0"];
+       
         
         //苹果审核要求引用了广告sdk的应用需要显示出广告，为了过苹果审核，请求多盟的banner广告
         [self showDomobBannerAd];
@@ -751,6 +769,169 @@
 }
 #pragma mark end
 /********************domob banner ad callback end********************/
+/********************weixin callback begin***************************/
+#pragma mark wexin callback
+/**
+ *分享app到微信朋友圈
+ */
+- (void)weixinShareAppCircle{
+    NSDate* now = [NSDate date];
+    if( [AdUtil isSameDay:[Player getInstance].wxAppCircleSharedDate date2:now ]){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: nil
+                              message: @"亲，今天已经分享过了哦，分享些别的吧，要不明天继续!"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"这APP用零散时间能挣到不少钱哦";
+    message.description = @"把你的赚钱小密码告诉朋友们吧。";
+    [message setThumbImage:[UIImage imageNamed:@"icon@2x.png"]];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = @"http://www.anansimobile.com";
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    [Player getInstance].shareType = app_friend_circle;
+    [WXApi sendReq:req];
+
+}
+/**
+ *分享收入到微信朋友
+ */
+- (void)weixinShareMoney{
+    NSDate* now = [NSDate date];
+    if( [AdUtil isSameDay:[Player getInstance].wxMoneySharedDate date2:now ]){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: nil
+                              message: @"亲，今天已经分享过了哦，分享些别的吧，要不明天继续!"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    float money = [Player getInstance].todayGold / [DataConfig getInstance].minMoneyRatio;
+    if(money <= 1){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: nil
+                              message: @"分享的收入至少大于1元，再努力赚点吧!"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = [NSString stringWithFormat:@"今天我通过这个App赚到%d金币，可以兑换%f元。", [Player getInstance].todayGold, money] ;
+    message.description = @"把你的赚钱小密码告诉朋友们吧。";
+    [message setThumbImage:[UIImage imageNamed:@"icon@2x.png"]];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = [DataConfig getInstance].appWebLink;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneSession;
+    [Player getInstance].shareType = money_friend;
+    [WXApi sendReq:req];
+}
+/**
+ *分享收入到朋友圈
+ */
+- (void)weixinShareMoneyCircle{
+    
+    NSDate* now = [NSDate date];
+    if( [AdUtil isSameDay:[Player getInstance].wxMoneyCircleSharedDate date2:now ]){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: nil
+                              message: @"亲，今天已经分享过了哦，分享些别的吧，要不明天继续!"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    float money = [Player getInstance].todayGold / [DataConfig getInstance].minMoneyRatio;
+    if(money <= 1){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: nil
+                              message: @"分享的收入至少大于1元，再努力赚点吧!"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = [NSString stringWithFormat:@"今天我通过这个App赚到%d金币，可以兑换%f元。", [Player getInstance].todayGold, money] ;
+    message.description = @"把你的赚钱小秘密告诉朋友们吧。";
+    [message setThumbImage:[UIImage imageNamed:@"icon@2x.png"]];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = [DataConfig getInstance].appWebLink;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    [Player getInstance].shareType = money_friend_circle;
+    [WXApi sendReq:req];
+}
+/**
+ *维修分享app到朋友
+ */
+-(void) weixinShareApp{
+    NSDate* now = [NSDate date];
+    if( [AdUtil isSameDay:[Player getInstance].wxAppSharedDate date2:now ]){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: nil
+                              message: @"亲，今天已经分享过了哦，分享些别的吧，要不明天继续!"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"这APP用零散时间能挣到不少钱哦";
+    message.description = @"把你的赚钱小秘密告诉朋友们吧。";
+    [message setThumbImage:[UIImage imageNamed:@"icon@2x.png"]];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = @"http://www.anansimobile.com";
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneSession;
+    [Player getInstance].shareType = app_friend;
+    [WXApi sendReq:req];
+
+}
+
+
+
+/********************weixin callback end***************************/
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {

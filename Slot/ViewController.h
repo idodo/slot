@@ -25,6 +25,7 @@
 #import "MiidiAdWall.h"
 #import "AdwoOfferWall.h"
 #import "DMAdView.h"
+#import "WXApi.h"
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 static NSString* const AdWoErrCodeList[] = {
     @"successful",
@@ -51,11 +52,13 @@ static NSString* const AdWoErrCodeList[] = {
     @"points consumption is not available",
     @"points consumption is negative value",
 };
-@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate,MiidiAdWallShowAppOffersDelegate
-, MiidiAdWallAwardPointsDelegate
-, MiidiAdWallSpendPointsDelegate
-, MiidiAdWallGetPointsDelegate, MiidiAdWallRequestToggleDelegate,
-DMAdViewDelegate> {
+@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate,MiidiAdWallShowAppOffersDelegate,
+ MiidiAdWallAwardPointsDelegate,
+ MiidiAdWallSpendPointsDelegate,
+ MiidiAdWallGetPointsDelegate,
+MiidiAdWallRequestToggleDelegate,
+DMAdViewDelegate,
+WXApiDelegate> {
     DMAdView *_dmAdView;
     CGSize _adSize;
     CGFloat _adX, _adY;
