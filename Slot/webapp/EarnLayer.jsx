@@ -3,6 +3,7 @@ var EarnLayer = View.derive({
         Hammer($('earn-back-btn')).on('tap', function(){
             Director.show('welcome', -1);
         });
+    
     },
     setTradeList : function(data, status){
         clearTimeout(this.listTimer);
@@ -25,7 +26,7 @@ var EarnLayer = View.derive({
         data.forEach(function(record){
             html += '<li>' +
                 record.user +
-                '在' + record.platform + '平台获得<span>' +
+                '' + record.platform + '获得<span>' +
                 record.earn + '</span>金币(' +
                 record.time + '前)</li>';
         });

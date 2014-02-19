@@ -70,9 +70,12 @@ WXApiDelegate> {
 @property (nonatomic, strong)immobView *limeiAdWall;
 @property(strong,nonatomic) DMOfferWallManager *domobAdWallManager;
 @property(strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
-@property (nonatomic)int spendGold;
+@property (nonatomic)int dianruSpendGold;
+@property (nonatomic)int domobSpendGold;
+@property (nonatomic)int limeiSpendGold;
 @property (strong,nonatomic)MBProgressHUD *hud;
 @property(strong, nonatomic)NSMutableArray *moveFlags;
+-(void)consumeEarnGold;
 
 
 @end

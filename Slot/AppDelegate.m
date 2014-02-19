@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "HttpClient.h"
 #import "Player.h"
+//#import "ViewController.h"
+#import "AdWall.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -39,6 +41,10 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    ViewController* viewController = (ViewController*)self.window.rootViewController;
+//    if( [AdWall getInstance].inReview == 0 && [[AdWall getInstance].adInfoArray count] > 0 ){
+//        [viewController consumeEarnGold];
+//    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -61,7 +67,7 @@
 
 -(void) onReq:(BaseReq*)req
 {
-    
+   
 }
 
 -(void) onResp:(BaseResp*)resp

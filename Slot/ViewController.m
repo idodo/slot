@@ -420,7 +420,7 @@
 - (void) immobViewQueryScore:(NSUInteger)score WithMessage:(NSString *)message{
     NSLog(@"[limei] query gold result:%@, score:%d", message, score);
     if( [message isEqualToString:@""] && score > 0 ){
-        _spendGold = score;
+        _limeiSpendGold = score;
         [self.limeiAdWall immobViewReduceScore:score WithAdUnitID:[DataConfig getLimeiCustomerId] WithAccountID:[Player getInstance].udid];
         
         
@@ -436,8 +436,8 @@
 - (void) immobViewReduceScore:(BOOL)status WithMessage:(NSString *)message{
     
     if(status){
-        NSLog(@"[limei] request to consume gold:%d", _spendGold );
-        [self onConsumeGold:_spendGold adtype:limei];
+        NSLog(@"[limei] request to consume gold:%d", _limeiSpendGold );
+        [self onConsumeGold:_limeiSpendGold adtype:limei];
     }else{
         NSLog(@"[limei] failed to request to consume gold,%@", message );
         [self onConsumeGold:0 adtype:limei];
@@ -516,9 +516,9 @@
 - (void)offerWallDidFinishCheckPointWithTotalPoint:(NSInteger)totalPoint
                              andTotalConsumedPoint:(NSInteger)consumed {
     NSLog(@"[domob]  request consume gold: %d", totalPoint - consumed );
-    int leftPoint = totalPoint-consumed;
-    if( leftPoint > 0 ){
-        [_domobAdWallManager requestOnlineConsumeWithPoint:leftPoint];
+    _domobSpendGold = totalPoint-consumed;
+    if( _domobSpendGold > 0 ){
+        [_domobAdWallManager requestOnlineConsumeWithPoint:_domobSpendGold];
     }else{
         [self onConsumeGold:0 adtype:domob];
     }
@@ -541,7 +541,7 @@
     NSLog(@"offerWallDidFinishConsumePoint");
     switch (statusCode) {
         case DMOfferWallConsumeStatusCodeSuccess:
-            [self onConsumeGold:consumed adtype:domob];
+            [self onConsumeGold: _domobSpendGold adtype:domob];
             break;
         case DMOfferWallConsumeStatusCodeInsufficient:
             [self onConsumeGold:0 adtype:domob];
@@ -567,10 +567,10 @@
  */
 -(void)didReceiveSpendScoreResult:(BOOL)isSuccess{
     if(isSuccess == TRUE){
-        NSLog(@"[dianru] consume point success, request consume gold: %d", _spendGold );
-        [self onConsumeGold:_spendGold adtype:dianru];
+        NSLog(@"[dianru] consume point success, request consume gold: %d", _dianruSpendGold );
+        [self onConsumeGold:_dianruSpendGold adtype:dianru];
     }else{
-        NSLog(@"[dianru] consume point failed, request consume gold: %d", _spendGold );
+        NSLog(@"[dianru] consume point failed, request consume gold: %d", _dianruSpendGold );
         [self onConsumeGold:0 adtype:dianru];
     }
 }
@@ -581,7 +581,7 @@
 -(void)didReceiveGetScoreResult:(int)point{
     NSLog(@"[dianru] query point , result %d", point );
     if( point > 0 ){
-        _spendGold = point;
+        _dianruSpendGold = point;
         [DianRuAdWall spendPoint: point];
         
     }else{
@@ -793,7 +793,7 @@
     [message setThumbImage:[UIImage imageNamed:@"icon@2x.png"]];
     
     WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = @"http://www.anansimobile.com";
+    ext.webpageUrl = [DataConfig getInstance].appWebLink;
     
     message.mediaObject = ext;
     
@@ -971,7 +971,8 @@
                                        if(moveNum == adNum ){
                                            if( self.hud != NULL){
                                                [self.hud hide:TRUE];
-                                               //self.hud = nil;
+                                               [_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
+
                                            }
                                            
                                        }
@@ -992,6 +993,7 @@
         if(moveNum == adNum ){
             if( self.hud != NULL){
                 [self.hud hide:TRUE];
+                [_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
                 //self.hud = NULL;
             }
         }

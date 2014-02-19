@@ -44,7 +44,6 @@
 		76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B82E189BC3060052FB4D /* CoreMedia.framework */; };
 		76C5B831189BC3120052FB4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B830189BC3120052FB4D /* Security.framework */; };
 		76C5B833189BC31A0052FB4D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B832189BC31A0052FB4D /* AVFoundation.framework */; };
-		76C5B835189BC3250052FB4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B834189BC3250052FB4D /* StoreKit.framework */; };
 		76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B836189BC32F0052FB4D /* CoreLocation.framework */; };
 		76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B838189BC3390052FB4D /* SystemConfiguration.framework */; };
 		76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83A189BC3410052FB4D /* QuartzCore.framework */; };
@@ -173,7 +172,6 @@
 		BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146637189BF6C30084E701 /* EventKit.framework */; };
 		BF14663A189BF6C30084E701 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146638189BF6C30084E701 /* EventKitUI.framework */; };
 		BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14663B189BF6FC0084E701 /* Social.framework */; };
-		BF14663E189BF71B0084E701 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14663D189BF71B0084E701 /* PassKit.framework */; };
 		BF146640189BF73E0084E701 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14663F189BF73E0084E701 /* libz.dylib */; };
 		BF146642189BF74B0084E701 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146641189BF74B0084E701 /* CoreText.framework */; };
 		BF146644189BF75D0084E701 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146643189BF75D0084E701 /* MediaPlayer.framework */; };
@@ -181,6 +179,8 @@
 		BF146648189BF7850084E701 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146647189BF7850084E701 /* CFNetwork.framework */; };
 		BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146649189BFFC10084E701 /* AudioToolbox.framework */; };
 		BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14664B189BFFE60084E701 /* CoreTelephony.framework */; };
+		BF1D11D218B497B0002D9E12 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D11D118B497B0002D9E12 /* PassKit.framework */; };
+		BF1D11D418B4D9AF002D9E12 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D11D318B4D9AF002D9E12 /* StoreKit.framework */; };
 		BFD8995F18A3C5EC0078016C /* AdUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995618A3C5EC0078016C /* AdUtil.m */; };
 		BFD8996018A3C5EC0078016C /* AdWall.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995818A3C5EC0078016C /* AdWall.m */; };
 		BFD8996118A3C5EC0078016C /* DataConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995A18A3C5EC0078016C /* DataConfig.m */; };
@@ -250,7 +250,6 @@
 		76C5B82E189BC3060052FB4D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		76C5B830189BC3120052FB4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		76C5B832189BC31A0052FB4D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		76C5B834189BC3250052FB4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		76C5B836189BC32F0052FB4D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		76C5B838189BC3390052FB4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		76C5B83A189BC3410052FB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -418,7 +417,6 @@
 		BF146637189BF6C30084E701 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		BF146638189BF6C30084E701 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		BF14663B189BF6FC0084E701 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		BF14663D189BF71B0084E701 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		BF14663F189BF73E0084E701 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF146641189BF74B0084E701 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		BF146643189BF75D0084E701 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -426,6 +424,8 @@
 		BF146647189BF7850084E701 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BF146649189BFFC10084E701 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BF14664B189BFFE60084E701 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BF1D11D118B497B0002D9E12 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		BF1D11D318B4D9AF002D9E12 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BFD8995518A3C5EC0078016C /* AdUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdUtil.h; sourceTree = "<group>"; };
 		BFD8995618A3C5EC0078016C /* AdUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdUtil.m; sourceTree = "<group>"; };
 		BFD8995718A3C5EC0078016C /* AdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWall.h; sourceTree = "<group>"; };
@@ -484,20 +484,20 @@
 				BF146644189BF75D0084E701 /* MediaPlayer.framework in Frameworks */,
 				BF146642189BF74B0084E701 /* CoreText.framework in Frameworks */,
 				BF146640189BF73E0084E701 /* libz.dylib in Frameworks */,
+				BF1D11D218B497B0002D9E12 /* PassKit.framework in Frameworks */,
 				76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */,
-				BF14663E189BF71B0084E701 /* PassKit.framework in Frameworks */,
 				76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */,
 				BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */,
 				BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */,
 				BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */,
 				BF14663A189BF6C30084E701 /* EventKitUI.framework in Frameworks */,
+				BF1D11D418B4D9AF002D9E12 /* StoreKit.framework in Frameworks */,
 				BF146634189BF6A80084E701 /* MessageUI.framework in Frameworks */,
 				76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */,
 				BF146632189BEE560084E701 /* libWeChatSDK.a in Frameworks */,
 				76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */,
 				76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */,
 				BF1465B1189BE73D0084E701 /* libYouMi.a in Frameworks */,
-				76C5B835189BC3250052FB4D /* StoreKit.framework in Frameworks */,
 				BF1465B0189BE73D0084E701 /* libDianRuAdWall.a in Frameworks */,
 				76C5B833189BC31A0052FB4D /* AVFoundation.framework in Frameworks */,
 				76C5B831189BC3120052FB4D /* Security.framework in Frameworks */,
@@ -629,6 +629,8 @@
 		76F208CA1892809B000BE84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF1D11D318B4D9AF002D9E12 /* StoreKit.framework */,
+				BF1D11D118B497B0002D9E12 /* PassKit.framework */,
 				BFEEAE1418A759FD0069B250 /* libz.1.2.5.dylib */,
 				76ED263818A6974700AFA4FD /* ImageIO.framework */,
 				BF14664B189BFFE60084E701 /* CoreTelephony.framework */,
@@ -638,7 +640,6 @@
 				BF146643189BF75D0084E701 /* MediaPlayer.framework */,
 				BF146641189BF74B0084E701 /* CoreText.framework */,
 				BF14663F189BF73E0084E701 /* libz.dylib */,
-				BF14663D189BF71B0084E701 /* PassKit.framework */,
 				BF14663B189BF6FC0084E701 /* Social.framework */,
 				BF146637189BF6C30084E701 /* EventKit.framework */,
 				BF146638189BF6C30084E701 /* EventKitUI.framework */,
@@ -648,7 +649,6 @@
 				76C5B83A189BC3410052FB4D /* QuartzCore.framework */,
 				76C5B838189BC3390052FB4D /* SystemConfiguration.framework */,
 				76C5B836189BC32F0052FB4D /* CoreLocation.framework */,
-				76C5B834189BC3250052FB4D /* StoreKit.framework */,
 				76C5B832189BC31A0052FB4D /* AVFoundation.framework */,
 				76C5B830189BC3120052FB4D /* Security.framework */,
 				76C5B82E189BC3060052FB4D /* CoreMedia.framework */,
@@ -1138,8 +1138,15 @@
 				ORGANIZATIONNAME = fouber;
 				TargetAttributes = {
 					76F208C71892809B000BE84C = {
+						DevelopmentTeam = RS3RQZ85P3;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Passbook = {
 								enabled = 1;
 							};
 						};
@@ -1465,7 +1472,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yonggang qiu (VY94G827V3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Questmatic Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/Slot/adsdk",
@@ -1491,7 +1499,7 @@
 					"${SRCROOT}/Slot/adsdk/DomobAdSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
+				PROVISIONING_PROFILE = "193D7398-529D-4CE4-A7B5-7B6D32E60168";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1502,7 +1510,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yonggang qiu (VY94G827V3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Questmatic Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Questmatic Inc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/Slot/adsdk",
@@ -1528,7 +1537,7 @@
 					"${SRCROOT}/Slot/adsdk/DomobAdSDK",
 				);
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "D3760E85-55CD-4135-A116-39A9AEAC49B6";
+				PROVISIONING_PROFILE = "193D7398-529D-4CE4-A7B5-7B6D32E60168";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
