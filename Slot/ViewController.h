@@ -24,8 +24,12 @@
 #import "MiidiAdWallRequestToggleDelegate.h"
 #import "MiidiAdWall.h"
 #import "AdwoOfferWall.h"
-#import "DMAdView.h"
+#import "GADBannerViewDelegate.h"
+//#import "DMAdView.h"
 #import "WXApi.h"
+@class GADBannerView;
+@class GADRequest;
+
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 static NSString* const AdWoErrCodeList[] = {
     @"successful",
@@ -57,11 +61,12 @@ static NSString* const AdWoErrCodeList[] = {
  MiidiAdWallSpendPointsDelegate,
  MiidiAdWallGetPointsDelegate,
 MiidiAdWallRequestToggleDelegate,
-DMAdViewDelegate,
+GADBannerViewDelegate,
+//DMAdViewDelegate,
 WXApiDelegate> {
-    DMAdView *_dmAdView;
-    CGSize _adSize;
-    CGFloat _adX, _adY;
+    //DMAdView *_dmAdView;
+//    CGSize _adSize;
+//    CGFloat _adX, _adY;
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
@@ -76,6 +81,8 @@ WXApiDelegate> {
 @property (strong,nonatomic)MBProgressHUD *hud;
 @property(strong, nonatomic)NSMutableArray *moveFlags;
 -(void)consumeEarnGold;
+@property(nonatomic, strong) GADBannerView *adBanner;
 
+- (GADRequest *)request;
 
 @end
