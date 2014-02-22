@@ -1,10 +1,4 @@
 var EarnLayer = View.derive({
-    init : function(){
-        Hammer($('earn-back-btn')).on('tap', function(){
-            Director.show('welcome', -1);
-        });
-    
-    },
     setTradeList : function(data, status){
         clearTimeout(this.listTimer);
         clearTimeout(this.listTimer2);

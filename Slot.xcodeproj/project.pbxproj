@@ -48,6 +48,7 @@
 		76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B838189BC3390052FB4D /* SystemConfiguration.framework */; };
 		76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83A189BC3410052FB4D /* QuartzCore.framework */; };
 		76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83C189BC3DD0052FB4D /* AdSupport.framework */; };
+		76E2BA6318B939FF00C7AC7A /* qrcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76E2BA6218B939FF00C7AC7A /* qrcode.jpg */; };
 		76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263618A6969C00AFA4FD /* Escore.framework */; };
 		76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263818A6974700AFA4FD /* ImageIO.framework */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
@@ -252,6 +253,7 @@
 		76C5B838189BC3390052FB4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		76C5B83A189BC3410052FB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		76C5B83C189BC3DD0052FB4D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		76E2BA6218B939FF00C7AC7A /* qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcode.jpg; sourceTree = "<group>"; };
 		76ED263618A6969C00AFA4FD /* Escore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Escore.framework; sourceTree = "<group>"; };
 		76ED263818A6974700AFA4FD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -526,6 +528,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76E2BA6218B939FF00C7AC7A /* qrcode.jpg */,
 				765299CA18B10985000F3347 /* ShareLayer.jsx */,
 				765299CB18B10985000F3347 /* TradeLayer.jsx */,
 				765299CC18B10985000F3347 /* WeixinLayer.jsx */,
@@ -1266,6 +1269,7 @@
 				BF14656C189BE73D0084E701 /* dianru_blue_left_view.png in Resources */,
 				BF146591189BE73D0084E701 /* dianru_orange_dianru_info.png in Resources */,
 				76B1C1E4189772400042C7F6 /* Director.jsx in Resources */,
+				76E2BA6318B939FF00C7AC7A /* qrcode.jpg in Resources */,
 				BF14656D189BE73D0084E701 /* dianru_blue_right_cell.png in Resources */,
 				764879F6189A28B90050CB62 /* slot.mp3 in Resources */,
 				76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */,

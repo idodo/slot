@@ -8,6 +8,7 @@
 html, body, #gameContainer, section {
     width: 100%;
     height: 100%;
+    min-height: 480px;
     overflow: hidden;
     color: #2982ba;
     position: absolute;
@@ -283,7 +284,7 @@ section {
 }
 
 #earnLayer .panel {
-    width: 282px;
+    width: 310px;
     height: 137px;
     background: url(panel.png) no-repeat 0 0;
     background-size: 100% 100%;
@@ -292,11 +293,11 @@ section {
 }
 
 .trade-panel {
-    width: 248px;
+    width: 272px;
     height: 93px;
     position: absolute;
     top: 34px;
-    left: 15px;
+    left: 19px;
     overflow: hidden;
 }
 .trade-panel li {
@@ -392,25 +393,30 @@ table {
     font-size: 18px;
     line-height: 22px;
     color: #333;
-    text-shadow: 0 1px 1px #fff;
+    text-shadow: 0 1px 1px #ccc;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 #settingsLayer table td {
-    padding: 10px 5px;
+    padding: 7px 10px;
     text-align:justify;
     text-justify:inter-ideograph;
 }
 
 #settingsLayer table input[type=text] {
-    width: 100%;
+    width: 180px;
 }
 
 input[type=text] {
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #333;
-    font-size: 18px;
-    line-height: 22px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #4c98d4;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 3px 5px;
+    box-shadow: none;
 }
 
 ::-webkit-input-placeholder { color:#369; }
@@ -438,12 +444,78 @@ input[type=text] {
     width: 100%;
 }
 
+.panel2 {
+    width: 250px;
+    min-height: 280px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -140px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.pure-button {
+    display: inline-block;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-family: inherit;
+    font-size: 100%;
+    padding: .5em 1em;
+    color: #444;
+    color: rgba(0,0,0,.8);
+    text-decoration: none;
+
+    /*background: rgb(28, 184, 65);*/
+    background: rgb(66, 184, 221);
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+
+    font-weight: bold;
+}
+
+.panel2 p {
+    padding: 5px 0;
+    text-indent: 2em;
+}
+
+.panel2 h1 {
+    text-align: center;
+    padding: 0 0 15px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+}
+
+.panel2 h2 {
+    text-align: center;
+    padding: 15px 0 10px;
+    font-size: 16px;
+}
+
+ul.list {
+    width: 280px;
+}
 ul.list li {
     background: #fff;
     border-radius: 6px;
     font-size: 16px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.5);
     padding: 5px 10px;
 }
@@ -461,11 +533,6 @@ ul.list li span:first-child {
 ul.list li span:last-child {
     float: right;
     font-size: 14px;
-}
-
-
-#shareLayer ul {
-    width: 280px;
 }
 
 @-webkit-keyframes glow {

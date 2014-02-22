@@ -1,9 +1,6 @@
 var SettingsLayer = View.derive({
     lock : false,
     init : function(){
-        Hammer($('settings-back-btn')).on('tap', function(){
-            Director.show('welcome', -1);
-        });
         Hammer($('settings-save-btn')).on('tap', this.onSaveUserInfo.bind(this));
     },
     setUserInfo : function(data){

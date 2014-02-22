@@ -61,7 +61,7 @@
                     onclick="WebViewJavascriptBridge.callHandler('showAdwoOfferWall');">安沃平台</span>
                 <span id="yijifen" class="button">易积分平台</span>
             </fieldset>
-            <div id="earn-back-btn" class="button_small back-btn">返回</div>
+            <div class="button_small back-btn">返回</div>
         </section>
         <section id="shareLayer" class="center">
             <ul class="list">
@@ -71,7 +71,52 @@
                 <li id="install"><span>帮朋友快速安装</span><span>得推荐金币</span></li>
                 <li id="weixin"><span>分享到微信</span><span>每天送12金币</span></li>
             </ul>
-            <div id="share-back-btn" class="button_small back-btn">返回</div>    
+            <div class="button_small back-btn">返回</div>
+        </section>
+        <section id="tuijianLayer">
+            <div class="panel2">
+                <h1>领取奖励金币</h1>
+                <div style="padding-bottom: 10px;">对方绑定的QQ&nbsp;&nbsp;<input type="text" size="14"/></div>
+                <div>操作：输入对方的绑定QQ号，提交通过后就能获取金币！</div>
+                <div>
+                    <h2>兑换金币规则</h2>
+                    <p>1. 初次送30金币，兑换次数越多送的越多，具体规则是，每次比上次增加5金币，比如第二次可兑换35，直到50金币封顶，领取次数无限制！</p>
+                    <p>2. 您自己的设备也必须是绑定了QQ号的，防止作弊。</p>
+                </div>
+            </div>
+            <div data-show="share" class="button_small back-btn">返回</div>
+        </section>
+        <section id="guanzhuLayer">
+            <div class="panel2">
+                <h1>微信关注奖励</h1>
+                <div>
+                    <p>为了提供更好的后续服务，我们特地开通了微信公共账号：&lt;优惠卷金币兑换信息中心&gt;(微信号：jinbiduihuan)。</p>
+                    <p>该账号目的是向所有优惠劵系类应用使用金币兑换服务的用户提供：金币任务信息，发布各类奖励/惩罚信息。此外收集用户反馈，手机用户活动反馈，接受各种意见！</p>
+                    <p>现在处于推广期，每位关注官方微信账号的用户将会收到30金币的奖励！</p>
+                    <p>操作方法是：微信"添加朋友"→"查找公共账号"→"搜索jinbiduihuan"→"添加关注"。最后在对话窗口发送您的绑定QQ号，客服会往您的设备上赠送30金币！</p>
+                </div>
+            </div>
+            <div data-show="share" class="button_small back-btn">返回</div>
+        </section>
+        <section id="5starLayer">
+            <div class="panel2">
+                <h1>评5星送积分</h1>
+                <div>
+                    <p>去AppStore评完5星可以把绑定QQ号发送给微信公共账号，并且说明是评分奖励，客服根据评价送出一定金额的奖励！（如果是ios7用户，会稍微繁琐一些，请在“评论”栏下方点击“撰写评论”按钮）</p>
+                    <div style="text-align: center"><span class="pure-button">去AppStore评分</span></div>
+                </div>
+            </div>
+            <div data-show="share" class="button_small back-btn">返回</div>
+        </section>
+        <section id="installLayer">
+            <div class="panel2" style="top:60px;">
+                <h1>快速安装程序</h1>
+                <p>推荐给朋友安装后，记得要到对方的绑定QQ号，每次最多可领取50金币哦，兑换次数无线！让对方打开微信，用扫一扫对准下面的二维码图片，就可以安装了！</p>
+                <div style="text-align: center;padding-top: 5px">
+                    <img src="qrcode.jpg" width="215px" height="215"/>
+                </div>
+            </div>
+            <div data-show="share" class="button_small back-btn">返回</div>
         </section>
         <section id="weixinLayer" class="center">
             <ul class="list">
@@ -80,12 +125,12 @@
                 <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoney');">分享收入给微信朋友</span><span>送3金币</span></li>
                 <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareApp');">分享应用给微信朋友</span><span>送3金币</span></li>
             </ul>
-            <div id="weixin-back-btn" class="button_small back-btn">返回</div>
+            <div data-show="share" class="button_small back-btn">返回</div>
         </section>
         <section id="settingsLayer" class="center">
             <table>
                 <tr>
-                    <td style="width:60px;">QQ&nbsp;&nbsp;号</td>
+                    <td style="width:60px;">Q&nbsp;Q&nbsp;号</td>
                     <td><input id="qq" type="text"></td>
                 </tr>
                 <tr>
@@ -112,7 +157,7 @@
                     <li><span>兑换支付宝10元</span><span>1070金币</span></li>
                     <li><span>兑换支付宝10元</span><span>1070金币</span></li>
                 </ul>
-                <div id="trade-back-btn" class="button_small back-btn">返回</div>
+                <div class="button_small back-btn">返回</div>
             </div>
         </section>
         <div id="sound"></div>
