@@ -255,6 +255,35 @@
                 }
             });
         },
+        duihuanHistoryUrl : REMOTE_SERVER + '/player/getduihuanhistory',
+        duihuanHistory : function(success, error){
+            error = error || function (code, err) {
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url: this.duihuanHistoryUrl,
+                data: 'udid=' + udid,
+                type: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function (res) {
+                    try {
+                        NSLog('[tradeHistory] res:' + res);
+                        var data = JSON.parse(res);
+                        if (data.result == 0) {
+                            success(data.duihuanHistory);
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch (e) {
+                        error(-1, e.message, e);
+                    }
+                },
+                error: function (res) {
+                    error(-2, res);
+                }
+            });
+        },
         duihuanUrl: REMOTE_SERVER + '/player/duihuan',
         duihuan : function(duihuanItem, success, error) {
             error = error || function (code, err) {

@@ -1,5 +1,10 @@
 var TradeLayer = View.derive({
     init: function () {
+        Hammer($('history')).on('tap', function(){
+            Player.duihuanHistory(function(data){
+                Director.show('history').setHistoryList(data);
+            });
+        });
         Hammer($('trade-infos')).on('tap', function (evt) {
             var tag = evt.target.tagName.toLocaleLowerCase();
             if (tag === 'ul') return;

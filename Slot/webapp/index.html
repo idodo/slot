@@ -149,18 +149,18 @@
         </section>
         <section id="tradeLayer" class="center">
             <div class="panel">
-                <h1 class="score">金币 <span id="score3"></span></h1>
-                <ul id="trade-infos" class="list">
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                    <li><span>兑换支付宝10元</span><span>1070金币</span></li>
-                </ul>
-                <div class="button_small back-btn">返回</div>
+                <ul id="trade-infos" class="list"></ul>
             </div>
+            <h1 class="score">金币 <span id="score3"></span></h1>
+            <div id="history" class="button">兑换记录</div>
+            <div class="button_small back-btn">返回</div>
+        </section>
+        <section id="historyLayer" class="center">
+            <div class="panel2">
+                <h1>金币兑换记录</h1>
+                <ul id="history-list"></ul>
+            </div>
+            <div data-show="trade" class="button_small back-btn">返回</div>
         </section>
         <div id="sound"></div>
         <section id="layer-mask" class="layer-mask"></section>
@@ -183,6 +183,7 @@
     <script type="text/javascript" src="EarnLayer.jsx"></script>
     <script type="text/javascript" src="SettingsLayer.jsx"></script>
     <script type="text/javascript" src="TradeLayer.jsx"></script>
+    <script type="text/javascript" src="HistoryLayer.jsx"></script>
     <script type="text/javascript" src="ShareLayer.jsx"></script>
     <script type="text/javascript" src="WeixinLayer.jsx"></script>
     <script type="text/javascript" src="Director.jsx"></script>

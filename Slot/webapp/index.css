@@ -353,10 +353,16 @@ section {
     bottom: 20px;
 }
 
+#history {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
 #sound {
     position: absolute;
     right: 5px;
-    top: 55px;
+    top: 5px;
     width: 18px;
     height: 18px;
     background: url("sound.png") no-repeat 0 0;
@@ -390,6 +396,16 @@ table {
     margin:0;
     border-collapse:collapse;
     border-spacing:0;
+}
+
+.panel2 {
+    width: 250px;
+    min-height: 280px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    padding: 10px 15px;
+    font-size: 14px;
 }
 
 #settingsLayer table {
@@ -434,24 +450,50 @@ input[type=text] {
 }
 
 #tradeLayer h1.score {
-    font-size: 30px;
+    font-size: 25px;
     text-shadow: 0 0 4px rgba(0,0,0,0.7);
     left: 20px;
-    bottom: 20px;
+    bottom: 25px;
 }
 
 #tradeLayer ul {
     width: 100%;
 }
 
-.panel2 {
-    width: 250px;
-    min-height: 280px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
-    padding: 10px 15px;
-    font-size: 14px;
+#tradeLayer .button_small {
+    right: 120px;
+}
+
+#historyLayer .panel2 {
+    width: 270px;
+}
+
+#historyLayer ul {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#historyLayer ul li {
+    height: 20px;
+    line-height: 20px;
+}
+
+#historyLayer ul time {
+    display: inline-block;
+    color: #999;
+    width: 78px;
+}
+
+#historyLayer ul span {
+    display: inline-block;
+}
+
+#historyLayer ul span.comment {
+    padding-left: 5px;
+}
+
+#historyLayer ul span.status {
+    float: right;
 }
 
 .pure-button {
