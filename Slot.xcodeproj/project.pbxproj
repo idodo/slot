@@ -69,6 +69,7 @@
 		76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */; };
 		76F8E1B518B9A4B2000867CA /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E1B418B9A4B2000867CA /* logo.jpg */; };
 		76F8E1B718B9CD19000867CA /* HistoryLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E1B618B9CD19000867CA /* HistoryLayer.jsx */; };
+		76F8E1B918BA3955000867CA /* rate.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E1B818BA3955000867CA /* rate.png */; };
 		76F9714718A629A90050357E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F9714518A629A90050357E /* icon.png */; };
 		76F9714818A629A90050357E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F9714618A629A90050357E /* icon@2x.png */; };
 		BF146563189BE73D0084E701 /* immobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146502189BE73D0084E701 /* immobSDK.framework */; };
@@ -282,6 +283,7 @@
 		76F20903189280D9000BE84C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		76F8E1B418B9A4B2000867CA /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		76F8E1B618B9CD19000867CA /* HistoryLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HistoryLayer.jsx; sourceTree = "<group>"; };
+		76F8E1B818BA3955000867CA /* rate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate.png; sourceTree = "<group>"; };
 		76F9714518A629A90050357E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		76F9714618A629A90050357E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		BF146502189BE73D0084E701 /* immobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = immobSDK.framework; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76F8E1B818BA3955000867CA /* rate.png */,
 				76F8E1B618B9CD19000867CA /* HistoryLayer.jsx */,
 				76F8E1B418B9A4B2000867CA /* logo.jpg */,
 				76E2BA6218B939FF00C7AC7A /* qrcode.jpg */,
@@ -1254,6 +1257,7 @@
 				76B1C1DE18975E340042C7F6 /* Dialog.jsx in Resources */,
 				BF146587189BE73D0084E701 /* dianru_green_dianru_iphone_download.png in Resources */,
 				BF14657B189BE73D0084E701 /* dianru_msg.png in Resources */,
+				76F8E1B918BA3955000867CA /* rate.png in Resources */,
 				BF1465AC189BE73D0084E701 /* dianru_red_left_cell.png in Resources */,
 				BF14656F189BE73D0084E701 /* dianru_back.png in Resources */,
 				BF146589189BE73D0084E701 /* dianru_green_dianru_triangle.png in Resources */,

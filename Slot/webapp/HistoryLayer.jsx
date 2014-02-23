@@ -2,7 +2,6 @@ var HistoryLayer = View.derive({
     setHistoryList : function(data){
         var html = [];
         if(data && data.length){
-//            var n = 20; while(n--)
             data.forEach(function(item){
                 var li  = '<time>' + item.createdAt.replace(/^\d+\-|:\d+\.\d+$/g, '') + '</time>';
                     li += '<span class="comment">' + item.comment + '</span>';
