@@ -35,16 +35,21 @@ var SlotLayer = View.derive({
         earn.className = 'score';
         var bet = parseInt($('bet').innerHTML.trim());
         if(bet){
-            var me = this;
-            Player.bet(bet, function(bet, winGold, score){
-                me.playing = true;
-                me.winGold = winGold;
-                me.score = score;
-                me.y1T = SLOT_OFFSET - (bet[0] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
-                me.y2T = SLOT_OFFSET - (bet[1] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
-                me.y3T = SLOT_OFFSET - (bet[2] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
-                me._run();
-            });
+            var score = Player.getScore();
+            if(score > bet){
+                var me = this;
+                Player.bet(bet, function(bet, winGold, score){
+                    me.playing = true;
+                    me.winGold = winGold;
+                    me.score = score;
+                    me.y1T = SLOT_OFFSET - (bet[0] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
+                    me.y2T = SLOT_OFFSET - (bet[1] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
+                    me.y3T = SLOT_OFFSET - (bet[2] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
+                    me._run();
+                });
+            } else {
+                Dialog.show('啊哈', '金币不够啦，快去赚一些吧！');
+            }
         } else {
             Dialog.show('啊哈', '亲，您还没有下注哦！');
         }

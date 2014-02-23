@@ -8,6 +8,13 @@ document.addEventListener('WebViewJavascriptBridgeReady', function(){
         });
     }
 
+    var container = $('gameContainer');
+    var height = (document.body.clientHeight - 50) + 'px';
+    document.documentElement.style.minHeight = height;
+    document.body.style.minHeight = height;
+    container.style.minHeight = height;
+    container.style.height = height;
+
     Director.addLayer(new WelcomeLayer('welcomeLayer'), 'welcome');
     Director.addLayer(new SlotLayer('slotLayer'), 'slot');
     Director.addLayer(new EarnLayer('earnLayer'), 'earn');
