@@ -20,7 +20,6 @@ enum adtype{
 
 
 @interface AdWall : NSObject
-@property(nonatomic) int inReview;
 @property(strong,nonatomic)NSMutableArray *adInfoArray;
 + (instancetype)getInstance;
 - (void)initWall;

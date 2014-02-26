@@ -4,6 +4,7 @@
     var udid = "";
     var qq = "";
     var phone = "";
+  var inReview=0; //是否是review状态
 
 
     var REMOTE_SERVER = 'http://anansi.vicp.cc:8076';
@@ -73,6 +74,9 @@
     $$.Player = {
         setScore: displayScore,
         //返回暂存的金币数据
+    getReviewStatus: function(){
+      return inReview;
+    },
         getScore: function () {
             return score;
         },
@@ -80,6 +84,11 @@
             NSLog('js in updateUdid udid:' + data.udid);
             udid = data.udid;
         },
+    updateInitData: function(data){
+      NSLog('js [initData]: udid:' + data.udid + ' inReview:'+data.inReview);
+      udid = data.udid;
+      inReview = data.inReview;
+    },
         updateScore: function (_data) {
             var data = JSON.parse(_data);
             displayScore(data.score);
@@ -101,6 +110,7 @@
                     try {
                         var data = JSON.parse(res);
                         if (typeof data.playerInfo.gold === 'number') {
+                            NSLog('[getbyudid]:gold:' + data.playerInfo.gold );
                             displayScore(data.playerInfo.gold);
                             success(data.playerInfo.gold, data);
                         } else {

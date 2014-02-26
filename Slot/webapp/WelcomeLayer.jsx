@@ -1,6 +1,6 @@
 var WelcomeLayer = View.derive({
     init : function(){
-        this.setPosition(View.width, 0);
+    this.setPosition(View.width, 0);
         Hammer($('enter-slot')).on('tap', this.onEnterSlot.bind(this));
         Hammer($('enter-earn')).on('tap', this.onEnterEarn.bind(this));
         Hammer($('enter-settings')).on('tap', this.onEnterSettings.bind(this));
@@ -29,7 +29,15 @@ var WelcomeLayer = View.derive({
     },
     onEnterTrade : function(){
         Player.tradeInfos(function(data){
+
             Director.show('trade').setTradeList(data);
         });
+    },
+    
+  setBtnStatus:function( reviewStatus ){
+    if( reviewStatus == 1 ){
+        $('enter-earn').style.display = "none";
     }
+  }
+   
 });

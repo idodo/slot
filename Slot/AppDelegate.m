@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "HttpClient.h"
 #import "Player.h"
-//#import "ViewController.h"
+#import "ViewController.h"
 #import "AdWall.h"
 @implementation AppDelegate
 
@@ -40,6 +40,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 //    ViewController* viewController = (ViewController*)self.window.rootViewController;
 //    if( [AdWall getInstance].inReview == 0 && [[AdWall getInstance].adInfoArray count] > 0 ){

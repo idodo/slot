@@ -15,7 +15,9 @@ static dispatch_once_t onceToken;
 {
     dispatch_once(&onceToken, ^{
         _sharedInstance =[DataConfig alloc];
-        
+        _sharedInstance.showBannerAd = 0;
+        _sharedInstance.minMoneyRatio = 1000;
+        _sharedInstance.inReview = 0;
     });
     return _sharedInstance;
 }

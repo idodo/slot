@@ -78,9 +78,13 @@ WXApiDelegate> {
 @property (nonatomic)int dianruSpendGold;
 @property (nonatomic)int domobSpendGold;
 @property (nonatomic)int limeiSpendGold;
+@property (nonatomic)int firstLoad; //是否是第一次进入游戏
+@property (strong,nonatomic)NSString* currentPageName;
 @property (strong,nonatomic)MBProgressHUD *hud;
 @property(strong, nonatomic)NSMutableArray *moveFlags;
 -(void)consumeEarnGold;
+-(void)checkVersion;
+
 @property(nonatomic, strong) GADBannerView *adBanner;
 
 - (GADRequest *)request;

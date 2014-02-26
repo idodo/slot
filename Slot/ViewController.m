@@ -35,105 +35,151 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString* openUDID  = [SvUDIDTools UDID];
+    NSLog(@"keychain udid:%@", openUDID );
+    [Player getInstance].udid = openUDID;
 	// Do any additional setup after loading the view, typically from a nib.
 
     CGRect screenFrame = [[UIScreen mainScreen] applicationFrame];
     _webView = [[UIWebView alloc] initWithFrame:screenFrame];
     self.view = _webView;
     
-    //_offerWallController = [[DMOfferWallViewController alloc] initWithPublisherID:PUBLISHER_ID];
-    //_offerWallController.delegate = self;
     
     [_webView setDelegate:self];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-    if ([path length]) {
-        _bridge = [WebViewJavascriptBridge bridgeForWebView:_webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback){
-            //NSLog(@"ObjC received message from JS: %@", data);
-            //responseCallback(@"Response for message from ObjC");
-        }];
+    self.firstLoad = 1;
+    [self checkVersion];
         
-        [_bridge registerHandler:@"alert" handler:^(id message, WVJBResponseCallback responseCallback) {
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:nil
-                                  message: message
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-            [alert show];
-        }];
-        [self initAdwallData];
-        [_bridge registerHandler:@"log" handler:^(id message, WVJBResponseCallback responseCallback) {
-            NSLog(@"%@", message);
-        }];
-        
-        [_bridge registerHandler:@"startLoading" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [_loading startAnimating];
-        }];
-        
-        [_bridge registerHandler:@"stopLoading" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [_loading stopAnimating];
-        }];
-        
-        [_bridge registerHandler:@"showDMOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self.domobAdWallController presentOfferWall];
-        }];
-        
-        
-        [_bridge registerHandler:@"showLimeiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-           [self.limeiAdWall immobViewRequest];
-            
-        }];
-        
-        [_bridge registerHandler:@"showDianruOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [DianRuAdWall showAdWall:self];
-        }];
-        
-        [_bridge registerHandler:@"showYoumiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [YouMiWall showOffers:YES didShowBlock:^{
-                NSLog(@"有米积分墙已显示");
-            } didDismissBlock:^{
-                NSLog(@"有米积分墙已退出");
-            }];
-
-        }];
-        
-        [_bridge registerHandler:@"showMiddiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [MiidiAdWall showAppOffers:self withDelegate:self];
-        }];
-        
-        
-        [_bridge registerHandler:@"showAdwoOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self initAdWoAdWall];
-        }];
-        
-        [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self consumeEarnGold];
-            
-        }];
-        
-        [_bridge registerHandler:@"weixinShareMoney" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self weixinShareMoney];
-        }];
-        
-        [_bridge registerHandler:@"weixinShareAppCircle" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self weixinShareAppCircle];
-        }];
-        
-        [_bridge registerHandler:@"weixinShareApp" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self weixinShareApp];
-        }];
-        
-        [_bridge registerHandler:@"weixinShareMoneyCircle" handler:^(id message, WVJBResponseCallback responseCallback) {
-            [self weixinShareMoneyCircle];
-        }];
-        
-        NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        NSURL *baseURL = [NSURL fileURLWithPath:path];
         
         //id webDocumentView = [_webView performSelector:@selector(_browserView)];
         //id backingWebView = [webDocumentView performSelector:@selector(webView)];
         //[backingWebView performSelector:@selector(_setWebGLEnabled:) withObject:[NSNumber numberWithBool:YES]];
         
+    
+    
+    
+    
+}
+
+
+-(void)updateScore
+{
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    if( [DataConfig getInstance].showBannerAd == 1){
+        
+        [self.adBanner loadRequest:[self request]];
+    }
+    
+    
+}
+-(void)initBridge{
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:_webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback){
+        //NSLog(@"ObjC received message from JS: %@", data);
+        //responseCallback(@"Response for message from ObjC");
+    }];
+    
+    [_bridge registerHandler:@"alert" handler:^(id message, WVJBResponseCallback responseCallback) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:nil
+                              message: message
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }];
+    
+    [_bridge registerHandler:@"log" handler:^(id message, WVJBResponseCallback responseCallback) {
+        NSLog(@"%@", message);
+    }];
+    
+    [_bridge registerHandler:@"startLoading" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [_loading startAnimating];
+    }];
+    
+    [_bridge registerHandler:@"stopLoading" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [_loading stopAnimating];
+    }];
+    
+    [_bridge registerHandler:@"getInitData" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"getPlayerUdid called: %@", data);
+        NSDictionary* response = @{@"udid":[Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview]};
+        responseCallback(response);
+    }];
+    
+    [_bridge registerHandler:@"setCurrentPage" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"getPlayerUdid called: %@", data);
+        self.currentPageName = (NSString*)data;
+    }];
+    
+    [_bridge registerHandler:@"showDMOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self.domobAdWallController presentOfferWall];
+    }];
+    
+    
+    [_bridge registerHandler:@"showLimeiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self.limeiAdWall immobViewRequest];
+        
+    }];
+    
+    [_bridge registerHandler:@"showDianruOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [DianRuAdWall showAdWall:self];
+    }];
+    
+    [_bridge registerHandler:@"showYoumiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [YouMiWall showOffers:YES didShowBlock:^{
+            NSLog(@"有米积分墙已显示");
+        } didDismissBlock:^{
+            NSLog(@"有米积分墙已退出");
+        }];
+        
+    }];
+    
+    [_bridge registerHandler:@"showMiddiOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [MiidiAdWall showAppOffers:self withDelegate:self];
+    }];
+    
+    
+    [_bridge registerHandler:@"showAdwoOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self initAdWoAdWall];
+    }];
+    
+    [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self consumeEarnGold];
+        
+    }];
+    
+    [_bridge registerHandler:@"weixinShareMoney" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self weixinShareMoney];
+    }];
+    
+    [_bridge registerHandler:@"weixinShareAppCircle" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self weixinShareAppCircle];
+    }];
+    
+    [_bridge registerHandler:@"weixinShareApp" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self weixinShareApp];
+    }];
+    
+    [_bridge registerHandler:@"weixinShareMoneyCircle" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self weixinShareMoneyCircle];
+    }];
+    
+    [_bridge registerHandler:@"updateScore" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self updateScore];
+    }];
+
+}
+
+-(void) loadHtmlIndex
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    if ([path length]) {
+        NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        NSURL *baseURL = [NSURL fileURLWithPath:path];
         [_webView setUserInteractionEnabled:YES];
         [_webView setOpaque:NO];
         [_webView setDataDetectorTypes:UIDataDetectorTypeNone];
@@ -155,91 +201,138 @@
         
         [_bridge send:@"A string sent from ObjC after Webview has loaded."];
         
-        [_bridge callHandler:@"updateUdid" data:@{ @"udid": [Player getInstance].udid }];
+        //[_bridge callHandler:@"initConfig" data:@{ @"udid": [Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] }];
         
-        // Initialize the banner at the bottom of the screen.
-//        CGPoint origin = CGPointMake(0.0,
-//                                     self.view.frame.size.height -
-//                                     CGSizeFromGADAdSize(kGADAdSizeBanner).height);
-        CGPoint origin = CGPointMake(0.0,
-                                     0.0 );
-        // Use predefined GADAdSize constants to define the GADBannerView.
-        self.adBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:origin];
         
-        // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID before compiling.
-        self.adBanner.adUnitID = @"a15305f2b2c2092";
-        self.adBanner.delegate = self;
-        self.adBanner.rootViewController = self;
-        [self.view addSubview:self.adBanner];
-        [self.adBanner loadRequest:[self request]];
+    }
+}
+-(void)checkVersion{
+    
+    //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    //NSLog(@"idfa:%@", idfaString);
+    //这里使用keychain存储udid
+   
+
+    NSNumber *majorVersion =[[NSNumber alloc] initWithInt:[DataConfig getMajorVersion]];
+    NSNumber *minorVersion = [[NSNumber alloc] initWithInt:[DataConfig getMinorVersion]];
+    NSDictionary *parameters = @{@"udid": [Player getInstance].udid, @"majorVersion" : majorVersion, @"minorVersion": minorVersion};
+    
+    
+    [[HttpClient sharedClient] GET:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
+        NSDictionary *result = (NSDictionary*)responseObject;
+        NSLog(@"[check version] result:%@", result);
+        //parse basic config info
+        NSNumber* inReview = [ result valueForKey:@"inReview" ];
+        NSNumber* showBannerAd = [ result valueForKey:@"showBannerAd"];
+        [AdWall getInstance];
+        [[DataConfig getInstance] setInReview: inReview.intValue ];
+        [[DataConfig getInstance] setShowBannerAd: showBannerAd.intValue ];
+        //parse ad config
+        NSArray* adInfos = [ result valueForKey:@"adInfos"];
+        for(id jadInfo in adInfos){
+            AdInfo* adInfo = [AdInfo alloc];
+            int adType = [[jadInfo valueForKey:@"idx"] intValue];
+            adInfo.idx = adType;
+            NSString* adName = [jadInfo valueForKey:@"name"];
+            adInfo.name = adName;
+            int adStatus = [[jadInfo valueForKey:@"status"] intValue];
+            adInfo.status = adStatus;
+            [[AdWall getInstance].adInfoArray insertObject:adInfo atIndex:adInfo.idx];
+        }
+        [[AdWall getInstance] initWall];
+        int minMoneyRatio = [[ result valueForKey:@"minMoneyRatio"] intValue];
+        [DataConfig getInstance].appWebLink = [result valueForKey:@"appWebLink"];
+        [DataConfig getInstance].minMoneyRatio = minMoneyRatio;
+        NSDictionary* player = [ result valueForKey:@"playerInfo"];
+        [Player getInstance].todayGold = [[ player valueForKey:@"todayEarnGold"] intValue];
+        [Player getInstance].gold = [[ player valueForKey:@"gold"] intValue];
+        if( self.firstLoad == 1){
+            NSLog(@"[checkversion] 第一次加载游戏，加载主界面");
+            //初始化积分墙
+            [self initAdWall];
+            //加载Bridge
+            [self initBridge];
+            //加载html主届面
+            [self loadHtmlIndex];
+            self.firstLoad = 0;
+            
+        }else{
+             NSLog(@"[checkversion] 不是第一次加载游戏");
+             
+        }
+        //苹果审核要求引用了广告sdk的应用需要显示出广告，为了过苹果审核，请求admob的banner广告
+        //[self showDomobBannerAd];
+        
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"error:%@", error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"加载数据失败，请关闭程序重试" message:@"网络连接异常" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                               [alert show];
+    }];
+
+}
+-(void)initAdWall{
+    //init adwall
+    if( [DataConfig getInstance].inReview == 0){
+        AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
+        if( adInfo.status == 1 ){
+            _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
+            _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
+            _domobAdWallManager.delegate = self;
+        }
+        
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
+        if( adInfo.status == 1 ){
+            _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
+            _limeiAdWall.delegate=self;
+            [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
+        if( adInfo.status == 1 ){
+            [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
+            [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
+        if( adInfo.status == 1 ){
+            NSLog(@"[youmi]init adwall");
+            [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
+            // 开启积分管理[本例子使用自动管理];
+            [YouMiPointsManager enable];
+            // 开启积分墙
+            [YouMiWall enable];
+            [YouMiConfig setFullScreenWindow:self.view.window];
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
+        if( adInfo.status == 1 ){
+            NSLog(@"[middi]init adwall");
+            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
+        }
+    }
+    //init move gold flags for comsumeEarnGold
+    _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
+    for(NSInteger i=0 ; i< adtype_num; i++){
+        [_moveFlags addObject:[NSNumber numberWithInteger:0]];
     }
     
+    CGPoint origin = CGPointMake(0.0, 0.0 );
+    // Use predefined GADAdSize constants to define the GADBannerView.
+    self.adBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:origin];
     
+    // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID before compiling.
+    self.adBanner.adUnitID = @"a15305f2b2c2092";
+    self.adBanner.delegate = self;
+    self.adBanner.rootViewController = self;
+    [self.view addSubview:self.adBanner];
     
-}
-
-
--(void)viewWillAppear:(BOOL)animated
-{
-    
-    if( [AdWall getInstance].inReview == 1){
-//        CGSize screenSize = [UIScreen mainScreen].bounds.size;
-//        if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
-//        {
-//            _dmAdView.frame = CGRectMake((screenSize.height - _adSize.width) / 2,
-//                                         _adY,
-//                                         _dmAdView.frame.size.width,
-//                                         _dmAdView.frame.size.height);
-//        }
-//        else
-//        {
-//            _dmAdView.frame = CGRectMake((screenSize.width - _adSize.width) / 2,
-//                                         _adY,
-//                                         _dmAdView.frame.size.width,
-//                                         _dmAdView.frame.size.height);
-//        }
+    if( [DataConfig getInstance].showBannerAd == 1){
+        [self.adBanner loadRequest:self.request];
     }
-    
-    
+
+
 }
-/**
- *显示多盟的banner广告
- */
-//-(void)showDomobBannerAd{
-//    //显示domob的banner广告，苹果审核要求引用了广告sdk的应用需要显示出广告
-//    if( [AdWall getInstance].inReview == 1){
-//        // 确定广告尺寸及位置
-//        //Set the size and origin
-//        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-//        {
-//            _adSize = DOMOB_AD_SIZE_320x50;
-//            if (!([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)) {
-//                _adY = 0;
-//            }
-//            
-//        }
-//        else
-//        {
-//            _adSize = DOMOB_AD_SIZE_728x90;
-//            _adX = ([UIScreen mainScreen].bounds.size.width - _adSize.width) / 2;
-//            _adY = 0;
-//        }
-//        _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJz1F4uNOdLXWmNI"
-//                                              placementId:@"16TLmLxlAp0DkNUfva9cvJFi"
-//                                                     size:_adSize];
-//        
-//        // 设置广告视图的位置
-//        // Set the frame of advertisement view
-//        _dmAdView.frame = CGRectMake(_adX, _adY, _adSize.width, _adSize.height);
-//        _dmAdView.delegate = self;
-//        _dmAdView.rootViewController = self; // set RootViewController
-//        [self.view addSubview:_dmAdView];
-//        [_dmAdView loadAd];
-//    }
-//
-//}
+
 -(void)consumeEarnGold{
-    if( [AdWall getInstance].inReview == 0){
+    if( [DataConfig getInstance].inReview == 0){
         self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //self.hud.mode = MBProgressHUDModeAnnularDeterminate;
         self.hud.labelText = @"Loading";
@@ -251,12 +344,12 @@
             NSLog(@"[domob] begin move gold");
             [_domobAdWallManager requestOnlinePointCheck];
         }
-       
+        
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:limei];
         if( adInfo.status == 1){
             NSLog(@"[limei] begin move gold");
             [_limeiAdWall immobViewQueryScoreWithAdUnitID:[DataConfig getLimeiCustomerId] WithAccountID:[Player getInstance].udid];
-
+            
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
         if( adInfo.status == 1){
@@ -294,7 +387,7 @@
                     if(AdwoOWConsumePoints(currPoints, NULL)){
                         [self onConsumeGold:currPoints adtype:adwo];
                     }else{
-                         NSLog(@"Consume points failed, because %@", AdWoErrCodeList[AdwoOWFetchLatestErrorCode()]);
+                        NSLog(@"Consume points failed, because %@", AdWoErrCodeList[AdwoOWFetchLatestErrorCode()]);
                         [self onConsumeGold:0 adtype:adwo];
                     }
                 }else{
@@ -308,106 +401,6 @@
         }
     }
     
-    //Player* player = [Player getInstance];
-    //[player getPlayerGold];
-}
-
-
--(void)initAdwallData{
-    
-    //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    //NSLog(@"idfa:%@", idfaString);
-    //这里使用keychain存储udid
-    NSString* openUDID  = [SvUDIDTools UDID];
-    NSLog(@"keychain udid:%@", openUDID );
-    NSNumber *majorVersion =[[NSNumber alloc] initWithInt:[DataConfig getMajorVersion]];
-    NSNumber *minorVersion = [[NSNumber alloc] initWithInt:[DataConfig getMinorVersion]];
-    NSDictionary *parameters = @{@"udid": openUDID, @"majorVersion" : majorVersion, @"minorVersion": minorVersion};
-    [Player getInstance].udid = openUDID;
-    
-    
-    [[HttpClient sharedClient] GET:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
-        NSDictionary *result = (NSDictionary*)responseObject;
-        NSLog(@"[check version] result:%@", result);
-        //parse basic config info
-        NSNumber* inReview = [ result valueForKey:@"inReview" ];
-        [AdWall getInstance];
-        [[AdWall getInstance] setInReview: inReview.intValue ];
-        
-        //parse ad config
-        NSArray* adInfos = [ result valueForKey:@"adInfos"];
-        for(id jadInfo in adInfos){
-            AdInfo* adInfo = [AdInfo alloc];
-            int adType = [[jadInfo valueForKey:@"idx"] intValue];
-            adInfo.idx = adType;
-            NSString* adName = [jadInfo valueForKey:@"name"];
-            adInfo.name = adName;
-            int adStatus = [[jadInfo valueForKey:@"status"] intValue];
-            adInfo.status = adStatus;
-            [[AdWall getInstance].adInfoArray insertObject:adInfo atIndex:adInfo.idx];
-        }
-        [[AdWall getInstance] initWall];
-        int minMoneyRatio = [[ result valueForKey:@"minMoneyRatio"] intValue];
-        [DataConfig getInstance].appWebLink = [result valueForKey:@"appWebLink"];
-        [DataConfig getInstance].minMoneyRatio = minMoneyRatio;
-        NSDictionary* player = [ result valueForKey:@"playerInfo"];
-        [Player getInstance].todayGold = [[ player valueForKey:@"todayEarnGold"] intValue];
-        [Player getInstance].gold = [[ player valueForKey:@"gold"] intValue];
-        //init adwall
-        if( [AdWall getInstance].inReview == 0){
-            AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
-            if( adInfo.status == 1 ){
-                 _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
-                _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
-                _domobAdWallManager.delegate = self;
-            }
-            
-            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
-            if( adInfo.status == 1 ){
-                _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
-                _limeiAdWall.delegate=self;
-                [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
-            }
-            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
-            if( adInfo.status == 1 ){
-                [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
-                [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
-            }
-            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
-            if( adInfo.status == 1 ){
-                NSLog(@"[youmi]init adwall");
-                [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
-                // 开启积分管理[本例子使用自动管理];
-                [YouMiPointsManager enable];
-                // 开启积分墙
-                [YouMiWall enable];
-                [YouMiConfig setFullScreenWindow:self.view.window];
-            }
-            adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
-            if( adInfo.status == 1 ){
-                NSLog(@"[middi]init adwall");
-                [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
-            }
-        }
-        //init move gold flags for comsumeEarnGold
-        _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
-        for(NSInteger i=0 ; i< adtype_num; i++){
-            [_moveFlags addObject:[NSNumber numberWithInteger:0]];
-        }
-        
-        
-       
-        
-        //苹果审核要求引用了广告sdk的应用需要显示出广告，为了过苹果审核，请求多盟的banner广告
-        //[self showDomobBannerAd];
-        
-    }
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"error:%@", error);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"加载数据失败，请关闭程序重试" message:@"网络连接异常" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                               [alert show];
-    }];
-
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
