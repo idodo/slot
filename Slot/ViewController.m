@@ -171,7 +171,10 @@
     [_bridge registerHandler:@"updateScore" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self updateScore];
     }];
-
+    
+    [_bridge registerHandler:@"fiveStarReview" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self fiveStarReview];
+    }];
 }
 
 -(void) loadHtmlIndex
@@ -330,7 +333,17 @@
 
 
 }
-
+-(void)fiveStarReview{
+    NSString *appId = @"558444165";
+    float version = [[UIDevice currentDevice].systemVersion floatValue];
+    NSString *link;
+    if( version < 7.0 ){
+        link  =  [[NSString alloc] initWithFormat: @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software", appId];
+    }else{
+        link = [@"itms-apps://itunes.apple.com/app/id" stringByAppendingString:appId];
+    }
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:link]];
+}
 -(void)consumeEarnGold{
     if( [DataConfig getInstance].inReview == 0){
         self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
