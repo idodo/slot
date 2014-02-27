@@ -323,6 +323,39 @@
                     error(-2, res);
                 }
             });
+
+        },
+        tuijianUrl: REMOTE_SERVER + '/player/tuijian',
+        tuijian : function(info, success, error) {
+            error = error || function (code, err) {
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url: this.tuijianUrl,
+                data: 'udid=' + udid+'&qq='+info.qq,
+                type: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function (res) {
+                    try {
+                        NSLog('[tuijian] res:' + res);
+                        var data = JSON.parse(res);
+                        if (data.result == 0) {
+                            displayScore(data.playerGold);
+                            NSLog("tui jian success");
+                            success();
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch (e) {
+                        error(-1, e.message, e);
+                    }
+                },
+                error: function (res) {
+                    error(-2, res);
+                }
+            });
+
         }
     };
 })(window);

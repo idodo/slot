@@ -191,6 +191,7 @@
 		BFD8996218A3C5EC0078016C /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995C18A3C5EC0078016C /* HttpClient.m */; };
 		BFD8996318A3C5EC0078016C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995E18A3C5EC0078016C /* Player.m */; };
 		BFD8996618A3C6CC0078016C /* AdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8996518A3C6CC0078016C /* AdInfo.m */; };
+		BFDAA4B718BF5959009C2925 /* TuijianLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = BFDAA4B618BF5959009C2925 /* TuijianLayer.jsx */; };
 		BFEB000C18A8BF4500E18677 /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFEB000B18A8BF4500E18677 /* KeychainAccessGroups.plist */; };
 		BFEB001018A8BF7F00E18677 /* SvUDIDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEB000F18A8BF7F00E18677 /* SvUDIDTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE0918A731440069B250 /* MiidiAdLib.a */; };
@@ -453,6 +454,7 @@
 		BFD8995E18A3C5EC0078016C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		BFD8996418A3C6CC0078016C /* AdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdInfo.h; sourceTree = "<group>"; };
 		BFD8996518A3C6CC0078016C /* AdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdInfo.m; sourceTree = "<group>"; };
+		BFDAA4B618BF5959009C2925 /* TuijianLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TuijianLayer.jsx; sourceTree = "<group>"; };
 		BFEB000B18A8BF4500E18677 /* KeychainAccessGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeychainAccessGroups.plist; sourceTree = "<group>"; };
 		BFEB000E18A8BF7F00E18677 /* SvUDIDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvUDIDTools.h; sourceTree = "<group>"; };
 		BFEB000F18A8BF7F00E18677 /* SvUDIDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvUDIDTools.m; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				76096D9818950C45006E6041 /* main.jsx */,
 				7628CDCD1892D9B90085CE94 /* index.css */,
 				7628CDCE1892D9B90085CE94 /* index.html */,
+				BFDAA4B618BF5959009C2925 /* TuijianLayer.jsx */,
 			);
 			path = webapp;
 			sourceTree = "<group>";
@@ -1162,7 +1165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1224,6 +1227,7 @@
 				BF1465A6189BE73D0084E701 /* dianru_red_dianru_bottom.png in Resources */,
 				7628CDDD1892D9B90085CE94 /* index.css in Resources */,
 				76F8E1B518B9A4B2000867CA /* logo.jpg in Resources */,
+				BFDAA4B718BF5959009C2925 /* TuijianLayer.jsx in Resources */,
 				BF14659F189BE73D0084E701 /* dianru_purple_dianru_triangle.png in Resources */,
 				BF146580189BE73D0084E701 /* dianru_titlebg.jpg in Resources */,
 				BF146583189BE73D0084E701 /* dianru_green_all_cell.png in Resources */,
@@ -1479,7 +1483,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Questmatic Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1519,7 +1522,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Questmatic Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Questmatic Inc";
@@ -1600,7 +1602,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,

@@ -452,6 +452,10 @@ input[type=text] {
     right: 85px;
 }
 
+#tuijianLayer #tuijian-back-btn {
+    right: 85px;
+}
+
 #tradeLayer .panel {
     width: 280px;
 }

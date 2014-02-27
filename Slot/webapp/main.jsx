@@ -18,7 +18,7 @@ document.addEventListener('WebViewJavascriptBridgeReady', function(){
     Director.addLayer(new WelcomeLayer('welcomeLayer'), 'welcome');
     Director.addLayer(new SlotLayer('slotLayer'), 'slot');
     Director.addLayer(new EarnLayer('earnLayer'), 'earn');
-    Director.addLayer(new View('tuijianLayer'), 'tuijian');
+    Director.addLayer(new TuijianLayer('tuijianLayer'), 'tuijian');
     Director.addLayer(new View('guanzhuLayer'), 'guanzhu');
     Director.addLayer(new View('5starLayer'), '5star');
     Director.addLayer(new View('installLayer'), 'install');
