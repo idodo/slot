@@ -25,6 +25,8 @@
 #import "AdUtil.h"
 #import "GADBannerView.h"
 #import "GADRequest.h"
+#import <Escore/YJFUserMessage.h>
+#import <Escore/YJFInitServer.h>
 @interface ViewController ()
 
 
@@ -146,6 +148,15 @@
     [_bridge registerHandler:@"showAdwoOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self initAdWoAdWall];
     }];
+    
+    [_bridge registerHandler:@"showYijifenOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        YJFIntegralWall *integralWall = [[YJFIntegralWall alloc]init];
+        integralWall.delegate = self;
+        [self presentViewController:integralWall animated:YES completion:nil];
+        //[integralWall release];
+    }];
+    
+    
     
     [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self consumeEarnGold];
@@ -310,6 +321,22 @@
             NSLog(@"[middi]init adwall");
             [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
         }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
+        if( adInfo.status == 1 ){
+            NSLog(@"[yijifen]init yijifen");
+            //开发者
+            YJFUserMessage *user = [[YJFUserMessage alloc]init];
+            [user setAppId:@"50326"];//应用ID
+            [user setDevId:@"59842"];//开发者ID
+            [user setAppKey:@"EM94S2R8E2N5X4MIT179I5CS9C6M86TOA7"];//appKey
+            [user setChannel:@"IOS1.2.3"];//渠道号，默认当前SDK版本号
+            //[user release];
+            //初始化
+            YJFInitServer *InitData  = [[YJFInitServer alloc]init];
+            [InitData  getInitEscoreData];
+            //[InitData  release];
+
+        }
     }
     //init move gold flags for comsumeEarnGold
     _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
@@ -375,19 +402,7 @@
             NSLog(@"[middi] begin move gold");
             [MiidiAdWall requestGetPoints:self];
         }
-        adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
-        if( adInfo.status == 1){
-            NSLog(@"[youmi] begin move gold");
-            //[[[AdWall getInstance] youmiController] moveGold];
-            NSInteger score = [YouMiPointsManager pointsRemained];
-            if( score > 0 ){
-                if([YouMiPointsManager spendPoints:score] ){
-                    [self onConsumeGold:score adtype:youmi];
-                }
-            }else{
-                [self onConsumeGold:score adtype:youmi];
-            }
-        }
+        
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:adwo];
         if( adInfo.status == 1){
             NSLog(@"[adwo] begin move gold");
@@ -412,6 +427,38 @@
                 [self onConsumeGold:0 adtype:adwo];
             }
         }
+        adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
+        if( adInfo.status == 1){
+            NSLog(@"[youmi] begin move gold");
+            //[[[AdWall getInstance] youmiController] moveGold];
+            NSInteger score = [YouMiPointsManager pointsRemained];
+            if( score > 0 ){
+                if([YouMiPointsManager spendPoints:score] ){
+                    [self onConsumeGold:score adtype:youmi];
+                }
+            }else{
+                [self onConsumeGold:score adtype:youmi];
+            }
+        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
+        if( adInfo.status == 1){
+             NSString * str = [YJFScore getScore];
+            int succ = [YJFScore consumptionScore:[str intValue]]; //[yjfScore consumptionScore:_sc] 返回1 表示成功消耗  0 失败
+            if (succ == 1) {
+                NSString * str = [YJFScore getScore];
+                if (str) {
+                    NSLog(@"[yijifen] 消耗积分成功 %@", str);
+                    int score = [str intValue];
+                    [self onConsumeGold:score adtype:yijifen];
+                }
+            }
+            else
+            {
+                NSLog(@"[yijifen] 消耗积分失败");
+                [self onConsumeGold:0 adtype:yijifen];
+            }
+        }
+                  
     }
     
 }
@@ -721,9 +768,6 @@
     // 注册积分墙被关闭事件消息
     AdwoOWRegisterResponseEvent(ADWO_OFFER_WALL_RESPONSE_EVENTS_WALL_DISMISS, self, @selector(dismissSelector));
     
-    //NSArray *arr = [NSArray arrayWithObjects:@"test", nil];
-    //AdwoOWSetKeywords(arr);
-    
     // 初始化并登录积分墙
     BOOL result = AdwoOWPresentOfferWall([DataConfig getAdWoCustomerId], self);
     if(!result)
@@ -751,44 +795,11 @@
 #pragma mark  end
 
 /********************adwo adwall callback end********************/
-/********************domob banner ad callback begin********************/
+/********************yijifen callback begin********************/
 #pragma mark -
-#pragma mark DMAdView delegate
 
-// 成功加载广告后，回调该方法
-// This method will be used after load successfully
-//- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
-//{
-//    NSLog(@"[Domob Sample] success to load ad.");
-//}
-//
-//// 加载广告失败后，回调该方法
-//// This method will be used after load failed
-//- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
-//{
-//    NSLog(@"[Domob Sample] fail to load ad. %@", error);
-//}
-//
-//// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器
-//// When will be showing a Modal View, this method will be called. Such as open built-in browser
-//- (void)dmWillPresentModalViewFromAd:(DMAdView *)adView
-//{
-//    NSLog(@"[Domob Sample] will present modal view.");
-//}
-//
-//// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
-//// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
-//- (void)dmDidDismissModalViewFromAd:(DMAdView *)adView
-//{
-//    NSLog(@"[Domob Sample] did dismiss modal view.");
-//}
+#pragma mark YiJiFen delegate
 
-// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
-// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
-//- (void)dmApplicationWillEnterBackgroundFromAd:(DMAdView *)adView
-//{
-//    NSLog(@"[Domob Sample] will enter background.");
-//}
 #pragma mark end
 /********************domob banner ad callback end********************/
 /********************weixin callback begin***************************/

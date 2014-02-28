@@ -25,6 +25,9 @@
 #import "MiidiAdWall.h"
 #import "AdwoOfferWall.h"
 #import "GADBannerViewDelegate.h"
+#import <Escore/YJFIntegralWall.h>
+#import <Escore/YJFInterstitial.h>
+#import <Escore/YJFScore.h>
 //#import "DMAdView.h"
 #import "WXApi.h"
 @class GADBannerView;
@@ -62,6 +65,7 @@ static NSString* const AdWoErrCodeList[] = {
  MiidiAdWallGetPointsDelegate,
 MiidiAdWallRequestToggleDelegate,
 GADBannerViewDelegate,
+YJFIntegralWallDelegate,
 //DMAdViewDelegate,
 WXApiDelegate> {
     //DMAdView *_dmAdView;
