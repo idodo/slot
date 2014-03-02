@@ -29,7 +29,7 @@ var Director = {
         var me = this;
         if(name == 'welcome'){
             getInitData(function(){
-                me._show(name, reverse);
+                me._show(name, reverse).setBtnStatus(Player.getReviewStatus());
             });
             return this._map[name];
         } else {
