@@ -1,6 +1,6 @@
 var WelcomeLayer = View.derive({
-    init : function(){
-    this.setPosition(View.width, 0);
+    init: function () {
+        this.setPosition(View.width, 0);
         Hammer($('enter-slot')).on('tap', this.onEnterSlot.bind(this));
         Hammer($('enter-earn')).on('tap', this.onEnterEarn.bind(this));
         Hammer($('enter-settings')).on('tap', this.onEnterSettings.bind(this));
@@ -8,36 +8,36 @@ var WelcomeLayer = View.derive({
         Hammer($('enter-trade')).on('tap', this.onEnterTrade.bind(this));
         Sound.init();
     },
-    onEnterSlot : function(){
-        Player.update(function(){
+    onEnterSlot: function () {
+        Player.update(function () {
             Director.show('slot');
         });
     },
-    onEnterEarn : function(){
+    onEnterEarn: function () {
         NSConsumeEarnGold();
-        Player.earn(function(earn, status){
+        Player.earn(function (earn, status) {
             Director.show('earn').setTradeList(earn, status);
         });
     },
-    onEnterSettings : function(){
-        Player.update(function(score, data){
+    onEnterSettings: function () {
+        Player.update(function (score, data) {
             Director.show('settings').setUserInfo(data.playerInfo);
         });
     },
-    onEnterShare : function(){
+    onEnterShare: function () {
         Director.show('share');
     },
-    onEnterTrade : function(){
-        Player.tradeInfos(function(data){
+    onEnterTrade: function () {
+        Player.tradeInfos(function (data) {
 
             Director.show('trade').setTradeList(data);
         });
     },
-    
-  setBtnStatus:function( reviewStatus ){
-    if( reviewStatus == 1 ){
-        $('enter-earn').style.display = "none";
+
+    setBtnStatus: function (reviewStatus) {
+        if (reviewStatus == 1) {
+            $('enter-earn').style.display = "none";
+        }
     }
-  }
-   
+
 });

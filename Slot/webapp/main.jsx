@@ -1,10 +1,10 @@
-document.addEventListener('WebViewJavascriptBridgeReady', function(){
+document.addEventListener('WebViewJavascriptBridgeReady', function () {
 
     var backBtns = document.querySelectorAll('.back-btn');
-    for(var i = 0, len = backBtns.length; i < len; i++){
-        Hammer(backBtns[i]).on('tap', function(){
+    for (var i = 0, len = backBtns.length; i < len; i++) {
+        Hammer(backBtns[i]).on('tap', function () {
             var layer = this.getAttribute('data-show') || 'welcome';
-      Director.show(layer, -1);
+            Director.show(layer, -1);
         });
     }
 
@@ -27,9 +27,6 @@ document.addEventListener('WebViewJavascriptBridgeReady', function(){
     Director.addLayer(new TradeLayer('tradeLayer'), 'trade');
     Director.addLayer(new HistoryLayer('historyLayer'), 'history');
     Director.addLayer(new WeixinLayer('weixinLayer'), 'weixin');
-    //这里实现感觉比较挫，js不太熟，主要是获取相关配置数据，然后加载welcome页面，
-  //TODO:最好是每次进入welcome界面都根据最新的配置数据来显示按钮
-  getInitData(true );
-
+    Director.show('welcome');
 
 }, false);

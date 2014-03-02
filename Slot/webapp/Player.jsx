@@ -4,7 +4,7 @@
     var udid = "";
     var qq = "";
     var phone = "";
-  var inReview=0; //是否是review状态
+    var inReview = 0; //是否是review状态
 
 
     var REMOTE_SERVER = 'http://anansi.vicp.cc:8076';
@@ -74,9 +74,9 @@
     $$.Player = {
         setScore: displayScore,
         //返回暂存的金币数据
-    getReviewStatus: function(){
-      return inReview;
-    },
+        getReviewStatus: function () {
+            return inReview;
+        },
         getScore: function () {
             return score;
         },
@@ -84,11 +84,11 @@
             NSLog('js in updateUdid udid:' + data.udid);
             udid = data.udid;
         },
-    updateInitData: function(data){
-      NSLog('js [initData]: udid:' + data.udid + ' inReview:'+data.inReview);
-      udid = data.udid;
-      inReview = data.inReview;
-    },
+        updateInitData: function (data) {
+            NSLog('js [initData]: udid:' + data.udid + ' inReview:' + data.inReview);
+            udid = data.udid;
+            inReview = data.inReview;
+        },
         updateScore: function (_data) {
             var data = JSON.parse(_data);
             displayScore(data.score);
@@ -110,7 +110,7 @@
                     try {
                         var data = JSON.parse(res);
                         if (typeof data.playerInfo.gold === 'number') {
-                            NSLog('[getbyudid]:gold:' + data.playerInfo.gold );
+                            NSLog('[getbyudid]:gold:' + data.playerInfo.gold);
                             displayScore(data.playerInfo.gold);
                             success(data.playerInfo.gold, data);
                         } else {
@@ -203,15 +203,15 @@
             });
         },
         saveSettingsUrl: REMOTE_SERVER + '/player/updateduihuaninfo',
-        saveSettings : function(info, success, error) {
+        saveSettings: function (info, success, error) {
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             var data = 'udid=' + udid;
-            if(info.qq) data += '&qq=' + encodeURIComponent(info.qq);
-            if(info.zhifubao) data += '&zhifubao=' + encodeURIComponent(info.zhifubao);
-            if(info.phone) data += '&phone=' + encodeURIComponent(info.phone);
+            if (info.qq) data += '&qq=' + encodeURIComponent(info.qq);
+            if (info.zhifubao) data += '&zhifubao=' + encodeURIComponent(info.zhifubao);
+            if (info.phone) data += '&phone=' + encodeURIComponent(info.phone);
             $$.ajax({
                 url: this.saveSettingsUrl,
                 data: data,
@@ -236,7 +236,7 @@
             });
         },
         tradeInfosUrl: REMOTE_SERVER + '/player/getduihuaninfos',
-        tradeInfos : function(success, error) {
+        tradeInfos: function (success, error) {
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
@@ -265,8 +265,8 @@
                 }
             });
         },
-        duihuanHistoryUrl : REMOTE_SERVER + '/player/getduihuanhistory',
-        duihuanHistory : function(success, error){
+        duihuanHistoryUrl: REMOTE_SERVER + '/player/getduihuanhistory',
+        duihuanHistory: function (success, error) {
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
@@ -295,14 +295,14 @@
             });
         },
         duihuanUrl: REMOTE_SERVER + '/player/duihuan',
-        duihuan : function(duihuanItem, success, error) {
+        duihuan: function (duihuanItem, success, error) {
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             $$.ajax({
                 url: this.duihuanUrl,
-                data: 'udid=' + udid+'&duihuanIdx='+duihuanItem,
+                data: 'udid=' + udid + '&duihuanIdx=' + duihuanItem,
                 type: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
                 success: function (res) {
@@ -311,7 +311,7 @@
                         var data = JSON.parse(res);
                         if (data.result == 0) {
                             displayScore(data.playerGold);
-              success();
+                            success();
                         } else {
                             error(data.result, data.reason, data);
                         }
@@ -326,14 +326,14 @@
 
         },
         tuijianUrl: REMOTE_SERVER + '/player/tuijian',
-        tuijian : function(info, success, error) {
+        tuijian: function (info, success, error) {
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             $$.ajax({
                 url: this.tuijianUrl,
-                data: 'udid=' + udid+'&qq='+info.qq,
+                data: 'udid=' + udid + '&qq=' + info.qq,
                 type: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
                 success: function (res) {

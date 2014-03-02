@@ -63,9 +63,9 @@ Function.prototype.derive = function (constructor, proto) {
     };
     window.NSLog = function () {
         var msg = [];
-        for(var i = 0, len = arguments.length; i < len; i ++){
+        for (var i = 0, len = arguments.length; i < len; i++) {
             var data = arguments[i];
-            switch (typeof data){
+            switch (typeof data) {
                 case 'string':
                 case 'number':
                 case 'boolean':
@@ -95,25 +95,20 @@ Function.prototype.derive = function (constructor, proto) {
     window.NSConsumeEarnGold = function () {
         bridge.callHandler("consumeEarnGold");
     };
-  //初始化页面相关的配置数据，包括用户udid，app是否在review状态，这个是js主动调用objc接口
-    window.getInitData = function( showSlot ) {
-        bridge.callHandler('getInitData', {}, function(response) {
-            window.NSLog( '[js getPlayerUdid] response:' + response );
-            Player.updateInitData( response );
-        if(showSlot){
-            Player.update(function(){
-                NSLog("[initData]player inReview:"+Player.getReviewStatus() );
-                Director.show('welcome').setBtnStatus( Player.getReviewStatus() );
-            });
-        }
+    //初始化页面相关的配置数据，包括用户udid，app是否在review状态，这个是js主动调用objc接口
+    window.getInitData = function (callback) {
+        bridge.callHandler('getInitData', {}, function (response) {
+            window.NSLog('[js getPlayerUdid] response:' + response);
+            Player.updateInitData(response);
+            if(callback) callback();
         });
     };
- //设置当前所在页面名字，如果程序在免费赚金币页面进入后台运行（此时很可能是由于用户去下载应用赚金币了），然后重新带回前台的时候，此时需要从广告平台搬运金币
- window.setCurrentPage = function(pageName){
-     bridge.callHandler('setCurrentPage', pageName);
- };
-    window.xss = function(content){
-        return content.replace(/[<>&"']/g, function(m){
+    //设置当前所在页面名字，如果程序在免费赚金币页面进入后台运行（此时很可能是由于用户去下载应用赚金币了），然后重新带回前台的时候，此时需要从广告平台搬运金币
+    window.setCurrentPage = function (pageName) {
+        bridge.callHandler('setCurrentPage', pageName);
+    };
+    window.xss = function (content) {
+        return content.replace(/[<>&"']/g, function (m) {
             return '&#' + m.charCodeAt(0) + ';';
         });
     };
@@ -129,10 +124,10 @@ Function.prototype.derive = function (constructor, proto) {
         window.NSLog('ObjC called js updateScore with:', data);
         Player.updateScore(data);
     });
- //初始化页面相关的配置数据，包括用户udid，app是否在review状态，这个是obc调用js接口
-  bridge.registerHandler('initConfig', function (data, responseCallback) {
+    //初始化页面相关的配置数据，包括用户udid，app是否在review状态，这个是obc调用js接口
+    bridge.registerHandler('initConfig', function (data, responseCallback) {
         window.NSLog('ObjC called js initConfig with:', data);
-        Player.updateInitData( data );
-  });
+        Player.updateInitData(data);
+    });
 
 });

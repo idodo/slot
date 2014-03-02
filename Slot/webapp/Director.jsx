@@ -10,9 +10,8 @@ var Director = {
     getLayer : function(name){
         return this._map[name];
     },
-    show : function(name, reverse){
+    _show : function(name, reverse){
         reverse = reverse ? -1 : 1;
-        $('layer-mask').style.display = 'block';
         if(this._map.hasOwnProperty(name)){
             if(this.currentLayer){
                 if(this.currentLayer._moving) return;
@@ -23,6 +22,18 @@ var Director = {
             return this.currentLayer;
         } else {
             throw 'undefined layer [' + name + ']';
+        }
+    },
+    show : function(name, reverse){
+        $('layer-mask').style.display = 'block';
+        var me = this;
+        if(name == 'welcome'){
+            getInitData(function(){
+                me._show(name, reverse);
+            });
+            return this._map[name];
+        } else {
+            return this._show(name, reverse);
         }
     }
 };
