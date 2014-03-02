@@ -17,6 +17,7 @@ var Director = {
                 if(this.currentLayer._moving) return;
                 this.currentLayer.moveTo(-View.width * reverse, 0);
             }
+            setCurrentPage(name);
             this.currentLayer = this._map[name];
             this.currentLayer.setPosition(View.width * reverse, 0).moveTo(0, 0);
             return this.currentLayer;
