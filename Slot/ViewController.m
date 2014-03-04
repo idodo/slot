@@ -223,7 +223,12 @@
         
     }
 }
-
+-(void)appBecomeActive{
+    if( self.firstLoad == 0 ){
+        [_bridge callHandler:@"appBecomeActive" data:Nil];
+    }
+    
+}
 -(void)reloadCheck{
     if( self.firstLoad == 0){
         NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid};

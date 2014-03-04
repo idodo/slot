@@ -129,5 +129,8 @@ Function.prototype.derive = function (constructor, proto) {
         window.NSLog('ObjC called js initConfig with:', data);
         Player.updateInitData(data);
     });
-
+    //app被从后台唤回
+    bridge.registerHandler('appBecomeActive', function (data, responseCallback) {
+        window.NSLog('ObjC called js [appBecomeActive]');
+    });
 });

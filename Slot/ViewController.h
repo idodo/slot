@@ -75,6 +75,7 @@ WXApiDelegate> {
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+
 /**ad wall**/
 @property (nonatomic, strong)immobView *limeiAdWall;
 @property (strong,nonatomic) DMOfferWallManager *domobAdWallManager;
@@ -90,7 +91,7 @@ WXApiDelegate> {
 -(void)consumeEarnGold;
 -(void)checkVersion;
 -(void)reloadCheck;
-
+-(void)appBecomeActive;
 @property(nonatomic, strong) GADBannerView *adBanner;
 
 - (GADRequest *)request;

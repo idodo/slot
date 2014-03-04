@@ -50,6 +50,7 @@
     if([viewController.currentPageName isEqualToString:@"earn"]){
         [viewController consumeEarnGold];
     }
+    [viewController appBecomeActive];
 
 }
 
