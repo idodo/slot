@@ -278,24 +278,24 @@
                 }
             });
         },
-        tradeInfosUrl: REMOTE_SERVER + '/player/getduihuaninfos',
-        tradeInfos: function (success, error) {
+    duihuanHistoryUrl : REMOTE_SERVER + '/player/getduihuanhistory',
+    duihuanHistory : function(success, error){
+
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             $$.ajax({
-                url: this.tradeInfosUrl,
+        url: this.duihuanHistoryUrl,
                 data: 'udid=' + udid,
                 type: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
                 success: function (res) {
                     try {
-                        NSLog('[getduihuaninfos] res:' + res);
+                        NSLog('[tradeHistory] res:' + res);
                         var data = JSON.parse(res);
                         if (data.result == 0) {
-                            displayScore(data.playerGold);
-                            success(data.duihuaninfos);
+                            success(data.duihuanHistory);
                         } else {
                             error(data.result, data.reason, data);
                         }

@@ -52,7 +52,7 @@ static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
     return ADWO_CUSTOMERID;
 }
 +(int)getMajorVersion{
-    return 1;
+    return 2;
 }
 +(int)getMinorVersion{
     return 0;
