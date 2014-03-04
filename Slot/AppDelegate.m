@@ -43,10 +43,14 @@
     
     
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-//    ViewController* viewController = (ViewController*)self.window.rootViewController;
-//    if( [AdWall getInstance].inReview == 0 && [[AdWall getInstance].adInfoArray count] > 0 ){
-//        [viewController consumeEarnGold];
-//    }
+        ViewController* viewController = (ViewController*)self.window.rootViewController;
+    if(![viewController.currentPageName isEqualToString:@"weixin"]){ //不在微信界面，则检查是否需要reload
+        [viewController reloadCheck];
+    }
+    if([viewController.currentPageName isEqualToString:@"earn"]){
+        [viewController consumeEarnGold];
+    }
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -80,7 +84,7 @@
             NSDictionary* parameters = @{@"udid":[Player getInstance].udid, @"shareType":[[NSNumber alloc] initWithInt:[Player getInstance].shareType]};
             [[HttpClient sharedClient] GET:@"player/weixinshare" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSDictionary *result = (NSDictionary*)responseObject;
-                int err_code = [[result valueForKey:@"err_code"] intValue];
+                int err_code = [[result valueForKey:@"result"] intValue];
                 if(err_code == 1){
                     UIAlertView *alert = [[UIAlertView alloc]
                                           initWithTitle: nil
@@ -121,9 +125,9 @@
                     return;
                 }
             }
-                                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                       NSLog(@"error:%@", error);
-                                   }];
+            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"error:%@", error);
+            }];
         }else{
             UIAlertView *alert = [[UIAlertView alloc]
                                   initWithTitle: nil

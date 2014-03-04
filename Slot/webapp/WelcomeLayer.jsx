@@ -25,8 +25,10 @@ var WelcomeLayer = View.derive({
         });
     },
     onEnterShare: function () {
-        Director.show('share');
-    },
+      Player.shareInfos(function (data){
+        Director.show('share').setShareList(data);
+    });
+  },
     onEnterTrade: function () {
         Player.tradeInfos(function (data) {
 
@@ -34,10 +36,13 @@ var WelcomeLayer = View.derive({
         });
     },
 
-    setBtnStatus: function (reviewStatus) {
-        if (reviewStatus == 1) {
+    setBtnStatus: function (earnBtnStatus, duihuanBtnStatus) {
+        if ( earnBtnStatus == 0 ) {
             $('enter-earn').style.display = "none";
         }
+    if( duihuanBtnStatus == 0 ) {
+      $('enter-trade').style.display = "none";
+    }
     }
 
 });

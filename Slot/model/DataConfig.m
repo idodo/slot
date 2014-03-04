@@ -18,6 +18,9 @@ static dispatch_once_t onceToken;
         _sharedInstance.showBannerAd = 0;
         _sharedInstance.minMoneyRatio = 1000;
         _sharedInstance.inReview = 0;
+        _sharedInstance.httpKey = @"19821021isme";
+        _sharedInstance.duihuanBtnStatus = 1;
+        _sharedInstance.earnBtnStatus = 1;
     });
     return _sharedInstance;
 }
@@ -27,7 +30,7 @@ static NSString *YOUMI_CUSTOMER_PASSWORD = @"8ddf3fae3ca26c18";
 static NSString *DIANRU_CUSTOMERID = @"0000171010000055";
 static NSString *LIMEI_CUSTOMERID = @"c68025499e648a33826427ef3bf384f9";//@"d2b0c4296dc009ddc00d10da9c4cf83e";////
 static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
-static NSString *AD_KEY = @"19821021isme";
+
 
 +(NSString*)getDomobCustomerId{
     return DOMOB_CUSTOMERID;
@@ -54,7 +57,5 @@ static NSString *AD_KEY = @"19821021isme";
 +(int)getMinorVersion{
     return 0;
 }
-+(NSString*)getAdKey{
-    return AD_KEY;
-}
+
 @end

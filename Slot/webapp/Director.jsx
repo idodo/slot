@@ -30,7 +30,7 @@ var Director = {
         var me = this;
         if(name == 'welcome'){
             getInitData(function(){
-                me._show(name, reverse).setBtnStatus(Player.getReviewStatus());
+                me._show(name, reverse).setBtnStatus(Player.getEarnBtnStatus(), Player.getDuihuanBtnStatus() );
             });
             return this._map[name];
         } else {

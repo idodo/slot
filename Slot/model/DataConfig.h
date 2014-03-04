@@ -18,9 +18,12 @@
 +(NSString*)getAdWoCustomerId;
 +(int)getMajorVersion;
 +(int)getMinorVersion;
-+(NSString*)getAdKey;
 @property (nonatomic)int minMoneyRatio;
 @property (strong,nonatomic)NSString* appWebLink;
 @property (nonatomic)int showBannerAd;
 @property(nonatomic) int inReview;
+@property (nonatomic)int earnBtnStatus;
+@property (nonatomic)int duihuanBtnStatus;
+@property(strong,nonatomic) NSString* ituneAppId;
+@property (strong,nonatomic)NSString* httpKey;
 @end

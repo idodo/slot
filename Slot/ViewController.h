@@ -77,17 +77,19 @@ WXApiDelegate> {
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 /**ad wall**/
 @property (nonatomic, strong)immobView *limeiAdWall;
-@property(strong,nonatomic) DMOfferWallManager *domobAdWallManager;
-@property(strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
+@property (strong,nonatomic) DMOfferWallManager *domobAdWallManager;
+@property (strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
 @property (nonatomic)int dianruSpendGold;
 @property (nonatomic)int domobSpendGold;
 @property (nonatomic)int limeiSpendGold;
 @property (nonatomic)int firstLoad; //是否是第一次进入游戏
 @property (strong,nonatomic)NSString* currentPageName;
 @property (strong,nonatomic)MBProgressHUD *hud;
-@property(strong, nonatomic)NSMutableArray *moveFlags;
+@property (strong, nonatomic)NSMutableArray *moveFlags;
+@property (nonatomic)long long importTimestamp; //配置载入的时间戳
 -(void)consumeEarnGold;
 -(void)checkVersion;
+-(void)reloadCheck;
 
 @property(nonatomic, strong) GADBannerView *adBanner;
 

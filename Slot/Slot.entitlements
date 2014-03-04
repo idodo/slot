@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)RS3RQZ85P3.com.anansi.city</string>
+		<string>$(AppIdentifierPrefix)N7MMKA6Y57.com.wish.slot</string>
 	</array>
 </dict>
 </plist>

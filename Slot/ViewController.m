@@ -49,6 +49,7 @@
     
     [_webView setDelegate:self];
     self.firstLoad = 1;
+    self.importTimestamp = 0;
     [self checkVersion];
         
         
@@ -108,12 +109,14 @@
     
     [_bridge registerHandler:@"getInitData" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"getPlayerUdid called: %@", data);
-        NSDictionary* response = @{@"udid":[Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview]};
+        NSDictionary* response = @{@"udid":[Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] ,
+                                    @"earnBtnStatus": [NSNumber numberWithInt:[DataConfig getInstance].earnBtnStatus],
+                                   @"duihuanBtnStatus": [NSNumber numberWithInt:[DataConfig getInstance].duihuanBtnStatus]};
         responseCallback(response);
     }];
     
     [_bridge registerHandler:@"setCurrentPage" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSLog(@"getPlayerUdid called: %@", data);
+        NSLog(@"setCurrentPage called: %@", data);
         self.currentPageName = (NSString*)data;
     }];
     
@@ -220,6 +223,38 @@
         
     }
 }
+
+-(void)reloadCheck{
+    if( self.firstLoad == 0){
+        NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid};
+        [[HttpClient sharedClient] GET:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
+            NSDictionary *result = (NSDictionary*)responseObject;
+            NSLog(@"[check version] result:%@", result);
+            //parse basic config info
+            
+            int reload = [[ result valueForKey:@"reload" ] intValue];
+            if( reload == 1 ){
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:nil
+                                      message: @"亲，有新的更新，游戏需要重新启动加载下~"
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+                [alert show];
+            }
+        
+        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"error:%@", error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"加载数据失败，请关闭程序重试" message:@"网络连接异常" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }];
+    }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        exit(0);
+    }
+}
 -(void)checkVersion{
     
     //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
@@ -238,20 +273,33 @@
         //parse basic config info
         NSNumber* inReview = [ result valueForKey:@"inReview" ];
         NSNumber* showBannerAd = [ result valueForKey:@"showBannerAd"];
+        NSString* ituneAppId = [ result valueForKey:@"ituneAppId" ];
+        NSNumber* impartTS = [ result valueForKey:@"impartTimestamp"];
+        self.importTimestamp = [impartTS longLongValue];
         [AdWall getInstance];
         [[DataConfig getInstance] setInReview: inReview.intValue ];
         [[DataConfig getInstance] setShowBannerAd: showBannerAd.intValue ];
+        [[DataConfig getInstance] setItuneAppId: ituneAppId ];
+        NSDictionary* btnStatusDic = [ result valueForKey:@"btnStatus"];
+        [DataConfig getInstance].earnBtnStatus = [[ btnStatusDic valueForKey:@"earnBtn"] intValue];
+        [DataConfig getInstance].duihuanBtnStatus = [[ btnStatusDic valueForKey:@"duihuanBtn"] intValue];
         //parse ad config
         NSArray* adInfos = [ result valueForKey:@"adInfos"];
         for(id jadInfo in adInfos){
-            AdInfo* adInfo = [AdInfo alloc];
-            int adType = [[jadInfo valueForKey:@"idx"] intValue];
-            adInfo.idx = adType;
-            NSString* adName = [jadInfo valueForKey:@"name"];
-            adInfo.name = adName;
-            int adStatus = [[jadInfo valueForKey:@"status"] intValue];
-            adInfo.status = adStatus;
-            [[AdWall getInstance].adInfoArray insertObject:adInfo atIndex:adInfo.idx];
+            
+            if( self.firstLoad == 1){
+                AdInfo* adInfo = [AdInfo alloc];
+                int adType = [[jadInfo valueForKey:@"idx"] intValue];
+                adInfo.idx = adType;
+                NSString* adName = [jadInfo valueForKey:@"name"];
+                adInfo.name = adName;
+                int adStatus = [[jadInfo valueForKey:@"status"] intValue];
+                adInfo.status = adStatus;
+                [[AdWall getInstance].adInfoArray insertObject:adInfo atIndex:adInfo.idx];
+            }else{
+                AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:adInfo.idx];
+                adInfo.status = [[jadInfo valueForKey:@"status"] intValue];
+            }
         }
         [[AdWall getInstance] initWall];
         int minMoneyRatio = [[ result valueForKey:@"minMoneyRatio"] intValue];
@@ -361,18 +409,21 @@
 
 }
 -(void)fiveStarReview{
-    NSString *appId = @"558444165";
+    //NSString *appId = @"558444165";
     float version = [[UIDevice currentDevice].systemVersion floatValue];
     NSString *link;
     if( version < 7.0 ){
-        link  =  [[NSString alloc] initWithFormat: @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software", appId];
+        link  =  [[NSString alloc] initWithFormat: @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software", [DataConfig getInstance].ituneAppId];
     }else{
-        link = [@"itms-apps://itunes.apple.com/app/id" stringByAppendingString:appId];
+        link = [@"itms-apps://itunes.apple.com/app/id" stringByAppendingString:[DataConfig getInstance].ituneAppId];
     }
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:link]];
 }
 -(void)consumeEarnGold{
     if( [DataConfig getInstance].inReview == 0){
+        for(int i=0; i  < [_moveFlags count]; i++ ){
+            [_moveFlags replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:0]];
+        }
         self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //self.hud.mode = MBProgressHUDModeAnnularDeterminate;
         self.hud.labelText = @"Loading";
@@ -1007,12 +1058,11 @@
     }
     NSLog(@"adtype:%d", adtype);
     Player* player = [Player getInstance];
-    // gold = 100;
     if( gold > 0 ){
         NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
         // NSTimeInterval is defined as double
         NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
-        NSString* md5checksumStr = [NSString stringWithFormat:@"%@|%d|%d|%ld|%@",player.udid, gold, adtype, [timeStampObj longValue], [DataConfig getAdKey] ];
+        NSString* md5checksumStr = [NSString stringWithFormat:@"%@|%d|%d|%ld|%@",player.udid, gold, adtype, [timeStampObj longValue], [DataConfig getInstance].httpKey ];
         NSString* md5checksum = [md5checksumStr MD5String];
         NSDictionary *params =  @{@"udid": player.udid, @"gold": [NSNumber numberWithInt:gold], @"adType":[NSNumber numberWithInt:adtype],
                                   @"timestamp":[NSNumber numberWithLong:timeStampObj.longValue], @"checksum":md5checksum};
@@ -1022,6 +1072,7 @@
                                    NSDictionary *result = (NSDictionary*)responseObject;
                                    NSNumber* gold = [result valueForKey:@"gold"];
                                    int todayEarnGold = [[result valueForKey:@"todayEarnGold"] intValue];
+                                  
                                    player.gold = gold.intValue;
                                    player.todayGold = todayEarnGold;
                                    @synchronized(self){
@@ -1057,7 +1108,7 @@
         if(moveNum == adNum ){
             if( self.hud != NULL){
                 [self.hud hide:TRUE];
-                [_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
+                //[_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
                 //self.hud = NULL;
             }
         }

@@ -118,7 +118,7 @@ Function.prototype.derive = function (constructor, proto) {
     });
     bridge.registerHandler('updateScore', function (data, responseCallback) {
         window.NSLog('ObjC called js updateScore with:', data);
-        Player.updateScore(data);
+        Player.updateScore1(data.score);
     });
     bridge.registerHandler('update', function (data, responseCallback) {
         window.NSLog('ObjC called js updateScore with:', data);
