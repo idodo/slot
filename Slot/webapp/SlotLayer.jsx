@@ -77,8 +77,15 @@ var SlotLayer = View.derive({
         var bet = parseInt(dom.innerHTML.trim());
         var score = Player.getScore();
         if(score > 0){
-            var base = Math.min(1000, score) + 100;
-            dom.innerHTML = (bet + 100) % base;
+            if( score >= 1000 ){
+                var _bet = bet + 50;
+            }else{
+                var _bet = bet + 10;
+            }
+            if( _bet > score ){
+                _bet = 0;
+            }
+            dom.innerHTML = (_bet);
         } else {
             Dialog.show('哎呀', '您的金币不足啦！');
         }

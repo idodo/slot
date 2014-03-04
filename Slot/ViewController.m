@@ -424,7 +424,7 @@
         for(int i=0; i  < [_moveFlags count]; i++ ){
             [_moveFlags replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:0]];
         }
-        self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //self.hud.mode = MBProgressHUDModeAnnularDeterminate;
         self.hud.labelText = @"Loading";
         self.hud.removeFromSuperViewOnHide = YES;
@@ -1056,6 +1056,7 @@
             adNum += 1;
         }
     }
+
     NSLog(@"adtype:%d", adtype);
     Player* player = [Player getInstance];
     if( gold > 0 ){
@@ -1070,26 +1071,30 @@
         [[HttpClient sharedClient] GET:@"player/consumegold" parameters:params
                                success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                    NSDictionary *result = (NSDictionary*)responseObject;
-                                   NSNumber* gold = [result valueForKey:@"gold"];
-                                   int todayEarnGold = [[result valueForKey:@"todayEarnGold"] intValue];
+                                   int res = [[result valueForKey:@"result"] intValue];
+                                   if( res == 0 ){
+                                       NSNumber* gold = [result valueForKey:@"gold"];
+                                       int todayEarnGold = [[result valueForKey:@"todayEarnGold"] intValue];
                                   
-                                   player.gold = gold.intValue;
-                                   player.todayGold = todayEarnGold;
-                                   @synchronized(self){
-                                       [_moveFlags replaceObjectAtIndex:adtype withObject:[NSNumber numberWithInt:1]];
-                                       int moveNum = 0;
-                                       for( int i=0; i< adtype_num; i++){
-                                           NSNumber *moveFlag = [_moveFlags objectAtIndex:i];
-                                           moveNum = moveFlag.intValue + moveNum;
-                                       }
-                                       NSLog(@"moveNum:%d", moveNum);
-                                       if(moveNum == adNum ){
-                                           if( self.hud != NULL){
-                                               [self.hud hide:TRUE];
-                                               [_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
-
+                                       player.gold = gold.intValue;
+                                       player.todayGold = todayEarnGold;
+                                       @synchronized(self){
+                                           [_moveFlags replaceObjectAtIndex:adtype withObject:[NSNumber numberWithInt:1]];
+                                           int moveNum = 0;
+                                           for( int i=0; i< adtype_num; i++){
+                                               NSNumber *moveFlag = [_moveFlags objectAtIndex:i];
+                                               moveNum = moveFlag.intValue + moveNum;
                                            }
+                                           NSLog(@"moveNum:%d", moveNum);
+                                           if(moveNum == adNum ){
+                                               [_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
+                                               if( self.hud != NULL){
+                                                   [self.hud hide:TRUE];
+                                                   
+
+                                               }
                                            
+                                           }
                                        }
                                    }
                                }
@@ -1108,8 +1113,6 @@
         if(moveNum == adNum ){
             if( self.hud != NULL){
                 [self.hud hide:TRUE];
-                //[_bridge callHandler:@"updateScore" data:@{ @"score": [NSNumber numberWithInt:[Player getInstance].gold] }];
-                //self.hud = NULL;
             }
         }
     }
