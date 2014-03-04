@@ -132,5 +132,7 @@ Function.prototype.derive = function (constructor, proto) {
     //app被从后台唤回
     bridge.registerHandler('appBecomeActive', function (data, responseCallback) {
         window.NSLog('ObjC called js [appBecomeActive]');
+        Sound.playing = !Sound.playing;
+        Sound.toggle();
     });
 });
