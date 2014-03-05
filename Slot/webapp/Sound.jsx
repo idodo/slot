@@ -2,20 +2,23 @@ var Sound = {
     audio : null,
     playing : false,
     init : function(){
-        if(!this.audio){
-            var sound = new Audio('bg.mp3');
-            sound.loop = true;
-            sound.preload = 'auto';
-            //sound.autoplay = true;
-            sound.load();
-            this.audio = sound;
-            var btn = $('sound');
-            if(localStorage.getItem('sound') != 'off'){
-                this.play();
-            } else {
-                btn.className = 'off';
-            }
+        var btn = $('sound');
+        if(this.audio){
+            this.audio.pause();
+        } else {
             Hammer(btn).on('tap', this.toggle.bind(this));
+        }
+        this.playing = false;
+        var sound = new Audio('bg.mp3');
+        sound.loop = true;
+        sound.preload = 'auto';
+        //sound.autoplay = true;
+        sound.load();
+        this.audio = sound;
+        if(localStorage.getItem('sound') != 'off'){
+            this.play();
+        } else {
+            btn.className = 'off';
         }
     },
     play : function(){
