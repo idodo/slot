@@ -357,13 +357,13 @@ section {
 .back-btn {
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 1%;
 }
 
 #history {
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 1%;
 }
 
 #sound {
@@ -464,7 +464,7 @@ input[type=text] {
     font-size: 25px;
     text-shadow: 0 0 4px rgba(0,0,0,0.7);
     left: 20px;
-    bottom: 25px;
+    bottom: 2%;
 }
 
 #tradeLayer ul {
