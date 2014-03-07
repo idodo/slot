@@ -89,7 +89,7 @@
                 if(err_code == 1){
                     UIAlertView *alert = [[UIAlertView alloc]
                                           initWithTitle: nil
-                                          message: @"分享成功，系统发给您获得3金币作为奖励!"
+                                          message: @"分享成功，系统发给您获得10金币作为奖励!"
                                           delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];

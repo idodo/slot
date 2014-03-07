@@ -14,9 +14,14 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>80</string>
+				<string>29</string>
+				<string>114</string>
+				<string>57</string>
+				<string>120</string>
 				<string>icon</string>
-				<string>icon_114_114</string>
-				<string>icon_57_57</string>
+				<string>114@2x.png</string>
+				<string>57.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -49,6 +54,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchImageFile</key>
+	<string>Default</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -239,9 +239,22 @@
             
             int reload = [[ result valueForKey:@"reload" ] intValue];
             if( reload == 1 ){
+                self.alertType = RELOAD;
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle:nil
                                       message: @"亲，有新的更新，游戏需要重新启动加载下~"
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            int newVersion = [[ result valueForKey:@"hasNewversion" ] intValue];
+            if( newVersion == 1){
+                self.alertType = NEW_VERSION;
+                self.versionLink = [ result valueForKey:@"newVersionLink" ];
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:nil
+                                      message: @"亲，有新的版本了，请下载新的版本~"
                                       delegate:self
                                       cancelButtonTitle:@"OK"
                                       otherButtonTitles:nil];
@@ -257,7 +270,11 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0){
-        exit(0);
+        if( self.alertType == RELOAD){
+            exit(0);
+        }else if( self.alertType == NEW_VERSION ){
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:self.versionLink]];
+        }
     }
 }
 -(void)checkVersion{
@@ -269,7 +286,8 @@
 
     NSNumber *majorVersion =[[NSNumber alloc] initWithInt:[DataConfig getMajorVersion]];
     NSNumber *minorVersion = [[NSNumber alloc] initWithInt:[DataConfig getMinorVersion]];
-    NSDictionary *parameters = @{@"udid": [Player getInstance].udid, @"majorVersion" : majorVersion, @"minorVersion": minorVersion};
+    NSDictionary *parameters = @{@"udid": [Player getInstance].udid, @"majorVersion" : majorVersion, @"minorVersion": minorVersion,
+                                 @"channelCode" : [DataConfig getChannelCode]};
     
     
     [[HttpClient sharedClient] GET:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
@@ -350,6 +368,7 @@
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
         if( adInfo.status == 1 ){
+            NSLog(@"[limei]init adwall");
             _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
             _limeiAdWall.delegate=self;
             [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
@@ -751,7 +770,7 @@
 
 - (void)didReceiveSpendPoints:(NSInteger)totalPoints{
 	NSLog(@"[middi] didReceiveSpendPoints success! totalPoints=%d",totalPoints);
-	[self onConsumeGold:totalPoints adtype:middi];
+	[self onConsumeGold:self.middiSpendGold adtype:middi];
 	
 	
 }
@@ -779,6 +798,7 @@
 
 - (void)didReceiveGetPoints:(NSInteger)totalPoints forPointName:(NSString*)pointName{
 	NSLog(@"[middi] didReceiveGetPoints success! totalPoints:%d",totalPoints);
+    self.middiSpendGold = totalPoints;
     if( totalPoints > 0 ){
         [MiidiAdWall requestSpendPoints:totalPoints withDelegate:self];
     }else{
@@ -1005,7 +1025,7 @@
     [message setThumbImage:[UIImage imageNamed:@"icon@2x.png"]];
     
     WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = @"http://www.anansimobile.com";
+    ext.webpageUrl = [DataConfig getInstance].appWebLink;
     
     message.mediaObject = ext;
     

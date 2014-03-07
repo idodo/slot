@@ -1,4 +1,9 @@
 var EarnLayer = View.derive({
+     init : function(){
+        this.on('explain', 'tap', function(){
+        Dialog.show('提示：', '1.金币任务每天都会更新；2.相同的任务即时在不同的平台，只第一次下载有效哦~；3.任务完成后，金币获取会有一定的延迟，不要着急哦。');
+         });
+     },
     setTradeList : function(data, status){
         clearTimeout(this.listTimer);
         clearTimeout(this.listTimer2);

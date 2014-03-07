@@ -32,7 +32,10 @@
 #import "WXApi.h"
 @class GADBannerView;
 @class GADRequest;
-
+enum ALERT_TYPE{
+    RELOAD,
+    NEW_VERSION
+};
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 static NSString* const AdWoErrCodeList[] = {
     @"successful",
@@ -83,7 +86,10 @@ WXApiDelegate> {
 @property (nonatomic)int dianruSpendGold;
 @property (nonatomic)int domobSpendGold;
 @property (nonatomic)int limeiSpendGold;
+@property (nonatomic)int middiSpendGold;
 @property (nonatomic)int firstLoad; //是否是第一次进入游戏
+@property (nonatomic)int alertType; //弹出alert类型，用于alert回调
+@property (strong,nonatomic)NSString* versionLink;
 @property (strong,nonatomic)NSString* currentPageName;
 @property (strong,nonatomic)MBProgressHUD *hud;
 @property (strong, nonatomic)NSMutableArray *moveFlags;

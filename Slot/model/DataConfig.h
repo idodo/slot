@@ -18,6 +18,7 @@
 +(NSString*)getAdWoCustomerId;
 +(int)getMajorVersion;
 +(int)getMinorVersion;
++(NSString*)getChannelCode;
 @property (nonatomic)int minMoneyRatio;
 @property (strong,nonatomic)NSString* appWebLink;
 @property (nonatomic)int showBannerAd;

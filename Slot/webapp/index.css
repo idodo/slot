@@ -303,6 +303,10 @@ section {
     margin: 130px auto 10px;
 }
 
+#earnLayer #earn-back-btn {
+    right: 85px;
+}
+
 .trade-panel {
     width: 272px;
     height: 93px;
@@ -360,6 +364,11 @@ section {
     bottom: 1%;
 }
 
+.back2-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 1%;
+}
 #history {
     position: absolute;
     right: 20px;
