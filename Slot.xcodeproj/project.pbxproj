@@ -192,6 +192,7 @@
 		BF262DF818C9FBAC003F8217 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF718C9FBAC003F8217 /* Default.png */; };
 		BF262DFA18C9FC62003F8217 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF918C9FC62003F8217 /* 29.png */; };
 		BF262DFC18C9FCC7003F8217 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DFB18C9FCC7003F8217 /* Default~iphone.png */; };
+		BF843E7818D54453003D17A8 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF843E7718D54453003D17A8 /* MarqueeLabel.m */; };
 		BF8E452F18C612A1002986DF /* 44.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452918C612A1002986DF /* 44.png */; };
 		BF8E453018C612A1002986DF /* 50.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452A18C612A1002986DF /* 50.png */; };
 		BF8E453118C612A1002986DF /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452B18C612A1002986DF /* 58.png */; };
@@ -462,6 +463,8 @@
 		BF262DF718C9FBAC003F8217 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BF262DF918C9FC62003F8217 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 29.png; path = icons/29.png; sourceTree = "<group>"; };
 		BF262DFB18C9FCC7003F8217 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		BF843E7618D54453003D17A8 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		BF843E7718D54453003D17A8 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		BF8E452918C612A1002986DF /* 44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 44.png; path = icons/44.png; sourceTree = "<group>"; };
 		BF8E452A18C612A1002986DF /* 50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 50.png; path = icons/50.png; sourceTree = "<group>"; };
 		BF8E452B18C612A1002986DF /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = icons/58.png; sourceTree = "<group>"; };
@@ -1052,6 +1055,7 @@
 		BF4B45D5189BE086004465BB /* thirdlibs */ = {
 			isa = PBXGroup;
 			children = (
+				BF843E7518D54453003D17A8 /* marqueeLabel */,
 				BFEB000D18A8BF7F00E18677 /* UDID_Tools */,
 				BF14662E189BEE560084E701 /* weixin */,
 				BF14662A189BED6A0084E701 /* OpenUDID */,
@@ -1068,6 +1072,16 @@
 			children = (
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		BF843E7518D54453003D17A8 /* marqueeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				BF843E7618D54453003D17A8 /* MarqueeLabel.h */,
+				BF843E7718D54453003D17A8 /* MarqueeLabel.m */,
+			);
+			name = marqueeLabel;
+			path = thirdlibs/marqueeLabel;
 			sourceTree = "<group>";
 		};
 		BFD8995418A3C5EC0078016C /* model */ = {
@@ -1388,6 +1402,7 @@
 				BF146618189BEB890084E701 /* AFHTTPSessionManager.m in Sources */,
 				BF146619189BEB890084E701 /* AFNetworkReachabilityManager.m in Sources */,
 				76F208E21892809B000BE84C /* ViewController.m in Sources */,
+				BF843E7818D54453003D17A8 /* MarqueeLabel.m in Sources */,
 				BF14661A189BEB890084E701 /* AFSecurityPolicy.m in Sources */,
 				BF146624189BEB890084E701 /* UIProgressView+AFNetworking.m in Sources */,
 				76F20905189280D9000BE84C /* WebViewJavascriptBridge.m in Sources */,

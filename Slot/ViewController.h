@@ -28,6 +28,7 @@
 #import <Escore/YJFIntegralWall.h>
 #import <Escore/YJFInterstitial.h>
 #import <Escore/YJFScore.h>
+#import "MarqueeLabel.h"
 //#import "DMAdView.h"
 #import "WXApi.h"
 @class GADBannerView;

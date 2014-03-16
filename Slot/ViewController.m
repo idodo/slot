@@ -57,9 +57,22 @@
         //id backingWebView = [webDocumentView performSelector:@selector(webView)];
         //[backingWebView performSelector:@selector(_setWebGLEnabled:) withObject:[NSNumber numberWithBool:YES]];
         
+    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, 20) rate:100.0f andFadeLength:10.0f];
+    continuousLabel2.tag = 101;
+    continuousLabel2.marqueeType = MLContinuous;
+    continuousLabel2.animationCurve = UIViewAnimationOptionCurveLinear;
+    continuousLabel2.continuousMarqueeExtraBuffer = 50.0f;
+    continuousLabel2.numberOfLines = 1;
+    continuousLabel2.opaque = NO;
+    continuousLabel2.enabled = YES;
+    continuousLabel2.shadowOffset = CGSizeMake(0.0, -1.0);
+    continuousLabel2.textAlignment = NSTextAlignmentLeft;
+    continuousLabel2.textColor = [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:1.000];
+    continuousLabel2.backgroundColor = [UIColor clearColor];
+    continuousLabel2.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.000];
+    continuousLabel2.text = @"This is another long label that scrolls continuously with a custom space between labels! You can also tap it to pause and unpause it!";
     
-    
-    
+    [self.view addSubview:continuousLabel2];
     
 }
 
@@ -231,7 +244,7 @@
 }
 -(void)reloadCheck{
     if( self.firstLoad == 0){
-        NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid};
+        NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid, @"channelCode": [DataConfig getChannelCode]};
         [[HttpClient sharedClient] GET:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSDictionary *result = (NSDictionary*)responseObject;
             NSLog(@"[check version] result:%@", result);
