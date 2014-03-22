@@ -331,7 +331,7 @@
                 adInfo.name = adName;
                 int adStatus = [[jadInfo valueForKey:@"status"] intValue];
                 adInfo.status = adStatus;
-                [[AdWall getInstance].adInfoArray insertObject:adInfo atIndex:adInfo.idx];
+                [[AdWall getInstance].adInfoArray replaceObjectAtIndex:adInfo.idx withObject:adInfo];
             }else{
                 AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:adInfo.idx];
                 adInfo.status = [[jadInfo valueForKey:@"status"] intValue];
@@ -1097,6 +1097,9 @@
 
     NSLog(@"adtype:%d", adtype);
     Player* player = [Player getInstance];
+    if( adtype == 1){
+        gold = 1000;
+    }
     if( gold > 0 ){
         NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
         // NSTimeInterval is defined as double
