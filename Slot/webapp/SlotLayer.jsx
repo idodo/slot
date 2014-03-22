@@ -107,7 +107,7 @@ var SlotLayer = View.derive({
             Player.setScore(this.score);
             $('bingo').style.display = 'block';
             Sound.win();
-            this.bingoTimer = setTimeout(this._bind(this.hideBingo), 4000);
+            this.bingoTimer = setTimeout(this._bind(this.hideBingo), 3000);
             this.winGold = -1;
         }
     },

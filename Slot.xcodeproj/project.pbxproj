@@ -13,6 +13,7 @@
 		76096D9B1895304D006E6041 /* View.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9A1895304C006E6041 /* View.jsx */; };
 		760B7D5018DDD45A004958E3 /* 672.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D4F18DDD45A004958E3 /* 672.wav */; };
 		760B7D5218DDD5B2004958E3 /* go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D5118DDD5B2004958E3 /* go.wav */; };
+		760B7D5418DDDCCB004958E3 /* win2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D5318DDDCCB004958E3 /* win2.wav */; };
 		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
 		7628CDDD1892D9B90085CE94 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCD1892D9B90085CE94 /* index.css */; };
 		7628CDDE1892D9B90085CE94 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDCE1892D9B90085CE94 /* index.html */; };
@@ -234,6 +235,7 @@
 		76096D9A1895304C006E6041 /* View.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.jsx; sourceTree = "<group>"; };
 		760B7D4F18DDD45A004958E3 /* 672.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 672.wav; sourceTree = "<group>"; };
 		760B7D5118DDD5B2004958E3 /* go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = go.wav; sourceTree = "<group>"; };
+		760B7D5318DDDCCB004958E3 /* win2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win2.wav; sourceTree = "<group>"; };
 		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
 		7628CDCD1892D9B90085CE94 /* index.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = index.css; sourceTree = "<group>"; };
 		7628CDCE1892D9B90085CE94 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				760B7D5318DDDCCB004958E3 /* win2.wav */,
 				760B7D5118DDD5B2004958E3 /* go.wav */,
 				760B7D4F18DDD45A004958E3 /* 672.wav */,
 				76F8E1B818BA3955000867CA /* rate.png */,
@@ -1352,6 +1355,7 @@
 				BF146586189BE73D0084E701 /* dianru_green_dianru_info.png in Resources */,
 				BF146570189BE73D0084E701 /* dianru_back_btn.png in Resources */,
 				BF146590189BE73D0084E701 /* dianru_orange_dianru_download.png in Resources */,
+				760B7D5418DDDCCB004958E3 /* win2.wav in Resources */,
 				BF146593189BE73D0084E701 /* dianru_orange_dianru_titlebg.jpg in Resources */,
 				BF14656C189BE73D0084E701 /* dianru_blue_left_view.png in Resources */,
 				BF146591189BE73D0084E701 /* dianru_orange_dianru_info.png in Resources */,
