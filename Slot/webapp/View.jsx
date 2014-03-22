@@ -69,7 +69,7 @@ var View = Object.derive({
 });
 View.width = document.documentElement.clientWidth;
 View.height = document.documentElement.clientHeight;
-View.speed = 15;
+View.speed = 7;
 View.create = function(tag){
     return new View(document.createElement(tag));
 };

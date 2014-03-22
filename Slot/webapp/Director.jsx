@@ -1,6 +1,7 @@
 var Director = {
     currentLayer : null,
     _map : {},
+    _stack : [],
     addLayer : function(layer, name){
         if(this._map.hasOwnProperty(name)){
             throw 'exists layer id [' + name + ']';
@@ -19,6 +20,7 @@ var Director = {
             }
             setCurrentPage(name);
             this.currentLayer = this._map[name];
+            this._stack.push(name);
             this.currentLayer.setPosition(View.width * reverse, 0).moveTo(0, 0);
             return this.currentLayer;
         } else {
@@ -36,5 +38,10 @@ var Director = {
         } else {
             return this._show(name, reverse);
         }
+    },
+    back : function(){
+        this._stack.pop();
+        var targe = this._stack.pop() || 'welcome';
+        this.show(targe, -1);
     }
 };

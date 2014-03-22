@@ -2,10 +2,7 @@ document.addEventListener('WebViewJavascriptBridgeReady', function () {
 
     var backBtns = document.querySelectorAll('.back-btn');
     for (var i = 0, len = backBtns.length; i < len; i++) {
-        Hammer(backBtns[i]).on('tap', function () {
-            var layer = this.getAttribute('data-show') || 'welcome';
-            Director.show(layer, -1);
-        });
+        Hammer(backBtns[i]).on('tap', Director.back.bind(Director));
     }
 
     var container = $('gameContainer');

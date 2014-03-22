@@ -25,24 +25,23 @@ var WelcomeLayer = View.derive({
         });
     },
     onEnterShare: function () {
-      Player.shareInfos(function (data){
-        Director.show('share').setShareList(data);
-    });
-  },
+        Player.shareInfos(function (data) {
+            Director.show('share').setShareList(data);
+        });
+    },
     onEnterTrade: function () {
         Player.tradeInfos(function (data) {
-
             Director.show('trade').setTradeList(data);
         });
     },
 
     setBtnStatus: function (earnBtnStatus, duihuanBtnStatus) {
-        if ( earnBtnStatus == 0 ) {
+        if (earnBtnStatus == 0) {
             $('enter-earn').style.display = "none";
         }
-    if( duihuanBtnStatus == 0 ) {
-      $('enter-trade').style.display = "none";
-    }
+        if (duihuanBtnStatus == 0) {
+            $('enter-trade').style.display = "none";
+        }
     }
 
 });

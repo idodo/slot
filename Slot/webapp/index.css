@@ -79,7 +79,7 @@ section {
     width: 282px;
     height: 232px;
     background-image: url(slot.png);
-    margin: 110px auto 0;
+    margin: 0 auto;
 }
 
 .score {
@@ -142,7 +142,7 @@ section {
 
 #welcomeLayer nav {
     width: 93px;
-    padding: 60px 0 0;
+    padding: 12% 0 0;
 }
 
 #welcomeLayer .button {
@@ -198,13 +198,14 @@ section {
 }
 
 .slotMenu {
-    margin: 10px 10px 0;
+    margin: 10px 5px 0;
     height: 64px;
     vertical-align: middle;
 }
 
 #startBtn {
     float: right;
+    margin-left: 2px;
 }
 
 #backBtn {
@@ -222,22 +223,35 @@ section {
 #betBtn {
     float: left;
     margin-top: 12px;
+    margin-right: 5px;
+}
+
+.btnMenu {
+    margin: -7px 5px 0;
+}
+
+.btnMenu div {
+    display: inline-block;
+    margin-right: 2px;
 }
 
 .dialog {
     display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog .outer {
+    width: 100%;
+    height: 100%;
 }
 
 .dialog .panel {
-    width: 200px;
-    height: 150px;
+    width: 250px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+    position: relative;
     background: #fff;
-    position: absolute;
-    left: 50%; top: 50%;
-    margin-left: -100px;
-    margin-top: -75px;
     background-image: -webkit-gradient(linear, center top, center bottom, from(#4dafee), to(#257db5));
     background-image: -webkit-linear-gradient(top, #4dafee, #257db5);
     background-image: linear-gradient(top, #4dafee, #257db5);
@@ -249,6 +263,11 @@ section {
     height: 30px;
     line-height: 30px;
     padding: 0 10px;
+}
+
+.dialog #dialog-buttons {
+    text-align: right;
+    padding: 7px 5px;
 }
 
 .dialog #dialog-content {
@@ -294,20 +313,16 @@ section {
     height: 100%;
 }
 
-#earnLayer .panel {
+#earnLayer .trade-panel {
     width: 310px;
     height: 137px;
     background: url(panel.png) no-repeat 0 0;
     background-size: 100% 100%;
+    margin: 0 auto 10px;
     position: relative;
-    margin: 130px auto 10px;
 }
 
-#earnLayer #earn-back-btn {
-    right: 85px;
-}
-
-.trade-panel {
+.trade-outer {
     width: 272px;
     height: 93px;
     position: absolute;
@@ -315,7 +330,7 @@ section {
     left: 19px;
     overflow: hidden;
 }
-.trade-panel li {
+.trade-outer li {
     width: 100%;
     text-overflow:ellipsis;
     overflow:hidden;
@@ -325,7 +340,7 @@ section {
     height: 19px;
 }
 
-.trade-panel li span {
+.trade-outer li span {
     color: #f60;
     font-family: "DB LCD Temp";
     margin: 0 2px;
@@ -339,7 +354,7 @@ section {
 #earnLayer fieldset {
     padding-right: 2px;
     padding-top: 10px;
-    width: 293px;
+    width: 300px;
     margin: 0 auto 0;
     border: none;
     border-top: 1px solid #2982ba;
@@ -353,22 +368,18 @@ section {
 }
 
 #earnLayer fieldset span {
-    margin-left: 2px;
+    margin-left: 6px;
     margin-bottom: 5px;
     display: none;
 }
 
+.bottom-btn,
 .back-btn {
     position: absolute;
     right: 20px;
     bottom: 1%;
 }
 
-.back2-btn {
-    position: absolute;
-    right: 20px;
-    bottom: 1%;
-}
 #history {
     position: absolute;
     right: 20px;

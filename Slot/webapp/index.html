@@ -1,23 +1,24 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>game</title>
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" type="text/css" href="index.css"/>
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <title>game</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
 <body>
-    <div id="gameContainer">
-        <section id="welcomeLayer" class="center">
-            <nav>
-                <span id="enter-slot" class="button">疯狂转转赚</span>
-                <span id="enter-earn" class="button">免费赚金币</span>
-                <span id="enter-share" class="button">分享赚金币</span>
-                <span id="enter-trade" class="button">金币兑换</span>
-                <span id="enter-settings" class="button">我的设置</span>
-            </nav>
-        </section>
-        <section id="slotLayer">
+<div id="gameContainer">
+    <section id="welcomeLayer" class="center">
+        <nav>
+            <span id="enter-slot" class="button">疯狂转转赚</span>
+            <span id="enter-earn" class="button">免费赚金币</span>
+            <span id="enter-share" class="button">分享赚金币</span>
+            <span id="enter-trade" class="button">金币兑换</span>
+            <span id="enter-settings" class="button">我的设置</span>
+        </nav>
+    </section>
+    <section id="slotLayer" class="center">
+        <div>
             <div class="slotPanel sprite">
                 <div id="score" class="score">0</div>
                 <div id="earn" class="score">0</div>
@@ -30,181 +31,209 @@
                 <hr/>
             </div>
             <div class="slotMenu">
-                <div id="backBtn" class="button_small">返回</div>
-                <div id="rateBtn" class="button_small">赔率</div>
                 <div id="betBtn" class="button">押金币</div>
+                <div id="rateBtn" class="button_small">赔率</div>
                 <div id="startBtn" class="button_big">开始</div>
             </div>
-            <div id="bingo" class="mask">
-                <div class="bingo"></div>
+            <div class="btnMenu">
+                <div id="earnBtn" class="button">免费赚金币</div>
+                <div id="tradeBtn" class="button">兑换金币</div>
             </div>
-        </section>
-        <section id="earnLayer">
-            <div class="panel">
+            <div id="backBtn" class="button_small bottom-btn">返回</div>
+        </div>
+    </section>
+    <section id="earnLayer" class="center">
+        <div class="panel">
+            <div class="trade-panel">
                 <div id="score2" class="score">0</div>
-                <div class="trade-panel">
+                <div class="trade-outer">
                     <ul id="trade-list"></ul>
                 </div>
             </div>
             <fieldset id="pt-panel">
                 <legend>免费赚金币平台</legend>
                 <span id="youmi" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showYoumiOfferWall');">有米平台</span>
+                      onclick="EarnLayer.wall('showYoumiOfferWall');">有米平台</span>
                 <span id="middi" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showMiddiOfferWall');">米迪平台</span>
+                      onclick="EarnLayer.wall('showMiddiOfferWall');">米迪平台</span>
                 <span id="dianru" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showDianruOfferWall');">点入平台</span>
+                      onclick="EarnLayer.wall('showDianruOfferWall');">点入平台</span>
                 <span id="domob" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showDMOfferWall');">多盟平台</span>
+                      onclick="EarnLayer.wall('showDMOfferWall');">多盟平台</span>
                 <span id="limei" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showLimeiOfferWall');">力美平台</span>
+                      onclick="EarnLayer.wall('showLimeiOfferWall');">力美平台</span>
                 <span id="adwo" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showAdwoOfferWall');">安沃平台</span>
+                      onclick="EarnLayer.wall('showAdwoOfferWall');">安沃平台</span>
                 <span id="yijifen" class="button"
-                    onclick="WebViewJavascriptBridge.callHandler('showYijifenOfferWall');">易积分平台</span>
+                      onclick="EarnLayer.wall('showYijifenOfferWall');">易积分平台</span>
             </fieldset>
-            <div id="earn-back-btn" class="button_small back-btn">返回</div>
-            <div id="explain" class="button_small back2-btn">说明</div>
-        </section>
-        <section id="earnExplainLayer" class="center">
-            <div class="panel2">
-                <h1>评5星送积分</h1>
-                <div>
-                    <p>去AppStore评完5星可以把绑定QQ号发送给微信公共账号，并且说明是评分奖励，客服根据评价送出一定金额的奖励！（如果是ios7用户，会稍微繁琐一些，请在“评论”栏下方点击“撰写评论”按钮）</p>
-                    <div style="text-align: center"><span class="pure-button" onclick="WebViewJavascriptBridge.callHandler('fiveStarReview');">去AppStore评分</span></div>
+        </div>
+        <div id="earn-back-btn" class="button_small back-btn">返回</div>
+        <div id="explain" style="right: 188px" class="button_small bottom-btn">说明</div>
+        <div id="convert" style="right: 85px" class="button bottom-btn">兑换金币</div>
+    </section>
+    <section id="earnExplainLayer" class="center">
+        <div class="panel2">
+            <h1>评5星送积分</h1>
+            <div>
+                <p>去AppStore评完5星可以把绑定QQ号发送给微信公共账号，并且说明是评分奖励，客服根据评价送出一定金额的奖励！（如果是ios7用户，会稍微繁琐一些，请在“评论”栏下方点击“撰写评论”按钮）</p>
+
+                <div style="text-align: center"><span class="pure-button"
+                                                      onclick="WebViewJavascriptBridge.callHandler('fiveStarReview');">去AppStore评分</span>
                 </div>
             </div>
-            <div data-show="share" class="button_small back-btn">返回</div>
-        </section>
-        <section id="shareLayer" class="center">
-             <ul id="share-infos" class="list"></ul>
-             <!-- <ul class="list">
-                  <li id="tuijian"><span>领取推荐金币</span><span>当前可领取30金币</span></li>
-                  <li id="guanzhu"><span>关注官方微信公共号</span><span>送30金币</span></li>
-                  <li id="5star"><span>AppStore评5星</span><span>送30金币</span></li>
-                  <li id="install"><span>帮朋友快速安装</span><span>得推荐金币</span></li>
-                  <li id="weixin"><span>分享到微信</span><span>每天送12金币</span></li>
-            </ul>-->
-            <div class="button_small back-btn">返回</div>
-        </section>
-        <section id="tuijianLayer" class="center">
-            <div class="panel2">
-                <h1>领取奖励金币</h1>
-                <div style="padding-bottom: 10px;" >对方绑定的QQ&nbsp;&nbsp;<input type="text" size="14" id="tuijian_qq"/></div>
-                <div>操作：输入对方的绑定QQ号，提交通过后就能获取金币！</div>
-                <div>
-                    <h2>兑换金币规则</h2>
-                    <p>1. 初次送50金币，兑换次数越多送的越多，具体规则是，每次比上次增加5金币，比如第二次可兑换55，直到70金币封顶，领取次数无限制！</p>
-                    <p>2. 您自己的设备也必须是绑定了QQ号的，防止作弊。</p>
+        </div>
+        <div data-show="share" class="button_small back-btn">返回</div>
+    </section>
+    <section id="shareLayer" class="center">
+        <ul id="share-infos" class="list"></ul>
+        <div class="button_small back-btn">返回</div>
+    </section>
+    <section id="tuijianLayer" class="center">
+        <div class="panel2">
+            <h1>领取奖励金币</h1>
+
+            <div style="padding-bottom: 10px;">对方绑定的QQ&nbsp;&nbsp;<input type="text" size="14" id="tuijian_qq"/></div>
+            <div>操作：输入对方的绑定QQ号，提交通过后就能获取金币！</div>
+            <div>
+                <h2>兑换金币规则</h2>
+
+                <p>1. 初次送50金币，兑换次数越多送的越多，具体规则是，每次比上次增加5金币，比如第二次可兑换55，直到70金币封顶，领取次数无限制！</p>
+
+                <p>2. 您自己的设备也必须是绑定了QQ号的，防止作弊。</p>
+            </div>
+        </div>
+
+        <div id="tuijian-back-btn" data-show="share" class="button_small back-btn">返回</div>
+        <div id="tuijian-save-btn" class="button_small back-btn">提交</div>
+    </section>
+    <section id="guanzhuLayer" class="center">
+        <div class="panel2">
+            <h1>微信关注奖励</h1>
+
+            <div>
+                <p>为了提供更好的后续服务，我们特地开通了微信公共账号：&lt;jinbiduihuan&gt;(微信号：jinbiduihuan)。</p>
+
+                <p>该账号目的是向所有天天转转赚系类应用使用金币兑换服务的用户提供：金币任务信息，发布各类奖励/惩罚信息。此外收集用户反馈，手机用户活动反馈，接受各种意见！</p>
+
+                <p>现在处于推广期，每位关注官方微信账号的用户将会收到50金币的奖励！</p>
+
+                <p>操作方法是：微信"添加朋友"→"查找公共账号"→"搜索jinbiduihuan"→"添加关注"。最后在对话窗口发送您的绑定QQ号，客服会往您的设备上赠送50金币！</p>
+            </div>
+        </div>
+        <div data-show="share" class="button_small back-btn">返回</div>
+    </section>
+    <section id="5starLayer" class="center">
+        <div class="panel2">
+            <h1>评5星送积分</h1>
+
+            <div>
+                <p>去AppStore评完5星可以把绑定QQ号发送给微信公共账号，并且说明是评分奖励，客服根据评价送出一定金额的奖励！（如果是ios7用户，会稍微繁琐一些，请在“评论”栏下方点击“撰写评论”按钮）</p>
+
+                <div style="text-align: center"><span class="pure-button"
+                                                      onclick="WebViewJavascriptBridge.callHandler('fiveStarReview');">去AppStore评分</span>
                 </div>
             </div>
-            
-            <div id="tuijian-back-btn"  data-show="share" class="button_small back-btn">返回</div>
-            <div id="tuijian-save-btn" class="button_small back-btn">提交</div> 
-        </section>
-        <section id="guanzhuLayer" class="center">
-            <div class="panel2">
-                <h1>微信关注奖励</h1>
-                <div>
-                    <p>为了提供更好的后续服务，我们特地开通了微信公共账号：&lt;jinbiduihuan&gt;(微信号：jinbiduihuan)。</p>
-                    <p>该账号目的是向所有天天转转赚系类应用使用金币兑换服务的用户提供：金币任务信息，发布各类奖励/惩罚信息。此外收集用户反馈，手机用户活动反馈，接受各种意见！</p>
-                    <p>现在处于推广期，每位关注官方微信账号的用户将会收到50金币的奖励！</p>
-                    <p>操作方法是：微信"添加朋友"→"查找公共账号"→"搜索jinbiduihuan"→"添加关注"。最后在对话窗口发送您的绑定QQ号，客服会往您的设备上赠送50金币！</p>
-                </div>
+        </div>
+        <div data-show="share" class="button_small back-btn">返回</div>
+    </section>
+    <section id="installLayer" class="center">
+        <div class="panel2" style="top:80px;">
+            <h1>快速安装程序</h1>
+
+            <p>推荐给朋友安装后，记得要到对方的绑定QQ号，每次最多可领取70金币哦，兑换次数无线！让对方打开微信，用扫一扫对准下面的二维码图片，就可以安装了！</p>
+
+            <div style="text-align: center;padding-top: 5px">
+                <img src="qrcode.jpg" width="215px" height="215px"/>
             </div>
-            <div data-show="share" class="button_small back-btn">返回</div>
-        </section>
-        <section id="5starLayer" class="center">
-            <div class="panel2">
-                <h1>评5星送积分</h1>
-                <div>
-                    <p>去AppStore评完5星可以把绑定QQ号发送给微信公共账号，并且说明是评分奖励，客服根据评价送出一定金额的奖励！（如果是ios7用户，会稍微繁琐一些，请在“评论”栏下方点击“撰写评论”按钮）</p>
-                    <div style="text-align: center"><span class="pure-button" onclick="WebViewJavascriptBridge.callHandler('fiveStarReview');">去AppStore评分</span></div>
-                </div>
-            </div>
-            <div data-show="share" class="button_small back-btn">返回</div>
-        </section>
-        <section id="installLayer" class="center">
-            <div class="panel2" style="top:80px;">
-                <h1>快速安装程序</h1>
-                <p>推荐给朋友安装后，记得要到对方的绑定QQ号，每次最多可领取70金币哦，兑换次数无线！让对方打开微信，用扫一扫对准下面的二维码图片，就可以安装了！</p>
-                <div style="text-align: center;padding-top: 5px">
-                    <img src="qrcode.jpg" width="215px" height="215px"/>
-                </div>
-            </div>
-            <div data-show="share" class="button_small back-btn">返回</div>
-        </section>
-        <section id="weixinLayer" class="center">
-            <ul class="list">
-                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareAppCircle');">分享应用到朋友圈</span><span>送10金币</span></li>
-                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoneyCircle');">分享收入到朋友圈</span><span>送10金币</span></li>
-                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoney');">分享收入给微信朋友</span><span>送10金币</span></li>
-                <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareApp');">分享应用给微信朋友</span><span>送10金币</span></li>
-            </ul>
-            <div data-show="share" class="button_small back-btn">返回</div>
-        </section>
-        <section id="settingsLayer" class="center">
-            <div class="panel2">
-                <table>
-                    <tr>
-                        <td style="width:60px;">Q&nbsp;Q&nbsp;号</td>
-                        <td><input id="qq" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>支付宝</td>
-                        <td><input id="zhifubao" type="text" placeholder="注册邮箱"></td>
-                    </tr>
-                    <tr>
-                        <td>手&nbsp;&nbsp;&nbsp;&nbsp;机</td>
-                        <td><input id="phone" type="text"></td>
-                    </tr>
-                </table>
-            </div>
-            <div id="settings-back-btn" class="button_small back-btn">返回</div>
-            <div id="settings-save-btn" class="button_small back-btn">保存</div>
-        </section>
-        <section id="tradeLayer" class="center">
-            <div class="panel">
-                <ul id="trade-infos" class="list"></ul>
-            </div>
-            <h1 class="score">金币 <span id="score3"></span></h1>
-            <div id="history" class="button">兑换记录</div>
-            <div class="button_small back-btn">返回</div>
-        </section>
-        <section id="historyLayer" class="center">
-            <div class="panel2">
-                <h1>金币兑换记录</h1>
-                <ul id="history-list"></ul>
-            </div>
-            <div data-show="trade" class="button_small back-btn">返回</div>
-        </section>
-        <div id="sound"></div>
-        <section id="layer-mask" class="layer-mask"></section>
-    </div>
-    <div id="slotRate"></div>
-    <div id="dialog" class="dialog mask">
+        </div>
+        <div data-show="share" class="button_small back-btn">返回</div>
+    </section>
+    <section id="weixinLayer" class="center">
+        <ul class="list">
+            <li><span
+                    onclick="WebViewJavascriptBridge.callHandler('weixinShareAppCircle');">分享应用到朋友圈</span><span>送10金币</span>
+            </li>
+            <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoneyCircle');">分享收入到朋友圈</span><span>送10金币</span>
+            </li>
+            <li><span
+                    onclick="WebViewJavascriptBridge.callHandler('weixinShareMoney');">分享收入给微信朋友</span><span>送10金币</span>
+            </li>
+            <li><span
+                    onclick="WebViewJavascriptBridge.callHandler('weixinShareApp');">分享应用给微信朋友</span><span>送10金币</span>
+            </li>
+        </ul>
+        <div data-show="share" class="button_small back-btn">返回</div>
+    </section>
+    <section id="settingsLayer" class="center">
+        <div class="panel2">
+            <table>
+                <tr>
+                    <td style="width:60px;">Q&nbsp;Q&nbsp;号</td>
+                    <td><input id="qq" type="text"></td>
+                </tr>
+                <tr>
+                    <td>支付宝</td>
+                    <td><input id="zhifubao" type="text" placeholder="注册邮箱"></td>
+                </tr>
+                <tr>
+                    <td>手&nbsp;&nbsp;&nbsp;&nbsp;机</td>
+                    <td><input id="phone" type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="settings-back-btn" class="button_small back-btn">返回</div>
+        <div id="settings-save-btn" class="button_small back-btn">保存</div>
+    </section>
+    <section id="tradeLayer" class="center">
+        <div class="panel">
+            <ul id="trade-infos" class="list"></ul>
+        </div>
+        <h1 class="score">金币 <span id="score3"></span></h1>
+
+        <div id="history" class="button">兑换记录</div>
+        <div class="button_small back-btn">返回</div>
+    </section>
+    <section id="historyLayer" class="center">
+        <div class="panel2">
+            <h1>金币兑换记录</h1>
+            <ul id="history-list"></ul>
+        </div>
+        <div data-show="trade" class="button_small back-btn">返回</div>
+    </section>
+    <div id="sound"></div>
+    <section id="layer-mask" class="layer-mask"></section>
+</div>
+<div id="slotRate"></div>
+<div id="dialog" class="dialog mask">
+    <div class="center outer">
         <div class="panel">
             <h3 id="dialog-title">你好</h3>
             <div id="dialog-content" class="center">这是内容</div>
+            <div id="dialog-buttons"></div>
             <div id="dialog-close"></div>
         </div>
     </div>
-    <script type="text/javascript" src="hammer.min.jsx"></script>
-    <script type="text/javascript" src="bridge.jsx"></script>
-    <script type="text/javascript" src="Sound.jsx"></script>
-    <script type="text/javascript" src="Player.jsx"></script>
-    <script type="text/javascript" src="View.jsx"></script>
-    <script type="text/javascript" src="Dialog.jsx"></script>
-    <script type="text/javascript" src="WelcomeLayer.jsx"></script>
-    <script type="text/javascript" src="SlotLayer.jsx"></script>
-    <script type="text/javascript" src="EarnLayer.jsx"></script>
-    <script type="text/javascript" src="SettingsLayer.jsx"></script>
-    <script type="text/javascript" src="TradeLayer.jsx"></script>
-    <script type="text/javascript" src="HistoryLayer.jsx"></script>
-    <script type="text/javascript" src="ShareLayer.jsx"></script>
-    <script type="text/javascript" src="WeixinLayer.jsx"></script>
-    <script type="text/javascript" src="TuijianLayer.jsx"></script>
-    <script type="text/javascript" src="Director.jsx"></script>
-    <script type="text/javascript" src="main.jsx"></script>
+</div>
+<div id="bingo" class="mask">
+    <div class="bingo"></div>
+</div>
+<script type="text/javascript" src="hammer.min.jsx"></script>
+<script type="text/javascript" src="bridge.jsx"></script>
+<script type="text/javascript" src="Sound.jsx"></script>
+<script type="text/javascript" src="Player.jsx"></script>
+<script type="text/javascript" src="View.jsx"></script>
+<script type="text/javascript" src="Dialog.jsx"></script>
+<script type="text/javascript" src="WelcomeLayer.jsx"></script>
+<script type="text/javascript" src="SlotLayer.jsx"></script>
+<script type="text/javascript" src="EarnLayer.jsx"></script>
+<script type="text/javascript" src="SettingsLayer.jsx"></script>
+<script type="text/javascript" src="tradeLayer.jsx"></script>
+<script type="text/javascript" src="HistoryLayer.jsx"></script>
+<script type="text/javascript" src="shareLayer.jsx"></script>
+<script type="text/javascript" src="WeixinLayer.jsx"></script>
+<script type="text/javascript" src="TuijianLayer.jsx"></script>
+<script type="text/javascript" src="Director.jsx"></script>
+<script type="text/javascript" src="main.jsx"></script>
 </body>
 </html>
