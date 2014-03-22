@@ -32,7 +32,7 @@ var Director = {
         var me = this;
         if(name == 'welcome'){
             getInitData(function(){
-                me._show(name, reverse).setBtnStatus(Player.getEarnBtnStatus(), Player.getDuihuanBtnStatus() );
+                me._show(name, reverse);
             });
             return this._map[name];
         } else {

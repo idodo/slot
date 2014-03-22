@@ -100,6 +100,14 @@ Function.prototype.derive = function (constructor, proto) {
         bridge.callHandler('getInitData', {}, function (response) {
             window.NSLog('[js getPlayerUdid] response:' + response);
             Player.updateInitData(response);
+            if (Player.getEarnBtnStatus() == 0) {
+                $('enter-earn').style.display = "none";
+                $('earnBtn').style.display = "none";
+            }
+            if (Player.getDuihuanBtnStatus() == 0) {
+                $('enter-trade').style.display = "none";
+                $('tradeBtn').style.display = "none";
+            }
             if(callback) callback();
         });
     };

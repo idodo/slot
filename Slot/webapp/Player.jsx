@@ -5,13 +5,13 @@
     var qq = "";
     var phone = "";
     var inReview = 0; //是否是review状态
-  var earnBtnStatus=1; //是否显示免费赚金币按钮
-  var duihuanBtnStatus=1; //是否显示兑换金币按钮
+    var earnBtnStatus = 1; //是否显示免费赚金币按钮
+    var duihuanBtnStatus = 1; //是否显示兑换金币按钮
 
     var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8982';
 
     function displayScore(value) {
-    NSLog('[displayScore] score:'+score );
+        NSLog('[displayScore] score:' + score);
         score = value;
         $('score').innerHTML = score;
         $('score2').innerHTML = score;
@@ -79,12 +79,12 @@
         getReviewStatus: function () {
             return inReview;
         },
-    getDuihuanBtnStatus: function(){
-      return duihuanBtnStatus;
-    },
-    getEarnBtnStatus: function(){
-      return earnBtnStatus;
-    },
+        getDuihuanBtnStatus: function () {
+            return duihuanBtnStatus;
+        },
+        getEarnBtnStatus: function () {
+            return earnBtnStatus;
+        },
         getScore: function () {
             return score;
         },
@@ -96,16 +96,16 @@
             NSLog('js [initData]: udid:' + data.udid + ' inReview:' + data.inReview);
             udid = data.udid;
             inReview = data.inReview;
-      earnBtnStatus = data.earnBtnStatus;
-         duihuanBtnStatus = data.duihuanBtnStatus;
+            earnBtnStatus = data.earnBtnStatus;
+            duihuanBtnStatus = data.duihuanBtnStatus;
         },
         updateScore: function (_data) {
             var data = JSON.parse(_data);
             displayScore(data.score);
         },
-    updateScore1: function (score) {
-        displayScore(score);
-    },
+        updateScore1: function (score) {
+            displayScore(score);
+        },
         //更新金币的url
         updateUrl: REMOTE_SERVER + '/player/getbyudid',
         //更新金币并回调
@@ -278,15 +278,15 @@
                 }
             });
         },
-    duihuanHistoryUrl : REMOTE_SERVER + '/player/getduihuanhistory',
-    duihuanHistory : function(success, error){
+        duihuanHistoryUrl: REMOTE_SERVER + '/player/getduihuanhistory',
+        duihuanHistory: function (success, error) {
 
             error = error || function (code, err) {
                 NSLog('code: ' + code + '\treason: ' + err);
                 Dialog.show('矮油', '等等，我们这有点忙~~');
             };
             $$.ajax({
-        url: this.duihuanHistoryUrl,
+                url: this.duihuanHistoryUrl,
                 data: 'udid=' + udid,
                 type: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
