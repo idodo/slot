@@ -37,6 +37,22 @@ var Sound = {
             localStorage.setItem('sound', 'off');
         }
     },
+    win : function(){
+        if(localStorage.getItem('sound') != 'off'){
+            var audio = new Audio('672.wav');
+            audio.loop = false;
+            audio.autoplay = true;
+            audio.load();
+        }
+    },
+    go : function(){
+        if(localStorage.getItem('sound') != 'off'){
+            var audio = new Audio('go.wav');
+            audio.loop = false;
+            audio.autoplay = true;
+            audio.load();
+        }
+    },
     toggle : function(){
         if(this.playing){
             this.pause();

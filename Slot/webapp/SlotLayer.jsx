@@ -60,6 +60,7 @@ var SlotLayer = View.derive({
                     me.y2T = SLOT_OFFSET - (bet[1] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
                     me.y3T = SLOT_OFFSET - (bet[2] + 6 * (80 + Math.round(Math.random() * 20)) ) * 68.5;
                     me._run();
+                    Sound.go();
                 });
             } else {
                 Dialog.show('啊哈', '金币不够啦，快去赚一些吧！');
@@ -105,7 +106,8 @@ var SlotLayer = View.derive({
             earn.className = 'score anim';
             Player.setScore(this.score);
             $('bingo').style.display = 'block';
-            this.bingoTimer = setTimeout(this._bind(this.hideBingo), 3000);
+            Sound.win();
+            this.bingoTimer = setTimeout(this._bind(this.hideBingo), 4000);
             this.winGold = -1;
         }
     },
