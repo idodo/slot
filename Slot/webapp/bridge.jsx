@@ -107,6 +107,7 @@ Function.prototype.derive = function (constructor, proto) {
             if (Player.getDuihuanBtnStatus() == 0) {
                 $('enter-trade').style.display = "none";
                 $('tradeBtn').style.display = "none";
+                $('convert').style.display = "none";
             }
             if(callback) callback();
         });
