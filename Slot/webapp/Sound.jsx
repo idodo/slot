@@ -39,7 +39,8 @@ var Sound = {
     },
     win : function(){
         if(localStorage.getItem('sound') != 'off'){
-            var audio = new Audio('win2.wav');
+            //var audio = new Audio('win2.wav');
+            var audio = new Audio('win.wav');
             audio.loop = false;
             audio.autoplay = true;
             audio.load();

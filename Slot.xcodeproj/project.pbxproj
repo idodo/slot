@@ -11,7 +11,7 @@
 		76096D901894E04B006E6041 /* slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 76096D8F1894E04B006E6041 /* slot.png */; };
 		76096D9918950C45006E6041 /* main.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9818950C45006E6041 /* main.jsx */; };
 		76096D9B1895304D006E6041 /* View.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76096D9A1895304C006E6041 /* View.jsx */; };
-		760B7D5018DDD45A004958E3 /* 672.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D4F18DDD45A004958E3 /* 672.wav */; };
+		760B7D5018DDD45A004958E3 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D4F18DDD45A004958E3 /* win.wav */; };
 		760B7D5218DDD5B2004958E3 /* go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D5118DDD5B2004958E3 /* go.wav */; };
 		760B7D5418DDDCCB004958E3 /* win2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 760B7D5318DDDCCB004958E3 /* win2.wav */; };
 		7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7628CDC31892D9B90085CE94 /* bridge.jsx */; };
@@ -233,7 +233,7 @@
 		76096D8F1894E04B006E6041 /* slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slot.png; sourceTree = "<group>"; };
 		76096D9818950C45006E6041 /* main.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsx; sourceTree = "<group>"; };
 		76096D9A1895304C006E6041 /* View.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = View.jsx; sourceTree = "<group>"; };
-		760B7D4F18DDD45A004958E3 /* 672.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 672.wav; sourceTree = "<group>"; };
+		760B7D4F18DDD45A004958E3 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 		760B7D5118DDD5B2004958E3 /* go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = go.wav; sourceTree = "<group>"; };
 		760B7D5318DDDCCB004958E3 /* win2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win2.wav; sourceTree = "<group>"; };
 		7628CDC31892D9B90085CE94 /* bridge.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.jsx; sourceTree = "<group>"; };
@@ -573,7 +573,7 @@
 			children = (
 				760B7D5318DDDCCB004958E3 /* win2.wav */,
 				760B7D5118DDD5B2004958E3 /* go.wav */,
-				760B7D4F18DDD45A004958E3 /* 672.wav */,
+				760B7D4F18DDD45A004958E3 /* win.wav */,
 				76F8E1B818BA3955000867CA /* rate.png */,
 				76F8E1B618B9CD19000867CA /* HistoryLayer.jsx */,
 				76F8E1B418B9A4B2000867CA /* logo.jpg */,
@@ -1284,7 +1284,7 @@
 				76F208E41892809B000BE84C /* Images.xcassets in Resources */,
 				BF14656A189BE73D0084E701 /* dianru_blue_dianru_triangle.png in Resources */,
 				765299C518B07B0D000F3347 /* pure-min.css in Resources */,
-				760B7D5018DDD45A004958E3 /* 672.wav in Resources */,
+				760B7D5018DDD45A004958E3 /* win.wav in Resources */,
 				76F208D61892809B000BE84C /* InfoPlist.strings in Resources */,
 				BF146571189BE73D0084E701 /* dianru_background.png in Resources */,
 				7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */,
