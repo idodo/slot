@@ -14,7 +14,10 @@ static dispatch_once_t onceToken;
 {
     dispatch_once(&onceToken, ^{
         _sharedInstance =[AdWall alloc];
-        _sharedInstance.adInfoArray = [[NSMutableArray alloc] init];
+        _sharedInstance.adInfoArray = [[NSMutableArray alloc] initWithCapacity:adtype_num];
+        for (unsigned i = 0; i < adtype_num; i++) {
+            [_sharedInstance.adInfoArray addObject:[NSNull null]];
+        }
 
     });
     return _sharedInstance;
