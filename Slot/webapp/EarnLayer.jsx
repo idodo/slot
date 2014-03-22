@@ -59,16 +59,16 @@ var EarnLayer = View.derive({
 });
 
 var WallDesc = {
-    showYoumiOfferWall : '有米平台兑换说明',
-    showMiddiOfferWall : '米迪平台兑换说明',
-    showDianruOfferWall : '点入平台兑换说明',
-    showDMOfferWall : '多盟平台兑换说明',
-    showLimeiOfferWall : '力美平台兑换说明',
-    showAdwoOfferWall : '安沃平台兑换说明',
-    showYijifenOfferWall : '易积分平台兑换说明'
+    showYoumiOfferWall : '按照说明安装应用即可获得金币',
+    showMiddiOfferWall : '按照说明安装应用即可获得金币',
+    showDianruOfferWall : '按照说明安装应用即可获得金币',
+    showDMOfferWall : '按照说明安装应用即可获得金币',
+    showLimeiOfferWall : '按照说明安装应用即可获得金币',
+    showAdwoOfferWall : '按照说明安装应用即可获得金币',
+    showYijifenOfferWall : '按照说明安装应用即可获得金币'
 };
 
 EarnLayer.wall = function(name){
-    var button = '<span class="button_small" style="display: inline-block" onclick="WebViewJavascriptBridge.callHandler(\'' + name + '\')">兑换</span>'
+    var button = '<span class="button_small" style="display: inline-block" onclick="WebViewJavascriptBridge.callHandler(\'' + name + '\')">开始</span>'
     Dialog.show('平台赚金币说明', WallDesc[name] || '免费赚金币', button);
 };
