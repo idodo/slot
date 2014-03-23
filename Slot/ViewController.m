@@ -1097,9 +1097,6 @@
 
     NSLog(@"adtype:%d", adtype);
     Player* player = [Player getInstance];
-    if( adtype == 1){
-        gold = 1000;
-    }
     if( gold > 0 ){
         NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
         // NSTimeInterval is defined as double
