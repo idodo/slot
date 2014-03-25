@@ -7,8 +7,8 @@
     var inReview = 0; //是否是review状态
     var earnBtnStatus = 1; //是否显示免费赚金币按钮
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
-
-    var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8982';
+    var earnDesc = "";
+    var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";//'http://adwall.anansimobile.cn:8982';
 
     function displayScore(value) {
         NSLog('[displayScore] score:' + score);
@@ -88,16 +88,20 @@
         getScore: function () {
             return score;
         },
+        getEarnDesc: function (){
+            return earnDesc;
+        },
         updateUdid: function (data) {
             NSLog('js in updateUdid udid:' + data.udid);
             udid = data.udid;
         },
         updateInitData: function (data) {
-            NSLog('js [initData]: udid:' + data.udid + ' inReview:' + data.inReview);
+            NSLog('js [initData]: udid:' + data.udid + ' inReview:' + data.inReview + ' earnDesc:'+data.earnDesc);
             udid = data.udid;
             inReview = data.inReview;
             earnBtnStatus = data.earnBtnStatus;
             duihuanBtnStatus = data.duihuanBtnStatus;
+            earnDesc = data.earnDesc;
         },
         updateScore: function (_data) {
             var data = JSON.parse(_data);

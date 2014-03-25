@@ -87,13 +87,16 @@
                 NSDictionary *result = (NSDictionary*)responseObject;
                 int err_code = [[result valueForKey:@"result"] intValue];
                 if(err_code == 1){
+                    int rewardGold = [[result valueForKey:@"rewardGold"] intValue];
+                    NSString* tipText = [NSString stringWithFormat:@"分享成功，系统发给您获得%d金币作为奖励!", rewardGold ];
                     UIAlertView *alert = [[UIAlertView alloc]
                                           initWithTitle: nil
-                                          message: @"分享成功，系统发给您获得10金币作为奖励!"
+                                          message:tipText
                                           delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
                     int gold = [[result valueForKey:@"gold"] intValue];
+                    
                     int todayEarnGold = [[result valueForKey:@"todayEarnGold"] intValue];
                     [Player getInstance].gold = gold;
                     [Player getInstance].todayGold = todayEarnGold;

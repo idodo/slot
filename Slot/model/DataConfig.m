@@ -58,7 +58,7 @@ static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
     return 0;
 }
 +(NSString*)getChannelCode{
-    return @"tongbu";
+    return @"apple";
 }
 
 @end

@@ -57,22 +57,7 @@
         //id backingWebView = [webDocumentView performSelector:@selector(webView)];
         //[backingWebView performSelector:@selector(_setWebGLEnabled:) withObject:[NSNumber numberWithBool:YES]];
         
-    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, 20) rate:100.0f andFadeLength:10.0f];
-    continuousLabel2.tag = 101;
-    continuousLabel2.marqueeType = MLContinuous;
-    continuousLabel2.animationCurve = UIViewAnimationOptionCurveLinear;
-    continuousLabel2.continuousMarqueeExtraBuffer = 50.0f;
-    continuousLabel2.numberOfLines = 1;
-    continuousLabel2.opaque = NO;
-    continuousLabel2.enabled = YES;
-    continuousLabel2.shadowOffset = CGSizeMake(0.0, -1.0);
-    continuousLabel2.textAlignment = NSTextAlignmentLeft;
-    continuousLabel2.textColor = [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:1.000];
-    continuousLabel2.backgroundColor = [UIColor clearColor];
-    continuousLabel2.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.000];
-    continuousLabel2.text = @"This is another long label that scrolls continuously with a custom space between labels! You can also tap it to pause and unpause it!";
-    
-    [self.view addSubview:continuousLabel2];
+   
     
 }
 
@@ -94,9 +79,7 @@
 }
 -(void)initBridge{
     _bridge = [WebViewJavascriptBridge bridgeForWebView:_webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback){
-        //NSLog(@"ObjC received message from JS: %@", data);
-        //responseCallback(@"Response for message from ObjC");
-    }];
+           }];
     
     [_bridge registerHandler:@"alert" handler:^(id message, WVJBResponseCallback responseCallback) {
         UIAlertView *alert = [[UIAlertView alloc]
@@ -122,9 +105,13 @@
     
     [_bridge registerHandler:@"getInitData" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"getPlayerUdid called: %@", data);
-        NSDictionary* response = @{@"udid":[Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] ,
-                                    @"earnBtnStatus": [NSNumber numberWithInt:[DataConfig getInstance].earnBtnStatus],
-                                   @"duihuanBtnStatus": [NSNumber numberWithInt:[DataConfig getInstance].duihuanBtnStatus]};
+        NSDictionary* response = @{
+            @"udid":[Player getInstance].udid,
+            @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] ,
+            @"earnBtnStatus": [NSNumber numberWithInt:[DataConfig getInstance].earnBtnStatus],
+            @"duihuanBtnStatus": [NSNumber numberWithInt:[DataConfig getInstance].duihuanBtnStatus],
+            @"earnDesc": [DataConfig getInstance].earnDesc
+                                  };
         responseCallback(response);
     }];
     
@@ -231,7 +218,7 @@
         
         [_bridge send:@"A string sent from ObjC after Webview has loaded."];
         
-        //[_bridge callHandler:@"initConfig" data:@{ @"udid": [Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] }];
+        [_bridge callHandler:@"initConfig" data:@{ @"udid": [Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] }];
         
         
     }
@@ -319,6 +306,7 @@
         NSDictionary* btnStatusDic = [ result valueForKey:@"btnStatus"];
         [DataConfig getInstance].earnBtnStatus = [[ btnStatusDic valueForKey:@"earnBtn"] intValue];
         [DataConfig getInstance].duihuanBtnStatus = [[ btnStatusDic valueForKey:@"duihuanBtn"] intValue];
+        [DataConfig getInstance].earnDesc = [result valueForKey:@"earnDesc" ];
         //parse ad config
         NSArray* adInfos = [ result valueForKey:@"adInfos"];
         for(id jadInfo in adInfos){
@@ -404,17 +392,17 @@
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
         if( adInfo.status == 1 ){
             NSLog(@"[middi]init adwall");
-            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde" withTestMode:NO];
+            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
         if( adInfo.status == 1 ){
             NSLog(@"[yijifen]init yijifen");
             //开发者
-            YJFUserMessage *user = [[YJFUserMessage alloc]init];
-            [user setAppId:@"50326"];//应用ID
-            [user setDevId:@"59842"];//开发者ID
-            [user setAppKey:@"EM94S2R8E2N5X4MIT179I5CS9C6M86TOA7"];//appKey
-            [user setChannel:@"IOS1.2.3"];//渠道号，默认当前SDK版本号
+            [YJFUserMessage shareInstance].yjfUserAppId = @"50326";//应用ID
+            [YJFUserMessage shareInstance].yjfUserDevId = @"59842";//开发者ID
+            [YJFUserMessage shareInstance].yjfAppKey = @"EM94S2R8E2N5X4MIT179I5CS9C6M86TOA7";//appKey
+            [YJFUserMessage shareInstance].yjfChannel = @"IOS1.2.4";//渠道号，默认当前SDK版本号
+            
             //[user release];
             //初始化
             YJFInitServer *InitData  = [[YJFInitServer alloc]init];
@@ -442,7 +430,23 @@
     if( [DataConfig getInstance].showBannerAd == 1){
         [self.adBanner loadRequest:self.request];
     }
-
+    
+//    MarqueeLabel *continuousLabel2 = [[MarqueeLabel alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width-20, 20) rate:100.0f andFadeLength:10.0f];
+//    continuousLabel2.tag = 101;
+//    continuousLabel2.marqueeType = MLContinuous;
+//    continuousLabel2.animationCurve = UIViewAnimationOptionCurveLinear;
+//    continuousLabel2.continuousMarqueeExtraBuffer = 50.0f;
+//    continuousLabel2.numberOfLines = 1;
+//    continuousLabel2.opaque = NO;
+//    continuousLabel2.enabled = YES;
+//    continuousLabel2.shadowOffset = CGSizeMake(0.0, -1.0);
+//    continuousLabel2.textAlignment = NSTextAlignmentLeft;
+//    continuousLabel2.textColor = [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:1.000];
+//    continuousLabel2.backgroundColor = [UIColor clearColor];
+//    continuousLabel2.font = [UIFont fontWithName:@"Helvetica-Bold" size:17.000];
+//    continuousLabel2.text = @"小明在5分钟前兑换支付宝10元 小王在10分钟钱兑换手机充值20元";
+    
+//    [self.view addSubview:continuousLabel2];
 
 }
 -(void)fiveStarReview{
@@ -519,7 +523,7 @@
         if( adInfo.status == 1){
             NSLog(@"[youmi] begin move gold");
             //[[[AdWall getInstance] youmiController] moveGold];
-            NSInteger score = [YouMiPointsManager pointsRemained];
+            NSInteger score = *[YouMiPointsManager pointsRemained];
             if( score > 0 ){
                 if([YouMiPointsManager spendPoints:score] ){
                     [self onConsumeGold:score adtype:youmi];
@@ -530,21 +534,7 @@
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
         if( adInfo.status == 1){
-             NSString * str = [YJFScore getScore];
-            int succ = [YJFScore consumptionScore:[str intValue]]; //[yjfScore consumptionScore:_sc] 返回1 表示成功消耗  0 失败
-            if (succ == 1) {
-                NSString * str = [YJFScore getScore];
-                if (str) {
-                    NSLog(@"[yijifen] 消耗积分成功 %@", str);
-                    int score = [str intValue];
-                    [self onConsumeGold:score adtype:yijifen];
-                }
-            }
-            else
-            {
-                NSLog(@"[yijifen] 消耗积分失败");
-                [self onConsumeGold:0 adtype:yijifen];
-            }
+            [YJFScore getScore:self];
         }
                   
     }
@@ -888,7 +878,47 @@
 #pragma mark -
 
 #pragma mark YiJiFen delegate
+#pragma mark - 获取积分回调
+-(void)getYjfScore:(int)_score  status:(int)_value unit:(NSString *) unit;// status:1 获取成功  0 获取失败
+{
+    if(_value==1){
+        NSLog(@"[yijifen] 获取积分成功，积分：%d, 获取状态：%d,单位:%@",_score,_value,unit);
+         [YJFScore consumptionScore:_score delegate:self];
+    }else{
+         NSLog(@"[yijifen] 获取积分失败");
+        [self onConsumeGold:0 adtype:yijifen];
+    }
+    
+    
+}
 
+#pragma mark - 消耗积分回调
+-(void)consumptionYjfScore:(int)_score status:(int)_value;//消耗积分 status:1 消耗成功  0 消耗失败
+{
+    
+    NSLog(@"[yijifen] 消耗积分：%d,消耗状态：%d",_score,_value);
+    if( _value == 1 ){
+        [self onConsumeGold:_score adtype:yijifen];
+    }else{
+        [self onConsumeGold:0 adtype:yijifen];
+    }
+    
+    
+}
+-(void)OpenIntegralWall:(int)_value //1 打开成功  0 获取数据失败
+{
+    if (_value == 1) {
+        NSLog(@"积分墙打开成功");
+    }
+    else
+    {
+        NSLog(@"积分墙获取数据失败");
+    }
+}
+-(void)CloseIntegralWall  //墙关闭
+{
+    NSLog(@"积分墙关闭");
+}
 #pragma mark end
 /********************domob banner ad callback end********************/
 /********************weixin callback begin***************************/

@@ -19,8 +19,10 @@
     int page;
     id<YJFAdWallDelegate> delegate;
     int flag1;
+    
+    UIActivityIndicatorView *progressInd;
 }
-@property (nonatomic, retain) id vc;
+//@property (nonatomic, retain) id vc;
 
 @property (assign) id<YJFAdWallDelegate> delegate;
 

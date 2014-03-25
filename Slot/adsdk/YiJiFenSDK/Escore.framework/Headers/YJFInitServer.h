@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NSString *initEscore;
-NSString *yjfSid;
+
 @interface YJFInitServer : NSObject<NSURLConnectionDelegate>
 -(void) getInitEscoreData;
 

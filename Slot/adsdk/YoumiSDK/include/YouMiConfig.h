@@ -95,4 +95,7 @@
 + (void)setUseInAppStore:(BOOL)flag;
 + (BOOL)useInAppStore;
 
+
+//设置货币单位，默认是金币
++ (void)setUnitName:(NSString *)name;
 @end

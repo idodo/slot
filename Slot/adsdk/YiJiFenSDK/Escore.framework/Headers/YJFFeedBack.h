@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface YJFFeedBack : UIViewController<UITextViewDelegate,NSURLConnectionDelegate>
-@property (nonatomic,retain) UITextView *text;
-@property (nonatomic,retain) UITextView *emailAddr;
+@property (nonatomic,assign) UITextView *text;
+@property (nonatomic,assign) UITextView *emailAddr;
 @property (nonatomic,retain) NSMutableData *receivedData;
 @property (assign) UILabel *label1;
 @property (assign) UILabel *label2;

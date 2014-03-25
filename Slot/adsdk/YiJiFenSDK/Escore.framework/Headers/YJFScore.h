@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YJFIntegralWall.h"
 
 @interface YJFScore : NSObject
-+(NSString *)getScore;//查询积分
-+(int)consumptionScore:(int)_score;//消耗积分
-@property (retain) NSMutableData *receivedData;
+
+
++(void)getScore:(id<YJFIntegralWallDelegate>)_delegate;;//查询积分
++(void)consumptionScore:(int)_score delegate:(id<YJFIntegralWallDelegate>)_delegate;//消耗积分
+
+
 @end
