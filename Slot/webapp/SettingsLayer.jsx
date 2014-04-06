@@ -4,6 +4,7 @@ var SettingsLayer = View.derive({
         Hammer($('settings-save-btn')).on('tap', this.onSaveUserInfo.bind(this));
     },
     setUserInfo : function(data){
+//        $('uid').innerHTML = data.id;
         $('qq').value = data.qq;
         $('zhifubao').value = data.zhifubao;
         $('phone').value = data.phone;
