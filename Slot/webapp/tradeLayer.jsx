@@ -18,7 +18,11 @@ var TradeLayer = View.derive({
                 Dialog.show('提示', '申请兑换成功！');
             }, function (code, msg) {
                 self.lock = false;
-                Dialog.show('保存失败', msg);
+                if(code == 4){
+                    Director.show('bind');
+                } else {
+                    Dialog.show('兑换失败', msg);
+                }
             });
         });
     },

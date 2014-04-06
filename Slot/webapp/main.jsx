@@ -24,6 +24,9 @@ document.addEventListener('WebViewJavascriptBridgeReady', function () {
     Director.addLayer(new TradeLayer('tradeLayer'), 'trade');
     Director.addLayer(new HistoryLayer('historyLayer'), 'history');
     Director.addLayer(new WeixinLayer('weixinLayer'), 'weixin');
+    Director.addLayer(new BindMobileLayer('bindMobileLayer'), 'bind');
     Director.show('welcome');
+
+
 
 }, false);

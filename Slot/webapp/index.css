@@ -390,14 +390,14 @@ section {
     position: absolute;
     right: 5px;
     top: 5px;
-    width: 18px;
+    width: 36px;
     height: 18px;
-    background: url("sound.png") no-repeat 0 0;
-    background-size: 100%;
+    background: url("sound.png") no-repeat right 0;
+    background-size: 18px 36px;
 }
 
 #sound.off {
-    background-position: 0 100%;
+    background-position: right 100%;
 }
 
 .layer-mask {
@@ -435,21 +435,34 @@ table {
     font-size: 14px;
 }
 
+#bindMobileLayer table,
 #settingsLayer table {
-    width: 160px;
+    width: 249px;
     font-size: 18px;
     line-height: 22px;
     color: #333;
 }
 
+#bindMobileLayer table td,
 #settingsLayer table td {
     padding: 7px 10px;
     text-align:justify;
     text-justify:inter-ideograph;
 }
 
+#bindMobileLayer table input[type=text],
 #settingsLayer table input[type=text] {
     width: 140px;
+}
+
+#bindMobileLayer .check-btn {
+    font-size: 12px;
+    background: #2982ba;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 14px;
+    padding: 3px 5px;
+    display: inline-block;
 }
 
 input[type=text] {
@@ -468,6 +481,7 @@ input[type=text] {
     background: rgb(28, 184, 65);;
 }
 
+#bindMobileLayer #bind-back-btn,
 #settingsLayer #settings-back-btn {
     right: 85px;
 }

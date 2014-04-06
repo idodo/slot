@@ -167,6 +167,30 @@
         </ul>
         <div data-show="share" class="button_small back-btn">返回</div>
     </section>
+    <section id="bindMobileLayer" class="center">
+        <div class="panel2">
+            <h1>绑定手机</h1>
+            <p>为了更快速的处理您的兑换请求，请先验证您的手机：</p>
+            <table>
+                <tr>
+                    <td style="width:60px;">手机号</td>
+                    <td><input id="bind-phone" type="text"></td>
+                </tr>
+                <tr>
+                    <td>验证码</td>
+                    <td><input id="bind-code" type="text" style="width:55px">
+                        <span id="get-verify-code" class="check-btn">免费获取</span>
+                    </td>
+                </tr>
+            </table><br/>
+            <h3>验证步骤：</h3>
+            <div>1. 填写手机号，然后点击 <span class="check-btn">免费获取</span> 按钮</div>
+            <div>2. 您会接到一个电话，请接听并记录您听到的验证码</div>
+            <div>3. 填写验证码，并提交</div>
+        </div>
+        <div id="bind-back-btn" class="button_small back-btn">返回</div>
+        <div id="bind-save-btn" class="button_small bottom-btn">保存</div>
+    </section>
     <section id="settingsLayer" class="center">
         <div class="panel2">
             <table>
@@ -185,7 +209,7 @@
             </table>
         </div>
         <div id="settings-back-btn" class="button_small back-btn">返回</div>
-        <div id="settings-save-btn" class="button_small back-btn">保存</div>
+        <div id="settings-save-btn" class="button_small bottom-btn">保存</div>
     </section>
     <section id="tradeLayer" class="center">
         <div class="panel">
@@ -230,11 +254,12 @@
 <script type="text/javascript" src="SlotLayer.jsx"></script>
 <script type="text/javascript" src="EarnLayer.jsx"></script>
 <script type="text/javascript" src="SettingsLayer.jsx"></script>
-<script type="text/javascript" src="TradeLayer.jsx"></script>
+<script type="text/javascript" src="tradeLayer.jsx"></script>
 <script type="text/javascript" src="HistoryLayer.jsx"></script>
-<script type="text/javascript" src="ShareLayer.jsx"></script>
+<script type="text/javascript" src="shareLayer.jsx"></script>
 <script type="text/javascript" src="WeixinLayer.jsx"></script>
 <script type="text/javascript" src="TuijianLayer.jsx"></script>
+<script type="text/javascript" src="BindMobileLayer.jsx"></script>
 <script type="text/javascript" src="Director.jsx"></script>
 <script type="text/javascript" src="main.jsx"></script>
 </body>

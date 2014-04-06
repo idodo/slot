@@ -8,7 +8,8 @@
     var earnBtnStatus = 1; //是否显示免费赚金币按钮
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
     var earnDesc = "";
-    var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";//'http://adwall.anansimobile.cn:8983';
+//    var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
+    var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8983';
 
 
     function displayScore(value) {
@@ -404,6 +405,66 @@
                 }
             });
 
+        },
+        getVerfiyCodeUrl : REMOTE_SERVER + '/player/getverfiycode',
+        getVerfiyCode : function(phone, success, error){
+            error = error || function (code, err) {
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', err.reason || err.message || err || '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url: this.getVerfiyCodeUrl,
+                data: 'udid=' + udid + '&bindMobile=' + phone,
+                type: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function (res) {
+                    try {
+                        NSLog('[getverfiycode] res:' + res);
+                        var data = JSON.parse(res);
+                        if (data.result == 0) {
+                            NSLog("getverfiycode success");
+                            success(data);
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch (e) {
+                        error(-1, e.message, e);
+                    }
+                },
+                error: function (res) {
+                    error(-2, res);
+                }
+            });
+        },
+        bindMobileUrl : REMOTE_SERVER + '/player/bindmobile',
+        bindMobile : function(code, success, error){
+            error = error || function (code, err) {
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', err.reason || err.message || err || '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url: this.bindMobileUrl,
+                data: 'udid=' + udid + '&inputCode=' + code + '',
+                type: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function (res) {
+                    try {
+                        NSLog('[bindmobile] res:' + res);
+                        var data = JSON.parse(res);
+                        if (data.result == 0) {
+                            NSLog("bindmobile success");
+                            success(data);
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch (e) {
+                        error(-1, e.message, e);
+                    }
+                },
+                error: function (res) {
+                    error(-2, res);
+                }
+            });
         }
     };
 })(window);

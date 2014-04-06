@@ -52,6 +52,7 @@
 		76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83A189BC3410052FB4D /* QuartzCore.framework */; };
 		76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83C189BC3DD0052FB4D /* AdSupport.framework */; };
 		76E2BA6318B939FF00C7AC7A /* qrcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76E2BA6218B939FF00C7AC7A /* qrcode.jpg */; };
+		76E2FE0818F155B900A49944 /* BindMobileLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FE0718F155B900A49944 /* BindMobileLayer.jsx */; };
 		76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263818A6974700AFA4FD /* ImageIO.framework */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
@@ -280,6 +281,7 @@
 		76C5B83A189BC3410052FB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		76C5B83C189BC3DD0052FB4D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		76E2BA6218B939FF00C7AC7A /* qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcode.jpg; sourceTree = "<group>"; };
+		76E2FE0718F155B900A49944 /* BindMobileLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BindMobileLayer.jsx; sourceTree = "<group>"; };
 		76ED263818A6974700AFA4FD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -581,6 +583,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				76E2FE0718F155B900A49944 /* BindMobileLayer.jsx */,
 				760B7D5118DDD5B2004958E3 /* go.wav */,
 				760B7D4F18DDD45A004958E3 /* win.wav */,
 				76F8E1B818BA3955000867CA /* rate.png */,
@@ -1250,7 +1253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1402,6 +1405,7 @@
 				BF146585189BE73D0084E701 /* dianru_green_dianru_download.png in Resources */,
 				76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */,
 				7628CDD31892D9B90085CE94 /* bridge.jsx in Resources */,
+				76E2FE0818F155B900A49944 /* BindMobileLayer.jsx in Resources */,
 				BF14658C189BE73D0084E701 /* dianru_green_right_cell.png in Resources */,
 				BF146598189BE73D0084E701 /* dianru_orange_right_view.png in Resources */,
 				BF14656E189BE73D0084E701 /* dianru_blue_right_view.png in Resources */,
@@ -1710,7 +1714,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,

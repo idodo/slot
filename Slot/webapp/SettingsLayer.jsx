@@ -32,7 +32,7 @@ var SettingsLayer = View.derive({
         }
         var phone = $('phone').value.trim();
         if(phone){
-            if(!/^\d+$/.test(phone)){
+            if(!/^\d{11}$/.test(phone)){
                 Dialog.show('格式错误', '手机号写错啦');
                 return;
             }
