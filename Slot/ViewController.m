@@ -159,7 +159,9 @@
         //[integralWall release];
     }];
     
-    
+    [_bridge registerHandler:@"showGuomobOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self loadGuomobAdwall];
+    }];
     
     [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self consumeEarnGold];
@@ -410,6 +412,23 @@
             //[InitData  release];
 
         }
+        //初始化果盟
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:guomob];
+        if( adInfo.status == 1 ){
+            NSLog(@"[yijifen]init guomob wall");
+            //用果盟广告密钥初始化积分墙
+            self.guomobWall=[[GuoMobWallViewController alloc] initWithId:@"p9a2mc0qh7s2469"];//@"p9a2mc0qh7s2469"
+            //设置代理
+            self.guomobWall.delegate=self;
+            //设置自动刷新积分的时间间隔
+            //******注:不设置该参数的话,SDK默认为20秒,自动刷新时间最小值为15******
+            //******设置为0为不自动刷新,开发者自己去控制刷新******
+            self.guomobWall.updatetime=30;
+            
+            //设置积分墙是否显示状态栏 默认隐藏
+            self.guomobWall.isStatusBarHidden=NO;
+            
+        }
     }
     //init move gold flags for comsumeEarnGold
     _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
@@ -519,6 +538,7 @@
                 [self onConsumeGold:0 adtype:adwo];
             }
         }
+        //有米
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
         if( adInfo.status == 1){
             NSLog(@"[youmi] begin move gold");
@@ -536,6 +556,18 @@
         if( adInfo.status == 1){
             [YJFScore getScore:self];
         }
+        //果盟
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:guomob];
+        if( adInfo.status == 1){
+           int gold = [self.guomobWall checkPoint];//查询积分
+            NSLog(@"[guomob] query gold:%d", gold);
+            if( gold > 0 ){
+                [self.guomobWall updatePoint];
+            }else{
+                [self onConsumeGold:0 adtype:guomob];
+            }
+        }
+        
                   
     }
     
@@ -1115,6 +1147,46 @@
 }
 #pragma mark end
 /********************admob callback end ***************************/
+/********************guomob callback begin ************************/
+#pragma mark guomob callback start
+-(void)loadGuomobAdwall
+{
+     [self.guomobWall pushGuoMobWall:YES Hscreen:NO];
+}
+//加载回调 返回参数YES表示加载成功 NO表示失败
+- (void)loadWallAdSuccess:(BOOL)success
+{
+    if (success) {
+        NSLog(@"[guomob] 积分墙加载成功");
+    }
+}
+//加载积分墙出错时候的回调  返回错误信息
+-(void)GMWallDidFailWithError:(NSString *)error{
+    NSLog(@"[guomob] 加载积分墙失败, error: %@", error );
+}
+
+//更新积分出错时候的回调  返回错误信息
+-(void)GMUpdatePointError:(NSString *)error{
+    [self onConsumeGold:0 adtype:guomob];
+      NSLog(@"[guomob] 刷新积分错误:%@",error);
+}
+
+
+//服务器回调接口，自动或手动更新积分得到积分时都会回调该方法,可以只在积分point不为0的情况下提示
+- (void)checkPoint:(NSString *)appname point:(int)point
+{
+    NSLog(@"[guomob begin to consume gold:%d]", point);
+    [self onConsumeGold:point adtype:guomob];
+    //[self onConsumeGold:self.middiSpendGold adtype:middi];
+   // UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:tempMsg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
+   // [alertView show];
+  
+}
+
+
+#pragma mark guomob callback end
+/********************guomob callback end **************************/
+
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {

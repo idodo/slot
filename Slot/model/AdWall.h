@@ -15,6 +15,7 @@ enum adtype{
     middi, //米迪
     adwo, //安沃
     yijifen, //易积分
+    guomob, //果盟
     adtype_num
 };
 

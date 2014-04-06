@@ -8,7 +8,8 @@
     var earnBtnStatus = 1; //是否显示免费赚金币按钮
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
     var earnDesc = "";
-    var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";//'http://adwall.anansimobile.cn:8982';
+    var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";//'http://adwall.anansimobile.cn:8983';
+
 
     function displayScore(value) {
         NSLog('[displayScore] score:' + score);

@@ -184,6 +184,8 @@
 		BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14664B189BFFE60084E701 /* CoreTelephony.framework */; };
 		BF1D11D418B4D9AF002D9E12 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D11D318B4D9AF002D9E12 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BF1F001418B6362100BC6C7B /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1F001318B6362100BC6C7B /* libGoogleAdMobAds.a */; };
+		BF20BBAA18EE82330035D7DB /* GuomobWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF20BBA718EE82330035D7DB /* GuomobWallBundle.bundle */; };
+		BF20BBAB18EE82330035D7DB /* libGuoMobWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF20BBA918EE82330035D7DB /* libGuoMobWall.a */; };
 		BF262DF118C9F9CF003F8217 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DEF18C9F9CF003F8217 /* icon.png */; };
 		BF262DF218C9F9CF003F8217 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF018C9F9CF003F8217 /* icon@2x.png */; };
 		BF262DF418C9FAD8003F8217 /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF318C9FAD8003F8217 /* 57.png */; };
@@ -450,6 +452,11 @@
 		BF1F001118B6362100BC6C7B /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
 		BF1F001218B6362100BC6C7B /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
 		BF1F001318B6362100BC6C7B /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		BF20BBA718EE82330035D7DB /* GuomobWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuomobWallBundle.bundle; sourceTree = "<group>"; };
+		BF20BBA818EE82330035D7DB /* GuoMobWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuoMobWallViewController.h; sourceTree = "<group>"; };
+		BF20BBA918EE82330035D7DB /* libGuoMobWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGuoMobWall.a; sourceTree = "<group>"; };
+		BF20BBAC18F12C430035D7DB /* MiidiAdSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdSpot.h; sourceTree = "<group>"; };
+		BF20BBAD18F12C430035D7DB /* MiidiAdDesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdDesc.h; sourceTree = "<group>"; };
 		BF262DEF18C9F9CF003F8217 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = icons/icon.png; sourceTree = "<group>"; };
 		BF262DF018C9F9CF003F8217 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "icons/icon@2x.png"; sourceTree = "<group>"; };
 		BF262DF318C9FAD8003F8217 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57.png; path = icons/57.png; sourceTree = "<group>"; };
@@ -529,6 +536,7 @@
 				BF146648189BF7850084E701 /* CFNetwork.framework in Frameworks */,
 				BF146646189BF7690084E701 /* MobileCoreServices.framework in Frameworks */,
 				BF146644189BF75D0084E701 /* MediaPlayer.framework in Frameworks */,
+				BF20BBAB18EE82330035D7DB /* libGuoMobWall.a in Frameworks */,
 				BF146642189BF74B0084E701 /* CoreText.framework in Frameworks */,
 				BF146640189BF73E0084E701 /* libz.dylib in Frameworks */,
 				76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */,
@@ -617,6 +625,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BF20BBA618EE82330035D7DB /* GuomobSDK */,
 				BF1F000918B6362100BC6C7B /* AdmodSDK */,
 				BFEEAE1618A75C730069B250 /* AdWoSDK */,
 				BFEEAE0818A731440069B250 /* MiddiSDK */,
@@ -1048,6 +1057,16 @@
 			path = AdmodSDK;
 			sourceTree = "<group>";
 		};
+		BF20BBA618EE82330035D7DB /* GuomobSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BF20BBA718EE82330035D7DB /* GuomobWallBundle.bundle */,
+				BF20BBA818EE82330035D7DB /* GuoMobWallViewController.h */,
+				BF20BBA918EE82330035D7DB /* libGuoMobWall.a */,
+			);
+			path = GuomobSDK;
+			sourceTree = "<group>";
+		};
 		BF4B45D5189BE086004465BB /* thirdlibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1128,6 +1147,8 @@
 		BFEEAE0818A731440069B250 /* MiddiSDK */ = {
 			isa = PBXGroup;
 			children = (
+				BF20BBAC18F12C430035D7DB /* MiidiAdSpot.h */,
+				BF20BBAD18F12C430035D7DB /* MiidiAdDesc.h */,
 				BFEEAE0918A731440069B250 /* MiidiAdLib.a */,
 				BFEEAE0A18A731440069B250 /* MiidiAdView.h */,
 				BFEEAE0B18A731440069B250 /* MiidiAdViewDelegate.h */,
@@ -1385,6 +1406,7 @@
 				BF146598189BE73D0084E701 /* dianru_orange_right_view.png in Resources */,
 				BF14656E189BE73D0084E701 /* dianru_blue_right_view.png in Resources */,
 				765299C318B072E8000F3347 /* SettingsLayer.jsx in Resources */,
+				BF20BBAA18EE82330035D7DB /* GuomobWallBundle.bundle in Resources */,
 				7628CDDE1892D9B90085CE94 /* index.html in Resources */,
 				BF8E452F18C612A1002986DF /* 44.png in Resources */,
 				BF14657F189BE73D0084E701 /* dianru_title_1.jpg in Resources */,
@@ -1593,6 +1615,7 @@
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
 					"${SRCROOT}/Slot/adsdk/AdmodSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1633,6 +1656,7 @@
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
 					"${SRCROOT}/Slot/adsdk/AdmodSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
