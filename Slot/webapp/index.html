@@ -178,24 +178,29 @@
                 </tr>
                 <tr>
                     <td>验证码</td>
-                    <td><input id="bind-code" type="text" style="width:55px">
+                    <td><input id="bind-code" type="text" style="width:75px">
                         <span id="get-verify-code" class="check-btn">免费获取</span>
                     </td>
                 </tr>
-            </table><br/>
+            </table>
+            <div style="height: 40px; padding-right: 10px"><span id="bind-save-btn" class="button_small pull-right">提交</span></div>
+            <br/>
             <h3>验证步骤：</h3>
-            <div>1. 填写手机号，然后点击 <span class="check-btn">免费获取</span> 按钮</div>
+            <div>1. 填写手机号，然后点击【免费获取】按钮</div>
             <div>2. 您会接到一个电话，请接听并记录您听到的验证码</div>
             <div>3. 填写验证码，并提交</div>
         </div>
         <div id="bind-back-btn" class="button_small back-btn">返回</div>
-        <div id="bind-save-btn" class="button_small bottom-btn">保存</div>
     </section>
     <section id="settingsLayer" class="center">
         <div class="panel2">
             <table>
                 <tr>
-                    <td style="width:60px;">Q&nbsp;Q&nbsp;号</td>
+                    <td style="width:60px;">用户ID</td>
+                    <td id="uid"></td>
+                </tr>
+                <tr>
+                    <td>Q&nbsp;Q&nbsp;号</td>
                     <td><input id="qq" type="text"></td>
                 </tr>
                 <tr>
@@ -227,6 +232,7 @@
         </div>
         <div data-show="trade" class="button_small back-btn">返回</div>
     </section>
+    <div id="earn-show" class="marquee">这里是滚动字幕</div>
     <div id="sound"></div>
     <section id="layer-mask" class="layer-mask"></section>
 </div>

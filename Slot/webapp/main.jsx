@@ -7,6 +7,7 @@ document.addEventListener('WebViewJavascriptBridgeReady', function () {
 
     var container = $('gameContainer');
     var height = (document.body.clientHeight - 50) + 'px';
+    var width = document.body.clientWidth;
     document.documentElement.style.minHeight = height;
     document.body.style.minHeight = height;
     container.style.minHeight = height;
@@ -27,6 +28,29 @@ document.addEventListener('WebViewJavascriptBridgeReady', function () {
     Director.addLayer(new BindMobileLayer('bindMobileLayer'), 'bind');
     Director.show('welcome');
 
+    var timer;
 
+    Player.getLastDuihuans(function(res){
+        var dom = $('earn-show');
+        dom.style.display = 'block';
+        var html = '<div class="item">';
+        res = res || [];
+        res.forEach(function(record){
+            html += '<span>' + record.duihuanInfo + record.createdAt + record.comment + '</span>';
+        });
+        html += '</div>';
+        html = '<table><tbody><tr><td>' + html + '</td><td>' + html + '</td></tr></tbody></table>';
+        dom.innerHTML = html;
+        var div = dom.getElementsByTagName('div')[0];
+        var table = dom.getElementsByTagName('table')[0];
+        var mWidth = div.offsetWidth;
+        var distance = 2 * mWidth - width;
+        var pos = 0;
+        clearInterval(timer);
+        timer = setInterval(function(){
+            table.style.marginLeft = '-' + (pos) + 'px';
+            pos = pos >= distance ? 0 : pos + 1;
+        }, 40);
+    });
 
 }, false);

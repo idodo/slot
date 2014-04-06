@@ -20,6 +20,10 @@
         $('score3').innerHTML = score;
     }
 
+    function displayUid(uid){
+        $('uid').innerHTML = uid;
+    }
+
     $$.ajax = function (opt) {
         var xhr = new window.XMLHttpRequest();
         var timer;
@@ -131,6 +135,7 @@
                         if (typeof data.playerInfo.gold === 'number') {
                             NSLog('[getbyudid]:gold:' + data.playerInfo.gold);
                             displayScore(data.playerInfo.gold);
+                            displayUid(data.playerInfo.uid);
                             success(data.playerInfo.gold, data);
                         } else {
                             error(data.result, data.reason, data);
@@ -454,6 +459,33 @@
                         if (data.result == 0) {
                             NSLog("bindmobile success");
                             success(data);
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch (e) {
+                        error(-1, e.message, e);
+                    }
+                },
+                error: function (res) {
+                    error(-2, res);
+                }
+            });
+        },
+        getLastDuihuansUrl : REMOTE_SERVER + '/player/getlastduihuans',
+        getLastDuihuans : function(success, error){
+            error = error || function (code, err) {
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', err.reason || err.message || err || '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url: this.getLastDuihuansUrl,
+                success: function (res) {
+                    try {
+                        NSLog('[getlastduihuans] res:' + res);
+                        var data = JSON.parse(res);
+                        if (data.result == 0) {
+                            NSLog("bindmobile success");
+                            success(data.duihuanRecords);
                         } else {
                             error(data.result, data.reason, data);
                         }

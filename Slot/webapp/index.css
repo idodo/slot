@@ -389,7 +389,7 @@ section {
 #sound {
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 20px;
     width: 36px;
     height: 18px;
     background: url("sound.png") no-repeat right 0;
@@ -475,13 +475,16 @@ input[type=text] {
     box-shadow: none;
 }
 
+.pull-right {
+    float: right;
+}
+
 ::-webkit-input-placeholder { color:#369; }
 
 #settingsLayer table .selected {
     background: rgb(28, 184, 65);;
 }
 
-#bindMobileLayer #bind-back-btn,
 #settingsLayer #settings-back-btn {
     right: 85px;
 }
@@ -627,6 +630,39 @@ ul.list li span:first-child {
 ul.list li span:last-child {
     float: right;
     font-size: 14px;
+}
+
+.marquee {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 20px;
+    background: rgba(255,255,125, 0.9);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+}
+
+.marquee div.item {
+    display: inline-block;
+    white-space: nowrap;
+    word-break: break-all;
+    min-width: 320px;
+}
+
+.marquee span {
+    margin: 0 5px;
+}
+
+.marquee table td {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+#earn-show {
+    display: none;
 }
 
 @-webkit-keyframes glow {
