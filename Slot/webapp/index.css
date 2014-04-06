@@ -389,7 +389,7 @@ section {
 #sound {
     position: absolute;
     right: 5px;
-    top: 20px;
+    top: 25px;
     width: 36px;
     height: 18px;
     background: url("sound.png") no-repeat right 0;
