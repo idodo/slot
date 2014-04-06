@@ -31,6 +31,7 @@
 #import <Escore/YJFAdWall.h>
 #import "MarqueeLabel.h"
 #import "GuoMobWallViewController.h"
+#import "MopanAdWall.h"
 //#import "DMAdView.h"
 #import "WXApi.h"
 @class GADBannerView;
@@ -74,11 +75,10 @@ GADBannerViewDelegate,
 YJFIntegralWallDelegate,
 YJFAdWallDelegate,
 GuoMobWallDelegate,
+MopanAdWallDelegate,
 //DMAdViewDelegate,
 WXApiDelegate> {
-    //DMAdView *_dmAdView;
-//    CGSize _adSize;
-//    CGFloat _adX, _adY;
+  
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet WebViewJavascriptBridge *bridge;
@@ -89,6 +89,7 @@ WXApiDelegate> {
 @property (strong,nonatomic) DMOfferWallManager *domobAdWallManager;
 @property (strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
 @property (strong,nonatomic)  GuoMobWallViewController *guomobWall;
+@property (strong,nonatomic) MopanAdWall *mopanWall;
 @property (nonatomic)int dianruSpendGold;
 @property (nonatomic)int domobSpendGold;
 @property (nonatomic)int limeiSpendGold;

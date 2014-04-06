@@ -16,6 +16,7 @@ enum adtype{
     adwo, //安沃
     yijifen, //易积分
     guomob, //果盟
+    mopan, //磨盘
     adtype_num
 };
 

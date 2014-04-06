@@ -364,6 +364,7 @@
     if( [DataConfig getInstance].inReview == 0){
         AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
         if( adInfo.status == 1 ){
+             NSLog(@"[initAdwall]init domob adwall");
             _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
             _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
             _domobAdWallManager.delegate = self;
@@ -371,7 +372,7 @@
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
         if( adInfo.status == 1 ){
-            NSLog(@"[limei]init adwall");
+            NSLog(@"[initAdwall]init limei adwall");
             _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
             _limeiAdWall.delegate=self;
             [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
@@ -383,7 +384,7 @@
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
         if( adInfo.status == 1 ){
-            NSLog(@"[youmi]init adwall");
+            NSLog(@"[initAdwall]init youmi adwall");
             [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
             // 开启积分管理[本例子使用自动管理];
             [YouMiPointsManager enable];
@@ -393,12 +394,12 @@
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
         if( adInfo.status == 1 ){
-            NSLog(@"[middi]init adwall");
+            NSLog(@"[initAdwall]init miidi adwall");
             [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
         if( adInfo.status == 1 ){
-            NSLog(@"[yijifen]init yijifen");
+            NSLog(@"[initAdwall]init yijifen");
             //开发者
             [YJFUserMessage shareInstance].yjfUserAppId = @"50326";//应用ID
             [YJFUserMessage shareInstance].yjfUserDevId = @"59842";//开发者ID
@@ -415,7 +416,7 @@
         //初始化果盟
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:guomob];
         if( adInfo.status == 1 ){
-            NSLog(@"[yijifen]init guomob wall");
+            NSLog(@"[initAdwall] init guomob wall");
             //用果盟广告密钥初始化积分墙
             self.guomobWall=[[GuoMobWallViewController alloc] initWithId:@"p9a2mc0qh7s2469"];//@"p9a2mc0qh7s2469"
             //设置代理
@@ -427,6 +428,16 @@
             
             //设置积分墙是否显示状态栏 默认隐藏
             self.guomobWall.isStatusBarHidden=NO;
+            
+        }
+        //初始化磨盘
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:mopan];
+        if( adInfo.status == 1 ){
+            NSLog(@"[initAdwall]init mopan wall");
+            // 设置账号
+            self.mopanWall = [[MopanAdWall alloc] initWithMopan:@"12445" withAppSecret:@"71nv66slrhct7ub9"];
+            self.mopanWall.delegate = self;
+            self.mopanWall.rootViewController = self;
             
         }
     }
@@ -567,6 +578,7 @@
                 [self onConsumeGold:0 adtype:guomob];
             }
         }
+        
         
                   
     }
@@ -1186,6 +1198,141 @@
 
 #pragma mark guomob callback end
 /********************guomob callback end **************************/
+/********************mopan callback start *************************/
+#pragma mark mopan callback start
+- (void)loadMopanAdWall
+{
+    [self.mopanWall showAppOffers];
+}
+// MopanAdWallDelegate delegate start
+
+// 积分墙开始加载数据。
+// Adall starts to work.
+- (void)adwallDidShowAppsStartLoad
+{
+    NSLog(@"[mopan] 开始加载积分墙");
+	
+	
+}
+
+// 关闭积分墙页面。
+// Offer wall closed.
+- (void)adwallDidShowAppsClosed
+{
+    NSLog(@"[mopan 关闭积分墙");
+}
+
+// 积分墙加载失败。可能的原因由error部分提供，例如网络连接失败、被禁用等。
+- (void)adwallDidFailShowAppsWithError:(NSError *)error
+{
+    NSLog(@"[mopan] 加载积分墙失败");
+	
+}
+
+// 请求积分值成功后调用
+//
+// 详解:当接收服务器返回的积分值成功后调用该函数
+// 补充：totalMoney: 返回用户的总积分
+//      moneyName  : 返回的积分名称
+- (void)adwallSuccessGetMoney:(NSInteger)totalMoney forMoneyName:(NSString*)moneyName
+{
+    NSLog(@"[mopan] 成功获取金币! 总金币值=%d",(int)totalMoney);
+    
+	
+}
+
+// 请求积分值数据失败后调用
+//
+// 详解:当接收服务器返回的数据失败后调用该函数
+// 补充：第一次和接下来每次如果请求失败都会调用该函数
+- (void)adwallFailGetMoney:(NSError *)error
+{
+    NSLog(@"[mopan] 获取金币失败!");
+    
+}
+
+// 消耗金币成功后调用
+//
+// 详解:当接收服务器返回的消耗积分成功后调用该函数
+// 补充：totalMoney: 返回用户的总积分
+
+- (void)adwallSuccessSpendMoney:(NSInteger)totalMoney
+{
+    NSLog(@"[mopan] 成功减少金币! 总金币值=%d",(int)totalMoney);
+    
+    
+	
+}
+
+
+// 请求消耗积分数据失败后调用
+//
+// 详解:当接收服务器返回的数据失败后调用该函数
+// 补充：第一次和接下来每次如果请求失败都会调用该函数
+- (void)adwallFailSpendMoney:(NSError *)error
+{
+    NSLog(@"[mopan] 减少金币失败!");
+    
+	
+}
+
+//// 请求奖励积分成功后调用
+////
+//// 详解:当接收服务器返回的奖励积分成功后调用该函数
+//// 补充：totalMoney: 返回用户的总积分
+//- (void)adwallSuccessAddMoney:(NSInteger)totalMoney
+//{
+//    NSLog(@"[mopan] 成功增加金币! 总金币值=%d",(int)totalMoney);
+//    //self.scoreLabel.text = [NSString stringWithFormat:@"%d",totalMoney];
+//	
+//	
+//}
+//
+//// 请求奖励积分数据失败后调用
+////
+//// 详解:当接收服务器返回的数据失败后调用该函数
+//// 补充：第一次和接下来每次如果请求失败都会调用该函数
+//- (void)adwallFailAddMoney:(NSError *)error
+//{
+//    NSLog(@"[mopan] 增加金币失败!");
+//    
+//	
+//}
+
+
+// 成功请求积分墙开关
+//
+// 详解:当接收服务器返回积分墙开关成功后调用该函数
+// 补充：adWallSwitch: 返回积分墙是否开启
+- (void)adwallSuccessAskEnable:(BOOL)adWallEnable
+{
+    if(adWallEnable == YES){
+        NSLog(@"[mopan] 从服务器查询，可以正常使用积分墙");
+        
+        
+    }
+    else{
+        NSLog(@"[mopan] 从服务器查询，不能使用积分墙 .需要正常使用，需要到后台设置");
+        
+        
+    }
+    
+}
+
+// 请求积分墙开关失败后调用
+//
+// 详解:当接收服务器返回的数据失败后调用该函数
+// 补充：
+- (void)adwallFailAskEnable:(NSError *)error
+{
+    NSLog(@"[mopan] 获取积分墙开关失败!");
+    
+	
+}
+
+
+#pragma mark mopan callback end
+/********************mopan callback end ***************************/
 
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype

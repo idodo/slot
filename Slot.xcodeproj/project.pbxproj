@@ -187,6 +187,7 @@
 		BF1F001418B6362100BC6C7B /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1F001318B6362100BC6C7B /* libGoogleAdMobAds.a */; };
 		BF20BBAA18EE82330035D7DB /* GuomobWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF20BBA718EE82330035D7DB /* GuomobWallBundle.bundle */; };
 		BF20BBAB18EE82330035D7DB /* libGuoMobWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF20BBA918EE82330035D7DB /* libGuoMobWall.a */; };
+		BF20BBB118F168D80035D7DB /* MopanAdLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF20BBAF18F168D80035D7DB /* MopanAdLib.a */; };
 		BF262DF118C9F9CF003F8217 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DEF18C9F9CF003F8217 /* icon.png */; };
 		BF262DF218C9F9CF003F8217 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF018C9F9CF003F8217 /* icon@2x.png */; };
 		BF262DF418C9FAD8003F8217 /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF318C9FAD8003F8217 /* 57.png */; };
@@ -459,6 +460,8 @@
 		BF20BBA918EE82330035D7DB /* libGuoMobWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGuoMobWall.a; sourceTree = "<group>"; };
 		BF20BBAC18F12C430035D7DB /* MiidiAdSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdSpot.h; sourceTree = "<group>"; };
 		BF20BBAD18F12C430035D7DB /* MiidiAdDesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiAdDesc.h; sourceTree = "<group>"; };
+		BF20BBAF18F168D80035D7DB /* MopanAdLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MopanAdLib.a; sourceTree = "<group>"; };
+		BF20BBB018F168D80035D7DB /* MopanAdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopanAdWall.h; sourceTree = "<group>"; };
 		BF262DEF18C9F9CF003F8217 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = icons/icon.png; sourceTree = "<group>"; };
 		BF262DF018C9F9CF003F8217 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "icons/icon@2x.png"; sourceTree = "<group>"; };
 		BF262DF318C9FAD8003F8217 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57.png; path = icons/57.png; sourceTree = "<group>"; };
@@ -557,6 +560,7 @@
 				76C5B831189BC3120052FB4D /* Security.framework in Frameworks */,
 				BF4CEE9618E054920014EEF1 /* Escore.framework in Frameworks */,
 				76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */,
+				BF20BBB118F168D80035D7DB /* MopanAdLib.a in Frameworks */,
 				76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */,
 				76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */,
 				BF146563189BE73D0084E701 /* immobSDK.framework in Frameworks */,
@@ -628,6 +632,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BF20BBAE18F168D80035D7DB /* MopanSDK */,
 				BF20BBA618EE82330035D7DB /* GuomobSDK */,
 				BF1F000918B6362100BC6C7B /* AdmodSDK */,
 				BFEEAE1618A75C730069B250 /* AdWoSDK */,
@@ -1068,6 +1073,15 @@
 				BF20BBA918EE82330035D7DB /* libGuoMobWall.a */,
 			);
 			path = GuomobSDK;
+			sourceTree = "<group>";
+		};
+		BF20BBAE18F168D80035D7DB /* MopanSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BF20BBAF18F168D80035D7DB /* MopanAdLib.a */,
+				BF20BBB018F168D80035D7DB /* MopanAdWall.h */,
+			);
+			path = MopanSDK;
 			sourceTree = "<group>";
 		};
 		BF4B45D5189BE086004465BB /* thirdlibs */ = {
@@ -1620,6 +1634,7 @@
 					"${SRCROOT}/Slot/adsdk/AdmodSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/MopanSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1661,6 +1676,7 @@
 					"${SRCROOT}/Slot/adsdk/AdmodSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/MopanSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
