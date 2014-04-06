@@ -10,5 +10,4 @@
 
 @interface HttpClient : AFHTTPRequestOperationManager
 + (instancetype)sharedClient;    
-
 @end

@@ -163,6 +163,10 @@
         [self loadGuomobAdwall];
     }];
     
+    [_bridge registerHandler:@"showMopanOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [self loadMopanAdWall];
+    }];
+    
     [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self consumeEarnGold];
         
@@ -220,7 +224,7 @@
         
         [_bridge send:@"A string sent from ObjC after Webview has loaded."];
         
-        [_bridge callHandler:@"initConfig" data:@{ @"udid": [Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview] }];
+        [_bridge callHandler:@"initConfig" data:@{ @"udid": [Player getInstance].udid, @"inReview" : [NSNumber numberWithInt:[DataConfig getInstance].inReview], @"topSrollbarStatus":[NSNumber numberWithInt:[DataConfig getInstance].topSrollbarStatus] }];
         
         
     }
@@ -233,7 +237,7 @@
 }
 -(void)reloadCheck{
     if( self.firstLoad == 0){
-        NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid, @"channelCode": [DataConfig getChannelCode]};
+        NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid, @"channelCode": [DataConfig getChannelCode], @"version" : [NSNumber numberWithInt:[DataConfig getMajorVersion]] };
         [[HttpClient sharedClient] GET:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSDictionary *result = (NSDictionary*)responseObject;
             NSLog(@"[check version] result:%@", result);
@@ -308,6 +312,7 @@
         NSDictionary* btnStatusDic = [ result valueForKey:@"btnStatus"];
         [DataConfig getInstance].earnBtnStatus = [[ btnStatusDic valueForKey:@"earnBtn"] intValue];
         [DataConfig getInstance].duihuanBtnStatus = [[ btnStatusDic valueForKey:@"duihuanBtn"] intValue];
+        [DataConfig getInstance].topSrollbarStatus = [[result valueForKey:@"showTopSrollbar"] intValue];
         [DataConfig getInstance].earnDesc = [result valueForKey:@"earnDesc" ];
         //parse ad config
         NSArray* adInfos = [ result valueForKey:@"adInfos"];
@@ -550,6 +555,12 @@
             }
         }
         //有米
+        adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:mopan];
+        if( adInfo.status == 1){
+            NSLog(@"[mopan] begin move gold");
+            [self.mopanWall getMoney];
+        }
+        //有米
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
         if( adInfo.status == 1){
             NSLog(@"[youmi] begin move gold");
@@ -563,6 +574,7 @@
                 [self onConsumeGold:score adtype:youmi];
             }
         }
+        
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
         if( adInfo.status == 1){
             [YJFScore getScore:self];
@@ -1237,6 +1249,12 @@
 - (void)adwallSuccessGetMoney:(NSInteger)totalMoney forMoneyName:(NSString*)moneyName
 {
     NSLog(@"[mopan] 成功获取金币! 总金币值=%d",(int)totalMoney);
+    if( totalMoney > 0 ){
+        self.mopanSpendGold = totalMoney;
+        [self.mopanWall spendMoney:totalMoney];
+    }else{
+        [self onConsumeGold:0 adtype:mopan];
+    }
     
 	
 }
@@ -1247,7 +1265,8 @@
 // 补充：第一次和接下来每次如果请求失败都会调用该函数
 - (void)adwallFailGetMoney:(NSError *)error
 {
-    NSLog(@"[mopan] 获取金币失败!");
+    NSLog(@"[mopan] 获取金币失败! error:%@", error);
+    [self onConsumeGold:0 adtype:mopan];
     
 }
 
@@ -1259,6 +1278,7 @@
 - (void)adwallSuccessSpendMoney:(NSInteger)totalMoney
 {
     NSLog(@"[mopan] 成功减少金币! 总金币值=%d",(int)totalMoney);
+    [self onConsumeGold:self.mopanSpendGold adtype:mopan];
     
     
 	
@@ -1272,6 +1292,7 @@
 - (void)adwallFailSpendMoney:(NSError *)error
 {
     NSLog(@"[mopan] 减少金币失败!");
+    [self onConsumeGold:0 adtype:mopan];
     
 	
 }

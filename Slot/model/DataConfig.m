@@ -21,6 +21,7 @@ static dispatch_once_t onceToken;
         _sharedInstance.httpKey = @"19821021isme";
         _sharedInstance.duihuanBtnStatus = 1;
         _sharedInstance.earnBtnStatus = 1;
+        _sharedInstance.topSrollbarStatus = 1;
     });
     return _sharedInstance;
 }

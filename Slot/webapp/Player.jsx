@@ -8,8 +8,8 @@
     var earnBtnStatus = 1; //是否显示免费赚金币按钮
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
     var earnDesc = "";
-//    var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
-    var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8983';
+ //   var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
+   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8983';
 
 
     function displayScore(value) {
@@ -485,7 +485,9 @@
                         var data = JSON.parse(res);
                         if (data.result == 0) {
                             NSLog("bindmobile success");
-                            success(data.duihuanRecords);
+                            if( data.showTopScrollBar == 1 ){
+                                success(data.duihuanRecords);
+                            }
                         } else {
                             error(data.result, data.reason, data);
                         }

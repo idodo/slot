@@ -26,6 +26,7 @@
 @property(nonatomic) int inReview;
 @property (nonatomic)int earnBtnStatus;
 @property (nonatomic)int duihuanBtnStatus;
+@property (nonatomic)int topSrollbarStatus;
 @property(strong,nonatomic) NSString* ituneAppId;
 @property (strong,nonatomic)NSString* httpKey;
 @end

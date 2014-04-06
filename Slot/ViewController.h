@@ -94,6 +94,7 @@ WXApiDelegate> {
 @property (nonatomic)int domobSpendGold;
 @property (nonatomic)int limeiSpendGold;
 @property (nonatomic)int middiSpendGold;
+@property (nonatomic)int mopanSpendGold;
 @property (nonatomic)int firstLoad; //是否是第一次进入游戏
 @property (nonatomic)int alertType; //弹出alert类型，用于alert回调
 @property (strong,nonatomic)NSString* versionLink;
