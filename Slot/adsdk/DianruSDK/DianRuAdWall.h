@@ -5,7 +5,7 @@
 //  Created by  on 12-5-25.
 //  update by  12-10-9
 //  Copyright (c) 2012年 DianRu. All rights reserved.
-//  版本2.4
+//  版本2.6
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

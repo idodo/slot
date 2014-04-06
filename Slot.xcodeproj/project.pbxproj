@@ -52,7 +52,6 @@
 		76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83A189BC3410052FB4D /* QuartzCore.framework */; };
 		76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B83C189BC3DD0052FB4D /* AdSupport.framework */; };
 		76E2BA6318B939FF00C7AC7A /* qrcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76E2BA6218B939FF00C7AC7A /* qrcode.jpg */; };
-		76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263618A6969C00AFA4FD /* Escore.framework */; };
 		76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ED263818A6974700AFA4FD /* ImageIO.framework */; };
 		76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CB1892809B000BE84C /* Foundation.framework */; };
 		76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F208CD1892809B000BE84C /* CoreGraphics.framework */; };
@@ -151,7 +150,6 @@
 		BF1465AE189BE73D0084E701 /* dianru_red_right_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146554189BE73D0084E701 /* dianru_red_right_cell.png */; };
 		BF1465AF189BE73D0084E701 /* dianru_red_right_view.png in Resources */ = {isa = PBXBuildFile; fileRef = BF146555189BE73D0084E701 /* dianru_red_right_view.png */; };
 		BF1465B0189BE73D0084E701 /* libDianRuAdWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146557189BE73D0084E701 /* libDianRuAdWall.a */; };
-		BF1465B1189BE73D0084E701 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146562189BE73D0084E701 /* libYouMi.a */; };
 		BF146615189BEB890084E701 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465F0189BEB890084E701 /* MBProgressHUD.m */; };
 		BF146616189BEB890084E701 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465F3189BEB890084E701 /* AFHTTPRequestOperation.m */; };
 		BF146617189BEB890084E701 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1465F5189BEB890084E701 /* AFHTTPRequestOperationManager.m */; };
@@ -184,7 +182,7 @@
 		BF146648189BF7850084E701 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146647189BF7850084E701 /* CFNetwork.framework */; };
 		BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF146649189BFFC10084E701 /* AudioToolbox.framework */; };
 		BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF14664B189BFFE60084E701 /* CoreTelephony.framework */; };
-		BF1D11D418B4D9AF002D9E12 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D11D318B4D9AF002D9E12 /* StoreKit.framework */; };
+		BF1D11D418B4D9AF002D9E12 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D11D318B4D9AF002D9E12 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BF1F001418B6362100BC6C7B /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1F001318B6362100BC6C7B /* libGoogleAdMobAds.a */; };
 		BF262DF118C9F9CF003F8217 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DEF18C9F9CF003F8217 /* icon.png */; };
 		BF262DF218C9F9CF003F8217 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF018C9F9CF003F8217 /* icon@2x.png */; };
@@ -193,6 +191,10 @@
 		BF262DF818C9FBAC003F8217 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF718C9FBAC003F8217 /* Default.png */; };
 		BF262DFA18C9FC62003F8217 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DF918C9FC62003F8217 /* 29.png */; };
 		BF262DFC18C9FCC7003F8217 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = BF262DFB18C9FCC7003F8217 /* Default~iphone.png */; };
+		BF4CEE9218E051C70014EEF1 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4CEE9018E051C70014EEF1 /* libYouMi.a */; };
+		BF4CEE9318E051C70014EEF1 /* libOpenIDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4CEE9118E051C70014EEF1 /* libOpenIDFA.a */; };
+		BF4CEE9618E054920014EEF1 /* Escore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4CEE9418E054920014EEF1 /* Escore.framework */; };
+		BF4CEE9718E054920014EEF1 /* Escore.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEE9518E054920014EEF1 /* Escore.bundle */; };
 		BF843E7818D54453003D17A8 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF843E7718D54453003D17A8 /* MarqueeLabel.m */; };
 		BF8E452F18C612A1002986DF /* 44.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452918C612A1002986DF /* 44.png */; };
 		BF8E453018C612A1002986DF /* 50.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452A18C612A1002986DF /* 50.png */; };
@@ -276,7 +278,6 @@
 		76C5B83A189BC3410052FB4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		76C5B83C189BC3DD0052FB4D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		76E2BA6218B939FF00C7AC7A /* qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcode.jpg; sourceTree = "<group>"; };
-		76ED263618A6969C00AFA4FD /* Escore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Escore.framework; sourceTree = "<group>"; };
 		76ED263818A6974700AFA4FD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		76F208C81892809B000BE84C /* Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F208CB1892809B000BE84C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -382,15 +383,6 @@
 		BF146555189BE73D0084E701 /* dianru_red_right_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianru_red_right_view.png; sourceTree = "<group>"; };
 		BF146556189BE73D0084E701 /* DianRuAdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianRuAdWall.h; sourceTree = "<group>"; };
 		BF146557189BE73D0084E701 /* libDianRuAdWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDianRuAdWall.a; sourceTree = "<group>"; };
-		BF14655A189BE73D0084E701 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiConfig.h; sourceTree = "<group>"; };
-		BF14655B189BE73D0084E701 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
-		BF14655C189BE73D0084E701 /* YouMiPointsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPointsManager.h; sourceTree = "<group>"; };
-		BF14655D189BE73D0084E701 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
-		BF14655E189BE73D0084E701 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
-		BF14655F189BE73D0084E701 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
-		BF146560189BE73D0084E701 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
-		BF146561189BE73D0084E701 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
-		BF146562189BE73D0084E701 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
 		BF1465EE189BEB890084E701 /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
 		BF1465EF189BEB890084E701 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		BF1465F0189BEB890084E701 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -465,6 +457,19 @@
 		BF262DF718C9FBAC003F8217 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BF262DF918C9FC62003F8217 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 29.png; path = icons/29.png; sourceTree = "<group>"; };
 		BF262DFB18C9FCC7003F8217 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		BF4CEE8718E051C70014EEF1 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiConfig.h; sourceTree = "<group>"; };
+		BF4CEE8818E051C70014EEF1 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
+		BF4CEE8918E051C70014EEF1 /* YouMiPointsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPointsManager.h; sourceTree = "<group>"; };
+		BF4CEE8A18E051C70014EEF1 /* YouMiSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpot.h; sourceTree = "<group>"; };
+		BF4CEE8B18E051C70014EEF1 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
+		BF4CEE8C18E051C70014EEF1 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
+		BF4CEE8D18E051C70014EEF1 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
+		BF4CEE8E18E051C70014EEF1 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
+		BF4CEE8F18E051C70014EEF1 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
+		BF4CEE9018E051C70014EEF1 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
+		BF4CEE9118E051C70014EEF1 /* libOpenIDFA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenIDFA.a; sourceTree = "<group>"; };
+		BF4CEE9418E054920014EEF1 /* Escore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Escore.framework; sourceTree = "<group>"; };
+		BF4CEE9518E054920014EEF1 /* Escore.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Escore.bundle; sourceTree = "<group>"; };
 		BF843E7618D54453003D17A8 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
 		BF843E7718D54453003D17A8 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		BF8E452918C612A1002986DF /* 44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 44.png; path = icons/44.png; sourceTree = "<group>"; };
@@ -515,6 +520,7 @@
 				BFEEAE1518A759FE0069B250 /* libz.1.2.5.dylib in Frameworks */,
 				76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */,
 				BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */,
+				BF4CEE9318E051C70014EEF1 /* libOpenIDFA.a in Frameworks */,
 				BF146636189BF6B10084E701 /* MapKit.framework in Frameworks */,
 				BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */,
 				BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */,
@@ -526,7 +532,6 @@
 				BF146642189BF74B0084E701 /* CoreText.framework in Frameworks */,
 				BF146640189BF73E0084E701 /* libz.dylib in Frameworks */,
 				76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */,
-				76ED263718A6969C00AFA4FD /* Escore.framework in Frameworks */,
 				BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */,
 				BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */,
 				BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */,
@@ -537,10 +542,10 @@
 				BF146632189BEE560084E701 /* libWeChatSDK.a in Frameworks */,
 				76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */,
 				76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */,
-				BF1465B1189BE73D0084E701 /* libYouMi.a in Frameworks */,
 				BF1465B0189BE73D0084E701 /* libDianRuAdWall.a in Frameworks */,
 				76C5B833189BC31A0052FB4D /* AVFoundation.framework in Frameworks */,
 				76C5B831189BC3120052FB4D /* Security.framework in Frameworks */,
+				BF4CEE9618E054920014EEF1 /* Escore.framework in Frameworks */,
 				76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */,
 				76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */,
 				76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */,
@@ -548,6 +553,7 @@
 				76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */,
 				76F208D01892809B000BE84C /* UIKit.framework in Frameworks */,
 				76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */,
+				BF4CEE9218E051C70014EEF1 /* libYouMi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +653,8 @@
 		76ED263518A6969C00AFA4FD /* YiJiFenSDK */ = {
 			isa = PBXGroup;
 			children = (
-				76ED263618A6969C00AFA4FD /* Escore.framework */,
+				BF4CEE9418E054920014EEF1 /* Escore.framework */,
+				BF4CEE9518E054920014EEF1 /* Escore.bundle */,
 			);
 			path = YiJiFenSDK;
 			sourceTree = "<group>";
@@ -925,25 +932,11 @@
 		BF146558189BE73D0084E701 /* YoumiSDK */ = {
 			isa = PBXGroup;
 			children = (
-				BF146559189BE73D0084E701 /* include */,
-				BF146562189BE73D0084E701 /* libYouMi.a */,
+				BF4CEE8618E051C70014EEF1 /* include */,
+				BF4CEE9018E051C70014EEF1 /* libYouMi.a */,
+				BF4CEE9118E051C70014EEF1 /* libOpenIDFA.a */,
 			);
 			path = YoumiSDK;
-			sourceTree = "<group>";
-		};
-		BF146559189BE73D0084E701 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				BF14655A189BE73D0084E701 /* YouMiConfig.h */,
-				BF14655B189BE73D0084E701 /* YouMiDelegateProtocol.h */,
-				BF14655C189BE73D0084E701 /* YouMiPointsManager.h */,
-				BF14655D189BE73D0084E701 /* YouMiView.h */,
-				BF14655E189BE73D0084E701 /* YouMiWall.h */,
-				BF14655F189BE73D0084E701 /* YouMiWallAppModel.h */,
-				BF146560189BE73D0084E701 /* YouMiWallSpot.h */,
-				BF146561189BE73D0084E701 /* YouMiWallSpotView.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		BF1465ED189BEB890084E701 /* MBProgressHUD */ = {
@@ -1075,6 +1068,22 @@
 			children = (
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		BF4CEE8618E051C70014EEF1 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BF4CEE8718E051C70014EEF1 /* YouMiConfig.h */,
+				BF4CEE8818E051C70014EEF1 /* YouMiDelegateProtocol.h */,
+				BF4CEE8918E051C70014EEF1 /* YouMiPointsManager.h */,
+				BF4CEE8A18E051C70014EEF1 /* YouMiSpot.h */,
+				BF4CEE8B18E051C70014EEF1 /* YouMiView.h */,
+				BF4CEE8C18E051C70014EEF1 /* YouMiWall.h */,
+				BF4CEE8D18E051C70014EEF1 /* YouMiWallAppModel.h */,
+				BF4CEE8E18E051C70014EEF1 /* YouMiWallSpot.h */,
+				BF4CEE8F18E051C70014EEF1 /* YouMiWallSpotView.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		BF843E7518D54453003D17A8 /* marqueeLabel */ = {
@@ -1220,7 +1229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1322,6 +1331,7 @@
 				BF146588189BE73D0084E701 /* dianru_green_dianru_titlebg.jpg in Resources */,
 				76B1C1D8189690410042C7F6 /* Player.jsx in Resources */,
 				BF146569189BE73D0084E701 /* dianru_blue_dianru_titlebg.jpg in Resources */,
+				BF4CEE9718E054920014EEF1 /* Escore.bundle in Resources */,
 				BF146567189BE73D0084E701 /* dianru_blue_dianru_info.png in Resources */,
 				BF8E453018C612A1002986DF /* 50.png in Resources */,
 				76B1C1DE18975E340042C7F6 /* Dialog.jsx in Resources */,
@@ -1563,6 +1573,7 @@
 					"${SRCROOT}/Slot/adsdk",
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/YiJiFenSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1581,6 +1592,7 @@
 					"${SRCROOT}/Slot/adsdk/AdWoSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
 					"${SRCROOT}/Slot/adsdk/AdmodSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1601,6 +1613,7 @@
 					"${SRCROOT}/Slot/adsdk",
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/YiJiFenSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1619,6 +1632,7 @@
 					"${SRCROOT}/Slot/adsdk/AdWoSDK",
 					"${SRCROOT}/Slot/adsdk/AdWoSDK/res",
 					"${SRCROOT}/Slot/adsdk/AdmodSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1672,7 +1686,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,

@@ -7,7 +7,7 @@
 //
 
 #import "HttpClient.h"
-static NSString * const AFAppDotNetAPIBaseURLString = @"http://adwall.anansimobile.cn:8982/";
+static NSString * const AFAppDotNetAPIBaseURLString = @"http://anansi.vicp.cc:8076/";//"@"http://adwall.anansimobile.cn:8982/";
 @implementation HttpClient
 + (instancetype)sharedClient {
     static HttpClient *_sharedClient = nil;

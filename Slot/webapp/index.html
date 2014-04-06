@@ -98,7 +98,7 @@
             <div>
                 <h2>兑换金币规则</h2>
 
-                <p>1. 初次送50金币，兑换次数越多送的越多，具体规则是，每次比上次增加5金币，比如第二次可兑换55，直到70金币封顶，领取次数无限制！</p>
+                <p>1. 每推荐一次，可获得一次的推荐金币奖励，领取次数无限制！</p>
 
                 <p>2. 您自己的设备也必须是绑定了QQ号的，防止作弊。</p>
             </div>
@@ -141,7 +141,7 @@
         <div class="panel2" style="top:80px;">
             <h1>快速安装程序</h1>
 
-            <p>推荐给朋友安装后，记得要到对方的绑定QQ号，每次最多可领取70金币哦，兑换次数无线！让对方打开微信，用扫一扫对准下面的二维码图片，就可以安装了！</p>
+            <p>推荐给朋友安装后，记得要到对方的绑定QQ号，每次可领取相应的奖励金币，兑换次数无线！让对方打开微信，用扫一扫对准下面的二维码图片，就可以安装了！</p>
 
             <div style="text-align: center;padding-top: 5px">
                 <img src="qrcode.jpg" width="215px" height="215px"/>
@@ -152,15 +152,15 @@
     <section id="weixinLayer" class="center">
         <ul class="list">
             <li><span
-                    onclick="WebViewJavascriptBridge.callHandler('weixinShareAppCircle');">分享应用到朋友圈</span><span>送10金币</span>
+                    onclick="WebViewJavascriptBridge.callHandler('weixinShareAppCircle');">分享应用到朋友圈</span><span>送金币</span>
             </li>
-            <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoneyCircle');">分享收入到朋友圈</span><span>送10金币</span>
-            </li>
-            <li><span
-                    onclick="WebViewJavascriptBridge.callHandler('weixinShareMoney');">分享收入给微信朋友</span><span>送10金币</span>
+            <li><span onclick="WebViewJavascriptBridge.callHandler('weixinShareMoneyCircle');">分享收入到朋友圈</span><span>送金币</span>
             </li>
             <li><span
-                    onclick="WebViewJavascriptBridge.callHandler('weixinShareApp');">分享应用给微信朋友</span><span>送10金币</span>
+                    onclick="WebViewJavascriptBridge.callHandler('weixinShareMoney');">分享收入给微信朋友</span><span>送金币</span>
+            </li>
+            <li><span
+                    onclick="WebViewJavascriptBridge.callHandler('weixinShareApp');">分享应用给微信朋友</span><span>送金币</span>
             </li>
         </ul>
         <div data-show="share" class="button_small back-btn">返回</div>
@@ -228,9 +228,9 @@
 <script type="text/javascript" src="SlotLayer.jsx"></script>
 <script type="text/javascript" src="EarnLayer.jsx"></script>
 <script type="text/javascript" src="SettingsLayer.jsx"></script>
-<script type="text/javascript" src="tradeLayer.jsx"></script>
+<script type="text/javascript" src="TradeLayer.jsx"></script>
 <script type="text/javascript" src="HistoryLayer.jsx"></script>
-<script type="text/javascript" src="shareLayer.jsx"></script>
+<script type="text/javascript" src="ShareLayer.jsx"></script>
 <script type="text/javascript" src="WeixinLayer.jsx"></script>
 <script type="text/javascript" src="TuijianLayer.jsx"></script>
 <script type="text/javascript" src="Director.jsx"></script>

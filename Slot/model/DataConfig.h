@@ -21,6 +21,7 @@
 +(NSString*)getChannelCode;
 @property (nonatomic)int minMoneyRatio;
 @property (strong,nonatomic)NSString* appWebLink;
+@property (strong,nonatomic)NSString* earnDesc;
 @property (nonatomic)int showBannerAd;
 @property(nonatomic) int inReview;
 @property (nonatomic)int earnBtnStatus;

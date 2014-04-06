@@ -57,7 +57,8 @@ extern NSString *const kYouMiPointsManagerPointProductNameKey;
 + (BOOL)rewardPoints:(NSUInteger)points;
 
 // [自动积分管理]剩余积分
-+ (NSUInteger)pointsRemained;
+///调用了这个函数后记得free()一下返回值的指针
++ (int *)pointsRemained;
 
 
 /////////////// 手动积分管理 ///////////////

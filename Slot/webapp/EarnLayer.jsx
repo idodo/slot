@@ -1,7 +1,7 @@
 var EarnLayer = View.derive({
     init: function () {
         this.on('explain', 'tap', function () {
-            Dialog.show('提示：', '1.金币任务每天都会更新；<br/>2.相同的任务即时在不同的平台，只第一次下载有效哦~；<br/>3.任务完成后，金币获取会有一定的延迟，不要着急哦。');
+            Dialog.show('提示：', '1.金币任务每天都会更新；<br/>2.相同的任务即使在不同的平台，只第一次下载才有效哦~；<br/>3.任务完成后，金币获取会有一定的延迟，不要着急哦。');
         });
         this.on('share', 'tap', function(){
             Director.getLayer('welcome').onEnterShare();
@@ -70,5 +70,5 @@ var WallDesc = {
 
 EarnLayer.wall = function(name){
     var button = '<span class="button_small" style="display: inline-block" onclick="WebViewJavascriptBridge.callHandler(\'' + name + '\')">开始</span>'
-    Dialog.show('平台赚金币说明', WallDesc[name] || '免费赚金币', button);
+    Dialog.show('平台赚金币说明', Player.getEarnDesc() || '按照说明安装应用即可获得金币', button);
 };

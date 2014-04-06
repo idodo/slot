@@ -6,7 +6,8 @@
 //  Copyright 2012 miidi. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
+
+
 
 @protocol MiidiAdViewDelegate;
 
@@ -24,10 +25,11 @@ typedef enum {
 
 
 
+
+
 @interface MiidiAdView : UIView {
-
+	
 }
-
 // 广告条的尺寸 
 
 // 详解：
@@ -43,8 +45,10 @@ typedef enum {
 @property(nonatomic, assign)                    id<MiidiAdViewDelegate> delegate;
 
 
+
+
 + (MiidiAdView *)createMiidiAdViewWithSizeIdentifier:(MiidiAdSizeIdentifier)adSizeIdentifier delegate:(id<MiidiAdViewDelegate>)delegate;
 - (id)initMiidiAdViewWithContentSizeIdentifier:(MiidiAdSizeIdentifier)adSizeIdentifier delegate:(id<MiidiAdViewDelegate>)delegate;
 
-
+- (void) requestAd;
 @end

@@ -28,6 +28,7 @@
 #import <Escore/YJFIntegralWall.h>
 #import <Escore/YJFInterstitial.h>
 #import <Escore/YJFScore.h>
+#import <Escore/YJFAdWall.h>
 #import "MarqueeLabel.h"
 //#import "DMAdView.h"
 #import "WXApi.h"
@@ -70,6 +71,7 @@ static NSString* const AdWoErrCodeList[] = {
 MiidiAdWallRequestToggleDelegate,
 GADBannerViewDelegate,
 YJFIntegralWallDelegate,
+YJFAdWallDelegate,
 //DMAdViewDelegate,
 WXApiDelegate> {
     //DMAdView *_dmAdView;

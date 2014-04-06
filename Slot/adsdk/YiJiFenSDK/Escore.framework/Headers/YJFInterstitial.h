@@ -14,7 +14,6 @@
 -(void)closeInterstitial;//插屏关闭
 -(void)getInterstitialDataSuccess;//获取数据成功
 -(void)getInterstitialDataFail;//获取数据失败
--(void)getImageDataSuccess;//获取图片成功
 
 @end
 
@@ -24,13 +23,20 @@ NSMutableString *interstitialPar;
     id<YJFInterstitialDelegate> delegate;
     NSMutableArray *array;
     NSMutableData *receivedData;
+    UIImageView *imagebian;
+    NSString *orientation;
 }
 @property (assign) id<YJFInterstitialDelegate> delegate;
-@property (nonatomic, retain) id vc;
+@property (nonatomic, assign) id viewController;
 @property (retain) NSMutableData *receivedData;
 @property CGRect picFrame;
-@property (assign) UIImageView *imagebian ;
+
 
 -(void) getInterstitialData;
 - (id)initWithFrame:(CGRect)frame andPicFrame:(CGRect)picFrame andOrientation:(NSString *)orientations andDelegate:(id<YJFInterstitialDelegate>)_delegate;
+
+/**
+ *  展示广告
+ */
+- (void)show;
 @end
