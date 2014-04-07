@@ -247,7 +247,7 @@ section {
 }
 
 .dialog .panel {
-    width: 250px;
+    width: 280px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
     position: relative;
@@ -284,14 +284,14 @@ section {
 }
 
 .dialog #dialog-close {
-    width: 20px;
-    height: 20px;
-    background: url(close.png) no-repeat 0 0;
-    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    background: url(close.png) no-repeat center center;
+    background-size: 20px 20px;
     font-weight: bold;
     position: absolute;
-    right: -7px;
-    top: -7px;
+    right: -12px;
+    top: -12px;
 }
 
 .transition {
