@@ -499,6 +499,32 @@
                     error(-2, res);
                 }
             });
+        },
+        getPlayerEarnsUrl : REMOTE_SERVER + '/player/getplayerearns',
+        getPlayerEarns : function(success, error){
+            error = error || function (code, err) {
+                NSLog('code: ' + code + '\treason: ' + err);
+                Dialog.show('矮油', err.reason || err.message || err || '等等，我们这有点忙~~');
+            };
+            $$.ajax({
+                url: this.getPlayerEarnsUrl + '?udid=' + udid,
+                success: function (res) {
+                    try {
+                        NSLog('[getplayerearns] res:' + res);
+                        var data = JSON.parse(res);
+                        if (data.result == 0) {
+                            success(data.goldEarnRecords);
+                        } else {
+                            error(data.result, data.reason, data);
+                        }
+                    } catch (e) {
+                        error(-1, e.message, e);
+                    }
+                },
+                error: function (res) {
+                    error(-2, res);
+                }
+            });
         }
     };
 })(window);

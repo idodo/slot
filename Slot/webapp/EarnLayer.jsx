@@ -1,7 +1,21 @@
 var EarnLayer = View.derive({
     init: function () {
         this.on('explain', 'tap', function () {
-            Dialog.show('提示：', '1.金币任务每天都会更新；<br/>2.相同的任务即使在不同的平台，只第一次下载才有效哦~；<br/>3.任务完成后，金币获取会有一定的延迟，不要着急哦。');
+            Player.getPlayerEarns(function(data){
+                if(data && data.length){
+                    var html = '';
+                    data.forEach(function(item){
+                        html += '<li style="margin-top:10px;font-size:12px;">' +
+                            item.createdAt.replace(/\.\d+/g, '') + ' ' +
+                            item.comment + '</li>';
+                    });
+                    $('earn-list').innerHTML = html;
+                    Director.show('earn-history');
+                } else {
+                    Dialog.show('提示', '暂时没有记录哦');
+                }
+            });
+            //Dialog.show('提示：', '1.金币任务每天都会更新；<br/>2.相同的任务即使在不同的平台，只第一次下载才有效哦~；<br/>3.任务完成后，金币获取会有一定的延迟，不要着急哦。');
         });
         this.on('share', 'tap', function(){
             Director.getLayer('welcome').onEnterShare();

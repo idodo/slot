@@ -20,6 +20,7 @@ document.addEventListener('WebViewJavascriptBridgeReady', function () {
     Director.addLayer(new View('guanzhuLayer'), 'guanzhu');
     Director.addLayer(new View('5starLayer'), '5star');
     Director.addLayer(new View('installLayer'), 'install');
+    Director.addLayer(new View('earnHistoryLayer'), 'earn-history');
     Director.addLayer(new SettingsLayer('settingsLayer'), 'settings');
     Director.addLayer(new ShareLayer('shareLayer'), 'share');
     Director.addLayer(new TradeLayer('tradeLayer'), 'trade');
