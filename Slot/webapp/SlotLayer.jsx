@@ -20,7 +20,8 @@ var SlotLayer = View.derive({
         this.on('backBtn', 'tap', this._bind(this.back));
 
         var welcome = Director.getLayer('welcome');
-        this.on('earnBtn', 'tap', welcome.onEnterEarn.bind(welcome));
+        //this.on('earnBtn', 'tap', welcome.onEnterEarn.bind(welcome));
+        this.on('earnBtn', 'tap', this._bind(this.gotoEarn));
         this.on('tradeBtn', 'tap', welcome.onEnterTrade.bind(welcome));
     },
     _bind: function (fn) {
@@ -29,6 +30,14 @@ var SlotLayer = View.derive({
             $('slot-inner').className = '';
             fn.apply(me, arguments);
         };
+    },
+    gotoEarn : function(){
+        var welcome = Director.getLayer('welcome');
+        if(Player.getReviewStatus()){
+            welcome.onEnterShare();
+        } else {
+            welcome.onEnterEarn();
+        }
     },
     hideBingo: function () {
         clearTimeout(this.bingoTimer);
