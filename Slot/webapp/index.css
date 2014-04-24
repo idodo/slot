@@ -16,6 +16,7 @@ html, body, #gameContainer, section {
 
 body {
     background: #59eae9 url(bg.jpg) no-repeat 0 bottom;
+    background-size: 100% 100%;
 }
 
 audio {
@@ -27,13 +28,14 @@ audio {
     display: block;
     text-align: center;
     width: 93px;
-    height: 40px;
+    height: 38px;
     line-height: 40px;
     background: url(btn.png) no-repeat 0 0;
-    background-size: 100%;
+    background-size: 100% 200%;
     overflow: hidden;
     font-size: 14px;
     font-weight: bold;
+    color: #fff;
 }
 .button_small {
     width: 56px;
@@ -45,6 +47,8 @@ audio {
     height: 64px;
     line-height: 64px;
     background-image: url(btn_big.png);
+    color: #333;
+    text-shadow: 0 1px 1px #fff;
 }
 .button:active, .button_small:active, .button_big:active {
     background-position: 0 100%;
@@ -78,7 +82,7 @@ section {
 .slotPanel {
     width: 282px;
     height: 232px;
-    background-image: url(slot.png);
+    background-image: url(slot.gif);
     margin: 0 auto;
 }
 
@@ -166,7 +170,7 @@ section {
     background: url(line.png) no-repeat 0 0;
     background-size: 100% 100%;
     position: absolute;
-    top: 110px;
+    top: 100px;
     left: 15px;
 }
 
@@ -176,12 +180,12 @@ section {
 
 #score {
     left: 60px;
-    top: 11px;
+    top: 18px;
 }
 
 #earn {
     left: 59px;
-    bottom: 12px;
+    bottom: 17px;
     font-size: 16px;
     line-height: 16px;
     height: 16px;
@@ -190,7 +194,7 @@ section {
 
 #bet {
     left: 194px;
-    bottom: 12px;
+    bottom: 17px;
     font-size: 16px;
     line-height: 16px;
     height: 16px;
@@ -252,9 +256,9 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
     position: relative;
     background: #fff;
-    background-image: -webkit-gradient(linear, center top, center bottom, from(#4dafee), to(#257db5));
-    background-image: -webkit-linear-gradient(top, #4dafee, #257db5);
-    background-image: linear-gradient(top, #4dafee, #257db5);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#d95e98), to(#d03795));
+    background-image: -webkit-linear-gradient(top, #d95e98, #d03795);
+    background-image: linear-gradient(top, #d95e98, #d03795);
 }
 
 .dialog #dialog-title {
@@ -347,8 +351,8 @@ section {
 }
 
 #score2 {
-    left: 60px;
-    top: 11px;
+    left: 55px;
+    top: 8px;
 }
 
 #earnLayer fieldset {

@@ -26,6 +26,7 @@
 		765299CD18B10985000F3347 /* ShareLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299CA18B10985000F3347 /* ShareLayer.jsx */; };
 		765299CE18B10985000F3347 /* TradeLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299CB18B10985000F3347 /* TradeLayer.jsx */; };
 		765299CF18B10985000F3347 /* WeixinLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 765299CC18B10985000F3347 /* WeixinLayer.jsx */; };
+		766F8DDC19096CF000EB123F /* slot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 766F8DDB19096CF000EB123F /* slot.gif */; };
 		7689D20F189574F00009C3A6 /* hammer.min.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 7689D20D189574F00009C3A6 /* hammer.min.jsx */; };
 		7689D2141895802E0009C3A6 /* warms.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D2131895802E0009C3A6 /* warms.png */; };
 		7689D216189586170009C3A6 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7689D215189586170009C3A6 /* line.png */; };
@@ -252,6 +253,7 @@
 		765299CA18B10985000F3347 /* ShareLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShareLayer.jsx; sourceTree = "<group>"; };
 		765299CB18B10985000F3347 /* TradeLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TradeLayer.jsx; sourceTree = "<group>"; };
 		765299CC18B10985000F3347 /* WeixinLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WeixinLayer.jsx; sourceTree = "<group>"; };
+		766F8DDB19096CF000EB123F /* slot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = slot.gif; sourceTree = "<group>"; };
 		7689D20D189574F00009C3A6 /* hammer.min.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hammer.min.jsx; sourceTree = "<group>"; };
 		7689D2131895802E0009C3A6 /* warms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warms.png; sourceTree = "<group>"; };
 		7689D215189586170009C3A6 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 		7628CDC11892D9B90085CE94 /* webapp */ = {
 			isa = PBXGroup;
 			children = (
+				766F8DDB19096CF000EB123F /* slot.gif */,
 				76E2FE0718F155B900A49944 /* BindMobileLayer.jsx */,
 				760B7D5118DDD5B2004958E3 /* go.wav */,
 				760B7D4F18DDD45A004958E3 /* win.wav */,
@@ -1331,6 +1334,7 @@
 				BF146582189BE73D0084E701 /* dianru_yuanjiao_horizontal.png in Resources */,
 				BF262DFA18C9FC62003F8217 /* 29.png in Resources */,
 				76B1C1E0189768380042C7F6 /* WelcomeLayer.jsx in Resources */,
+				766F8DDC19096CF000EB123F /* slot.gif in Resources */,
 				BF262DF118C9F9CF003F8217 /* icon.png in Resources */,
 				763F3BFB18C3814400CB5EEF /* Default-568h.png in Resources */,
 				76F8E1B718B9CD19000867CA /* HistoryLayer.jsx in Resources */,
