@@ -19,6 +19,8 @@
 +(int)getMajorVersion;
 +(int)getMinorVersion;
 +(NSString*)getChannelCode;
++(int)getReviewVersion;
++(NSString*)getAppName;
 @property (nonatomic)int minMoneyRatio;
 @property (strong,nonatomic)NSString* appWebLink;
 @property (strong,nonatomic)NSString* earnDesc;

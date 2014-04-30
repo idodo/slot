@@ -1,0 +1,43 @@
+#define WAPS_CONNECT_SUCCESS                @"WAPS_Connect_Success"
+#define WAPS_CONNECT_FAILED                 @"WAPS_Connect_Failed"
+
+#define WAPS_UPDATE_POINTS                  @"WAPS_UPDATE_POINTS"
+#define WAPS_GET_POINTS_SUCCESS             @"WAPS_GET_POINTS_SUCCESS"
+#define WAPS_GET_POINTS_FAILED              @"WAPS_GET_POINTS_FAILED"
+#define WAPS_SPEND_POINTS_SUCCESS           @"WAPS_SPEND_POINTS_SUCCESS"
+#define WAPS_SPEND_POINTS_FAILED            @"WAPS_SPEND_POINTS_FAILED"
+#define WAPS_AWARD_POINTS_SUCCESS           @"WAPS_AWARD_POINTS_SUCCESS"
+#define WAPS_AWARD_POINTS_FAILED            @"WAPS_AWARD_POINTS_FAILED"
+#define WAPS_POINTS_EARNED                  @"WAPS_POINTS_EARNED"
+
+#define WAPS_OFFER_CLOSED                   @"WAPS_OFFER_CLOSED"
+
+#define WAPS_BANNERAD_SHOW                  @"WAPS_BANNERAD_SHOW"
+#define WAPS_BANNERAD_CLICK                 @"WAPS_BANNERAD_CLICK"
+#define WAPS_BANNERAD_FAILED                @"WAPS_BANNERAD_FAILED"
+#define WAPS_BANNERAD_CLOSED                @"WAPS_BANNERAD_CLOSED"
+
+#define WAPS_POPAD_INIT_SUCESS              @"WAPS_POPAD_INIT_SUCESS"
+#define WAPS_POPAD_INIT_NULL                @"WAPS_POPAD_INIT_NULL"
+#define WAPS_POPAD_INIT_FAILED              @"WAPS_POPAD_INIT_FAILED"
+#define WAPS_POPAD_SHOW_SUCESS              @"WAPS_POPAD_SHOW_SUCESS"
+#define WAPS_POPAD_SHOW_FAILED              @"WAPS_POPAD_SHOW_FAILED"
+#define WAPS_POPAD_CLOSED                   @"WAPS_POPAD_CLOSED"
+#define WAPS_POPAD_CLICKED                  @"WAPS_POPAD_CLICKED"
+#define WAPS_MENU_SHOW                      @"WAPS_MENU_SHOW"
+
+
+#define AD_SIZE_320X50        @"320x50"
+#define AD_SIZE_480X75        @"480X75"
+#define AD_SIZE_640X100       @"640x100"
+#define AD_SIZE_768X90        @"768x90"
+#define AD_SIZE_768X100       @"768x100"
+
+#import "WapsLog.h"
+#import "WapsPopAdView.h"
+#import "WapsAdViewHandler.h"
+#import "WapsUserPoints.h"
+#import "WapsUserPointsManager.h"
+#import "WapsCallsWrapper.h"
+#import "WapsTBXML.h"
+#import "WapsOffersViewHandler.h"

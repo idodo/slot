@@ -32,6 +32,7 @@
 #import "MarqueeLabel.h"
 #import "GuoMobWallViewController.h"
 #import "MopanAdWall.h"
+#import "WapsOffer/AppConnect.h"
 //#import "DMAdView.h"
 #import "WXApi.h"
 @class GADBannerView;

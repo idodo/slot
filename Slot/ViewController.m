@@ -167,6 +167,10 @@
         [self loadMopanAdWall];
     }];
     
+    [_bridge registerHandler:@"showWanpuOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [AppConnect showOffers:self showNavBar:NO];
+    }];
+    
     [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self consumeEarnGold];
         
@@ -238,7 +242,7 @@
 -(void)reloadCheck{
     if( self.firstLoad == 0){
         NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid, @"channelCode": [DataConfig getChannelCode], @"version" : [NSNumber numberWithInt:[DataConfig getMajorVersion]] };
-        [[HttpClient sharedClient] GET:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
+        [HttpClient HTTPGet:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSDictionary *result = (NSDictionary*)responseObject;
             NSLog(@"[check version] result:%@", result);
             //parse basic config info
@@ -296,7 +300,7 @@
                                  @"channelCode" : [DataConfig getChannelCode]};
     
     
-    [[HttpClient sharedClient] GET:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [HttpClient HTTPGet:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSDictionary *result = (NSDictionary*)responseObject;
         NSLog(@"[check version] result:%@", result);
         //parse basic config info
@@ -445,6 +449,16 @@
             self.mopanWall.rootViewController = self;
             
         }
+        //初始化万普
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:wanpu];
+        if( adInfo.status == 1){
+            NSLog(@"[initAdwall]init wanpu wall");
+            //[AppConnect getConnect:@"0c8ccdc9baf9143f5974efb2f60310b7" pid:@"appstore"];
+            [AppConnect getConnect:@"0c8ccdc9baf9143f5974efb2f60310b7"
+                               pid:@"appstore" userID:[Player getInstance].udid];
+            
+        }
+        
     }
     //init move gold flags for comsumeEarnGold
     _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
@@ -529,7 +543,11 @@
             NSLog(@"[middi] begin move gold");
             [MiidiAdWall requestGetPoints:self];
         }
-        
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:wanpu];
+        if( adInfo.status == 1){
+            NSLog(@"[wanpu] begin move gold");
+            [AppConnect getPoints];
+        }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:adwo];
         if( adInfo.status == 1){
             NSLog(@"[adwo] begin move gold");
@@ -1297,29 +1315,6 @@
 	
 }
 
-//// 请求奖励积分成功后调用
-////
-//// 详解:当接收服务器返回的奖励积分成功后调用该函数
-//// 补充：totalMoney: 返回用户的总积分
-//- (void)adwallSuccessAddMoney:(NSInteger)totalMoney
-//{
-//    NSLog(@"[mopan] 成功增加金币! 总金币值=%d",(int)totalMoney);
-//    //self.scoreLabel.text = [NSString stringWithFormat:@"%d",totalMoney];
-//	
-//	
-//}
-//
-//// 请求奖励积分数据失败后调用
-////
-//// 详解:当接收服务器返回的数据失败后调用该函数
-//// 补充：第一次和接下来每次如果请求失败都会调用该函数
-//- (void)adwallFailAddMoney:(NSError *)error
-//{
-//    NSLog(@"[mopan] 增加金币失败!");
-//    
-//	
-//}
-
 
 // 成功请求积分墙开关
 //
@@ -1354,7 +1349,64 @@
 
 #pragma mark mopan callback end
 /********************mopan callback end ***************************/
+/********************wanpu callback start ***************************/
+#pragma mark wanpu callback start
+#pragma mark 广告墙相关通知
+- (void)onOfferClosed:(NSNotification*)notifyObj
+{
+	NSLog(@"%@", @"Offer已关闭");
+}
+////任何积分操作成功都会调用
+//-(void)onUpdatePoints:(NSNotification*)notifyObj
+//{
+//    NSLog(@"onUpdatePoints");
+//    WapsUserPoints *userPointsObj = notifyObj.object;
+//    NSString * pointsName=[userPointsObj getPointsName];
+//    int  pointsValue=[userPointsObj getPointsValue];
+//	NSString *pointsStr = [NSString stringWithFormat:@"您的%@: %d",pointsName, pointsValue];
+//
+//}
 
+//只有getPoints操作才会调用
+-(void)onGetPointsSuccess:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu] onGetPointsSuccess");
+    WapsUserPoints *userPointsObj = notifyObj.object;
+    //NSString * pointsName=[userPointsObj getPointsName];
+    int  pointsValue=[userPointsObj getPointsValue];
+	//NSString *pointsStr = [NSString stringWithFormat:@"您的%@: %d",pointsName, pointsValue];
+    NSLog(@"[wanpu] get points:%d, begin to spend gold", pointsValue);
+    [AppConnect spendPoints:pointsValue];
+
+}
+
+
+
+
+-(void)onSpendPointsSuccess:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu]消费积分:%@", notifyObj.object);
+    WapsUserPoints *userPointsObj = notifyObj.object;
+    int  pointsValue=[userPointsObj getPointsValue];
+    [self onConsumeGold:pointsValue adtype:wanpu];
+}
+
+- (void)onGetPointsFailed:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu] 查询积分错误 %@",notifyObj.object);
+    [self onConsumeGold:0 adtype:wanpu];
+}
+
+
+
+-(void)onSpendPointsFailed:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu] 消费积分错误 %@",notifyObj.object);
+    [self onConsumeGold:0 adtype:wanpu];
+    
+}
+#pragma mark wanpu callback edn
+/********************wanpu callback end ***************************/
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {

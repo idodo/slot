@@ -17,6 +17,7 @@ enum adtype{
     yijifen, //易积分
     guomob, //果盟
     mopan, //磨盘
+    wanpu, //万普
     adtype_num
 };
 

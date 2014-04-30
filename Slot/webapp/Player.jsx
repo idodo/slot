@@ -9,7 +9,8 @@
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
     var earnDesc = "";
  //   var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
-   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8983';
+   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8984';
+   var APP_NAME = 'slot2';
 
 
     function displayScore(value) {
@@ -204,7 +205,7 @@
             };
             $$.ajax({
                 url: this.earnUrl,
-                data: 'udid=' + udid,
+                data: 'udid=' + udid +'&appName='+APP_NAME,
                 type: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
                 success: function (res) {
@@ -479,6 +480,7 @@
             };
             $$.ajax({
                 url: this.getLastDuihuansUrl,
+                data: 'appName=' + APP_NAME,
                 success: function (res) {
                     try {
                         NSLog('[getlastduihuans] res:' + res);

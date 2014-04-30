@@ -26,8 +26,8 @@ static dispatch_once_t onceToken;
     return _sharedInstance;
 }
 static NSString *DOMOB_CUSTOMERID = @"96ZJ0PsQze86XwTA7A";
-static NSString *YOUMI_CUSTOMERID = @"e9ad445f2e1d4866";
-static NSString *YOUMI_CUSTOMER_PASSWORD = @"8ddf3fae3ca26c18";
+static NSString *YOUMI_CUSTOMERID = @"50d14a4bfb2e97c4";
+static NSString *YOUMI_CUSTOMER_PASSWORD = @"384ba0f197f238a9";
 static NSString *DIANRU_CUSTOMERID = @"0000171010000055";
 static NSString *LIMEI_CUSTOMERID = @"c68025499e648a33826427ef3bf384f9";//@"d2b0c4296dc009ddc00d10da9c4cf83e";////
 static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
@@ -53,13 +53,19 @@ static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
     return ADWO_CUSTOMERID;
 }
 +(int)getMajorVersion{
-    return 3;
+    return 5;
 }
 +(int)getMinorVersion{
     return 0;
 }
++(int)getReviewVersion{
+    return 1;
+}
 +(NSString*)getChannelCode{
     return @"apple";
+}
++(NSString*)getAppName{
+    return @"slot2";
 }
 
 @end

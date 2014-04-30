@@ -207,6 +207,7 @@
 		BF8E453218C612A1002986DF /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452C18C612A1002986DF /* 80.png */; };
 		BF8E453318C612A1002986DF /* 120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452D18C612A1002986DF /* 120@2x.png */; };
 		BF8E453418C612A1002986DF /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8E452E18C612A1002986DF /* 1024.png */; };
+		BFB3A23519115DDC00B991D5 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB3A23419115DDC00B991D5 /* WapsOffer.framework */; };
 		BFD8995F18A3C5EC0078016C /* AdUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995618A3C5EC0078016C /* AdUtil.m */; };
 		BFD8996018A3C5EC0078016C /* AdWall.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995818A3C5EC0078016C /* AdWall.m */; };
 		BFD8996118A3C5EC0078016C /* DataConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8995A18A3C5EC0078016C /* DataConfig.m */; };
@@ -492,6 +493,7 @@
 		BF8E452C18C612A1002986DF /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80.png; path = icons/80.png; sourceTree = "<group>"; };
 		BF8E452D18C612A1002986DF /* 120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "120@2x.png"; path = "icons/120@2x.png"; sourceTree = "<group>"; };
 		BF8E452E18C612A1002986DF /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1024.png; path = icons/1024.png; sourceTree = "<group>"; };
+		BFB3A23419115DDC00B991D5 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
 		BFD8995518A3C5EC0078016C /* AdUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdUtil.h; sourceTree = "<group>"; };
 		BFD8995618A3C5EC0078016C /* AdUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdUtil.m; sourceTree = "<group>"; };
 		BFD8995718A3C5EC0078016C /* AdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWall.h; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 				76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */,
 				BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */,
 				BF4CEE9318E051C70014EEF1 /* libOpenIDFA.a in Frameworks */,
+				BFB3A23519115DDC00B991D5 /* WapsOffer.framework in Frameworks */,
 				BF146636189BF6B10084E701 /* MapKit.framework in Frameworks */,
 				BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */,
 				BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */,
@@ -635,6 +638,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BFB3A23419115DDC00B991D5 /* WapsOffer.framework */,
 				BF20BBAE18F168D80035D7DB /* MopanSDK */,
 				BF20BBA618EE82330035D7DB /* GuomobSDK */,
 				BF1F000918B6362100BC6C7B /* AdmodSDK */,
@@ -1250,6 +1254,7 @@
 				ORGANIZATIONNAME = fouber;
 				TargetAttributes = {
 					76F208C71892809B000BE84C = {
+						DevelopmentTeam = N7MMKA6Y57;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -1270,7 +1275,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1618,6 +1623,7 @@
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YiJiFenSDK",
+					"$(PROJECT_DIR)/Slot/adsdk",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1642,7 +1648,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "9DD8A745-1298-47CD-8684-121001912FD5";
+				PROVISIONING_PROFILE = "ADEB4FB9-82A0-467B-8B52-D81595EF2BF5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1660,6 +1666,7 @@
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YiJiFenSDK",
+					"$(PROJECT_DIR)/Slot/adsdk",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1684,7 +1691,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "9DD8A745-1298-47CD-8684-121001912FD5";
+				PROVISIONING_PROFILE = "ADEB4FB9-82A0-467B-8B52-D81595EF2BF5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1734,7 +1741,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,
