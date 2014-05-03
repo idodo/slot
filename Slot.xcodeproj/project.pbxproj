@@ -1267,7 +1267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */;
+			buildConfigurationList = 76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1604,7 +1604,10 @@
 		76F208FB1892809B000BE84C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"armv7,armv7s",
+				);
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
@@ -1639,6 +1642,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "9DD8A745-1298-47CD-8684-121001912FD5";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1646,7 +1650,10 @@
 		76F208FC1892809B000BE84C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"armv7,armv7s",
+				);
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
@@ -1681,6 +1688,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "9DD8A745-1298-47CD-8684-121001912FD5";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1730,7 +1738,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76F208C31892809B000BE84C /* Build configuration list for PBXProject "Slot" */ = {
+		76F208C31892809B000BE84C /* Build configuration list for PBXProject "slot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76F208F81892809B000BE84C /* Debug */,

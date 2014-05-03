@@ -38,7 +38,8 @@
 @class GADRequest;
 enum ALERT_TYPE{
     RELOAD,
-    NEW_VERSION
+    NEW_VERSION,
+    MESSAGE
 };
 #define PUBLISHER_ID @"96ZJ0PsQze86XwTA7A" // online
 static NSString* const AdWoErrCodeList[] = {
@@ -76,6 +77,7 @@ YJFIntegralWallDelegate,
 YJFAdWallDelegate,
 GuoMobWallDelegate,
 MopanAdWallDelegate,
+
 //DMAdViewDelegate,
 WXApiDelegate> {
   
