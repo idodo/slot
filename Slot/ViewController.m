@@ -457,6 +457,29 @@
             [AppConnect getConnect:@"0c8ccdc9baf9143f5974efb2f60310b7"
                                pid:@"appstore" userID:[Player getInstance].udid];
             
+            //此通知任何积分操作成功都会调用
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onUpdatePoints:)
+                                                         name:WAPS_UPDATE_POINTS
+                                                       object:nil];
+            
+            //只有getPoints成功会通知
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onGetPointsSuccess:)
+                                                         name:WAPS_GET_POINTS_SUCCESS
+                                                       object:nil];
+            
+            //只有getPoints失败会通知
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onGetPointsFailed:)
+                                                         name:WAPS_GET_POINTS_FAILED
+                                                       object:nil];
+            
+            //获取用户消费积成功事件
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onSpendPointsSuccess:)
+                                                         name:WAPS_SPEND_POINTS_SUCCESS
+                                                       object:nil];
         }
         
     }
@@ -1366,6 +1389,13 @@
 //	NSString *pointsStr = [NSString stringWithFormat:@"您的%@: %d",pointsName, pointsValue];
 //
 //}
+//任何积分操作成功都会调用
+-(void)onUpdatePoints:(NSNotification*)notifyObj
+{
+    WapsUserPoints *userPointsObj = notifyObj.object;
+    int  pointsValue=[userPointsObj getPointsValue];
+    NSLog(@"Waps onUpdatePoints, points: %d", pointsValue);
+}
 
 //只有getPoints操作才会调用
 -(void)onGetPointsSuccess:(NSNotification*)notifyObj
