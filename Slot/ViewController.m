@@ -252,7 +252,7 @@
                 self.alertType = RELOAD;
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle:nil
-                                      message: @"亲，有新的更新，游戏需要重新启动加载下~"
+                                      message: @"亲，游戏有新的更新，游戏需要重新启动加载下~"
                                       delegate:self
                                       cancelButtonTitle:@"OK"
                                       otherButtonTitles:nil];
@@ -265,6 +265,18 @@
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle:nil
                                       message: @"亲，有新的版本了，请下载新的版本~"
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            int newMsg = [[ result valueForKey:@"hasNewMsg" ] intValue];
+            if( newMsg == 1){
+                self.alertType = MESSAGE;
+                NSString* message = [ result valueForKey:@"message" ];
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:nil
+                                      message: message
                                       delegate:self
                                       cancelButtonTitle:@"OK"
                                       otherButtonTitles:nil];
@@ -284,20 +296,19 @@
             exit(0);
         }else if( self.alertType == NEW_VERSION ){
             [[UIApplication sharedApplication] openURL: [NSURL URLWithString:self.versionLink]];
+        }else if( self.alertType == MESSAGE ){
+            //do nothing go on
         }
     }
 }
 -(void)checkVersion{
     
-    //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    //NSLog(@"idfa:%@", idfaString);
-    //这里使用keychain存储udid
    
 
     NSNumber *majorVersion =[[NSNumber alloc] initWithInt:[DataConfig getMajorVersion]];
     NSNumber *minorVersion = [[NSNumber alloc] initWithInt:[DataConfig getMinorVersion]];
     NSDictionary *parameters = @{@"udid": [Player getInstance].udid, @"majorVersion" : majorVersion, @"minorVersion": minorVersion,
-                                 @"channelCode" : [DataConfig getChannelCode]};
+        @"channelCode" : [DataConfig getChannelCode]};
     
     
     [HttpClient HTTPGet:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
