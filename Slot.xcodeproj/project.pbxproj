@@ -1573,6 +1573,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1607,16 +1608,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		76F208FB1892809B000BE84C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"armv7,armv7s",
+				);
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Qi Chen (N7MMKA6Y57)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qi Chen (N7MMKA6Y57)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/Slot/adsdk",
@@ -1648,7 +1653,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "ADEB4FB9-82A0-467B-8B52-D81595EF2BF5";
+				PROVISIONING_PROFILE = "F21272AF-2E24-4060-AD9D-5FACBF00381E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1656,10 +1661,13 @@
 		76F208FC1892809B000BE84C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"armv7,armv7s",
+				);
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Qi Chen (N7MMKA6Y57)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qi Chen (N7MMKA6Y57)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/Slot/adsdk",
@@ -1691,7 +1699,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "ADEB4FB9-82A0-467B-8B52-D81595EF2BF5";
+				PROVISIONING_PROFILE = "F21272AF-2E24-4060-AD9D-5FACBF00381E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -25,12 +25,12 @@ static dispatch_once_t onceToken;
     });
     return _sharedInstance;
 }
-static NSString *DOMOB_CUSTOMERID = @"96ZJ0PsQze86XwTA7A";
+static NSString *DOMOB_CUSTOMERID = @"96ZJ0c1Qze86XwTBlH";
 static NSString *YOUMI_CUSTOMERID = @"50d14a4bfb2e97c4";
 static NSString *YOUMI_CUSTOMER_PASSWORD = @"384ba0f197f238a9";
-static NSString *DIANRU_CUSTOMERID = @"0000171010000055";
+static NSString *DIANRU_CUSTOMERID = @"0000111013000055";
 static NSString *LIMEI_CUSTOMERID = @"c68025499e648a33826427ef3bf384f9";//@"d2b0c4296dc009ddc00d10da9c4cf83e";////
-static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
+static NSString *ADWO_CUSTOMERID = @"a7f85c07b6834d67a8c73cd153dd5978";
 
 
 +(NSString*)getDomobCustomerId{
@@ -53,7 +53,7 @@ static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
     return ADWO_CUSTOMERID;
 }
 +(int)getMajorVersion{
-    return 5;
+    return 1;
 }
 +(int)getMinorVersion{
     return 0;

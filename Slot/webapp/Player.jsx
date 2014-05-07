@@ -10,7 +10,9 @@
     var earnDesc = "";
  //   var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
    var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8984';
-   var APP_NAME = 'slot2';
+   var APP_NAME = 'slot2'; //app名字
+   var APP_VERSION = 1;    //强制更新版本号
+   var REVIEW_VERSION = 1; //review版本号
 
 
     function displayScore(value) {
@@ -55,7 +57,7 @@
                 }
             }
         };
-        opt.url += (opt.url.indexOf('?') > -1 ? '&' : '?') + 't=' + Date.now();
+        opt.url += (opt.url.indexOf('?') > -1 ? '&' : '?') + 't=' + Date.now() +'&appName='+APP_NAME+'&appVersion='+APP_VERSION+'&reviewVersion='+REVIEW_VERSION;
         xhr.open(opt.type || 'GET', opt.url, opt.async);
         if (opt.headers) {
             for (var header in opt.headers) {
@@ -480,7 +482,6 @@
             };
             $$.ajax({
                 url: this.getLastDuihuansUrl,
-                data: 'appName=' + APP_NAME,
                 success: function (res) {
                     try {
                         NSLog('[getlastduihuans] res:' + res);

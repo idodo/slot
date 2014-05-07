@@ -168,7 +168,7 @@
     }];
     
     [_bridge registerHandler:@"showWanpuOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-        [AppConnect showOffers:self showNavBar:NO];
+        [AppConnect showOffers:self showNavBar:YES];
     }];
     
     [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
@@ -368,6 +368,18 @@
              NSLog(@"[checkversion] 不是第一次加载游戏");
              
         }
+        int newMsg = [[ result valueForKey:@"hasNewMsg" ] intValue];
+        if( newMsg == 1){
+            self.alertType = MESSAGE;
+            NSString* message = [ result valueForKey:@"message" ];
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:nil
+                                  message: message
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+            [alert show];
+        }
         //苹果审核要求引用了广告sdk的应用需要显示出广告，为了过苹果审核，请求admob的banner广告
         //[self showDomobBannerAd];
         
@@ -415,15 +427,15 @@
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
         if( adInfo.status == 1 ){
             NSLog(@"[initAdwall]init miidi adwall");
-            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde"];
+            [MiidiManager setAppPublisher:@"17535" withAppSecret:@"bhd3mv07444yhkxu"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
         if( adInfo.status == 1 ){
             NSLog(@"[initAdwall]init yijifen");
             //开发者
-            [YJFUserMessage shareInstance].yjfUserAppId = @"50326";//应用ID
+            [YJFUserMessage shareInstance].yjfUserAppId = @"70855";//应用ID
             [YJFUserMessage shareInstance].yjfUserDevId = @"59842";//开发者ID
-            [YJFUserMessage shareInstance].yjfAppKey = @"EM94S2R8E2N5X4MIT179I5CS9C6M86TOA7";//appKey
+            [YJFUserMessage shareInstance].yjfAppKey = @"EM35JVBP67SFZM1PHNSPCHLV7X0JY60GC9";//appKey
             [YJFUserMessage shareInstance].yjfChannel = @"IOS1.2.4";//渠道号，默认当前SDK版本号
             
             //[user release];
@@ -438,7 +450,7 @@
         if( adInfo.status == 1 ){
             NSLog(@"[initAdwall] init guomob wall");
             //用果盟广告密钥初始化积分墙
-            self.guomobWall=[[GuoMobWallViewController alloc] initWithId:@"p9a2mc0qh7s2469"];//@"p9a2mc0qh7s2469"
+            self.guomobWall=[[GuoMobWallViewController alloc] initWithId:@"2kw9m5rhj8p2469"];//@"p9a2mc0qh7s2469"
             //设置代理
             self.guomobWall.delegate=self;
             //设置自动刷新积分的时间间隔
@@ -455,7 +467,7 @@
         if( adInfo.status == 1 ){
             NSLog(@"[initAdwall]init mopan wall");
             // 设置账号
-            self.mopanWall = [[MopanAdWall alloc] initWithMopan:@"12445" withAppSecret:@"71nv66slrhct7ub9"];
+            self.mopanWall = [[MopanAdWall alloc] initWithMopan:@"12526" withAppSecret:@"yi1w73jm2e1wwil1"];
             self.mopanWall.delegate = self;
             self.mopanWall.rootViewController = self;
             
@@ -466,7 +478,7 @@
             NSLog(@"[initAdwall]init wanpu wall");
             //[AppConnect getConnect:@"0c8ccdc9baf9143f5974efb2f60310b7" pid:@"appstore"];
             [AppConnect getConnect:@"0c8ccdc9baf9143f5974efb2f60310b7"
-                               pid:@"appstore" userID:[Player getInstance].udid];
+                               pid:@"appstore" ];
             
             //此通知任何积分操作成功都会调用
             [[NSNotificationCenter defaultCenter] addObserver:self
@@ -1417,7 +1429,9 @@
     int  pointsValue=[userPointsObj getPointsValue];
 	//NSString *pointsStr = [NSString stringWithFormat:@"您的%@: %d",pointsName, pointsValue];
     NSLog(@"[wanpu] get points:%d, begin to spend gold", pointsValue);
-    [AppConnect spendPoints:pointsValue];
+    if( pointsValue > 0 ){
+        [AppConnect spendPoints:pointsValue];
+    }
 
 }
 
@@ -1427,8 +1441,7 @@
 -(void)onSpendPointsSuccess:(NSNotification*)notifyObj
 {
     NSLog(@"[wanpu]消费积分:%@", notifyObj.object);
-    WapsUserPoints *userPointsObj = notifyObj.object;
-    int  pointsValue=[userPointsObj getPointsValue];
+    int  pointsValue=[notifyObj.object intValue];
     [self onConsumeGold:pointsValue adtype:wanpu];
 }
 
@@ -1476,7 +1489,8 @@
                                    if( res == 0 ){
                                        NSNumber* gold = [result valueForKey:@"gold"];
                                        int todayEarnGold = [[result valueForKey:@"todayEarnGold"] intValue];
-                                  
+                                       
+                                       
                                        player.gold = gold.intValue;
                                        player.todayGold = todayEarnGold;
                                        @synchronized(self){
@@ -1497,6 +1511,21 @@
                                            
                                            }
                                        }
+                                       //提示赚金币
+                                       NSString* adTypeName = [result valueForKey:@"adTypeName"];
+                                       int earnGold = [[result valueForKey:@"earnGold"] intValue];
+                                       if( earnGold > 0 ){
+                                           NSString* alertText = [NSString stringWithFormat:@"亲，您刚从%@获得%d金币,干的不错哦~", adTypeName, earnGold];
+                                           UIAlertView *alert = [[UIAlertView alloc]
+                                                             initWithTitle:nil
+                                                             message:alertText
+                                                             delegate:self
+                                                             cancelButtonTitle:@"OK"
+                                                             otherButtonTitles:nil];
+                                           self.alertType = MESSAGE;
+                                           [alert show];
+                                       }
+                                       
                                    }
                                }
                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
