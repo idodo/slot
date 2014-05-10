@@ -220,6 +220,7 @@
 		BFEEAE1C18A75C730069B250 /* libAdwoOfferWall1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */; };
 		BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1A18A75C730069B250 /* libminizip.a */; };
 		BFEEAE1E18A75C730069B250 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = BFEEAE1B18A75C730069B250 /* wall_template.zip */; };
+		BFFA5476191DEC7300B7D0F4 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -522,6 +523,7 @@
 		BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdwoOfferWall1.3.0.a; sourceTree = "<group>"; };
 		BFEEAE1A18A75C730069B250 /* libminizip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libminizip.a; sourceTree = "<group>"; };
 		BFEEAE1B18A75C730069B250 /* wall_template.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = wall_template.zip; sourceTree = "<group>"; };
+		BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +535,7 @@
 				76ED263918A6974700AFA4FD /* ImageIO.framework in Frameworks */,
 				BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */,
 				BF4CEE9318E051C70014EEF1 /* libOpenIDFA.a in Frameworks */,
+				BFFA5476191DEC7300B7D0F4 /* WapsOffer.framework in Frameworks */,
 				BF146636189BF6B10084E701 /* MapKit.framework in Frameworks */,
 				BF14664C189BFFE60084E701 /* CoreTelephony.framework in Frameworks */,
 				BF14664A189BFFC10084E701 /* AudioToolbox.framework in Frameworks */,
@@ -632,6 +635,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */,
 				BF20BBAE18F168D80035D7DB /* MopanSDK */,
 				BF20BBA618EE82330035D7DB /* GuomobSDK */,
 				BF1F000918B6362100BC6C7B /* AdmodSDK */,
@@ -1617,6 +1621,7 @@
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YiJiFenSDK",
+					"$(PROJECT_DIR)/Slot/adsdk",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1638,10 +1643,12 @@
 					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/MopanSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/jupengSDK",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "9DD8A745-1298-47CD-8684-121001912FD5";
+				PROVISIONING_PROFILE = "E6CC61AC-4E96-4C4C-9714-8AFE3883D47D";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1663,6 +1670,7 @@
 					"${SRCROOT}/Slot/adsdk/LimeiSDK",
 					"${SRCROOT}/Slot/adsdk/YiJiFenSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/YiJiFenSDK",
+					"$(PROJECT_DIR)/Slot/adsdk",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slot/Slot-Prefix.pch";
@@ -1684,10 +1692,12 @@
 					"$(PROJECT_DIR)/Slot/adsdk/YoumiSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/MopanSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/jupengSDK",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "9DD8A745-1298-47CD-8684-121001912FD5";
+				PROVISIONING_PROFILE = "E6CC61AC-4E96-4C4C-9714-8AFE3883D47D";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

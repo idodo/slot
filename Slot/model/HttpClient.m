@@ -7,8 +7,9 @@
 //
 
 #import "HttpClient.h"
+#import "DataConfig.h"
 //static NSString * const AFAppDotNetAPIBaseURLString = @"http://anansi.vicp.cc:8076/";
-static NSString * const AFAppDotNetAPIBaseURLString = @"http://adwall.anansimobile.cn:8983/";
+static NSString * const AFAppDotNetAPIBaseURLString = @"http://adwall.anansimobile.cn:8982/";
 @implementation HttpClient
 + (instancetype)sharedClient {
     static HttpClient *_sharedClient = nil;
@@ -20,5 +21,15 @@ static NSString * const AFAppDotNetAPIBaseURLString = @"http://adwall.anansimobi
     
     return _sharedClient;
 }
-
++(void)HTTPGet:(NSString*)url parameters:(NSDictionary *)parameters
+       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    
+    [dic setValue:[DataConfig getAppName] forKey:@"appName"];
+    [dic setValue:[NSNumber numberWithInt:[DataConfig getReviewVersion]] forKey:@"reviewVersion"];
+    
+    [[HttpClient sharedClient] GET:url parameters:dic success:success failure:failure];
+}
 @end

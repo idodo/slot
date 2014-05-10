@@ -86,6 +86,7 @@
             [[HttpClient sharedClient] GET:@"player/weixinshare" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSDictionary *result = (NSDictionary*)responseObject;
                 int err_code = [[result valueForKey:@"result"] intValue];
+                NSString* reason = [ result valueForKey:@"reason"];
                 if(err_code == 1){
                     int rewardGold = [[result valueForKey:@"rewardGold"] intValue];
                     NSString* tipText = [NSString stringWithFormat:@"分享成功，系统发给您获得%d金币作为奖励!", rewardGold ];
@@ -121,7 +122,7 @@
                     }
                     UIAlertView *alert = [[UIAlertView alloc]
                                           initWithTitle: nil
-                                          message: @"您今天已经分享过了，明天继续哦，亲!"
+                                          message: reason
                                           delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];

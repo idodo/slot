@@ -27,6 +27,8 @@
 #import "GADRequest.h"
 #import <Escore/YJFUserMessage.h>
 #import <Escore/YJFInitServer.h>
+//#import "JupengWall.h"
+#define isNSNull(value) [value isKindOfClass:[NSNull class]]
 @interface ViewController ()
 
 
@@ -167,6 +169,23 @@
         [self loadMopanAdWall];
     }];
     
+    [_bridge registerHandler:@"showWanpuOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [AppConnect showOffers:self showNavBar:YES];
+    }];
+    
+//    [_bridge registerHandler:@"showJupengOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+//        [JupengWall showOffers:self
+//                  didShowBlock:^{
+//                      NSLog(@"[jupeng] 巨朋积分墙已显示");
+//                  } didDismissBlock:^{
+//                      NSLog(@"[jupeng] 巨朋积分墙已退出");
+//                  }];
+//    }];
+    
+   
+
+
+    
     [_bridge registerHandler:@"consumeEarnGold" handler:^(id message, WVJBResponseCallback responseCallback) {
         [self consumeEarnGold];
         
@@ -238,7 +257,7 @@
 -(void)reloadCheck{
     if( self.firstLoad == 0){
         NSDictionary* parameters = @{ @"impartTimestamp" : [NSNumber numberWithLongLong:self.importTimestamp], @"udid": [Player getInstance].udid, @"channelCode": [DataConfig getChannelCode], @"version" : [NSNumber numberWithInt:[DataConfig getMajorVersion]] };
-        [[HttpClient sharedClient] GET:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
+        [HttpClient HTTPGet:@"player/reloadcheck" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSDictionary *result = (NSDictionary*)responseObject;
             NSLog(@"[check version] result:%@", result);
             //parse basic config info
@@ -307,7 +326,7 @@
         @"channelCode" : [DataConfig getChannelCode]};
     
     
-    [[HttpClient sharedClient] GET:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [HttpClient HTTPGet:@"player/checkversion" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSDictionary *result = (NSDictionary*)responseObject;
         NSLog(@"[check version] result:%@", result);
         //parse basic config info
@@ -364,6 +383,19 @@
              NSLog(@"[checkversion] 不是第一次加载游戏");
              
         }
+        int newMsg = [[ result valueForKey:@"hasNewMsg" ] intValue];
+        if( newMsg == 1){
+            self.alertType = MESSAGE;
+            NSString* message = [ result valueForKey:@"message" ];
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:nil
+                                  message: message
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+            [alert show];
+        }
+
         //苹果审核要求引用了广告sdk的应用需要显示出广告，为了过苹果审核，请求admob的banner广告
         //[self showDomobBannerAd];
         
@@ -379,7 +411,7 @@
     //init adwall
     if( [DataConfig getInstance].inReview == 0){
         AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE && adInfo.status == 1 ){
              NSLog(@"[initAdwall]init domob adwall");
             _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
             _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
@@ -387,19 +419,19 @@
         }
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init limei adwall");
             _limeiAdWall=[[immobView alloc] initWithAdUnitID:[DataConfig getLimeiCustomerId]];
             _limeiAdWall.delegate=self;
             [_limeiAdWall.UserAttribute setObject:[Player getInstance].udid forKey:@"accountname"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             [DianRuAdWall beforehandAdWallWithDianRuAppKey:[DataConfig getDianruCustomerId]];
             [DianRuAdWall initAdWallWithDianRuAdWallDelegate:self];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:youmi];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init youmi adwall");
             [YouMiConfig launchWithAppID:[DataConfig getYoumiCustomerId] appSecret:[DataConfig getYoumiCustomerPwd]];
             // 开启积分管理[本例子使用自动管理];
@@ -409,12 +441,12 @@
             [YouMiConfig setFullScreenWindow:self.view.window];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init miidi adwall");
             [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
-        if( adInfo.status == 1 ){
+        if(isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init yijifen");
             //开发者
             [YJFUserMessage shareInstance].yjfUserAppId = @"50326";//应用ID
@@ -431,7 +463,7 @@
         }
         //初始化果盟
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:guomob];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall] init guomob wall");
             //用果盟广告密钥初始化积分墙
             self.guomobWall=[[GuoMobWallViewController alloc] initWithId:@"p9a2mc0qh7s2469"];//@"p9a2mc0qh7s2469"
@@ -448,7 +480,7 @@
         }
         //初始化磨盘
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:mopan];
-        if( adInfo.status == 1 ){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init mopan wall");
             // 设置账号
             self.mopanWall = [[MopanAdWall alloc] initWithMopan:@"12445" withAppSecret:@"71nv66slrhct7ub9"];
@@ -456,6 +488,47 @@
             self.mopanWall.rootViewController = self;
             
         }
+        //初始化万普
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:wanpu];
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
+            NSLog(@"[initAdwall]init wanpu wall");
+            //[AppConnect getConnect:@"0c8ccdc9baf9143f5974efb2f60310b7" pid:@"appstore"];
+            [AppConnect getConnect:@"9357b445d94df92ad1dfa74cf9ab0f17"
+                               pid:@"appstore" ];
+            
+            //此通知任何积分操作成功都会调用
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onUpdatePoints:)
+                                                         name:WAPS_UPDATE_POINTS
+                                                       object:nil];
+            
+            //只有getPoints成功会通知
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onGetPointsSuccess:)
+                                                         name:WAPS_GET_POINTS_SUCCESS
+                                                       object:nil];
+            
+            //只有getPoints失败会通知
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onGetPointsFailed:)
+                                                         name:WAPS_GET_POINTS_FAILED
+                                                       object:nil];
+            
+            //获取用户消费积成功事件
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(onSpendPointsSuccess:)
+                                                         name:WAPS_SPEND_POINTS_SUCCESS
+                                                       object:nil];
+        }
+//        //初始化巨朋
+//        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:jupeng];
+//        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
+//            // 替换下面的appID和appSecret为你的appid和appSecret
+//            [JupengConfig launchWithAppID:@"10119" withAppSecret:@"43gnildkf0d7iqde"];
+//
+//        }
+        
+
     }
     //init move gold flags for comsumeEarnGold
     _moveFlags = [NSMutableArray arrayWithCapacity:(adtype_num)];
@@ -518,31 +591,37 @@
         AdInfo* adInfo = NULL;
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
         //消耗多盟平台上的金币
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[domob] begin move gold");
             [_domobAdWallManager requestOnlinePointCheck];
         }
         
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:limei];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[limei] begin move gold");
             [_limeiAdWall immobViewQueryScoreWithAdUnitID:[DataConfig getLimeiCustomerId] WithAccountID:[Player getInstance].udid];
             
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianru];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[dianru] begin move gold");
             [DianRuAdWall getRemainPoint];
             
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[middi] begin move gold");
             [MiidiAdWall requestGetPoints:self];
         }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:wanpu];
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
+            NSLog(@"[wanpu] begin move gold");
+            [AppConnect getPoints];
+        }
+
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:adwo];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[adwo] begin move gold");
             NSInteger currPoints = 0;
             
@@ -565,15 +644,43 @@
                 [self onConsumeGold:0 adtype:adwo];
             }
         }
-        //有米
+//        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:jupeng];
+//        if( isNSNull(AdWall)== FALSE  && adInfo.status == 1 ){
+//            NSLog(@"[jupeng] begin move gold");
+//            [JupengWall getScore:^(NSError* error,NSInteger userTotalScore)
+//             {
+//                 if(error == nil){
+//                     NSInteger score = userTotalScore;
+//                     NSLog(@"[jupeng]当前积分：%d",score);
+//                     if( score > 0 ){
+//                         [JupengWall spendScore:userTotalScore didSpendBlock:^(NSError* error,NSInteger userTotalScore)
+//                          {
+//                              if(error == nil){
+//                                  NSLog(@"[jupeng]减少%d积分成功，还有总共%d个积分",score, userTotalScore);
+//                                  [self onConsumeGold:score adtype:jupeng];
+//                              }else{
+//                                  NSLog(@"[jupeng] 减少%d积分失败", score);
+//                                  [self onConsumeGold:0 adtype:jupeng];
+//                              }
+//                          }];
+//                     }else{
+//                          [self onConsumeGold:0 adtype:jupeng];
+//                     }
+//                 }else{
+//                     NSLog(@"[jupeng]查询积分失败, %@", error);
+//                     [self onConsumeGold:0 adtype:jupeng];
+//                 }
+//             }];
+//        }
+        //磨盘
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:mopan];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[mopan] begin move gold");
             [self.mopanWall getMoney];
         }
         //有米
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[youmi] begin move gold");
             //[[[AdWall getInstance] youmiController] moveGold];
             NSInteger score = *[YouMiPointsManager pointsRemained];
@@ -587,12 +694,12 @@
         }
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             [YJFScore getScore:self];
         }
         //果盟
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:guomob];
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
            int gold = [self.guomobWall checkPoint];//查询积分
             NSLog(@"[guomob] query gold:%d", gold);
             if( gold > 0 ){
@@ -1365,13 +1472,79 @@
 
 #pragma mark mopan callback end
 /********************mopan callback end ***************************/
+/********************wanpu callback start ***************************/
+#pragma mark wanpu callback start
+#pragma mark 广告墙相关通知
+- (void)onOfferClosed:(NSNotification*)notifyObj
+{
+	NSLog(@"%@", @"Offer已关闭");
+}
+////任何积分操作成功都会调用
+//-(void)onUpdatePoints:(NSNotification*)notifyObj
+//{
+//    NSLog(@"onUpdatePoints");
+//    WapsUserPoints *userPointsObj = notifyObj.object;
+//    NSString * pointsName=[userPointsObj getPointsName];
+//    int  pointsValue=[userPointsObj getPointsValue];
+//	NSString *pointsStr = [NSString stringWithFormat:@"您的%@: %d",pointsName, pointsValue];
+//
+//}
+//任何积分操作成功都会调用
+-(void)onUpdatePoints:(NSNotification*)notifyObj
+{
+    WapsUserPoints *userPointsObj = notifyObj.object;
+    int  pointsValue=[userPointsObj getPointsValue];
+    NSLog(@"Waps onUpdatePoints, points: %d", pointsValue);
+}
+
+//只有getPoints操作才会调用
+-(void)onGetPointsSuccess:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu] onGetPointsSuccess");
+    WapsUserPoints *userPointsObj = notifyObj.object;
+    //NSString * pointsName=[userPointsObj getPointsName];
+    int  pointsValue=[userPointsObj getPointsValue];
+	//NSString *pointsStr = [NSString stringWithFormat:@"您的%@: %d",pointsName, pointsValue];
+    NSLog(@"[wanpu] get points:%d, begin to spend gold", pointsValue);
+    if( pointsValue > 0 ){
+        [AppConnect spendPoints:pointsValue];
+    }
+    
+}
+
+
+
+
+-(void)onSpendPointsSuccess:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu]消费积分:%@", notifyObj.object);
+    int  pointsValue=[notifyObj.object intValue];
+    [self onConsumeGold:pointsValue adtype:wanpu];
+}
+
+- (void)onGetPointsFailed:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu] 查询积分错误 %@",notifyObj.object);
+    [self onConsumeGold:0 adtype:wanpu];
+}
+
+
+
+-(void)onSpendPointsFailed:(NSNotification*)notifyObj
+{
+    NSLog(@"[wanpu] 消费积分错误 %@",notifyObj.object);
+    [self onConsumeGold:0 adtype:wanpu];
+    
+}
+#pragma mark wanpu callback edn
+/********************wanpu callback end ***************************/
 
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype
 {
     int adNum = 0; //有效的广告平台数
     for( AdInfo* adInfo in [AdWall getInstance].adInfoArray){
-        if( adInfo.status == 1){
+        if( isNSNull(adInfo) == FALSE && adInfo.status == 1){
             adNum += 1;
         }
     }
@@ -1415,6 +1588,21 @@
                                            
                                            }
                                        }
+                                       //提示赚金币
+                                       NSString* adTypeName = [result valueForKey:@"adTypeName"];
+                                       int earnGold = [[result valueForKey:@"earnGold"] intValue];
+                                       if( earnGold > 0 ){
+                                           NSString* alertText = [NSString stringWithFormat:@"亲，您刚从%@获得%d金币,干的不错哦~", adTypeName, earnGold];
+                                           UIAlertView *alert = [[UIAlertView alloc]
+                                                                 initWithTitle:nil
+                                                                 message:alertText
+                                                                 delegate:self
+                                                                 cancelButtonTitle:@"OK"
+                                                                 otherButtonTitles:nil];
+                                           self.alertType = MESSAGE;
+                                           [alert show];
+                                       }
+
                                    }
                                }
                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {

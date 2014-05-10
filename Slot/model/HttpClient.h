@@ -9,5 +9,8 @@
 #import "AFHTTPRequestOperationManager.h"
 
 @interface HttpClient : AFHTTPRequestOperationManager
-+ (instancetype)sharedClient;    
++ (instancetype)sharedClient;
++(void)HTTPGet:(NSString*)url parameters:(NSDictionary *)parameters
+       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 @end

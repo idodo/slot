@@ -9,7 +9,10 @@
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
     var earnDesc = "";
  //   var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
-   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8983';
+   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8982';
+    var APP_NAME = 'slot'; //app名字
+    var APP_VERSION = 8;    //强制更新版本号
+    var REVIEW_VERSION = 1; //review版本号
 
 
     function displayScore(value) {
@@ -54,7 +57,8 @@
                 }
             }
         };
-        opt.url += (opt.url.indexOf('?') > -1 ? '&' : '?') + 't=' + Date.now();
+        opt.url += (opt.url.indexOf('?') > -1 ? '&' : '?') + 't=' + Date.now() +'&appName='+APP_NAME+'&appVersion='+APP_VERSION+'&reviewVersion='+REVIEW_VERSION;
+
         xhr.open(opt.type || 'GET', opt.url, opt.async);
         if (opt.headers) {
             for (var header in opt.headers) {

@@ -53,13 +53,19 @@ static NSString *ADWO_CUSTOMERID = @"868cdf4365d645309e528ca958db4aeb";
     return ADWO_CUSTOMERID;
 }
 +(int)getMajorVersion{
-    return 6;
+    return 8;
 }
 +(int)getMinorVersion{
     return 0;
 }
++(int)getReviewVersion{
+    return 1;
+}
 +(NSString*)getChannelCode{
     return @"apple";
+}
++(NSString*)getAppName{
+    return @"slot";
 }
 
 @end
