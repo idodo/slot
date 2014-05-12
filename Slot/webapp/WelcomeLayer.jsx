@@ -6,6 +6,7 @@ var WelcomeLayer = View.derive({
         Hammer($('enter-settings')).on('tap', this.onEnterSettings.bind(this));
         Hammer($('enter-share')).on('tap', this.onEnterShare.bind(this));
         Hammer($('enter-trade')).on('tap', this.onEnterTrade.bind(this));
+        Hammer($('enter-help')).on('tap', this.onEnterHelp.bind(this));
         Sound.init();
     },
     onEnterSlot: function () {
@@ -33,6 +34,9 @@ var WelcomeLayer = View.derive({
         Player.tradeInfos(function (data) {
             Director.show('trade').setTradeList(data);
         });
+    },
+    onEnterHelp: function () {
+        Director.show('help');
     },
 
     setBtnStatus: function (earnBtnStatus, duihuanBtnStatus) {
