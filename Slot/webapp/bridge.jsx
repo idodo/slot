@@ -102,7 +102,7 @@ Function.prototype.derive = function (constructor, proto) {
             Player.updateInitData(response);
             if (Player.getEarnBtnStatus() == 0) {
                 $('enter-earn').style.display = "none";
-                //$('enter-help').style.display = "none";
+                $('enter-help').style.display = "none";
                 $('earnBtn').style.display = "none";
             }
             if (Player.getDuihuanBtnStatus() == 0) {
