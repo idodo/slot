@@ -27,7 +27,7 @@
 #import "GADRequest.h"
 #import <Escore/YJFUserMessage.h>
 #import <Escore/YJFInitServer.h>
-//#import "JupengWall.h"
+#import "JupengWall.h"
 #define isNSNull(value) [value isKindOfClass:[NSNull class]]
 @interface ViewController ()
 

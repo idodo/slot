@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIkit.h>
 
-#define WAPS_SDK_VERSION_NUMBER            @"1.6.3"
+#define WAPS_SDK_VERSION_NUMBER            @"1.6.5"
 
 @protocol AppConnectDelegate;
 @class WapsUserPoints;

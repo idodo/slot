@@ -220,6 +220,7 @@
 		BFEEAE1C18A75C730069B250 /* libAdwoOfferWall1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */; };
 		BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1A18A75C730069B250 /* libminizip.a */; };
 		BFEEAE1E18A75C730069B250 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = BFEEAE1B18A75C730069B250 /* wall_template.zip */; };
+		BFF969C3192074830080D947 /* JupengSdkLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF969C1192074830080D947 /* JupengSdkLib.a */; };
 		BFFA5476191DEC7300B7D0F4 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */; };
 /* End PBXBuildFile section */
 
@@ -523,6 +524,11 @@
 		BFEEAE1818A75C730069B250 /* libAdwoOfferWall1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdwoOfferWall1.3.0.a; sourceTree = "<group>"; };
 		BFEEAE1A18A75C730069B250 /* libminizip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libminizip.a; sourceTree = "<group>"; };
 		BFEEAE1B18A75C730069B250 /* wall_template.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = wall_template.zip; sourceTree = "<group>"; };
+		BFF969BE192074830080D947 /* JupengAdOpenData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengAdOpenData.h; sourceTree = "<group>"; };
+		BFF969BF192074830080D947 /* JupengConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengConfig.h; sourceTree = "<group>"; };
+		BFF969C0192074830080D947 /* JupengPopScreenADs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengPopScreenADs.h; sourceTree = "<group>"; };
+		BFF969C1192074830080D947 /* JupengSdkLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JupengSdkLib.a; sourceTree = "<group>"; };
+		BFF969C2192074830080D947 /* JupengWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengWall.h; sourceTree = "<group>"; };
 		BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -551,6 +557,7 @@
 				BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */,
 				BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */,
 				BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */,
+				BFF969C3192074830080D947 /* JupengSdkLib.a in Frameworks */,
 				BF14663A189BF6C30084E701 /* EventKitUI.framework in Frameworks */,
 				BF1D11D418B4D9AF002D9E12 /* StoreKit.framework in Frameworks */,
 				BF146634189BF6A80084E701 /* MessageUI.framework in Frameworks */,
@@ -635,6 +642,7 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BFF969BD192074830080D947 /* jupengSDK */,
 				BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */,
 				BF20BBAE18F168D80035D7DB /* MopanSDK */,
 				BF20BBA618EE82330035D7DB /* GuomobSDK */,
@@ -1201,6 +1209,18 @@
 				BFEEAE1B18A75C730069B250 /* wall_template.zip */,
 			);
 			path = res;
+			sourceTree = "<group>";
+		};
+		BFF969BD192074830080D947 /* jupengSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BFF969BE192074830080D947 /* JupengAdOpenData.h */,
+				BFF969BF192074830080D947 /* JupengConfig.h */,
+				BFF969C0192074830080D947 /* JupengPopScreenADs.h */,
+				BFF969C1192074830080D947 /* JupengSdkLib.a */,
+				BFF969C2192074830080D947 /* JupengWall.h */,
+			);
+			path = jupengSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

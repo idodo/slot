@@ -25,19 +25,19 @@ typedef enum {
 
 + (WapsOffersViewHandler *)sharedWapsOffersViewHandler;
 
-- (void)showOffer:(UIViewController *)controller;
+- (void)showOfferWithController:(UIViewController *)controller;
 
-- (void)showOffer:(UIViewController *)controller animated:(BOOL)animated;
+- (void)showOfferWithController:(UIViewController *)controller animated:(BOOL)animated;
 
-- (void)showOffers:(UIViewController *)vController showNavBar:(BOOL)visible;
+- (void)showOfferWithController:(UIViewController *)vController showNavBar:(BOOL)visible;
 
-- (void)showOffers:(UIViewController *)controller navBar:(UIView *)userNavBar;
+- (void)showOffersWithController:(UIViewController *)controller navBar:(UIView *)userNavBar;
 
-- (void)showOffersWithURL:(NSString *)url Controller:(UIViewController *)controller;
+- (void)showOffersWithUserURL:(NSString *)url Controller:(UIViewController *)controller;
 
-- (void)showFeedBack:(UIViewController *)controller;
+- (void)showFeedBackWithController:(UIViewController *)controller;
 
-- (void)loadViewWithURL:(NSString *)url Controller:(UIViewController *)controller;
+- (void)loadViewWithUserURL:(NSString *)url Controller:(UIViewController *)controller;
 
 @end
 
