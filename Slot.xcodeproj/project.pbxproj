@@ -41,8 +41,6 @@
 		76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */; };
 		76B1C1EC1897FD6D0042C7F6 /* btn_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B1C1EB1897FD6D0042C7F6 /* btn_big.png */; };
 		76B95DD718A7F0E600AF26C5 /* sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B95DD618A7F0E600AF26C5 /* sound.png */; };
-		76C5B82A189BC0470052FB4D /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */; };
-		76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */; };
 		76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B82C189BC2FA0052FB4D /* libsqlite3.dylib */; };
 		76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B82E189BC3060052FB4D /* CoreMedia.framework */; };
 		76C5B831189BC3120052FB4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C5B830189BC3120052FB4D /* Security.framework */; };
@@ -221,6 +219,10 @@
 		BFEEAE1D18A75C730069B250 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEEAE1A18A75C730069B250 /* libminizip.a */; };
 		BFEEAE1E18A75C730069B250 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = BFEEAE1B18A75C730069B250 /* wall_template.zip */; };
 		BFF969C3192074830080D947 /* JupengSdkLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF969C1192074830080D947 /* JupengSdkLib.a */; };
+		BFF969C81923A6800080D947 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF969C51923A6800080D947 /* libMobClickLibrary.a */; };
+		BFF969C91923A6810080D947 /* libMobClickLibrary_armv6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF969C61923A6800080D947 /* libMobClickLibrary_armv6.a */; };
+		BFF969DF1923B3AE0080D947 /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFF969DB1923B3AE0080D947 /* DomobOfferWallBundle.bundle */; };
+		BFF969E01923B3AE0080D947 /* libDMOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF969DE1923B3AE0080D947 /* libDMOfferWallSDK.a */; };
 		BFFA5476191DEC7300B7D0F4 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */; };
 /* End PBXBuildFile section */
 
@@ -269,12 +271,6 @@
 		76B1C1E91897ECFE0042C7F6 /* EarnLayer.jsx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EarnLayer.jsx; sourceTree = "<group>"; };
 		76B1C1EB1897FD6D0042C7F6 /* btn_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_big.png; sourceTree = "<group>"; };
 		76B95DD618A7F0E600AF26C5 /* sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound.png; sourceTree = "<group>"; };
-		76C5B823189BC0470052FB4D /* DMOfferWallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManager.h; sourceTree = "<group>"; };
-		76C5B824189BC0470052FB4D /* DMOfferWallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManagerDelegate.h; sourceTree = "<group>"; };
-		76C5B825189BC0470052FB4D /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
-		76C5B826189BC0470052FB4D /* DMVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMVideoViewController.h; sourceTree = "<group>"; };
-		76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
-		76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		76C5B82C189BC2FA0052FB4D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		76C5B82E189BC3060052FB4D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		76C5B830189BC3120052FB4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -529,6 +525,12 @@
 		BFF969C0192074830080D947 /* JupengPopScreenADs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengPopScreenADs.h; sourceTree = "<group>"; };
 		BFF969C1192074830080D947 /* JupengSdkLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JupengSdkLib.a; sourceTree = "<group>"; };
 		BFF969C2192074830080D947 /* JupengWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengWall.h; sourceTree = "<group>"; };
+		BFF969C51923A6800080D947 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		BFF969C61923A6800080D947 /* libMobClickLibrary_armv6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary_armv6.a; sourceTree = "<group>"; };
+		BFF969C71923A6800080D947 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		BFF969DB1923B3AE0080D947 /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
+		BFF969DD1923B3AE0080D947 /* DMOfferWallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallManager.h; sourceTree = "<group>"; };
+		BFF969DE1923B3AE0080D947 /* libDMOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDMOfferWallSDK.a; sourceTree = "<group>"; };
 		BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -555,6 +557,7 @@
 				BF146640189BF73E0084E701 /* libz.dylib in Frameworks */,
 				76C5B837189BC32F0052FB4D /* CoreLocation.framework in Frameworks */,
 				BF14663C189BF6FC0084E701 /* Social.framework in Frameworks */,
+				BFF969E01923B3AE0080D947 /* libDMOfferWallSDK.a in Frameworks */,
 				BF146639189BF6C30084E701 /* EventKit.framework in Frameworks */,
 				BFEEAE1318A731440069B250 /* MiidiAdLib.a in Frameworks */,
 				BFF969C3192074830080D947 /* JupengSdkLib.a in Frameworks */,
@@ -564,17 +567,18 @@
 				76C5B83D189BC3DD0052FB4D /* AdSupport.framework in Frameworks */,
 				BF146632189BEE560084E701 /* libWeChatSDK.a in Frameworks */,
 				76C5B83B189BC3410052FB4D /* QuartzCore.framework in Frameworks */,
+				BFF969C91923A6810080D947 /* libMobClickLibrary_armv6.a in Frameworks */,
 				76C5B839189BC3390052FB4D /* SystemConfiguration.framework in Frameworks */,
 				BF1465B0189BE73D0084E701 /* libDianRuAdWall.a in Frameworks */,
 				76C5B833189BC31A0052FB4D /* AVFoundation.framework in Frameworks */,
 				76C5B831189BC3120052FB4D /* Security.framework in Frameworks */,
 				BF4CEE9618E054920014EEF1 /* Escore.framework in Frameworks */,
 				76C5B82F189BC3060052FB4D /* CoreMedia.framework in Frameworks */,
+				BFF969C81923A6800080D947 /* libMobClickLibrary.a in Frameworks */,
 				BF20BBB118F168D80035D7DB /* MopanAdLib.a in Frameworks */,
 				76C5B82D189BC2FA0052FB4D /* libsqlite3.dylib in Frameworks */,
 				76F208CE1892809B000BE84C /* CoreGraphics.framework in Frameworks */,
 				BF146563189BE73D0084E701 /* immobSDK.framework in Frameworks */,
-				76C5B82B189BC0470052FB4D /* libDomobOfferWallSDK.a in Frameworks */,
 				76F208D01892809B000BE84C /* UIKit.framework in Frameworks */,
 				76F208CC1892809B000BE84C /* Foundation.framework in Frameworks */,
 				BF4CEE9218E051C70014EEF1 /* libYouMi.a in Frameworks */,
@@ -642,6 +646,8 @@
 		76C5B821189BC0470052FB4D /* adsdk */ = {
 			isa = PBXGroup;
 			children = (
+				BFF969DA1923B3AE0080D947 /* DMOfferWallSDK */,
+				BFF969C41923A6800080D947 /* UMAnalytics */,
 				BFF969BD192074830080D947 /* jupengSDK */,
 				BFFA5475191DEC7300B7D0F4 /* WapsOffer.framework */,
 				BF20BBAE18F168D80035D7DB /* MopanSDK */,
@@ -653,30 +659,8 @@
 				BF146501189BE73D0084E701 /* LimeiSDK */,
 				BF146503189BE73D0084E701 /* DianruSDK */,
 				BF146558189BE73D0084E701 /* YoumiSDK */,
-				76C5B822189BC0470052FB4D /* DMOfferWallSDK */,
 			);
 			path = adsdk;
-			sourceTree = "<group>";
-		};
-		76C5B822189BC0470052FB4D /* DMOfferWallSDK */ = {
-			isa = PBXGroup;
-			children = (
-				76C5B823189BC0470052FB4D /* DMOfferWallManager.h */,
-				76C5B824189BC0470052FB4D /* DMOfferWallManagerDelegate.h */,
-				76C5B825189BC0470052FB4D /* DMOfferWallViewController.h */,
-				76C5B826189BC0470052FB4D /* DMVideoViewController.h */,
-				76C5B827189BC0470052FB4D /* DomobOfferWallBundle */,
-				76C5B829189BC0470052FB4D /* libDomobOfferWallSDK.a */,
-			);
-			path = DMOfferWallSDK;
-			sourceTree = "<group>";
-		};
-		76C5B827189BC0470052FB4D /* DomobOfferWallBundle */ = {
-			isa = PBXGroup;
-			children = (
-				76C5B828189BC0470052FB4D /* DomobOfferWallBundle.bundle */,
-			);
-			path = DomobOfferWallBundle;
 			sourceTree = "<group>";
 		};
 		76ED263518A6969C00AFA4FD /* YiJiFenSDK */ = {
@@ -1223,6 +1207,34 @@
 			path = jupengSDK;
 			sourceTree = "<group>";
 		};
+		BFF969C41923A6800080D947 /* UMAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				BFF969C51923A6800080D947 /* libMobClickLibrary.a */,
+				BFF969C61923A6800080D947 /* libMobClickLibrary_armv6.a */,
+				BFF969C71923A6800080D947 /* MobClick.h */,
+			);
+			path = UMAnalytics;
+			sourceTree = "<group>";
+		};
+		BFF969DA1923B3AE0080D947 /* DMOfferWallSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BFF969DB1923B3AE0080D947 /* DomobOfferWallBundle.bundle */,
+				BFF969DC1923B3AE0080D947 /* Header */,
+				BFF969DE1923B3AE0080D947 /* libDMOfferWallSDK.a */,
+			);
+			path = DMOfferWallSDK;
+			sourceTree = "<group>";
+		};
+		BFF969DC1923B3AE0080D947 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BFF969DD1923B3AE0080D947 /* DMOfferWallManager.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1267,10 +1279,11 @@
 		76F208C01892809B000BE84C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = fouber;
 				TargetAttributes = {
 					76F208C71892809B000BE84C = {
+						DevelopmentTeam = N7MMKA6Y57;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -1317,7 +1330,6 @@
 			files = (
 				BFEB000C18A8BF4500E18677 /* KeychainAccessGroups.plist in Resources */,
 				BF1465A9189BE73D0084E701 /* dianru_red_dianru_iphone_download.png in Resources */,
-				76C5B82A189BC0470052FB4D /* DomobOfferWallBundle.bundle in Resources */,
 				76096D9918950C45006E6041 /* main.jsx in Resources */,
 				764879F8189A36F30050CB62 /* Sound.jsx in Resources */,
 				7689D2141895802E0009C3A6 /* warms.png in Resources */,
@@ -1430,6 +1442,7 @@
 				764879F6189A28B90050CB62 /* slot.mp3 in Resources */,
 				76B1C1EA1897ECFE0042C7F6 /* EarnLayer.jsx in Resources */,
 				76052F041893EBFF0089F1E5 /* bg.jpg in Resources */,
+				BFF969DF1923B3AE0080D947 /* DomobOfferWallBundle.bundle in Resources */,
 				76B1C1E6189782630042C7F6 /* btn_small.png in Resources */,
 				BF14658B189BE73D0084E701 /* dianru_green_left_view.png in Resources */,
 				BF146566189BE73D0084E701 /* dianru_blue_dianru_download.png in Resources */,
@@ -1555,7 +1568,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1595,7 +1607,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1628,12 +1639,8 @@
 		76F208FB1892809B000BE84C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					"armv7,armv7s",
-				);
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1664,11 +1671,13 @@
 					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/MopanSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/jupengSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/UMAnalytics",
+					"$(PROJECT_DIR)/Slot/adsdk/DMOfferWallSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "E6CC61AC-4E96-4C4C-9714-8AFE3883D47D";
+				PROVISIONING_PROFILE = "3759316D-D4BF-4A71-96F8-78B6533C23C0";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1677,12 +1686,8 @@
 		76F208FC1892809B000BE84C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					"armv7,armv7s",
-				);
 				CODE_SIGN_ENTITLEMENTS = Slot/Slot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Chen (GUWEG3G9SP)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1713,11 +1718,13 @@
 					"$(PROJECT_DIR)/Slot/adsdk/GuomobSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/MopanSDK",
 					"$(PROJECT_DIR)/Slot/adsdk/jupengSDK",
+					"$(PROJECT_DIR)/Slot/adsdk/UMAnalytics",
+					"$(PROJECT_DIR)/Slot/adsdk/DMOfferWallSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "E6CC61AC-4E96-4C4C-9714-8AFE3883D47D";
+				PROVISIONING_PROFILE = "3759316D-D4BF-4A71-96F8-78B6533C23C0";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1726,7 +1733,6 @@
 		76F208FE1892809B000BE84C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slot.app/Slot";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1749,7 +1755,6 @@
 		76F208FF1892809B000BE84C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slot.app/Slot";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

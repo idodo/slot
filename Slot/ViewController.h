@@ -10,8 +10,8 @@
 #import "WebViewJavascriptBridge.h"
 #import <immobSDK/immobView.h>
 #import "DMOfferWallManager.h"
-#import "DMOfferWallViewController.h"
 #import "MBProgressHUD.h"
+#import "DMOfferWallManager.h"
 #import "NSString+MD5.h"
 #import  "DianRuAdWall.h"
 #import <Escore/YJFUserMessage.h> 
@@ -69,7 +69,7 @@ static NSString* const AdWoErrCodeList[] = {
     @"points consumption is not available",
     @"points consumption is negative value",
 };
-@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate,MiidiAdWallShowAppOffersDelegate,
+@interface ViewController : UIViewController<UIWebViewDelegate,immobViewDelegate,DMOfferWallManagerDelegate,DianRuAdWallDelegate,MiidiAdWallShowAppOffersDelegate,
  MiidiAdWallAwardPointsDelegate,
  MiidiAdWallSpendPointsDelegate,
  MiidiAdWallGetPointsDelegate,
@@ -79,7 +79,7 @@ YJFIntegralWallDelegate,
 YJFAdWallDelegate,
 GuoMobWallDelegate,
 MopanAdWallDelegate,
-
+DMOfferWallManagerDelegate,
 //DMAdViewDelegate,
 WXApiDelegate> {
   
@@ -91,7 +91,6 @@ WXApiDelegate> {
 /**ad wall**/
 @property (nonatomic, strong)immobView *limeiAdWall;
 @property (strong,nonatomic) DMOfferWallManager *domobAdWallManager;
-@property (strong,nonatomic)  DMOfferWallViewController *domobAdWallController;
 @property (strong,nonatomic)  GuoMobWallViewController *guomobWall;
 @property (strong,nonatomic) MopanAdWall *mopanWall;
 @property (nonatomic)int dianruSpendGold;

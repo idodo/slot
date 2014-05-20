@@ -123,7 +123,7 @@
     }];
     
     [_bridge registerHandler:@"showDMOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-        [self.domobAdWallController presentOfferWall];
+        [self.domobAdWallManager presentOfferWallWithViewController:self type:eDMOfferWallTypeList];
     }];
     
     
@@ -173,14 +173,14 @@
         [AppConnect showOffers:self showNavBar:YES];
     }];
     
-//    [_bridge registerHandler:@"showJupengOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
-//        [JupengWall showOffers:self
-//                  didShowBlock:^{
-//                      NSLog(@"[jupeng] 巨朋积分墙已显示");
-//                  } didDismissBlock:^{
-//                      NSLog(@"[jupeng] 巨朋积分墙已退出");
-//                  }];
-//    }];
+    [_bridge registerHandler:@"showJupengOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [JupengWall showOffers:self
+                  didShowBlock:^{
+                      NSLog(@"[jupeng] 巨朋积分墙已显示");
+                  } didDismissBlock:^{
+                      NSLog(@"[jupeng] 巨朋积分墙已退出");
+                  }];
+    }];
     
    
 
@@ -413,9 +413,10 @@
         AdInfo* adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:domob];
         if( isNSNull(adInfo) == FALSE && adInfo.status == 1 ){
              NSLog(@"[initAdwall]init domob adwall");
-            _domobAdWallController = [[DMOfferWallViewController alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
-            _domobAdWallManager = [[DMOfferWallManager alloc] initWithPublishId:[DataConfig getDomobCustomerId] userId:[Player getInstance].udid];
-            _domobAdWallManager.delegate = self;
+            self.domobAdWallManager = [[DMOfferWallManager alloc] initWithPublisherID:[DataConfig getDomobCustomerId] andUserID:[Player getInstance].udid];
+            [self domobAdWallManager].delegate = self;
+           
+            [self domobAdWallManager].disableStoreKit = YES;
         }
         
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:limei];
@@ -520,13 +521,13 @@
                                                          name:WAPS_SPEND_POINTS_SUCCESS
                                                        object:nil];
         }
-//        //初始化巨朋
-//        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:jupeng];
-//        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
-//            // 替换下面的appID和appSecret为你的appid和appSecret
-//            [JupengConfig launchWithAppID:@"10119" withAppSecret:@"43gnildkf0d7iqde"];
-//
-//        }
+        //初始化巨朋
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:jupeng];
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
+            // 替换下面的appID和appSecret为你的appid和appSecret
+            [JupengConfig launchWithAppID:@"10119" withAppSecret:@"43gnildkf0d7iqde"];
+
+        }
         
 
     }
@@ -593,7 +594,7 @@
         //消耗多盟平台上的金币
         if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[domob] begin move gold");
-            [_domobAdWallManager requestOnlinePointCheck];
+            [_domobAdWallManager checkOwnedPoint];
         }
         
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:limei];
@@ -644,34 +645,34 @@
                 [self onConsumeGold:0 adtype:adwo];
             }
         }
-//        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:jupeng];
-//        if( isNSNull(AdWall)== FALSE  && adInfo.status == 1 ){
-//            NSLog(@"[jupeng] begin move gold");
-//            [JupengWall getScore:^(NSError* error,NSInteger userTotalScore)
-//             {
-//                 if(error == nil){
-//                     NSInteger score = userTotalScore;
-//                     NSLog(@"[jupeng]当前积分：%d",score);
-//                     if( score > 0 ){
-//                         [JupengWall spendScore:userTotalScore didSpendBlock:^(NSError* error,NSInteger userTotalScore)
-//                          {
-//                              if(error == nil){
-//                                  NSLog(@"[jupeng]减少%d积分成功，还有总共%d个积分",score, userTotalScore);
-//                                  [self onConsumeGold:score adtype:jupeng];
-//                              }else{
-//                                  NSLog(@"[jupeng] 减少%d积分失败", score);
-//                                  [self onConsumeGold:0 adtype:jupeng];
-//                              }
-//                          }];
-//                     }else{
-//                          [self onConsumeGold:0 adtype:jupeng];
-//                     }
-//                 }else{
-//                     NSLog(@"[jupeng]查询积分失败, %@", error);
-//                     [self onConsumeGold:0 adtype:jupeng];
-//                 }
-//             }];
-//        }
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:jupeng];
+        if( isNSNull(AdWall)== FALSE  && adInfo.status == 1 ){
+            NSLog(@"[jupeng] begin move gold");
+            [JupengWall getScore:^(NSError* error,NSInteger userTotalScore)
+             {
+                 if(error == nil){
+                     NSInteger score = userTotalScore;
+                     NSLog(@"[jupeng]当前积分：%d",score);
+                     if( score > 0 ){
+                         [JupengWall spendScore:userTotalScore didSpendBlock:^(NSError* error,NSInteger userTotalScore)
+                          {
+                              if(error == nil){
+                                  NSLog(@"[jupeng]减少%d积分成功，还有总共%d个积分",score, userTotalScore);
+                                  [self onConsumeGold:score adtype:jupeng];
+                              }else{
+                                  NSLog(@"[jupeng] 减少%d积分失败", score);
+                                  [self onConsumeGold:0 adtype:jupeng];
+                              }
+                          }];
+                     }else{
+                          [self onConsumeGold:0 adtype:jupeng];
+                     }
+                 }else{
+                     NSLog(@"[jupeng]查询积分失败, %@", error);
+                     [self onConsumeGold:0 adtype:jupeng];
+                 }
+             }];
+        }
         //磨盘
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:mopan];
         if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
@@ -684,11 +685,13 @@
             NSLog(@"[youmi] begin move gold");
             //[[[AdWall getInstance] youmiController] moveGold];
             NSInteger score = *[YouMiPointsManager pointsRemained];
+            NSLog(@"[youmi] get gold:%d", score);
             if( score > 0 ){
                 if([YouMiPointsManager spendPoints:score] ){
                     [self onConsumeGold:score adtype:youmi];
                 }
             }else{
+                
                 [self onConsumeGold:score adtype:youmi];
             }
         }
@@ -831,40 +834,42 @@
 -(void)offerWallDidClosed{
     
 }
-
-
 // 积分查询成功之后，回调该接口，获取总积分和总已消费积分。
-- (void)offerWallDidFinishCheckPointWithTotalPoint:(NSInteger)totalPoint
-                             andTotalConsumedPoint:(NSInteger)consumed {
-    NSLog(@"[domob]  request consume gold: %d", totalPoint - consumed );
-    _domobSpendGold = totalPoint-consumed;
+- (void)dmOfferWallManager:(DMOfferWallManager *)manager
+        receivedTotalPoint:(NSNumber *)totalPoint
+        totalConsumedPoint:(NSNumber *)consumedPoint {
+    _domobSpendGold = [totalPoint intValue]-[consumedPoint intValue];
     if( _domobSpendGold > 0 ){
-        [_domobAdWallManager requestOnlineConsumeWithPoint:_domobSpendGold];
+        [_domobAdWallManager consumeWithPointNumber:_domobSpendGold];
     }else{
         [self onConsumeGold:0 adtype:domob];
     }
     
-    
 }
 
 // 积分查询失败之后，回调该接口，返回查询失败的错误原因。
-- (void)offerWallDidFailCheckPointWithError:(NSError *)error {
-    NSLog(@"offerWallDidFailCheckPointWithError:%@", error);
-    //    _statusLabel.text = @"空闲";
+- (void)dmOfferWallManager:(DMOfferWallManager *)manager
+      failedCheckWithError:(NSError *)error {
+    NSLog(@"[domob] dmOfferWallManager:failedCheckWithError:%@", error);
     [self onConsumeGold:0 adtype:domob];
+    
 }
 
-
 // 消费请求正常应答后，回调该接口，并返回消费状态（成功或余额不足），以及总积分和总已消费积分。
-- (void)offerWallDidFinishConsumePointWithStatusCode:(DMOfferWallConsumeStatusCode)statusCode
-                                          totalPoint:(NSInteger)totalPoint
-                                  totalConsumedPoint:(NSInteger)consumed {
-    NSLog(@"offerWallDidFinishConsumePoint");
+- (void)dmOfferWallManager:(DMOfferWallManager *)manager
+    consumedWithStatusCode:(DMOfferWallConsumeStatus)statusCode
+                totalPoint:(NSNumber *)totalPoint
+        totalConsumedPoint:(NSNumber *)consumedPoint {
+    
     switch (statusCode) {
-        case DMOfferWallConsumeStatusCodeSuccess:
+        case eDMOfferWallConsumeSuccess:
             [self onConsumeGold: _domobSpendGold adtype:domob];
             break;
-        case DMOfferWallConsumeStatusCodeInsufficient:
+
+        case eDMOfferWallConsumeInsufficient:
+            [self onConsumeGold:0 adtype:domob];
+            break;
+        case eDMOfferWallConsumeDuplicateOrder:
             [self onConsumeGold:0 adtype:domob];
             break;
         default:
@@ -873,12 +878,16 @@
     
 }
 
-// 消费请求异常应答后，回调该接口，并返回异常的错误原因。
-- (void)offerWallDidFailConsumePointWithError:(NSError *)error {
-    NSLog(@"offerWallDidFailConsumePointWithError:%@", error);
-    //_statusLabel.text = @"空闲";
+//  消费请求异常应答后，回调该接口，并返回异常的错误原因。
+- (void)dmOfferWallManager:(DMOfferWallManager *)manager
+    failedConsumeWithError:(NSError *)error {
+    NSLog(@"[domob] dmOfferWallManager:failedConsumeWithError:%@", error);
+    [self onConsumeGold:0 adtype:domob];
+
 }
-//
+
+
+
 
 /********************domob adwall callback end*********************/
 /********************dianru adwall callback begin******************/

@@ -11,6 +11,7 @@
 #import "Player.h"
 #import "ViewController.h"
 #import "AdWall.h"
+#import "MobClick.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +19,9 @@
     // Override point for customization after application launch.
     //init wei xin
     [WXApi registerApp:@"wxf7f8f4e26c1f66d0"];
+    //init umeng
+    [MobClick startWithAppkey:@"53736d2c56240b1cc103448c" reportPolicy:(ReportPolicy) SEND_ON_EXIT channelId:nil];
+    [MobClick setLogEnabled:YES];
     return YES;
 }
 							

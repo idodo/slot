@@ -18,7 +18,7 @@ enum adtype{
     guomob, //果盟
     mopan, //磨盘
     wanpu, //万普
-    //jupeng, //巨朋
+    jupeng, //巨朋
     adtype_num
 };
 
