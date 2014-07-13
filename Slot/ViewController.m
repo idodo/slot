@@ -182,7 +182,9 @@
                   }];
     }];
     
-   
+    [_bridge registerHandler:@"showDianjoyOfferWall" handler:^(id message, WVJBResponseCallback responseCallback) {
+        [DianJoySDK showDianOffersWallWithViewController:self];
+    }];
 
 
     
@@ -528,6 +530,16 @@
             [JupengConfig launchWithAppID:@"10119" withAppSecret:@"43gnildkf0d7iqde"];
 
         }
+        //初始化点乐
+        adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianjoy];
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
+            [DianJoySDK requestDianJoySession:@"e894e2508e0de581dd1b4ddef84785fa" withUserID:@"32eea7a3d6619cbcf60f7a189f24ec73"];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(offersWallConnectSuccess:) name:DIANJOY_CONNECT_SUCCESS_NOTIFICATION object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(offersWallConnectFailed:) name:DIANJOY_CONNECT_FAILED_NOTIFICATION object:nil];
+            [DianJoySDK setDelegate:self];
+            
+        }
+       
         
 
     }
@@ -678,6 +690,12 @@
         if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
             NSLog(@"[mopan] begin move gold");
             [self.mopanWall getMoney];
+        }
+        //点乐
+        adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:dianjoy];
+        if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
+            NSLog(@"[dianjoy] begin move gold");
+             [DianJoySDK getUserDianPoints];
         }
         //有米
         adInfo = [[AdWall getInstance].adInfoArray  objectAtIndex:youmi];
@@ -1517,6 +1535,9 @@
     NSLog(@"[wanpu] get points:%d, begin to spend gold", pointsValue);
     if( pointsValue > 0 ){
         [AppConnect spendPoints:pointsValue];
+    }else{
+        [self onConsumeGold:0 adtype:wanpu];
+
     }
     
 }
@@ -1547,6 +1568,52 @@
 }
 #pragma mark wanpu callback edn
 /********************wanpu callback end ***************************/
+/********************dianjoy callback begin ***********************/
+#pragma mark dianjoy callback start
+- (void)offersWallConnectSuccess:(NSNotification *)notification
+{
+        NSLog(@"[dianjoy] connection success");
+
+}
+- (void)offersWallConnectFailed:(NSNotification *)notification
+{
+        NSLog(@"[dianjoy] failed");
+}
+- (void)getUserDianPointsSuccess:(int)dianPointsAmounts currency:(NSString *)currencyName
+{
+    NSLog(@"[dianjoy] get gold:%d%@",dianPointsAmounts,currencyName);
+    self.dianjoySpendGold = dianPointsAmounts;
+    if( dianPointsAmounts > 0 ){
+       [DianJoySDK spendDianPoints:dianPointsAmounts];
+    }else{
+        [self onConsumeGold:0 adtype:dianjoy];
+    }
+    
+}
+- (void)getUserDianPointsFail:(NSError *)error
+{
+    NSLog(@"[dianjoy] getUserDianPointsFail");
+    [self onConsumeGold:0 adtype:dianjoy];
+}
+- (void)spendDianPointsSuccess:(int)dianPointsAmounts currency:(NSString *)currencyName
+{
+    NSLog(@"[dianjoy] spend gold@%d%@",self.dianjoySpendGold,currencyName);
+    [self onConsumeGold:self.dianjoySpendGold adtype:dianjoy];
+}
+- (void)spendDianPointsFail:(NSError *)error
+{
+    NSLog(@"[dianjoy] spendDianPointsFail");
+    [self onConsumeGold:0 adtype:dianjoy];
+}
+- (void)awardDianPointsFail:(NSError *)error
+{
+    NSLog(@"[dianjoy] awardDianPointsFail");
+}
+- (void)awardDianPointsSuccess:(int)dianPointsAmounts currency:(NSString *)currencyName
+{
+    NSLog(@"[dianjoy] award gold%d%@",dianPointsAmounts,currencyName);
+}
+/*******************dianjoy callback end ***************************/
 
 #pragma mark adwall cmmmon  Callbacks
 - (void)onConsumeGold:(int)gold adtype:(int)adtype

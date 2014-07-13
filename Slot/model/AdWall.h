@@ -19,6 +19,7 @@ enum adtype{
     mopan, //磨盘
     wanpu, //万普
     jupeng, //巨朋
+    dianjoy, //点乐
     adtype_num
 };
 

@@ -9,7 +9,7 @@
     var duihuanBtnStatus = 1; //是否显示兑换金币按钮
     var earnDesc = "";
  //   var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
-   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8982';
+   var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8985';
     var APP_NAME = 'slot'; //app名字
     var APP_VERSION = 8;    //强制更新版本号
     var REVIEW_VERSION = 1; //review版本号

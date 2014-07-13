@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "924"
-            endingLineNumber = "924"
+            startingLineNumber = "926"
+            endingLineNumber = "926"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1361"
-            endingLineNumber = "1361"
-            landmarkName = "-adwallDidShowAppsClosed"
+            startingLineNumber = "1363"
+            endingLineNumber = "1363"
+            landmarkName = "-loadMopanAdWall"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1360"
-            endingLineNumber = "1360"
-            landmarkName = "-adwallDidShowAppsClosed"
+            startingLineNumber = "1362"
+            endingLineNumber = "1362"
+            landmarkName = "-loadMopanAdWall"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1340"
-            endingLineNumber = "1340"
+            startingLineNumber = "1342"
+            endingLineNumber = "1342"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1351"
-            endingLineNumber = "1351"
-            landmarkName = "-adwallDidShowAppsStartLoad"
+            startingLineNumber = "1353"
+            endingLineNumber = "1353"
+            landmarkName = "-checkPoint:point:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "541"
-            endingLineNumber = "541"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
             landmarkName = "-initAdWall"
             landmarkType = "5">
             <Locations>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
+            startingLineNumber = "544"
+            endingLineNumber = "544"
             landmarkName = "-initAdWall"
             landmarkType = "5">
          </BreakpointContent>
@@ -358,11 +358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
@@ -374,12 +374,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1293"
-            endingLineNumber = "1293"
-            landmarkName = "-adViewDidReceiveAd:"
+            startingLineNumber = "1295"
+            endingLineNumber = "1295"
+            landmarkName = "-request"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -390,12 +390,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1298"
-            endingLineNumber = "1298"
-            landmarkName = "-adView:didFailToReceiveAdWithError:"
+            startingLineNumber = "1300"
+            endingLineNumber = "1300"
+            landmarkName = "-request"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -406,11 +406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "693"
-            endingLineNumber = "693"
+            startingLineNumber = "695"
+            endingLineNumber = "695"
             landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
@@ -422,29 +422,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1304"
-            endingLineNumber = "1304"
-            landmarkName = "-loadGuomobAdwall"
-            landmarkType = "5">
+            startingLineNumber = "1306"
+            endingLineNumber = "1306"
+            landmarkName = "@implementation ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1405"
-            endingLineNumber = "1405"
-            landmarkName = "-adwallSuccessSpendMoney:"
-            landmarkType = "5">
+            startingLineNumber = "1407"
+            endingLineNumber = "1407"
+            landmarkName = "@implementation ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -486,11 +486,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
+            startingLineNumber = "587"
+            endingLineNumber = "587"
+            landmarkName = "-fiveStarReview"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426920369.805412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
@@ -502,11 +518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "594"
-            endingLineNumber = "594"
+            startingLineNumber = "631"
+            endingLineNumber = "631"
             landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
@@ -518,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629"
+            startingLineNumber = "691"
+            endingLineNumber = "691"
             landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
@@ -534,43 +550,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
+            timestampString = "426920369.805412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "690"
+            endingLineNumber = "690"
+            landmarkName = "-consumeEarnGold"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "689"
             endingLineNumber = "689"
-            landmarkName = "-consumeEarnGold"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
-            landmarkName = "-consumeEarnGold"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slot/ViewController.m"
-            timestampString = "421773901.333483"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "687"
-            endingLineNumber = "687"
             landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
@@ -598,12 +598,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421774710.50038"
+            timestampString = "426920369.805412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "841"
-            endingLineNumber = "841"
-            landmarkName = "-dmOfferWallManager:receivedTotalPoint:totalConsumedPoint:"
+            startingLineNumber = "843"
+            endingLineNumber = "843"
+            landmarkName = "@implementation ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426920369.805412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "840"
+            endingLineNumber = "840"
+            landmarkName = "-offerWallDidFinishLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426921129.875745"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "698"
+            endingLineNumber = "698"
+            landmarkName = "-consumeEarnGold"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -614,12 +646,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slot/ViewController.m"
-            timestampString = "421775790.597433"
+            timestampString = "426921669.162407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "838"
-            endingLineNumber = "838"
-            landmarkName = "-dmOfferWallManager:receivedTotalPoint:totalConsumedPoint:"
+            startingLineNumber = "1587"
+            endingLineNumber = "1587"
+            landmarkName = "-getUserDianPointsSuccess:currency:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426921669.162407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1584"
+            endingLineNumber = "1584"
+            landmarkName = "-getUserDianPointsSuccess:currency:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426921669.162407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1595"
+            endingLineNumber = "1595"
+            landmarkName = "-getUserDianPointsFail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426921669.162407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1600"
+            endingLineNumber = "1600"
+            landmarkName = "-spendDianPointsSuccess:currency:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Slot/ViewController.m"
+            timestampString = "426921669.162407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1605"
+            endingLineNumber = "1605"
+            landmarkName = "-spendDianPointsFail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -11,7 +11,6 @@
 #import <immobSDK/immobView.h>
 #import "DMOfferWallManager.h"
 #import "MBProgressHUD.h"
-#import "DMOfferWallManager.h"
 #import "NSString+MD5.h"
 #import  "DianRuAdWall.h"
 #import <Escore/YJFUserMessage.h> 
@@ -34,6 +33,8 @@
 #import "MopanAdWall.h"
 #import "WapsOffer/AppConnect.h"
 #import "JupengConfig.h"
+#import "DianJoySDK.h"
+#import "DianJoyOffersWallConstants.h"
 //#import "DMAdView.h"
 #import "WXApi.h"
 @class GADBannerView;
@@ -79,7 +80,7 @@ YJFIntegralWallDelegate,
 YJFAdWallDelegate,
 GuoMobWallDelegate,
 MopanAdWallDelegate,
-DMOfferWallManagerDelegate,
+DianJoySDKDelegate,
 //DMAdViewDelegate,
 WXApiDelegate> {
   
@@ -98,6 +99,7 @@ WXApiDelegate> {
 @property (nonatomic)int limeiSpendGold;
 @property (nonatomic)int middiSpendGold;
 @property (nonatomic)int mopanSpendGold;
+@property (nonatomic)int dianjoySpendGold;
 @property (nonatomic)int firstLoad; //是否是第一次进入游戏
 @property (nonatomic)int alertType; //弹出alert类型，用于alert回调
 @property (strong,nonatomic)NSString* versionLink;
