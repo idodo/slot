@@ -1,0 +1,28 @@
+//
+//  DianJoyOffersWallConstants.h
+//  DianJoySDK
+//
+//  Created by Noodles Wang on 10/14/13.
+//  Copyright (c) 2013 Noodles Wang. All rights reserved.
+//
+
+/**
+ *  积分墙即将打开
+ */
+#define DIANJOY_OFFERSWALL_WILL_OPEN_NOTIFICATION   @"DIANJOY_OFFERSWALL_OPEN_NOTIFICATION"
+/**
+ *  积分墙加载错误
+ */
+#define DIANJOY_OFFERSWALL_ERROR_NOTIFICATION       @"DIANJOY_OFFERSWALL_ERROR_NOTIFICATION"
+/**
+ *  积分墙即将关闭
+ */
+#define DIANJOY_OFFERSWALL_WILL_CLOSE_NOTIFICATION  @"DIANJOY_OFFERSWALL_WILL_CLOSE_NOTIFICATION"
+/**
+ *  连接Dianjoy成功
+ */
+#define DIANJOY_CONNECT_SUCCESS_NOTIFICATION        @"DIANJOY_CONNECT_SUCCESS_NOTIFICATION"
+/**
+ *  连接Dianjoy失败
+ */
+#define DIANJOY_CONNECT_FAILED_NOTIFICATION         @"DIANJOY_CONNECT_FAILED_NOTIFICATION"
