@@ -1,11 +1,12 @@
 // index.js
 ;
-var DATA = {}, 
-	ITEMS = {}, 
+var DATA = {},
+	ITEMS = {},
 	APPEAL = {},
 	IMPLIST_CID = [],
 	IMPLIST_TR = [],
 	UNIT = '奖励',
+	POINT_SUFFIX = '',
 	M_NAME = '',
 	NULL_CONTENT = '暂时没有广告，<br/>请稍后重试',
 	PAGESIZE = 10,
@@ -51,6 +52,7 @@ function init(){
 	M_NAME = DATA.m_name || M_NAME;
 	PAGESIZE = DATA.control.pagesize || PAGESIZE;
 	MAX_DATA_AGE = DATA.control.max_data_age || MAX_DATA_AGE;
+	POINT_SUFFIX = DATA.point_suffix || POINT_SUFFIX;
 	if(M_NAME)$('.m_name').html(M_NAME);
 	$('.unit').html(UNIT);
 
@@ -73,6 +75,15 @@ function init(){
 	}
 	if(DATA.control.video_entrance){
 		$('#video_wrapper').show();
+	}
+	if(!DATA.control.floating_enable){
+	}
+	if(DATA.control.floating_enable && DATA.floating){
+		$('#pich')
+			.css('display', 'block')
+			.attr('href', DATA.floating.target_url)
+			.find('span')
+				.css('background-image', 'url('+DATA.floating.entry_img+')');
 	}
 	$('#first_load').remove();
 	setTimeout(reportImp, 1000);
@@ -159,7 +170,7 @@ function __showPage() {
 		scroll_help.refresh();
 		scroll_repo.refresh();
 
-		setTimeout(fetchGameList, 1000);
+		setTimeout(fetchGameList, 0);
 		return;
 	} 
 	// scroll_list = new iScroll('game_scroller', {"bounce":false});
@@ -217,7 +228,7 @@ function __showPage() {
 		}
 	});
 	
-	setTimeout(fetchGameList, 1000);
+	setTimeout(fetchGameList, 0);
 }
 var __fetchingGameList = [], f=0, __lastFetchXHR;
 function fetchGameList () {
@@ -302,7 +313,7 @@ function __buildItems(items, nodetail, action_string) {
 						'<p class="todo">'+items[i].texts[1]+'</p>',
 					'</div>',
 					'<div class="download_info">',
-						'<p class="points">'+items[i].point+'</p>',
+						'<p class="points">'+items[i].point+POINT_SUFFIX+'</p>',
 						'<span class="unit">'+UNIT+'</span>',
 						'<span class="link_go hidden" srv="'+items[i].file_url+'" href="javascript:void(0);">'+items[i].action_string+'</span>',
 					'</div>',
@@ -418,7 +429,7 @@ function __openDetail(target) {
 				'</div>'].join(''),
 		"content": item.detail.replace(/\n/g,'<br/>'), //+'<p>完成上述步骤，半小时内获得积分</p>'
 		"button": {
-			"content": '<span>赚取</span> '+item.point+' <span class="unit">'+UNIT+'</span>',
+			"content": '<span>赚取</span> '+item.point+POINT_SUFFIX+' <span class="unit">'+UNIT+'</span>',
 			"class": 'btn_default',
 			"href": 'javascript:void(0)'
 			// "href": item.file_url
@@ -434,6 +445,7 @@ function __openDetail(target) {
 	});
 }
 function __openStatus() {
+	if(scroll_status){scroll_status.refresh()}
 	$('#status').css('marginLeft',0);
 	$('#status_scroller .status_body').empty().append('<div class="msg"><span class="icon icon_loading"></span></div>');
 
@@ -518,7 +530,7 @@ function __buildStatusItems(items) {
 							'<img class="game_icon" alt="" src="'+items[i].image+'">',
 						'</span>',
 						'<h4 class="game_name">'+items[i].title+'</h4>',
-						'<p class="intor">'+tagHTML+items[i].point+UNIT+'</p>',
+						'<p class="intor">'+tagHTML+items[i].point+(items[i].point_suffix||'')+UNIT+'</p>',
 					'</div>',
 					'<p class="desc">任务要求：'+items[i].desc+'</p>',
 				'</li>'].join(''));
@@ -609,7 +621,7 @@ function __sdk (functionName, data) {
 			delete this;
 		}
 	}
-	console?console.log(req):__showLog(req.url);
+	DEV&&(console?console.log(req):__showLog(req.url));
 	window.location = req.url;
 
 	return req;
@@ -757,7 +769,26 @@ $(function(){
 		fetchGameList();
 	});
 	// $('.ac_show_status').trigger('touchend');
+
+	$('#pich').pich();
+	(function ver(){
+		var vers = [
+				document.getElementById('version').innerHTML.replace('v=',''),
+				'ios'+document.getElementById('version').clientWidth,
+				version
+				]
+			console.log('%cVersions:', 'font-size: big;');
+			console.log(' HTML:', vers[0]);
+			console.log(' CSS:', vers[1]);
+			console.log(' JS:', vers[2]);
+			if(jQuery.unique(vers).length == 1 ){
+				console.log('%c MATCHED! ', 'background: #0f0; color: #fff');
+			}else{
+				console.log('%c NOT MATCHED! ', 'background: #f00; color: #fff');
+			}
+	})();
 });
+
 $(window).on('resize', function(){
 		__showPage();
 	}).on('load', function() {
@@ -779,3 +810,126 @@ var domobjs = {
 			// document.body.style.opacity = 0;
 		}
 	};
+(function($){
+	var nextFrame = window.requestAnimationFrame || 
+			window.mozRequestAnimationFrame || 
+			window.webkitRequestAnimationFrame || 
+			window.msRequestAnimationFrame || 
+			function(fn){return setTimeout(fn, 16)},
+		cancelFrame = window.cancelRequestAnimationFrame ||
+			window.webkitCancelAnimationFrame ||
+			window.webkitCancelRequestAnimationFrame ||
+			window.mozCancelRequestAnimationFrame ||
+			window.oCancelRequestAnimationFrame ||
+			window.msCancelRequestAnimationFrame ||
+			clearTimeout
+		;
+	function __setPos($t, newPos, force){
+		// $t.css(newPos);
+		$t[0].style.top = newPos.top + 'px';
+		$t[0].style.left = newPos.left + 'px';
+	}
+	$.fn.extend({
+		pich:function (setting){
+			var setting = $.extend({
+					sticky: true
+				},setting);
+			return this.each(function(){
+				var $t=$(this),
+					cache = {
+						height: $t.height(),
+						width: $t.width(),
+						pos: $t.offset(),
+						ts:0
+					},
+					PAGE,
+					startTouch,
+					touch
+					;
+				// $t.css({
+				// 	height: cache.height,
+				// 	width: cache.width
+				// });
+				if(setting.sticky){
+					PAGE = {
+						height: document.body.clientHeight,
+						width: document.body.clientWidth
+					}
+				}
+				$t.addClass('anim_css');
+
+				var __aninTimer;
+				function update(){
+					__aninTimer = nextFrame(update);
+					__setPos($t, {
+						top: touch.pageY - cache.height/2,
+						left: touch.pageX - cache.width/2
+					});
+				}
+
+				var __idleTimer;
+				function checkIdle(){
+					if(__idleTimer)clearTimeout(__idleTimer);
+					__idleTimer=setTimeout(function(){$t.addClass('idle');}, 5000);
+				}
+				checkIdle();
+
+				var __testTimer;
+				$t.on('touchstart', function(e){
+					e.preventDefault();
+					$(this).removeClass('anim_css idle');
+					if(__idleTimer)clearTimeout(__idleTimer);
+
+					cache.ts = e.timeStamp;
+					touch =  e.originalEvent.touches[0];
+					cache.startX = touch.pageX;
+					cache.startY = touch.pageY;
+					update();
+				}).on('touchmove', function(e){
+					e.preventDefault();
+					touch = e.originalEvent.touches[0];
+				}).on('touchcancel touchend', function(e){
+					e.preventDefault();
+					cancelFrame(__aninTimer);
+					checkIdle();
+
+					$(this).addClass('anim_css');
+					if(e.timeStamp - cache.ts < 300){
+						var diff = Math.abs(cache.startY - touch.pageY)+Math.abs(cache.startX - touch.pageX);
+						if(diff<10){
+							this.click();
+						}
+					}
+					if(setting.sticky){
+						var newPos = {
+								left: e.originalEvent.changedTouches[0].pageX - cache.width/2,
+								top: e.originalEvent.changedTouches[0].pageY - cache.height/2
+							};
+						if(e.originalEvent.changedTouches[0].pageY > PAGE.height-1.5*cache.height){
+							newPos.top = PAGE.height - cache.height;
+						}else if(e.originalEvent.changedTouches[0].pageY < 1.5*cache.height){
+							newPos.top = 0;
+						}
+						if(e.originalEvent.changedTouches[0].pageX > PAGE.width/2 + cache.width/2){
+							newPos.left = PAGE.width - cache.width;
+						}else{
+							newPos.left = 0;
+						}
+						__setPos($t, newPos, true);
+					}
+				});
+				$(window).on('resize', function(){
+					$t.css({
+						left: 0,
+						top: 2*cache.width
+					});
+					PAGE = {
+						height: document.body.clientHeight,
+						width: document.body.clientWidth
+					};
+				});
+			});
+		}
+	});
+})(jQuery);
+var version = "ios82161";
