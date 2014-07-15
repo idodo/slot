@@ -256,9 +256,9 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
     position: relative;
     background: #fff;
-    background-image: -webkit-gradient(linear, center top, center bottom, from(#d95e98), to(#d03795));
-    background-image: -webkit-linear-gradient(top, #d95e98, #d03795);
-    background-image: linear-gradient(top, #d95e98, #d03795);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#3498db), to(#2980b9));
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(top, #3498db, #2980b9);
 }
 
 .dialog #dialog-title {
