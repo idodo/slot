@@ -11,8 +11,8 @@
  //   var REMOTE_SERVER = "http://anansi.vicp.cc:8076/";
    var REMOTE_SERVER = 'http://adwall.anansimobile.cn:8985';
     var APP_NAME = 'slot'; //app名字
-    var APP_VERSION = 8;    //强制更新版本号
-    var REVIEW_VERSION = 1; //review版本号
+    var APP_VERSION = 9;    //强制更新版本号
+    var REVIEW_VERSION = 2; //review版本号
 
 
     function displayScore(value) {
