@@ -2,8 +2,8 @@
 //  DMOfferWallManager.h
 //  DMOfferWallSDK
 //
-//  Created by wangxijin on 14-2-11.
-//  Copyright (c) 2014年 domob. All rights reserved.
+//  Created by Domob on 14-2-11.
+//  Copyright (c) 2014年 Domob Ltd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -60,6 +60,12 @@ typedef enum {
     
 } DMOfferWallType;
 
+typedef enum {
+    
+    eOWActivityEnterReport = 1,// 进入广告列表界面
+    eOWActivityExitReport      // 退出广告列表界面
+}DMOWActivityReprotType;
+
 @class DMOfferWallManager;
 @protocol DMOfferWallManagerDelegate <NSObject>
 @optional
@@ -86,7 +92,7 @@ typedef enum {
 /**
  *  积分墙加载失败。可能的原因由error部分提供，例如网络连接失败、被禁用等。
  *   Failed to load offer wall.
- 
+
  *
  *  @param manager DMOfferWallManager
  *  @param error   error
@@ -113,6 +119,30 @@ typedef enum {
  */
 - (void)dmOfferWallManagerDidClosed:(DMOfferWallManager *)manager
                       offerWallType:(DMOfferWallType)type;
+
+/**
+ *  成功获取视频积分。（只用于视频积分墙）
+ *  Complete Video Offer.（only for video offer）
+ *
+ *  @param manager DMOfferWallManager
+ *  @param totalPoint
+ *  @param consumedPoint
+ */
+
+- (void)dmOfferWallManagerCompleteVideoOffer:(DMOfferWallManager *)manager
+                              withTotalPoint:(NSNumber *)totalPoint
+                               consumedPoint:(NSNumber *)consumedPoint;
+
+/**
+ *  获取视频积分出错。（只用于视频积分墙）
+ *  Uncomplete Video Offer.（only for video offer）
+ *
+ *  @param manager DMOfferWallManager
+ *  @param error
+ */
+
+- (void)dmOfferWallManagerUncompleteVideoOffer:(DMOfferWallManager *)manager
+                                     withError:(NSError *)error;
 
 #pragma mark - point manage callback 积分管理
 
@@ -181,6 +211,11 @@ typedef enum {
  */
 @property (nonatomic, assign) BOOL disableStoreKit;
 
+/**
+ *  用于展示sotre或者展示类广告
+ */
+@property(nonatomic,assign)UIViewController *rootViewController;
+
 #pragma mark - init 初始化相关方法
 /**
  *  使用Publisher ID初始化积分墙
@@ -201,6 +236,14 @@ typedef enum {
  *  @return DMOfferWallManager
  */
 - (id)initWithPublisherID:(NSString *)publisherID andUserID:(NSString *)userID;
+
+/**
+ *  更新登陆用户的User ID
+ *  Update User ID.
+ *
+ *  @param userID      应用中唯一标识用户的ID
+ */
+- (void)updateUserID:(NSString *)userID;
 
 #pragma mark - offer wall present 积分墙展现相关方法
 /**

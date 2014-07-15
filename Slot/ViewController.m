@@ -446,7 +446,7 @@
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:middi];
         if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init miidi adwall");
-            [MiidiManager setAppPublisher:@"16867" withAppSecret:@"uff8905vy2ytuyde"];
+            [MiidiManager setAppPublisher:@"18017" withAppSecret:@"bav80bov97ozogk3"];
         }
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:yijifen];
         if(isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
@@ -486,7 +486,7 @@
         if( isNSNull(adInfo) == FALSE  && adInfo.status == 1 ){
             NSLog(@"[initAdwall]init mopan wall");
             // 设置账号
-            self.mopanWall = [[MopanAdWall alloc] initWithMopan:@"12445" withAppSecret:@"71nv66slrhct7ub9"];
+            self.mopanWall = [[MopanAdWall alloc] initWithMopan:@"12742" withAppSecret:@"7c0c9lo715j66731"];
             self.mopanWall.delegate = self;
             self.mopanWall.rootViewController = self;
             
@@ -533,7 +533,7 @@
         //初始化点乐
         adInfo = [[AdWall getInstance].adInfoArray objectAtIndex:dianjoy];
         if( isNSNull(adInfo) == FALSE  && adInfo.status == 1){
-            [DianJoySDK requestDianJoySession:@"e894e2508e0de581dd1b4ddef84785fa" withUserID:@"32eea7a3d6619cbcf60f7a189f24ec73"];
+            [DianJoySDK requestDianJoySession:@"e98c6e680225408a04876feba1b9dac8" withUserID:[Player getInstance].udid];
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(offersWallConnectSuccess:) name:DIANJOY_CONNECT_SUCCESS_NOTIFICATION object:nil];
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(offersWallConnectFailed:) name:DIANJOY_CONNECT_FAILED_NOTIFICATION object:nil];
             [DianJoySDK setDelegate:self];
